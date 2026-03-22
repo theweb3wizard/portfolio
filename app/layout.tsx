@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "The Web3 Wizard",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "The Web3 Wizard — Khalid Murtala",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Khalid Murtala — The Web3 Wizard",
     description: "Web3 × AI builder. Building tools that hit different.",
     creator: "@theweb3wizard",
-    images: ["/images/og-image.png"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

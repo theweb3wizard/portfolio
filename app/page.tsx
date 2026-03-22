@@ -10,7 +10,9 @@ import Arsenal from "@/components/sections/Arsenal";
 import Work from "@/components/sections/Work";
 import Mission from "@/components/sections/Mission";
 import Contact from "@/components/sections/Contact";
+import CryptoFloat from "@/components/canvas/CryptoFloat";
 
+// Load Three.js canvas client-side only
 const ParticleUniverse = dynamic(
   () => import("@/components/canvas/ParticleUniverse"),
   { ssr: false }
@@ -19,7 +21,10 @@ const ParticleUniverse = dynamic(
 export default function Home() {
   useLenis();
 
+  // Custom cursor — desktop only
   useEffect(() => {
+    if (window.innerWidth < 768) return;
+
     const cursor = document.createElement("div");
     cursor.className = "cursor";
     const follower = document.createElement("div");
@@ -31,6 +36,7 @@ export default function Home() {
     let followerY = 0;
     let mouseX = 0;
     let mouseY = 0;
+    let running = true;
 
     const onMove = (e: MouseEvent) => {
       mouseX = e.clientX;
@@ -40,6 +46,7 @@ export default function Home() {
     };
 
     const animateFollower = () => {
+      if (!running) return;
       followerX += (mouseX - followerX) * 0.12;
       followerY += (mouseY - followerY) * 0.12;
       follower.style.left = `${followerX}px`;
@@ -51,6 +58,7 @@ export default function Home() {
     animateFollower();
 
     return () => {
+      running = false;
       window.removeEventListener("mousemove", onMove);
       cursor.remove();
       follower.remove();
@@ -59,8 +67,16 @@ export default function Home() {
 
   return (
     <>
+      {/* Layer 1 — Three.js particle universe */}
       <ParticleUniverse />
+
+      {/* Layer 2 — Floating crypto symbols */}
+      <CryptoFloat />
+
+      {/* Navigation */}
       <Navbar />
+
+      {/* Main content */}
       <main className="relative z-10">
         <Hero />
         <About />

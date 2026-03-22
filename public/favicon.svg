@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" rx="8" fill="#050508"/>
+  
+  <!-- Subtle border glow -->
+  <rect width="32" height="32" rx="8" fill="none" stroke="url(#borderGrad)" stroke-width="1"/>
+  
+  <!-- W3 text -->
+  <text x="3" y="22" font-family="'Arial Black', sans-serif" font-weight="900" font-size="14" fill="url(#textGrad)" letter-spacing="-0.5">W3</text>
+  
+  <!-- Small wizard hat accent top right -->
+  <polygon points="26,4 30,12 22,12" fill="url(#accentGrad)" opacity="0.9"/>
+  <rect x="21" y="12" width="10" height="2" rx="1" fill="url(#accentGrad)" opacity="0.7"/>
+
+  <defs>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+</svg>

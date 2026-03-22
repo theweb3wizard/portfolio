@@ -132,3 +132,10 @@ body:hover .cursor { opacity: 1; }
     overflow: hidden;
   }
 }
+
+/* Text readability over animated backgrounds */
+section p,
+section span,
+section li {
+  text-shadow: 0 1px 12px rgba(5, 5, 8, 0.9), 0 0 20px rgba(5, 5, 8, 0.7);
+}

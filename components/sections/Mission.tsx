@@ -46,7 +46,7 @@ export function Mission() {
             Why I{" "}
             <span className="text-gradient">build.</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
             The gap between what blockchain technology promises and what people
             actually experience is enormous. I work in that gap.
           </p>
@@ -76,7 +76,7 @@ export function Mission() {
                   >
                     {pillar.title}
                   </h3>
-                  <p className="text-muted leading-relaxed text-sm">
+                  <p className="text-slate-400 leading-relaxed text-sm">
                     {pillar.body}
                   </p>
                 </div>

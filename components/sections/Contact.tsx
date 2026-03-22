@@ -51,7 +51,7 @@ export default function Contact() {
             Find me in{" "}
             <span className="text-gradient">the dark.</span>
           </h2>
-          <p className="text-muted max-w-lg mx-auto">
+          <p className="text-slate-400 max-w-lg mx-auto">
             I don&apos;t do cold emails. But if you&apos;re building something real in
             Web3 or AI — find me on X.
           </p>

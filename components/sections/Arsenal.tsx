@@ -35,7 +35,7 @@ export default function Arsenal() {
             The tools I{" "}
             <span className="text-gradient">wield.</span>
           </h2>
-          <p className="text-muted max-w-xl mx-auto">
+          <p className="text-slate-400 max-w-xl mx-auto">
             Every tool chosen for a reason. Every stack decision intentional.
           </p>
         </SectionReveal>

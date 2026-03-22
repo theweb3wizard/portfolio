@@ -99,7 +99,7 @@ export default function ProjectCard({ project, index }: Props) {
         </div>
 
         <p className="text-slate-400 text-sm font-mono mb-3">{project.tagline}</p>
-        <p className="text-muted text-sm leading-relaxed mb-6 line-clamp-2">
+        <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">
           {project.description}
         </p>
 

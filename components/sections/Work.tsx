@@ -30,7 +30,7 @@ export default function Work() {
                 What I&apos;ve{" "}
                 <span className="text-gradient">built.</span>
               </h2>
-              <p className="text-muted max-w-lg">
+              <p className="text-slate-400 max-w-lg">
                 Every product solves a specific problem. No demo projects.
                 No tutorial clones. All live.
               </p>

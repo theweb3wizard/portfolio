@@ -90,7 +90,7 @@ export default function About() {
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
-              <p className="text-muted leading-relaxed">
+              <p className="text-slate-400 leading-relaxed">
                 No theories. No long threads about what I&apos;m{" "}
                 <em>going to build.</em> I ship, I move on, I ship again. The
                 work speaks. Everything else is noise.

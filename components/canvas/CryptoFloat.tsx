@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useParallax } from "@/hooks/useParallax";
 
 interface FloatingSymbol {
   id: number;
@@ -97,6 +98,7 @@ function generateSymbols(count: number): FloatingSymbol[] {
 export default function CryptoFloat() {
   const [symbols, setSymbols] = useState<FloatingSymbol[]>([]);
   const [mounted, setMounted] = useState(false);
+  const parallaxY = useParallax(-0.25);
 
   useEffect(() => {
     setSymbols(generateSymbols(32));
@@ -108,7 +110,12 @@ export default function CryptoFloat() {
   return (
     <div
       className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: 0 }}
+      style={{
+        zIndex: 0,
+        transform: `translateY(${parallaxY * 0.5}px)`,
+        filter: `hue-rotate(calc((var(--ambient-hue, 239) - 239) * 1deg))`,
+        transition: "filter 0.6s ease, transform 0.05s linear",
+      }}
       aria-hidden="true"
     >
       {symbols.map((s) => (

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" fill="none">
+  <defs>
+    <linearGradient id="hatBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B2C91"/>
+    </linearGradient>
+    <linearGradient id="hatHighlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="brimGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="50%" stop-color="#67E8F9"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+    <linearGradient id="apexGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sigil mark (same as above, shifted left) -->
+  <g transform="translate(0, 0)">
+    <path d="M 60,12 L 22,72 L 55,72 Z" fill="url(#hatHighlight)" opacity="0.9"/>
+    <path d="M 60,12 L 55,72 L 98,72 Z" fill="url(#hatBody)"/>
+    <path d="M 55,72 L 60,12 L 65,72 Z" fill="#4C1D95" opacity="0.6"/>
+    <path d="M 60,12 L 48,4 L 56,2 Z" fill="#8B5CF6"/>
+    <path d="M 10,74 Q 30,69 50,74 Q 55,75 60,74 Q 65,75 70,74 Q 90,69 110,74 L 110,82 L 90,82 Q 70,77 60,82 Q 50,83 40,82 Q 30,77 10,82 L 10,74 Z" fill="url(#brimGrad)"/>
+    <polygon points="60,76 66,71 72,76 66,81" fill="url(#apexGlow)"/>
+    <polygon points="56,2 58,5 61,5 59,7 60,10 56,8 52,10 53,7 51,5 54,5" fill="#00D9FF"/>
+  </g>
+
+  <!-- "The Web3 Wizard" text -->
+  <text x="130" y="52" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="28" fill="#FFFFFF" letter-spacing="0.02em">The</text>
+  <text x="130" y="82" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="32" letter-spacing="0.01em">
+    <tspan fill="url(#textGrad)">Web3</tspan>
+    <tspan fill="#FFFFFF"> Wizard</tspan>
+  </text>
+</svg>

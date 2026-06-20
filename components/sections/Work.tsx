@@ -4,10 +4,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionReveal from "@/components/ui/SectionReveal";
 import ProjectCard from "@/components/ui/ProjectCard";
+import FeaturedSpotlight from "@/components/ui/FeaturedSpotlight";
+import MobileProjectCarousel from "@/components/ui/MobileProjectCarousel";
 import { allProjects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-const FILTERS = ["All", "AI", "DeFi", "Agent", "Tax", "Infrastructure"];
+const FILTERS = ["All", "AI", "Agent"];
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -20,7 +22,7 @@ export default function Work() {
     <section id="work" className="section-padding relative z-10">
       <div className="container-width">
 
-        <SectionReveal className="mb-16">
+        <SectionReveal className="mb-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <p className="text-indigo font-mono text-xs tracking-widest uppercase mb-4">
@@ -35,43 +37,49 @@ export default function Work() {
                 No tutorial clones. All live.
               </p>
             </div>
-
-            {/* Filters */}
-            <div className="flex flex-wrap gap-2">
-              {FILTERS.map((f) => {
-                const count = f === "All"
-                  ? allProjects.length
-                  : allProjects.filter((p) => p.category === f).length;
-                if (count === 0) return null;
-                return (
-                  <button
-                    key={f}
-                    onClick={() => setActiveFilter(f)}
-                    className={cn(
-                      "px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-300 border",
-                      activeFilter === f
-                        ? "bg-indigo/20 border-indigo/40 text-indigo-glow"
-                        : "border-border text-muted hover:border-subtle hover:text-slate-300"
-                    )}
-                  >
-                    {f}
-                    <span className="ml-1.5 opacity-50">{count}</span>
-                  </button>
-                );
-              })}
-            </div>
           </div>
         </SectionReveal>
 
-        {/* Grid */}
+        {/* Featured spotlight */}
+        <FeaturedSpotlight />
+
+        {/* Filters */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {FILTERS.map((f) => {
+            const count = f === "All"
+              ? allProjects.length
+              : allProjects.filter((p) => p.category === f).length;
+            if (count === 0) return null;
+            return (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                className={cn(
+                  "px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-300 border",
+                  activeFilter === f
+                    ? "bg-indigo/20 border-indigo/40 text-indigo-glow"
+                    : "border-border text-muted hover:border-subtle hover:text-slate-300"
+                )}
+              >
+                {f}
+                <span className="ml-1.5 opacity-50">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Desktop grid — hidden on mobile */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="hidden md:grid grid-cols-2 gap-6"
         >
           {filtered.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </motion.div>
+
+        {/* Mobile carousel — hidden on desktop */}
+        <MobileProjectCarousel projects={filtered} />
 
         {/* More coming */}
         <SectionReveal delay={0.4} className="text-center mt-12">

@@ -32,21 +32,23 @@ export const metadata: Metadata = {
     template: "%s | The Web3 Wizard",
   },
   description:
-    "Khalid Murtala is The Web3 Wizard — a Web3 and AI builder from Kano, Nigeria. Creator of WalletLens, OrderFlow, Valor, and TaxRabbit. Building tools that solve real problems at the intersection of crypto and artificial intelligence.",
+    "Khalid Murtala is The Web3 Wizard — a Web3 and AI builder from Kano, Nigeria. Creator of Conviction Collapse Detector, SearchLens, Write3, and SolPulse. Clarity meets craft. Building tools at the intersection of crypto and artificial intelligence.",
   keywords: [
     "The Web3 Wizard",
     "Khalid Murtala",
     "Web3 builder",
     "AI crypto tools",
-    "WalletLens",
-    "OrderFlow",
-    "Valor",
-    "TaxRabbit",
+    "Conviction Collapse Detector",
+    "SearchLens",
+    "Write3",
+    "SolPulse",
     "Web3 developer Nigeria",
     "crypto AI tools",
     "blockchain developer",
     "DeFi tools",
-    "EVM wallet analysis",
+    "Solana analytics",
+    "Web3 learning resources",
+    "Clarity meets craft",
   ],
   authors: [{ name: "Khalid Murtala", url: siteUrl }],
   creator: "Khalid Murtala",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Khalid Murtala — The Web3 Wizard",
     description:
-      "Web3 × AI builder from Kano, Nigeria. Building tools that solve real problems in crypto.",
+      "Clarity meets craft. Web3 × AI builder from Kano, Nigeria. Building tools that solve real problems at the intersection of crypto and artificial intelligence.",
     siteName: "The Web3 Wizard",
     images: [
       {
@@ -70,8 +72,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Khalid Murtala — The Web3 Wizard",
-    description: "Web3 × AI builder. Building tools that hit different.",
-    creator: "@theweb3wizard",
+    description: "Clarity meets craft. Web3 × AI builder. Building tools that hit different.",
+    creator: "@theweb3wizard00",
     images: ["/opengraph-image"],
   },
   robots: {
@@ -96,14 +98,14 @@ export const metadata: Metadata = {
 };
 
 
-const jsonLd = {
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Khalid Murtala",
   alternateName: "The Web3 Wizard",
   url: siteUrl,
   sameAs: [
-    "https://twitter.com/theweb3wizard",
+    "https://twitter.com/theweb3wizard00",
     "https://github.com/theweb3wizard",
     "https://linkedin.com/in/khalid-murtala",
   ],
@@ -120,10 +122,56 @@ const jsonLd = {
     "Smart Contracts",
     "Next.js",
     "TypeScript",
+    "Solana",
+    "EVM",
   ],
   description:
-    "Web3 and AI builder from Kano, Nigeria. Creator of WalletLens, OrderFlow, Valor, and TaxRabbit.",
+    "Web3 and AI builder from Kano, Nigeria. Creator of Conviction Collapse Detector, SearchLens, Write3, and SolPulse.",
 };
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "The Web3 Wizard",
+  alternateName: "Khalid Murtala",
+  url: siteUrl,
+  description:
+    "Web3 and AI tools by Khalid Murtala. Clarity meets craft.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteUrl}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const learningResourceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  name: "The Web3 Wizard — Learning Resources",
+  description:
+    "Web3 and AI concepts explained clearly. No gatekeeping. No jargon for jargon's sake.",
+  provider: {
+    "@type": "Person",
+    name: "Khalid Murtala",
+    alternateName: "The Web3 Wizard",
+  },
+  audience: {
+    "@type": "Audience",
+    audienceType: "Web3 learners and developers",
+  },
+  educationalLevel: "Beginner to Intermediate",
+  teaches: [
+    "Web3 fundamentals",
+    "Smart contracts",
+    "AI and blockchain integration",
+    "Solana development",
+  ],
+};
+
+const allJsonLd = [personJsonLd, websiteJsonLd, learningResourceJsonLd];
 
 export default function RootLayout({
   children,
@@ -135,7 +183,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(allJsonLd) }}
         />
       </head>
       <body

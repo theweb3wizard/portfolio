@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Twitter, Github, Linkedin, ExternalLink } from "lucide-react";
+import { Twitter, Github, Linkedin, ExternalLink, MessageCircle, Send, Instagram } from "lucide-react";
 import SectionReveal from "@/components/ui/SectionReveal";
 
 const LINKS = [
   {
     label: "X / Twitter",
-    handle: "@theweb3wizard",
+    handle: "@theweb3wizard00",
     url: "https://twitter.com/theweb3wizard00",
     icon: Twitter,
     color: "#1DA1F2",
@@ -22,6 +22,30 @@ const LINKS = [
     desc: "Open source code and project repos",
   },
   {
+    label: "Telegram",
+    handle: "@theweb3wizard00",
+    url: "https://t.me/theweb3wizard00",
+    icon: Send,
+    color: "#29B6F6",
+    desc: "Quick messages and community chat",
+  },
+  {
+    label: "Discord",
+    handle: "theweb3wizard00",
+    url: "https://discord.com/users/theweb3wizard00",
+    icon: MessageCircle,
+    color: "#5865F2",
+    desc: "Dev discussions and collab",
+  },
+  {
+    label: "Instagram",
+    handle: "@theweb3wizard00",
+    url: "https://instagram.com/theweb3wizard00",
+    icon: Instagram,
+    color: "#E4405F",
+    desc: "Behind the build and visuals",
+  },
+  {
     label: "LinkedIn",
     handle: "Khalid Murtala",
     url: "https://linkedin.com/in/theweb3wizard00",
@@ -32,10 +56,10 @@ const LINKS = [
 ];
 
 const TOOLS = [
-  { name: "WalletLens", url: "https://walletlens-hq.vercel.app", color: "#6366F1" },
-  { name: "OrderFlow", url: "https://orderflow-hq.vercel.app", color: "#06B6D4" },
-  { name: "Valor", url: "https://valor-tgbot.vercel.app", color: "#10B981" },
-  { name: "TaxRabbit", url: "https://taxrabbit.xyz", color: "#F59E0B" },
+  { name: "SearchLens", url: "https://searchlens-io.vercel.app", color: "#6366F1" },
+  { name: "Write3", url: "https://write3-ai.vercel.app", color: "#06B6D4" },
+  { name: "SolPulse", url: "https://solpulse-hq.vercel.app", color: "#10B981" },
+  { name: "CCD", url: "https://github.com/theweb3wizard/conviction-collapse-detector", color: "#F59E0B" },
 ];
 
 export default function Contact() {
@@ -53,12 +77,15 @@ export default function Contact() {
           </h2>
           <p className="text-slate-400 max-w-lg mx-auto">
             I don&apos;t do cold emails. But if you&apos;re building something real in
-            Web3 or AI — find me on X.
+            Web3 or AI — find me online.
+          </p>
+          <p className="font-display text-sm text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300 tracking-wide mt-4">
+            &ldquo;Clarity meets craft.&rdquo;
           </p>
         </SectionReveal>
 
         {/* Social links */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
           {LINKS.map((link, i) => (
             <motion.a
               key={link.label}

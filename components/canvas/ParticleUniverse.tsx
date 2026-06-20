@@ -2,20 +2,24 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { useParallax } from "@/hooks/useParallax";
 
 export default function ParticleUniverse() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const parallaxY = useParallax(-0.15);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
-      antialias: true,
+      antialias: !isMobile,
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const scene = new THREE.Scene();
@@ -27,7 +31,7 @@ export default function ParticleUniverse() {
     );
     camera.position.z = 3;
 
-    const COUNT = 2500;
+    const COUNT = isMobile ? 800 : 2500;
     const positions = new Float32Array(COUNT * 3);
     const colors = new Float32Array(COUNT * 3);
 
@@ -137,7 +141,12 @@ export default function ParticleUniverse() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0, opacity: 0.75 }}
+      style={{
+        zIndex: 0,
+        opacity: 0.75,
+        transform: `translateY(${parallaxY * 0.3}px)`,
+        willChange: "transform",
+      }}
     />
   );
 }

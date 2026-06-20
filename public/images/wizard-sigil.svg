@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs>
+    <linearGradient id="hatBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B2C91"/>
+    </linearGradient>
+    <linearGradient id="hatHighlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="brimGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="50%" stop-color="#67E8F9"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+    <linearGradient id="apexGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left facet of hat body -->
+  <path d="M 60,12 L 22,72 L 55,72 Z" fill="url(#hatHighlight)" opacity="0.9"/>
+
+  <!-- Right facet of hat body -->
+  <path d="M 60,12 L 55,72 L 98,72 Z" fill="url(#hatBody)"/>
+
+  <!-- Center facet shadow -->
+  <path d="M 55,72 L 60,12 L 65,72 Z" fill="#4C1D95" opacity="0.6"/>
+
+  <!-- Bent tip -->
+  <path d="M 60,12 L 48,4 L 56,2 Z" fill="#8B5CF6"/>
+
+  <!-- W-shaped brim (triple arc = W) -->
+  <path d="M 10,74 
+           Q 30,69 50,74 
+           Q 55,75 60,74 
+           Q 65,75 70,74 
+           Q 90,69 110,74 
+           L 110,82 
+           L 90,82 
+           Q 70,77 60,82 
+           Q 50,83 40,82 
+           Q 30,77 10,82 
+           L 10,74 Z" 
+        fill="url(#brimGrad)"/>
+
+  <!-- Aperture crystal at center of brim -->
+  <polygon points="60,76 66,71 72,76 66,81" fill="url(#apexGlow)"/>
+
+  <!-- Star at apex -->
+  <polygon points="56,2 58,5 61,5 59,7 60,10 56,8 52,10 53,7 51,5 54,5" fill="#00D9FF"/>
+</svg>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ArrowUpRight, Github } from "lucide-react";
 import { Project } from "@/data/projects";
+import Tilt3D from "./Tilt3D";
 
 interface Props {
   project: Project;
@@ -50,7 +51,7 @@ export default function ProjectCard({ project, index }: Props) {
         transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
       />
 
-      <div className="p-6 md:p-8">
+      <Tilt3D className="p-6 md:p-8" maxTilt={6} perspective={1200} scale={1.01}>
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
             <div
@@ -72,14 +73,21 @@ export default function ProjectCard({ project, index }: Props) {
                   {project.name}
                 </h3>
                 <span
-                  className="text-[10px] font-mono px-2 py-0.5 rounded-full"
+                  className="text-[10px] font-mono px-2 py-0.5 rounded-full flex items-center gap-1"
                   style={{
                     background: `${project.color}15`,
                     border: `1px solid ${project.color}30`,
                     color: project.color,
                   }}
                 >
-                  {project.status === "live" ? "● LIVE" : "◐ BUILDING"}
+                  <span
+                    className="w-1.5 h-1.5 rounded-full animate-pulse"
+                    style={{
+                      background: project.color,
+                      boxShadow: `0 0 6px ${project.color}`,
+                    }}
+                  />
+                  {project.status === "live" ? "LIVE" : "BUILDING"}
                 </span>
               </div>
               <p className="text-muted text-xs font-mono mt-0.5">
@@ -114,6 +122,36 @@ export default function ProjectCard({ project, index }: Props) {
           ))}
         </div>
 
+        {/* Terminal snippet */}
+        <AnimatePresence>
+          {hovered && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden"
+            >
+              <div
+                className="mb-4 rounded-lg px-3 py-2 font-mono text-[10px] leading-relaxed"
+                style={{
+                  background: `${project.color}08`,
+                  border: `1px solid ${project.color}20`,
+                }}
+              >
+                <span style={{ color: project.color }}>$</span>{" "}
+                <span className="text-slate-400">npx</span>{" "}
+                <span className="text-white">{project.name.toLowerCase()}</span>{" "}
+                <span className="text-slate-500">--stack</span>{" "}
+                <span className="text-slate-400">{project.stack[0]}</span>
+                <br />
+                <span className="text-emerald">✓</span>{" "}
+                <span className="text-slate-500">Built and shipped</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <div className="flex items-center justify-between pt-4 border-t border-border">
           <a
             href={project.url}
@@ -137,7 +175,7 @@ export default function ProjectCard({ project, index }: Props) {
             </a>
           )}
         </div>
-      </div>
+      </Tilt3D>
     </motion.article>
   );
 }

@@ -1,29 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Background -->
-  <rect width="32" height="32" rx="8" fill="#050508"/>
+  <rect width="32" height="32" rx="8" fill="#0F0F14"/>
+  <rect width="32" height="32" rx="8" fill="none" stroke="url(#hatGrad)" stroke-width="0.5" opacity="0.5"/>
   
-  <!-- Subtle border glow -->
-  <rect width="32" height="32" rx="8" fill="none" stroke="url(#borderGrad)" stroke-width="1"/>
-  
-  <!-- W3 text -->
-  <text x="3" y="22" font-family="'Arial Black', sans-serif" font-weight="900" font-size="14" fill="url(#textGrad)" letter-spacing="-0.5">W3</text>
-  
-  <!-- Small wizard hat accent top right -->
-  <polygon points="26,4 30,12 22,12" fill="url(#accentGrad)" opacity="0.9"/>
-  <rect x="21" y="12" width="10" height="2" rx="1" fill="url(#accentGrad)" opacity="0.7"/>
+  <!-- Sigil mark (simplified for 32px) -->
+  <path d="M 16,4 L 7,22 L 14,22 Z" fill="url(#hatHighlight)" opacity="0.9"/>
+  <path d="M 16,4 L 14,22 L 25,22 Z" fill="url(#hatBody)"/>
+  <path d="M 14,22 L 16,4 L 18,22 Z" fill="#4C1D95" opacity="0.6"/>
+  <path d="M 16,4 L 13,3 L 14,2 Z" fill="#8B5CF6"/>
+  <path d="M 5,23 Q 11,22 16,23 Q 21,22 27,23 L 27,25 L 21,25 Q 16,24 11,25 L 5,25 Z" fill="#00D9FF"/>
+  <polygon points="16,24 18,23 20,24 18,25" fill="#FFFFFF" opacity="0.8"/>
+  <polygon points="13,2 14,3 16,2 15,4 14,2" fill="#00D9FF"/>
 
   <defs>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#06B6D4"/>
+    <linearGradient id="hatBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B2C91"/>
     </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#06B6D4"/>
+    <linearGradient id="hatHighlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6D28D9"/>
     </linearGradient>
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.3"/>
+    <linearGradient id="hatGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
     </linearGradient>
   </defs>
 </svg>

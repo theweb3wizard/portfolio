@@ -189,6 +189,12 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable} bg-void text-slate-300 antialiased noise-overlay`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-indigo focus:text-white focus:text-sm focus:font-mono focus:outline-none"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

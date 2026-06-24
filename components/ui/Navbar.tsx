@@ -89,6 +89,7 @@ export default function Navbar() {
                   ? "text-indigo-glow"
                   : "text-muted hover:text-slate-300"
               )}
+              aria-current={activeSection === item.href.slice(1) ? "page" : undefined}
             />
           ))}
         </div>

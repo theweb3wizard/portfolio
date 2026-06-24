@@ -5,21 +5,21 @@ import { scrollY } from "@/lib/scrollState";
 
 export default function ScrollWand() {
   const barRef = useRef<HTMLDivElement>(null);
-  const rafId = useRef<number>(0);
 
   useEffect(() => {
-    const tick = () => {
+    function update() {
       const bar = barRef.current;
-      if (bar) {
-        const scrollable =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollable > 0 ? scrollY.current / scrollable : 0;
-        bar.style.transform = `scaleY(${progress})`;
-      }
-      rafId.current = requestAnimationFrame(tick);
-    };
-    rafId.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafId.current);
+      if (!bar) return;
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? scrollY.current / scrollable : 0;
+      bar.style.transform = `scaleY(${Math.min(progress, 1)})`;
+    }
+
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   return (
@@ -29,7 +29,7 @@ export default function ScrollWand() {
     >
       <div
         ref={barRef}
-        className="w-full origin-top transition-transform duration-75"
+        className="w-full origin-top"
         style={{
           height: "100%",
           background:

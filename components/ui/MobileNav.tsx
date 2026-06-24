@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { User, Layers, Briefcase, BookOpen, Target, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { label: "About", href: "#about", icon: "◈" },
-  { label: "Stack", href: "#arsenal", icon: "◎" },
-  { label: "Work", href: "#work", icon: "⬡" },
-  { label: "Why", href: "#mission", icon: "◈" },
-  { label: "Find", href: "#contact", icon: "◎" },
+  { label: "About", href: "#about", icon: User },
+  { label: "Stack", href: "#arsenal", icon: Layers },
+  { label: "Work", href: "#work", icon: Briefcase },
+  { label: "Learn", href: "#grimoire", icon: BookOpen },
+  { label: "Why", href: "#mission", icon: Target },
+  { label: "Find", href: "#contact", icon: Send },
 ];
 
 export default function MobileNav() {
@@ -51,6 +53,7 @@ export default function MobileNav() {
             <button
               key={item.label}
               onClick={() => handleClick(item.href)}
+              aria-label={`Navigate to ${item.label} section`}
               className={cn(
                 "flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all duration-300 min-w-[56px]",
                 isActive
@@ -60,16 +63,16 @@ export default function MobileNav() {
               style={{
                 WebkitTapHighlightColor: "transparent",
               }}
+              aria-current={isActive ? "page" : undefined}
             >
-              <span
+              <item.icon
+                size={14}
                 className={cn(
-                  "text-xs transition-all duration-300",
+                  "transition-all duration-300",
                   isActive && "scale-110"
                 )}
-              >
-                {item.icon}
-              </span>
-              <span className="text-[9px] font-mono tracking-wider">
+              />
+              <span className="text-xs font-mono tracking-wider">
                 {item.label}
               </span>
             </button>

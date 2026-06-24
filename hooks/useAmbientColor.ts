@@ -8,6 +8,7 @@ const SECTION_IDS = ["hero", "about", "arsenal", "work", "mission", "contact"];
 export function useAmbientColor() {
   const currentHue = useRef(239);
   const rafId = useRef<number>(0);
+  const activeHue = useRef(239);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -21,16 +22,26 @@ export function useAmbientColor() {
       const obs = new IntersectionObserver(
         ([entry]) => {
           ratios[id] = entry.intersectionRatio;
+          scheduleUpdate();
         },
-        { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
+        { threshold: [0, 0.25, 0.5, 0.75, 1] }
       );
       obs.observe(el);
       observers.push(obs);
     });
 
-    let targetHue = 239;
+    let scheduled = false;
 
-    const tick = () => {
+    function scheduleUpdate() {
+      if (scheduled) return;
+      scheduled = true;
+      rafId.current = requestAnimationFrame(() => {
+        scheduled = false;
+        applyHue();
+      });
+    }
+
+    function applyHue() {
       let totalWeight = 0;
       let weightedHue = 0;
 
@@ -46,36 +57,31 @@ export function useAmbientColor() {
         }
       });
 
-      if (totalWeight > 0) {
-        targetHue = ((weightedHue / totalWeight) % 360 + 360) % 360;
-      }
+      const targetHue = totalWeight > 0
+        ? ((weightedHue / totalWeight) % 360 + 360) % 360
+        : 239;
 
-      currentHue.current = lerpHue(currentHue.current, targetHue, 0.08);
+      currentHue.current = lerpHue(currentHue.current, targetHue, 0.12);
+      activeHue.current = currentHue.current;
 
-      document.documentElement.style.setProperty(
-        "--ambient-hue",
-        String(Math.round(currentHue.current))
-      );
-
-      const sat = 75;
-      const light = 55;
+      const hue = Math.round(currentHue.current);
+      document.documentElement.style.setProperty("--ambient-hue", String(hue));
       document.documentElement.style.setProperty(
         "--ambient-color",
-        `hsl(${Math.round(currentHue.current)}, ${sat}%, ${light}%)`
+        `hsl(${hue}, 75%, 55%)`
       );
       document.documentElement.style.setProperty(
         "--ambient-glow",
-        `hsl(${Math.round(currentHue.current)}, ${sat}%, ${light}%, 0.15)`
+        `hsl(${hue}, 75%, 55%, 0.15)`
       );
       document.documentElement.style.setProperty(
         "--ambient-border",
-        `hsl(${Math.round(currentHue.current)}, ${sat}%, ${light}%, 0.25)`
+        `hsl(${hue}, 75%, 55%, 0.25)`
       );
+    }
 
-      rafId.current = requestAnimationFrame(tick);
-    };
-
-    rafId.current = requestAnimationFrame(tick);
+    applyHue();
+    scheduleUpdate();
 
     return () => {
       observers.forEach((o) => o.disconnect());

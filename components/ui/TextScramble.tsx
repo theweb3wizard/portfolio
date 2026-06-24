@@ -10,6 +10,7 @@ interface TextScrambleProps {
   as?: "span" | "a" | "button";
   href?: string;
   onClick?: (e: React.MouseEvent<Element, MouseEvent>) => void;
+  "aria-current"?: "page" | "step" | "location" | "date" | "time" | boolean | undefined;
 }
 
 export default function TextScramble({
@@ -18,6 +19,7 @@ export default function TextScramble({
   as: Tag = "span",
   href,
   onClick,
+  ...props
 }: TextScrambleProps) {
   const [displayed, setDisplayed] = useState(text);
   const intervalRef = useRef<ReturnType<typeof setInterval>>();
@@ -63,6 +65,7 @@ export default function TextScramble({
       href={href}
       onClick={onClick}
       onMouseEnter={startScramble}
+      aria-current={props["aria-current"]}
     >
       {displayed}
     </Tag>

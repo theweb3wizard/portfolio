@@ -10,17 +10,21 @@ function prefersReducedMotion(): boolean {
 
 export function useParallax(speed: number) {
   const [y, setY] = useState(0);
-  const rafId = useRef<number>(0);
+  const lastValue = useRef(0);
 
   useEffect(() => {
     if (prefersReducedMotion()) return;
 
-    const tick = () => {
-      setY(scrollY.current * speed);
-      rafId.current = requestAnimationFrame(tick);
+    const onScroll = (v: number) => {
+      const next = v * speed;
+      if (Math.abs(next - lastValue.current) > 0.5) {
+        lastValue.current = next;
+        setY(next);
+      }
     };
-    rafId.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafId.current);
+
+    scrollY._subscribers.add(onScroll);
+    return () => { scrollY._subscribers.delete(onScroll); };
   }, [speed]);
 
   return y;

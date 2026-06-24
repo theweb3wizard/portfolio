@@ -53,7 +53,7 @@ export default function MobileProjectCarousel({ projects }: Props) {
                     <h3 className="font-display font-700 text-base text-white">
                       {project.name}
                     </h3>
-                    <p className="text-muted text-[10px] font-mono">
+                    <p className="text-muted text-xs font-mono">
                       {project.category} · {project.year}
                     </p>
                   </div>
@@ -77,7 +77,7 @@ export default function MobileProjectCarousel({ projects }: Props) {
                 {project.stack.slice(0, 4).map((tech) => (
                   <span
                     key={tech}
-                    className="text-[9px] font-mono px-1.5 py-0.5 rounded-md border border-border text-muted"
+                    className="text-[11px] font-mono px-1.5 py-0.5 rounded-md border border-border text-muted"
                   >
                     {tech}
                   </span>
@@ -89,7 +89,7 @@ export default function MobileProjectCarousel({ projects }: Props) {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[10px] font-mono text-muted"
+                  className="flex items-center gap-1 text-xs font-mono text-muted"
                 >
                   <ExternalLink size={9} />
                   {project.url.replace("https://", "").slice(0, 20)}...
@@ -112,7 +112,7 @@ export default function MobileProjectCarousel({ projects }: Props) {
       </div>
 
       {/* Scroll hint */}
-      <p className="text-center text-[10px] font-mono text-muted mt-2 md:hidden">
+      <p className="text-center text-xs font-mono text-muted mt-2 md:hidden">
         ← Swipe to browse projects →
       </p>
     </div>

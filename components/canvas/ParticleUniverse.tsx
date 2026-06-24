@@ -2,24 +2,27 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { useParallax } from "@/hooks/useParallax";
+import { scrollY } from "@/lib/scrollState";
 
 export default function ParticleUniverse() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const parallaxY = useParallax(-0.15);
+  const translateRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const isMobile = window.innerWidth < 768;
+    const isLowPower = navigator.hardwareConcurrency !== undefined && navigator.hardwareConcurrency <= 4;
+    const maxParticles = isMobile ? 500 : isLowPower ? 800 : 1500;
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
-      antialias: !isMobile,
+      antialias: false,
+      powerPreference: "low-power",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 1.5));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const scene = new THREE.Scene();
@@ -31,7 +34,7 @@ export default function ParticleUniverse() {
     );
     camera.position.z = 3;
 
-    const COUNT = isMobile ? 800 : 2500;
+    const COUNT = maxParticles;
     const positions = new Float32Array(COUNT * 3);
     const colors = new Float32Array(COUNT * 3);
 
@@ -68,12 +71,11 @@ export default function ParticleUniverse() {
     geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
-    // Use PointsMaterial instead of custom ShaderMaterial — fully compatible
     const material = new THREE.PointsMaterial({
       size: 0.025,
       vertexColors: true,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.7,
       sizeAttenuation: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
@@ -82,7 +84,6 @@ export default function ParticleUniverse() {
     const particles = new THREE.Points(geometry, material);
     scene.add(particles);
 
-    // Mouse tracking
     const mouse = { x: 0, y: 0 };
     const targetRotation = { x: 0, y: 0 };
 
@@ -90,35 +91,43 @@ export default function ParticleUniverse() {
       mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
       mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
     };
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
 
     const onResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", onResize, { passive: true });
 
     let frameId: number;
     let elapsed = 0;
     let lastTime = performance.now();
+    let hidden = false;
+
+    const onVisibilityChange = () => {
+      hidden = document.hidden;
+      if (!hidden) {
+        lastTime = performance.now();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     const animate = () => {
       frameId = requestAnimationFrame(animate);
+      if (hidden) return;
 
       const now = performance.now();
       const delta = (now - lastTime) / 1000;
       lastTime = now;
       elapsed += delta;
 
-      // Smooth mouse follow
       targetRotation.x += (mouse.y * 0.3 - targetRotation.x) * 0.05;
       targetRotation.y += (mouse.x * 0.3 - targetRotation.y) * 0.05;
 
       particles.rotation.x = targetRotation.x + elapsed * 0.02;
       particles.rotation.y = targetRotation.y + elapsed * 0.03;
 
-      // Breathing
       const breathe = 1 + Math.sin(elapsed * 0.5) * 0.02;
       particles.scale.setScalar(breathe);
 
@@ -127,10 +136,18 @@ export default function ParticleUniverse() {
 
     animate();
 
+    const onScroll = (v: number) => {
+      translateRef.current = v * -0.15 * 0.3;
+      canvas.style.transform = `translateY(${translateRef.current}px)`;
+    };
+    scrollY._subscribers.add(onScroll);
+
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      scrollY._subscribers.delete(onScroll);
       geometry.dispose();
       material.dispose();
       renderer.dispose();
@@ -144,7 +161,6 @@ export default function ParticleUniverse() {
       style={{
         zIndex: 0,
         opacity: 0.75,
-        transform: `translateY(${parallaxY * 0.3}px)`,
         willChange: "transform",
       }}
     />

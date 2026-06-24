@@ -48,7 +48,7 @@ const LINKS = [
   {
     label: "LinkedIn",
     handle: "Khalid Murtala",
-    url: "https://linkedin.com/in/theweb3wizard00",
+    url: "https://linkedin.com/in/khalid-murtala",
     icon: Linkedin,
     color: "#0A66C2",
     desc: "Professional work and product updates",

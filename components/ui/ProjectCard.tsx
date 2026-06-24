@@ -73,7 +73,7 @@ export default function ProjectCard({ project, index }: Props) {
                   {project.name}
                 </h3>
                 <span
-                  className="text-[10px] font-mono px-2 py-0.5 rounded-full flex items-center gap-1"
+                  className="text-xs font-mono px-2 py-0.5 rounded-full flex items-center gap-1"
                   style={{
                     background: `${project.color}15`,
                     border: `1px solid ${project.color}30`,
@@ -115,7 +115,7 @@ export default function ProjectCard({ project, index }: Props) {
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="text-[10px] font-mono px-2 py-1 rounded-md border border-border text-muted"
+              className="text-xs font-mono px-2 py-1 rounded-md border border-border text-muted"
             >
               {tech}
             </span>
@@ -133,7 +133,7 @@ export default function ProjectCard({ project, index }: Props) {
               className="overflow-hidden"
             >
               <div
-                className="mb-4 rounded-lg px-3 py-2 font-mono text-[10px] leading-relaxed"
+                className="mb-4 rounded-lg px-3 py-2 font-mono text-xs leading-relaxed"
                 style={{
                   background: `${project.color}08`,
                   border: `1px solid ${project.color}20`,

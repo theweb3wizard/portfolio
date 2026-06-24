@@ -169,7 +169,7 @@ export default function Hero() {
         transition={{ delay: 1.5 }}
         className="flex flex-col items-center gap-2 text-muted hover:text-indigo transition-colors duration-300 group"
       >
-        <span className="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
+         <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

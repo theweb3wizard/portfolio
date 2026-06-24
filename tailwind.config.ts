@@ -26,7 +26,7 @@ const config: Config = {
         emerald: { DEFAULT: "#10B981" },
         rose: { DEFAULT: "#F43F5E" },
         amber: { DEFAULT: "#F59E0B" },
-        muted: "#6B7280",
+        muted: "#94A3B8",
         subtle: "#252540",
       },
       fontFamily: {

@@ -33,7 +33,7 @@ export default function FeaturedSpotlight() {
             className="w-2 h-2 rounded-full animate-pulse"
             style={{ background: project.color, boxShadow: `0 0 8px ${project.color}` }}
           />
-          <span className="text-[10px] font-mono tracking-widest uppercase text-muted">
+          <span className="text-xs font-mono tracking-widest uppercase text-muted">
             Featured Project
           </span>
         </div>
@@ -57,7 +57,7 @@ export default function FeaturedSpotlight() {
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="text-[10px] font-mono px-2 py-1 rounded-md"
+                  className="text-xs font-mono px-2 py-1 rounded-md"
                   style={{
                     border: `1px solid ${project.color}30`,
                     background: `${project.color}10`,
@@ -104,7 +104,7 @@ export default function FeaturedSpotlight() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <metric.icon size={12} style={{ color: project.color }} />
-                  <span className="text-[10px] font-mono text-muted tracking-wider uppercase">
+                  <span className="text-xs font-mono text-muted tracking-wider uppercase">
                     {metric.label}
                   </span>
                 </div>

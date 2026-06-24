@@ -59,7 +59,7 @@ export default function Arsenal() {
               <p className="font-display font-600 text-white text-sm mb-1">
                 {item.name}
               </p>
-              <p className="text-muted text-[10px] font-mono">{item.category}</p>
+              <p className="text-muted text-xs font-mono">{item.category}</p>
             </motion.div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLenis } from "@/hooks/useLenis";
 import { useAmbientColor } from "@/hooks/useAmbientColor";
@@ -28,6 +28,20 @@ export default function Home() {
   useLenis();
   useAmbientColor();
 
+  // Skip loading veil if already seen this session
+  const [showLoading, setShowLoading] = useState(true);
+  useEffect(() => {
+    if (sessionStorage.getItem("w3w_loaded")) {
+      setShowLoading(false);
+    } else {
+      const t = setTimeout(() => {
+        sessionStorage.setItem("w3w_loaded", "true");
+        setShowLoading(false);
+      }, 1200);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
   // Custom cursor — desktop only (no touch devices)
   useEffect(() => {
     if ("ontouchstart" in window || window.innerWidth < 768) return;
@@ -40,7 +54,7 @@ export default function Home() {
     document.body.appendChild(follower);
 
     // Ambient cursor trail
-    const trailCount = 8;
+    const trailCount = 5;
     const trailDots: HTMLDivElement[] = [];
     for (let i = 0; i < trailCount; i++) {
       const dot = document.createElement("div");
@@ -109,8 +123,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Loading veil */}
-      <LoadingVeil />
+      {showLoading && <LoadingVeil />}
 
       {/* Layer 1 — Three.js particle universe */}
       <ParticleUniverse />
@@ -131,7 +144,7 @@ export default function Home() {
       <MobileNav />
 
       {/* Main content */}
-      <main className="relative z-10 pb-20 md:pb-0">
+      <main id="main-content" className="relative z-10 pb-20 md:pb-0">
         <Hero />
         <About />
         <Arsenal />

@@ -72,7 +72,7 @@ export default function Grimoire() {
                   <h3 className="font-display font-600 text-white text-lg">
                     {res.title}
                   </h3>
-                  <span className="shrink-0 text-[10px] font-mono uppercase tracking-wider text-cyan px-2 py-0.5 rounded-full border border-cyan/20">
+                  <span className="shrink-0 text-xs font-mono uppercase tracking-wider text-cyan px-2 py-0.5 rounded-full border border-cyan/20">
                     {res.tag}
                   </span>
                 </div>

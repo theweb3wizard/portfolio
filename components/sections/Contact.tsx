@@ -56,10 +56,10 @@ const LINKS = [
 ];
 
 const TOOLS = [
+  { name: "SolPulse", url: "https://solpulse-hq.vercel.app", color: "#14F195" },
+  { name: "Valor", url: "https://github.com/theweb3wizard/valor", color: "#10B981" },
+  { name: "TxPreview", url: "https://github.com/theweb3wizard/txpreview", color: "#F59E0B" },
   { name: "SearchLens", url: "https://searchlens-io.vercel.app", color: "#6366F1" },
-  { name: "Write3", url: "https://write3-ai.vercel.app", color: "#06B6D4" },
-  { name: "SolPulse", url: "https://solpulse-hq.vercel.app", color: "#10B981" },
-  { name: "CCD", url: "https://github.com/theweb3wizard/conviction-collapse-detector", color: "#F59E0B" },
 ];
 
 export default function Contact() {
@@ -147,7 +147,7 @@ export default function Contact() {
           <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-muted">
             <p>© 2026 Khalid Murtala — The Web3 Wizard</p>
             <p>Built with Next.js · Deployed on Vercel</p>
-            <p>Kano, Nigeria 🇳🇬</p>
+            <p>Remote · Global</p>
           </div>
         </SectionReveal>
       </div>

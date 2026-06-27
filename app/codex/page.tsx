@@ -177,15 +177,16 @@ const CODEX_SECTIONS = [
     content: (
       <>
         <p className="text-slate-400 leading-relaxed">
-          Kano, Nigeria. A city of traders, scholars, and systems — old and new.
           The Wizard grew up watching markets work on trust, reputation, and
           handshake deals — and later discovered that blockchain was just the
-          same thing, digitized.
+          same thing, digitized. The first tool was born from the same
+          friction that every builder knows: the gap between what should
+          exist and what actually does.
         </p>
         <p className="text-slate-400 leading-relaxed mt-4">
-          The first tool was born from personal frustration: wallet analysis
-          that required six tabs, three APIs, and a spreadsheet. The Wizard
-          built what should have existed. Then did it again. And again.
+          The first tool was born from that gap: wallet analysis that required
+          six tabs, three APIs, and a spreadsheet. The Wizard built what
+          should have existed. Then did it again. And again.
         </p>
         <p className="text-slate-400 leading-relaxed mt-4">
           The title came later. Someone called him &quot;the Web3 Wizard&quot;

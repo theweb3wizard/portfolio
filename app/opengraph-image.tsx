@@ -135,18 +135,18 @@ export default async function Image() {
             lineHeight: "1.5",
           }}
         >
-          Web3 × AI builder from Kano, Nigeria.
+          Product Engineer · Full-Stack Web3 × AI Builder.
           <br />
-          Building tools that solve real problems.
+          High-execution building from chain to UI.
         </p>
 
         {/* Tool pills */}
         <div style={{ display: "flex", gap: "12px" }}>
           {[
-            { name: "WalletLens", color: "#6366F1" },
-            { name: "OrderFlow", color: "#06B6D4" },
+            { name: "SolPulse", color: "#14F195" },
             { name: "Valor", color: "#10B981" },
-            { name: "TaxRabbit", color: "#F59E0B" },
+            { name: "TxPreview", color: "#F59E0B" },
+            { name: "SearchLens", color: "#6366F1" },
           ].map((tool) => (
             <div
               key={tool.name}

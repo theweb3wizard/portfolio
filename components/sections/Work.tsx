@@ -33,8 +33,8 @@ export default function Work() {
                 <span className="text-gradient">built.</span>
               </h2>
               <p className="text-slate-400 max-w-lg">
-                Every product solves a specific problem. No demo projects.
-                No tutorial clones. All live.
+                High-execution full-stack builds — from smart-contract plumbing
+                to responsive UI. No demo projects. All live and shipping.
               </p>
             </div>
           </div>

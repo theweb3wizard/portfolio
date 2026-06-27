@@ -91,8 +91,8 @@ export function Mission() {
             <div className="absolute inset-0 bg-gradient-to-br from-indigo/10 via-transparent to-cyan/5" />
             <div className="relative z-10">
               <p className="font-display text-2xl md:text-3xl font-700 text-white leading-relaxed max-w-3xl mx-auto">
-                &quot;I build from Kano, Nigeria,{" "}
-                <span className="text-gradient">for problems that exist everywhere.</span>
+                &quot;I build for problems that exist everywhere,{" "}
+                <span className="text-gradient">from wherever the work gets done.</span>
                 {" "}The truth underneath the noise is usually simpler than the noise suggests.&quot;
               </p>
               <p className="text-muted font-mono text-sm mt-6">— Khalid Murtala</p>

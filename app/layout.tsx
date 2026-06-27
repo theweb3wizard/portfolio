@@ -28,11 +28,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://theweb3wizard.verce
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Khalid Murtala — The Web3 Wizard | Web3 × AI Builder",
+    default: "Khalid Murtala — Product Engineer | Full-Stack Web3 × AI Builder",
     template: "%s | The Web3 Wizard",
   },
   description:
-    "Khalid Murtala is The Web3 Wizard — a Web3 and AI builder from Kano, Nigeria. Creator of Conviction Collapse Detector, SearchLens, Write3, and SolPulse. Clarity meets craft. Building tools at the intersection of crypto and artificial intelligence.",
+    "Khalid Murtala is a Product Engineer and Full-Stack Web3 Builder specializing in AI-native development. High-execution full-stack building from smart contracts to responsive UI. Creator of SolPulse, Valor, and TxPreview. Clarity meets craft.",
   keywords: [
     "The Web3 Wizard",
     "Khalid Murtala",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "SearchLens",
     "Write3",
     "SolPulse",
-    "Web3 developer Nigeria",
+    "Product Engineer",
     "crypto AI tools",
     "blockchain developer",
     "DeFi tools",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Khalid Murtala — The Web3 Wizard",
     description:
-      "Clarity meets craft. Web3 × AI builder from Kano, Nigeria. Building tools that solve real problems at the intersection of crypto and artificial intelligence.",
+      "Clarity meets craft. Full-Stack Web3 × AI Product Engineer. Building tools that solve real problems at the intersection of crypto and artificial intelligence.",
     siteName: "The Web3 Wizard",
     images: [
       {
@@ -109,7 +109,7 @@ const personJsonLd = {
     "https://github.com/theweb3wizard",
     "https://linkedin.com/in/khalid-murtala",
   ],
-  jobTitle: "Web3 and AI Builder",
+  jobTitle: "Product Engineer & Full-Stack Web3 Builder",
   worksFor: {
     "@type": "Organization",
     name: "The Web3 Wizard",
@@ -126,7 +126,7 @@ const personJsonLd = {
     "EVM",
   ],
   description:
-    "Web3 and AI builder from Kano, Nigeria. Creator of Conviction Collapse Detector, SearchLens, Write3, and SolPulse.",
+    "Product Engineer and Full-Stack Web3 Builder. Creator of SolPulse, Valor, and TxPreview.",
 };
 
 const websiteJsonLd = {

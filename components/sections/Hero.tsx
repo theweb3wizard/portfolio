@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 const LINES = [
-  "Web3 × AI tools that hit different.",
-  "Find the friction. Build the fix.",
-  "Clarity meets craft.",
+  "High-execution. Full-stack. Web3 × AI.",
+  "AI-native orchestration. Compressed cycles.",
+  "From chain to UI — I own the loop.",
 ];
 
 export default function Hero() {
@@ -66,7 +66,7 @@ export default function Hero() {
         className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface/50 text-xs font-mono text-muted mb-8"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse-slow" />
-        Available for select collaborations
+        Open to product engineering roles
       </motion.div>
 
       <div className="overflow-hidden mb-3">
@@ -153,12 +153,12 @@ export default function Hero() {
         <span className="w-px h-4 bg-border hidden sm:block" />
         <span className="flex items-center gap-1.5">
           <span className="text-cyan">◎</span>
-          Kano, Nigeria
+          Product Engineer
         </span>
         <span className="w-px h-4 bg-border hidden sm:block" />
         <span className="flex items-center gap-1.5">
           <span className="text-emerald">●</span>
-          4 Tools Shipped
+          6 Tools Shipped
         </span>
       </motion.div>
 

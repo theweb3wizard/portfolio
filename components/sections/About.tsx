@@ -6,9 +6,9 @@ import SectionReveal from "@/components/ui/SectionReveal";
 
 const TRAITS = [
   { label: "Stack", value: "Next.js · TypeScript · Solidity · AI APIs" },
-  { label: "Based", value: "Kano, Nigeria" },
-  { label: "Focus", value: "Web3 × AI tools that solve real problems" },
-  { label: "Style", value: "Ship fast. Iterate. Move to the next problem." },
+  { label: "Based", value: "Remote · Global" },
+  { label: "Focus", value: "Full-stack Web3 × AI product engineering" },
+  { label: "Style", value: "High-execution. Own the full loop. Ship." },
 ];
 
 export default function About() {
@@ -43,7 +43,7 @@ export default function About() {
                       Khalid Murtala
                     </p>
                     <p className="text-muted text-xs font-mono mt-0.5">
-                      The Web3 Wizard · Builder
+                      Product Engineer · Full-Stack Web3
                     </p>
                   </div>
                 </div>
@@ -83,17 +83,20 @@ export default function About() {
                   <span className="text-gradient">Real ones.</span>
                 </h2>
                 <p className="text-slate-400 leading-relaxed text-lg">
-                  I find specific, painful friction points that real people hit
-                  in Web3 and crypto — and I build the tool that removes it.
+                  I engineer full-stack Web3 products from data and
+                  smart-contract plumbing to responsive UI — owning the
+                  entire loop with AI-native orchestration that compresses
+                  development cycles without cutting corners.
                 </p>
               </div>
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
               <p className="text-slate-400 leading-relaxed">
-                No theories. No long threads about what I&apos;m{" "}
-                <em>going to build.</em> I ship, I move on, I ship again. The
-                work speaks. Everything else is noise.
+                Product Engineer by practice. Full-Stack Web3 Engineer by
+                craft. Every tool I ship is independently architected, built,
+                deployed, and maintained. No handoffs. No overhead. Just
+                high-execution building from problem to production — faster.
               </p>
             </SectionReveal>
 

@@ -194,6 +194,38 @@ export const projects: Project[] = [
     category: "Agent",
     year: "2026",
   },
+  {
+    id: "solvflow",
+    name: "SolvFlow",
+    tagline: "Precision Web3 escrow — gasless micro-tasking on Base Sepolia.",
+    description:
+      "A full-stack Web3 escrow platform bridging real-time database state with on-chain smart contract guarantees. Enables trustless, milestone-based payments between clients and freelancers via a decentralized gig marketplace. Pairs Firebase Firestore (fast UI sync, real-time listeners) with a deployed Solidity escrow contract on Base Sepolia for final settlement, dispute resolution, and fund custody. Features marketplace discovery, milestone stepper, on-chain arbitration, and a dashboard tracking live TVL, active escrows, and gas deflected.",
+    url: "https://solv-flow.vercel.app",
+    github: "https://github.com/theweb3wizard/SolvFlow",
+    stack: ["Next.js", "TypeScript", "Solidity", "Firebase", "ethers.js", "Tailwind CSS", "Hardhat", "Base Sepolia"],
+    color: "#00D4AA",
+    accentColor: "#20C997",
+    status: "live",
+    featured: false,
+    category: "Infrastructure",
+    year: "2026",
+  },
+  {
+    id: "zenith",
+    name: "Zenith",
+    tagline: "Crypto forecasting terminal — draw where price goes next.",
+    description:
+      "A prediction terminal where users draw price trajectories directly on a live BTC/USD candlestick chart, receive AI-powered confidence scores via OpenRouter, and immutably commit their forecasts to a smart contract on Base Sepolia. Features real-time Binance WebSocket price feed, freehand drawing overlay with TradingView lightweight-charts, 4-step AI fallback chain, on-chain commitment tracking, wallet-connected portfolio history, and a global leaderboard. Zero API keys required — pure ethers.js + MetaMask injection.",
+    url: "https://zenith-prediction-terminal.vercel.app",
+    github: "https://github.com/theweb3wizard/Zenith",
+    stack: ["Next.js", "TypeScript", "Solidity", "Firebase", "ethers.js", "OpenRouter AI", "Tailwind CSS", "Binance WebSocket"],
+    color: "#FF8A1E",
+    accentColor: "#FF9F3D",
+    status: "live",
+    featured: false,
+    category: "AI",
+    year: "2026",
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);

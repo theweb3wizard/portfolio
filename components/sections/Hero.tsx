@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { projects } from "@/data/projects";
 
 const LINES = [
   "High-execution. Full-stack. Web3 × AI.",
@@ -157,8 +158,8 @@ export default function Hero() {
         </span>
         <span className="w-px h-4 bg-border hidden sm:block" />
         <span className="flex items-center gap-1.5">
-          <span className="text-emerald">●</span>
-          6 Tools Shipped
+           <span className="text-emerald">●</span>
+           {projects.length} Tools Shipped
         </span>
       </motion.div>
 

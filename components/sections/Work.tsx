@@ -9,7 +9,7 @@ import MobileProjectCarousel from "@/components/ui/MobileProjectCarousel";
 import { allProjects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-const FILTERS = ["All", "AI", "Agent"];
+const FILTERS = ["All", "AI", "Agent", "Infrastructure"];
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState("All");

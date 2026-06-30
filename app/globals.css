@@ -27,6 +27,9 @@ body {
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+body.wizard-cursor {
   cursor: none;
 }
 
@@ -162,7 +165,7 @@ body:hover .cursor { opacity: 1; }
 
 /* Remove custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
-  body {
+  body, body.wizard-cursor {
     cursor: auto;
   }
   .cursor, .cursor-follower, .cursor-trail-dot {
@@ -177,6 +180,10 @@ body:hover .cursor { opacity: 1; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  body.wizard-cursor {
+    cursor: auto !important;
   }
 
   .cursor, .cursor-follower, .cursor-trail-dot {

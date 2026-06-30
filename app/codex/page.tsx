@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -227,10 +228,12 @@ export default function CodexPage() {
           <div className="flex justify-center mb-16">
             <div className="w-24 h-24 md:w-32 md:h-32 relative">
               <div className="absolute inset-0 bg-indigo/20 rounded-full blur-3xl scale-150" />
-              <img
+              <Image
                 src="/images/wizard-sigil.svg"
                 alt="The Web3 Wizard Sigil"
-                className="w-full h-full relative z-10"
+                fill
+                unoptimized
+                className="relative z-10"
               />
             </div>
           </div>

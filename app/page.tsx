@@ -45,7 +45,7 @@ export default function Home() {
   // Custom cursor — desktop only (no touch devices)
   useEffect(() => {
     if ("ontouchstart" in window || window.innerWidth < 768) return;
-
+    document.body.classList.add("wizard-cursor");
     const cursor = document.createElement("div");
     cursor.className = "cursor";
     const follower = document.createElement("div");
@@ -114,6 +114,7 @@ export default function Home() {
 
     return () => {
       running = false;
+      document.body.classList.remove("wizard-cursor");
       window.removeEventListener("mousemove", onMove);
       cursor.remove();
       follower.remove();

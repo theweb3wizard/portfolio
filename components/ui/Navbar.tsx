@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import TextScramble from "./TextScramble";
 
@@ -62,9 +63,12 @@ export default function Navbar() {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300"
         >
-          <img
+          <Image
             src="/images/wizard-sigil.svg"
             alt="The Web3 Wizard"
+            width={32}
+            height={32}
+            unoptimized
             className="h-8 w-auto"
             style={{ filter: "drop-shadow(0 0 6px rgba(99,102,241,0.3))" }}
           />

@@ -1,6 +1,3 @@
-// ============================================
-// components/sections/Mission.tsx
-// ============================================
 "use client";
 
 import { motion } from "framer-motion";
@@ -33,7 +30,7 @@ const PILLARS = [
   },
 ];
 
-export function Mission() {
+function Mission() {
   return (
     <section id="mission" className="section-padding relative z-10">
       <div className="container-width">

@@ -76,12 +76,48 @@ export default function Contact() {
             <span className="text-gradient">the dark.</span>
           </h2>
           <p className="text-slate-400 max-w-lg mx-auto">
-            I don&apos;t do cold emails. But if you&apos;re building something real in
-            Web3 or AI — find me online.
+            Building something real in Web3 or AI? Let&apos;s talk.
           </p>
           <p className="font-display text-sm text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300 tracking-wide mt-4">
             &ldquo;Clarity meets craft.&rdquo;
           </p>
+        </SectionReveal>
+
+        {/* Work with me CTA */}
+        <SectionReveal delay={0.1}>
+          <div className="relative rounded-2xl overflow-hidden mb-16 text-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo/10 via-transparent to-cyan/5" />
+            <div className="relative z-10 glass-card rounded-2xl p-8 md:p-12 border border-indigo/20">
+              <p className="font-mono text-xs text-indigo tracking-widest uppercase mb-3">
+                ◈ Open for work
+              </p>
+              <h3 className="font-display text-2xl md:text-3xl font-700 text-white mb-4">
+                Ship your next product.
+              </h3>
+              <p className="text-slate-400 max-w-md mx-auto mb-8 text-sm leading-relaxed">
+                Full-stack Web3 × AI product engineering. From concept to deployed
+                tool — I own the entire loop.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="https://twitter.com/theweb3wizard00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-mono text-sm font-500 hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300"
+                >
+                  DM me on X
+                </a>
+                <a
+                  href="https://t.me/theweb3wizard00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-indigo/30 text-slate-300 font-mono text-sm hover:bg-indigo/10 hover:border-indigo/50 transition-all duration-300"
+                >
+                  Telegram
+                </a>
+              </div>
+            </div>
+          </div>
         </SectionReveal>
 
         {/* Social links */}

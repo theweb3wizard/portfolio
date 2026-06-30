@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# build artifacts
+build_output.txt
+
 # vercel
 .vercel
 

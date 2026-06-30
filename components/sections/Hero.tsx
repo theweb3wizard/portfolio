@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
@@ -14,26 +14,26 @@ export default function Hero() {
   const [lineIndex, setLineIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     const target = LINES[lineIndex];
+    clearTimeout(timerRef.current);
     if (typing) {
       if (displayed.length < target.length) {
-        const t = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 50);
-        return () => clearTimeout(t);
+        timerRef.current = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 50);
       } else {
-        const t = setTimeout(() => setTyping(false), 2500);
-        return () => clearTimeout(t);
+        timerRef.current = setTimeout(() => setTyping(false), 2500);
       }
     } else {
       if (displayed.length > 0) {
-        const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 25);
-        return () => clearTimeout(t);
+        timerRef.current = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 25);
       } else {
         setLineIndex((i) => (i + 1) % LINES.length);
         setTyping(true);
       }
     }
+    return () => clearTimeout(timerRef.current);
   }, [displayed, typing, lineIndex]);
 
   function scrollToAbout() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { User, Layers, Briefcase, BookOpen, Target, Send } from "lucide-react";
+import { User, Layers, Briefcase, BookOpen, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -9,8 +9,7 @@ const NAV_ITEMS = [
   { label: "Stack", href: "#arsenal", icon: Layers },
   { label: "Work", href: "#work", icon: Briefcase },
   { label: "Learn", href: "#grimoire", icon: BookOpen },
-  { label: "Why", href: "#mission", icon: Target },
-  { label: "Find", href: "#contact", icon: Send },
+  { label: "Contact", href: "#contact", icon: Send },
 ];
 
 export default function MobileNav() {

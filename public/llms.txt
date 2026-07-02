@@ -1,0 +1,25 @@
+# The Web3 Wizard — Khalid Murtala
+
+## About
+Khalid Murtala (The Web3 Wizard) is a Product Engineer and Full-Stack Web3 Builder. He independently architects, builds, and ships production-grade Web3 × AI tools — from smart contracts and data pipelines to responsive UI.
+
+## Social
+- X / Twitter: https://twitter.com/theweb3wizard00
+- GitHub: https://github.com/theweb3wizard
+- LinkedIn: https://linkedin.com/in/khalid-murtala
+- Telegram: https://t.me/theweb3wizard00
+- Discord: https://discord.com/users/theweb3wizard00
+- Instagram: https://instagram.com/theweb3wizard00
+
+## Featured Tools
+- SolPulse: https://solpulse-hq.vercel.app — Real-time Solana memecoin whale tracker with Telegram alerts
+- Valor: https://github.com/theweb3wizard/valor — Low-latency AI agents for on-chain trading execution
+- TxPreview: https://github.com/theweb3wizard/txpreview — On-chain transaction security previewer
+- SearchLens: https://searchlens-io.vercel.app — AI Overview Search Interception Scanner for SEO agencies
+
+## All Tools
+SolPulse, Valor, TxPreview, SearchLens, Write3, Conviction Collapse Detector, FlowForge, Grant-OS, ChainCard, WalletLens, OrderFlow, SolvFlow, Zenith — all listed at https://theweb3wizard.vercel.app
+
+## Key Pages
+- Home: https://theweb3wizard.vercel.app
+- Codex: https://theweb3wizard.vercel.app/codex — Brand manifesto and voice

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | The Web3 Wizard",
   },
   description:
-    "Khalid Murtala is a Product Engineer and Full-Stack Web3 Builder specializing in AI-native development. High-execution full-stack building from smart contracts to responsive UI. Creator of SolPulse, Valor, and TxPreview. Clarity meets craft.",
+    "Khalid Murtala (The Web3 Wizard) is a Product Engineer and Full-Stack Web3 Builder who independently architects, builds, and ships production-grade tools at the intersection of crypto and AI. Creator of SolPulse, Valor, TxPreview, SearchLens, and 10+ Web3 products — from smart contracts and data pipelines to responsive UI. Clarity meets craft.",
   keywords: [
     "The Web3 Wizard",
     "Khalid Murtala",
@@ -71,6 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@theweb3wizard00",
     title: "Khalid Murtala — The Web3 Wizard",
     description: "Clarity meets craft. Web3 × AI builder. Building tools that hit different.",
     creator: "@theweb3wizard00",
@@ -104,10 +105,14 @@ const personJsonLd = {
   name: "Khalid Murtala",
   alternateName: "The Web3 Wizard",
   url: siteUrl,
+  image: `${siteUrl}/images/profile.png`,
   sameAs: [
     "https://twitter.com/theweb3wizard00",
     "https://github.com/theweb3wizard",
     "https://linkedin.com/in/khalid-murtala",
+    "https://t.me/theweb3wizard00",
+    "https://discord.com/users/theweb3wizard00",
+    "https://instagram.com/theweb3wizard00",
   ],
   jobTitle: "Product Engineer & Full-Stack Web3 Builder",
   worksFor: {
@@ -124,9 +129,15 @@ const personJsonLd = {
     "TypeScript",
     "Solana",
     "EVM",
+    "Solidity",
+    "React",
+    "Full-Stack Development",
+    "AI Agents",
+    "Crypto Trading",
+    "Web Development",
   ],
   description:
-    "Product Engineer and Full-Stack Web3 Builder. Creator of SolPulse, Valor, and TxPreview.",
+    "Khalid Murtala, known as The Web3 Wizard, is a Product Engineer and Full-Stack Web3 Builder specializing in AI-native development. Creator of SolPulse, Valor, TxPreview, SearchLens, Write3, and 10+ Web3 and AI tools. Independently ships products from smart contracts to responsive UI.",
 };
 
 const websiteJsonLd = {
@@ -171,7 +182,46 @@ const learningResourceJsonLd = {
   ],
 };
 
-const allJsonLd = [personJsonLd, websiteJsonLd, learningResourceJsonLd];
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Who is Khalid Murtala?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Khalid Murtala, known online as The Web3 Wizard, is a Product Engineer and Full-Stack Web3 Builder specializing in AI-native development. He builds production-grade Web3 tools end-to-end — from smart contracts and data pipelines to responsive UI. He is the creator of SolPulse, Valor, TxPreview, and 10+ other tools in the Web3 and AI space.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is The Web3 Wizard?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Web3 Wizard is the online alias and brand of Khalid Murtala, a Product Engineer building at the intersection of Web3 and AI. It represents a portfolio of independently built tools including SolPulse, Valor, TxPreview, SearchLens, Write3, and more — along with Web3 learning resources and educational content.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What tools has Khalid Murtala built?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Khalid Murtala has built 13 Web3 and AI tools including SolPulse (Solana whale tracker), Valor (AI on-chain trading agents), TxPreview (transaction security simulator), SearchLens (AI Overview SEO scanner), Write3 (AI Web3 content generator), Conviction Collapse Detector, FlowForge, Grant-OS, ChainCard, WalletLens, OrderFlow, SolvFlow, and Zenith.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where can I find Khalid Murtala online?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Khalid Murtala (The Web3 Wizard) can be found on X/Twitter at @theweb3wizard00, GitHub at theweb3wizard, LinkedIn at Khalid Murtala, Telegram at @theweb3wizard00, Discord at theweb3wizard00, and Instagram at @theweb3wizard00. His portfolio is at theweb3wizard.vercel.app.",
+      },
+    },
+  ],
+};
+
+const allJsonLd = [personJsonLd, websiteJsonLd, learningResourceJsonLd, faqJsonLd];
 
 export default function RootLayout({
   children,
@@ -186,6 +236,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(allJsonLd) }}
         />
         <meta name="google-site-verification" content="zvIJiEYmfKERekflP9xpnVxCRJdhI2vjwYbaYGWqK3s" />
+        <meta name="theme-color" content="#050508" />
+        <link rel="llms-txt" href="/llms.txt" />
       </head>
       <body
         className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable} bg-void text-slate-300 antialiased noise-overlay`}

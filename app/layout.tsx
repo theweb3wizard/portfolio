@@ -185,6 +185,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(allJsonLd) }}
         />
+        <meta name="google-site-verification" content="zvIJiEYmfKERekflP9xpnVxCRJdhI2vjwYbaYGWqK3s" />
       </head>
       <body
         className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable} bg-void text-slate-300 antialiased noise-overlay`}

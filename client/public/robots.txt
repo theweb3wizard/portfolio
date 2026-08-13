@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://theweb3wizard.xyz/sitemap.xml

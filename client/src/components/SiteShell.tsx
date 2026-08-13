@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "wouter";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navLinks } from "@/site";
@@ -13,7 +14,9 @@ export function SiteHeader() {
   const menuRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (!open) return;
+    // iOS Safari requires overflow hidden on both body and html to prevent background scroll
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     closeRef.current?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
@@ -25,9 +28,13 @@ export function SiteHeader() {
       }
     };
     document.addEventListener("keydown", onKey);
-    return () => { document.body.style.overflow = ""; document.removeEventListener("keydown", onKey); };
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
-  return <header className="site-header"><div className="container header-inner"><BrandMark /><nav className="desktop-nav" aria-label="Primary navigation">{navLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}</nav><Link href="/start" className="button button-primary header-cta">Start with your idea <ArrowUpRight size={15} /></Link><button className="mobile-menu-button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button></div>{open && <div className="mobile-overlay" onClick={() => setOpen(false)}><nav ref={menuRef} id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation" onClick={(e) => e.stopPropagation()}><div className="mobile-nav-top"><BrandMark /><button ref={closeRef} className="icon-button" aria-label="Close navigation" onClick={() => setOpen(false)}><X /></button></div>{navLinks.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}<Link href="/start" className="button button-primary" onClick={() => setOpen(false)}>Start with your idea <ArrowUpRight size={15} /></Link></nav></div>}</header>;
+  return <header className="site-header"><div className="container header-inner"><BrandMark /><nav className="desktop-nav" aria-label="Primary navigation">{navLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}</nav><Link href="/start" className="button button-primary header-cta">Start with your idea <ArrowUpRight size={15} /></Link><button className="mobile-menu-button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button></div>{open && createPortal(<div className="mobile-overlay" onClick={() => setOpen(false)}><nav ref={menuRef} id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation" onClick={(e) => e.stopPropagation()}><div className="mobile-nav-top"><BrandMark /><button ref={closeRef} className="icon-button" aria-label="Close navigation" onClick={() => setOpen(false)}><X /></button></div>{navLinks.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}<Link href="/start" className="button button-primary" onClick={() => setOpen(false)}>Start with your idea <ArrowUpRight size={15} /></Link></nav></div>, document.body)}</header>;
 }
 
 export function SiteFooter() {

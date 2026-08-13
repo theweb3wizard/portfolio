@@ -17,52 +17,52 @@ export const inquiryInputSchema = z.object({
   website: z.string().max(200).optional().default(""),
 });
 
-export function buildInquiryNotification(input: z.infer<typeof inquiryInputSchema>) {
-  const subject = `New Web3 Wizard Labs inquiry from ${input.name}`;
-  const text = [
-    `Name: ${input.name}`,
-    `Email: ${input.email}`,
-    `Company or project: ${input.company || "Not provided"}`,
-    `Project URL: ${input.projectUrl || "Not provided"}`,
-    `Situation: ${input.situation}`,
-    `Stage: ${input.stage}`,
-    `Timeline: ${input.timeline || "Not provided"}`,
-    `Budget: ${input.budget || "Not provided"}`,
+export function buildTelegramMessage(input: z.infer<typeof inquiryInputSchema>): string {
+  const line = (emoji: string, label: string, value: string) =>
+    `${emoji} *${label}:* ${value || "—"}`;
+
+  return [
+    "🔔 *New Inquiry — Web3 Wizard Labs*",
     "",
-    "What they are trying to build:",
+    line("👤", "Name", input.name),
+    line("📧", "Email", input.email),
+    line("🏢", "Company", input.company),
+    line("🔗", "URL", input.projectUrl || ""),
+    "",
+    line("📌", "Situation", input.situation),
+    line("📍", "Stage", input.stage),
+    line("⏱", "Timeline", input.timeline),
+    line("💰", "Budget", input.budget),
+    "",
+    "📝 *What they want to build:*",
     input.description,
     "",
-    "What success would look like:",
-    input.success || "Not provided",
+    "✅ *What success looks like:*",
+    input.success || "—",
   ].join("\n");
-
-  return {
-    from: ENV.resendFromEmail,
-    to: ENV.inquiryNotificationEmail,
-    replyTo: input.email,
-    subject,
-    text,
-  };
 }
 
-export async function sendInquiryEmail(input: z.infer<typeof inquiryInputSchema>) {
-  if (!ENV.resendApiKey || !ENV.resendFromEmail || !ENV.inquiryNotificationEmail) {
-    throw new Error("Resend inquiry email configuration is incomplete");
+export async function sendTelegramNotification(input: z.infer<typeof inquiryInputSchema>) {
+  if (!ENV.telegramBotToken || !ENV.telegramChatId) {
+    throw new Error("Telegram notification configuration is incomplete");
   }
 
-  const email = buildInquiryNotification(input);
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${ENV.resendApiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(email),
-  });
+  const response = await fetch(
+    `https://api.telegram.org/bot${ENV.telegramBotToken}/sendMessage`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: ENV.telegramChatId,
+        text: buildTelegramMessage(input),
+        parse_mode: "Markdown",
+      }),
+    }
+  );
 
   if (!response.ok) {
     const detail = await response.text();
-    throw new Error(`Resend email delivery failed (${response.status}): ${detail}`);
+    throw new Error(`Telegram notification failed (${response.status}): ${detail}`);
   }
 
   return true;
@@ -75,7 +75,7 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         // Honeypot: if the hidden "website" field is filled, silently succeed
         if (input.website.trim()) return { success: true, notificationSent: false } as const;
-        const notificationSent = await sendInquiryEmail(input);
+        const notificationSent = await sendTelegramNotification(input);
         return { success: true, notificationSent } as const;
       }),
   }),

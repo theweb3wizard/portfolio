@@ -30,6 +30,9 @@ function Router() {
   </Switch>;
 }
 
+const SITE_URL = window.location.origin;
+const OG_IMAGE = `${SITE_URL}/og-image.svg`;
+
 function MetaManager() {
   const [location] = useLocation();
   useEffect(() => {
@@ -44,26 +47,42 @@ function MetaManager() {
     };
     const service = Object.values(services).find((item) => path === `/services/${item.slug}`);
     const [title, description] = service ? [`${service.label} | Web3 Wizard Labs`, service.description] : (labels[path] ?? ["Web3 Wizard Labs", "Founder-led Web3 product studio."]);
+
     document.title = title;
-    let descriptionTag = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!descriptionTag) { descriptionTag = document.createElement("meta"); descriptionTag.name = "description"; document.head.appendChild(descriptionTag); }
-    descriptionTag.content = description;
-    const setMeta = (property: string, content: string) => { let tag = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`); if (!tag) { tag = document.createElement("meta"); tag.setAttribute("property", property); document.head.appendChild(tag); } tag.content = content; };
-    setMeta("og:title", title);
-    setMeta("og:description", description);
-    setMeta("og:type", "website");
-    setMeta("og:url", `${window.location.origin}${path}`);
-    setMeta("twitter:card", "summary_large_image");
-    setMeta("twitter:title", title);
-    setMeta("twitter:description", description);
+
+    const setMetaName = (name: string, content: string) => { let tag = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`); if (!tag) { tag = document.createElement("meta"); tag.name = name; document.head.appendChild(tag); } tag.content = content; };
+    const setMetaProp = (property: string, content: string) => { let tag = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`); if (!tag) { tag = document.createElement("meta"); tag.setAttribute("property", property); document.head.appendChild(tag); } tag.content = content; };
+
+    setMetaName("description", description);
+    setMetaProp("og:title", title);
+    setMetaProp("og:description", description);
+    setMetaProp("og:type", "website");
+    setMetaProp("og:url", `${SITE_URL}${path}`);
+    setMetaProp("og:image", OG_IMAGE);
+    setMetaProp("og:image:width", "1200");
+    setMetaProp("og:image:height", "630");
+    setMetaProp("og:image:alt", "Web3 Wizard Labs — Clearer Web3 products, built by one founder.");
+    setMetaName("twitter:card", "summary_large_image");
+    setMetaName("twitter:title", title);
+    setMetaName("twitter:description", description);
+    setMetaName("twitter:image", OG_IMAGE);
+    setMetaName("twitter:image:alt", "Web3 Wizard Labs — Clearer Web3 products, built by one founder.");
+
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
-    canonical.href = `${window.location.origin}${path}`;
-    let personSchema = document.getElementById("w3w-person-schema") as HTMLScriptElement | null;
-    if (!personSchema) { personSchema = document.createElement("script"); personSchema.id = "w3w-person-schema"; personSchema.type = "application/ld+json"; document.head.appendChild(personSchema); }
-    personSchema.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "Person", name: "Khalid - The Web3 Wizard", url: window.location.origin, worksFor: { "@type": "Organization", name: "Web3 Wizard Labs" } });
-    let serviceSchema = document.getElementById("w3w-service-schema") as HTMLScriptElement | null;
-    if (service) { if (!serviceSchema) { serviceSchema = document.createElement("script"); serviceSchema.id = "w3w-service-schema"; serviceSchema.type = "application/ld+json"; document.head.appendChild(serviceSchema); } serviceSchema.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "Service", name: service.label, description: service.description, provider: { "@type": "Person", name: "Khalid - The Web3 Wizard" } }); } else if (serviceSchema) { serviceSchema.remove(); }
+    canonical.href = `${SITE_URL}${path}`;
+
+    const setSchema = (id: string, data: object) => { let tag = document.getElementById(id) as HTMLScriptElement | null; if (!tag) { tag = document.createElement("script"); tag.id = id; tag.type = "application/ld+json"; document.head.appendChild(tag); } tag.textContent = JSON.stringify(data); };
+    const removeSchema = (id: string) => { document.getElementById(id)?.remove(); };
+
+    setSchema("w3w-person-schema", { "@context": "https://schema.org", "@type": "Person", name: "Khalid - The Web3 Wizard", url: SITE_URL, sameAs: ["https://github.com/THEWEB3WIZARD", "https://www.linkedin.com/in/theweb3wizard0"], worksFor: { "@type": "Organization", name: "Web3 Wizard Labs", url: SITE_URL } });
+    setSchema("w3w-website-schema", { "@context": "https://schema.org", "@type": "WebSite", name: "Web3 Wizard Labs", url: SITE_URL, description: "Founder-led Web3 product studio for focused products, prototypes, community tools, and application-layer clarity.", author: { "@type": "Person", name: "Khalid - The Web3 Wizard" } });
+
+    if (service) {
+      setSchema("w3w-service-schema", { "@context": "https://schema.org", "@type": "Service", name: service.label, description: service.description, provider: { "@type": "Person", name: "Khalid - The Web3 Wizard" } });
+    } else {
+      removeSchema("w3w-service-schema");
+    }
   }, [location]);
   return null;
 }

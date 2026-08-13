@@ -2,8 +2,8 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import { appRouter } from "./routers";
-import { serveStatic, setupVite } from "./vite";
+import { appRouter } from "./routers.js";
+import { serveStatic, setupVite } from "./vite.js";
 
 async function startServer() {
   const app = express();

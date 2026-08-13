@@ -1,6 +1,6 @@
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, router } from "./_core/trpc.js";
 import { z } from "zod";
-import { ENV } from "./_core/env";
+import { ENV } from "./_core/env.js";
 
 export const inquiryInputSchema = z.object({
   name: z.string().trim().min(2).max(100),

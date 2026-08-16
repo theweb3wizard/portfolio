@@ -75,7 +75,7 @@ function MetaManager() {
     const setSchema = (id: string, data: object) => { let tag = document.getElementById(id) as HTMLScriptElement | null; if (!tag) { tag = document.createElement("script"); tag.id = id; tag.type = "application/ld+json"; document.head.appendChild(tag); } tag.textContent = JSON.stringify(data); };
     const removeSchema = (id: string) => { document.getElementById(id)?.remove(); };
 
-    setSchema("w3w-person-schema", { "@context": "https://schema.org", "@type": "Person", name: "Khalid - The Web3 Wizard", url: SITE_URL, sameAs: ["https://github.com/THEWEB3WIZARD", "https://www.linkedin.com/in/theweb3wizard0"], worksFor: { "@type": "Organization", name: "Web3 Wizard Labs", url: SITE_URL } });
+    setSchema("w3w-person-schema", { "@context": "https://schema.org", "@type": "Person", name: "Khalid - The Web3 Wizard", url: SITE_URL, sameAs: ["https://github.com/THEWEB3WIZARD", "https://www.linkedin.com/in/theweb3wizard00", "https://x.com/theweb3wizard00", "https://t.me/theweb3wizard00"], worksFor: { "@type": "Organization", name: "Web3 Wizard Labs", url: SITE_URL } });
     setSchema("w3w-website-schema", { "@context": "https://schema.org", "@type": "WebSite", name: "Web3 Wizard Labs", url: SITE_URL, description: "Founder-led Web3 product studio for focused products, prototypes, community tools, and application-layer clarity.", author: { "@type": "Person", name: "Khalid - The Web3 Wizard" } });
 
     if (service) {

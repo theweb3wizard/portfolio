@@ -61,7 +61,9 @@ const PERSON_SCHEMA = {
   url: SITE_URL,
   sameAs: [
     "https://github.com/THEWEB3WIZARD",
-    "https://www.linkedin.com/in/theweb3wizard0",
+    "https://www.linkedin.com/in/theweb3wizard00",
+    "https://x.com/theweb3wizard00",
+    "https://t.me/theweb3wizard00",
   ],
   worksFor: {
     "@type": "Organization",

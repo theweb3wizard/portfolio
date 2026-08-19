@@ -19,7 +19,7 @@ import {
 } from "./pages/SitePages";
 import { useEffect } from "react";
 import { CLIENT_ROUTE_META, SITE_URL } from "@shared/routeMeta";
-const OG_IMAGE = `${SITE_URL}/og-image.svg`;
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
 const OG_IMAGE_ALT =
   "The Web3 Wizard — AI-native Web3 product studio. Turn your Web3 problem into a working product.";
 

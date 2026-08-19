@@ -11,6 +11,7 @@
  */
 
 export const SITE_URL = "https://www.theweb3wizard.xyz";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export type ClientRouteMeta = {
   title: string;

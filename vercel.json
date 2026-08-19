@@ -26,6 +26,13 @@
       ]
     },
     {
+      "source": "/og-image.png",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
       "source": "/favicon.svg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
@@ -33,7 +40,6 @@
     }
   ],
   "redirects": [
-    { "source": "/og-image.png", "destination": "/og-image.svg", "permanent": true },
     { "source": "/services/product-builds", "destination": "/services/web3-mvp-development", "permanent": true },
     { "source": "/services/prototype-refinement", "destination": "/services/web3-mvp-development", "permanent": true },
     { "source": "/services/community-tools", "destination": "/services/ai-agent-solana-engineering", "permanent": true },

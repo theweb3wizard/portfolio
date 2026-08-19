@@ -1,18 +1,97 @@
 /**
- * Server-side meta injection for SEO / GEO.
- * Injects title, description, canonical, og:*, twitter:*, and JSON-LD
- * into the raw index.html before it is sent to crawlers.
- * The React MetaManager keeps client-side navigation in sync after hydration.
+ * server/meta.ts
+ *
+ * Per-route meta injection: title, description, canonical, Open Graph,
+ * Twitter cards, and JSON-LD (schema.org).
+ *
+ * Used by:
+ *   • vite-plugin-ssg-meta  → writes static HTML files at build time (Vercel)
+ *   • server/vite.ts        → injects meta at request time for local dev
  */
 
-const SITE_URL = "https://theweb3wizard.xyz";
-const OG_IMAGE = `${SITE_URL}/og-image.svg`;
-const AUTHOR = "Khalid - The Web3 Wizard";
+export const SITE_URL = "https://www.theweb3wizard.xyz";
+export const OG_IMAGE = `${SITE_URL}/og-image.svg`;
+export const OG_IMAGE_ALT =
+  "The Web3 Wizard — AI-native Web3 product studio. Turn your Web3 problem into a working product.";
 
-type RouteMeta = {
-  title: string;
-  description: string;
-  schemas?: object[];
+const AUTHOR_NAME = "Khalid Murtala";
+const PERSONA = "The Web3 Wizard";
+const ORG_NAME = "Web3 Wizard Labs";
+const STUDIO_DESCRIPTION =
+  "The Web3 Wizard is a founder-led AI-native Web3 product studio. We turn real problems and product ideas into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.";
+
+// ─── Entity schemas ────────────────────────────────────────────────────────────
+
+const PERSON_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/#person`,
+  name: AUTHOR_NAME,
+  alternateName: PERSONA,
+  url: SITE_URL,
+  jobTitle: `Founder of ${PERSONA} / ${ORG_NAME}`,
+  sameAs: [
+    "https://github.com/theweb3wizard",
+    "https://www.linkedin.com/in/theweb3wizard00",
+    "https://x.com/theweb3wizard00",
+    "https://t.me/theweb3wizard00",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: ORG_NAME,
+    url: SITE_URL,
+  },
+};
+
+const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#organization`,
+  name: ORG_NAME,
+  alternateName: PERSONA,
+  url: SITE_URL,
+  description: STUDIO_DESCRIPTION,
+  founder: {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person`,
+    name: AUTHOR_NAME,
+    alternateName: PERSONA,
+  },
+  knowsAbout: [
+    "AI agents",
+    "Solana application development",
+    "Web3 product development",
+    "dApp development",
+    "Web3 automation",
+    "MVP development",
+    "AI-native product development",
+  ],
+  sameAs: [
+    "https://github.com/theweb3wizard",
+    "https://x.com/theweb3wizard00",
+    "https://www.linkedin.com/in/theweb3wizard00",
+  ],
+};
+
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: ORG_NAME,
+  alternateName: PERSONA,
+  url: SITE_URL,
+  description: STUDIO_DESCRIPTION,
+  publisher: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: ORG_NAME,
+  },
+  author: {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person`,
+    name: AUTHOR_NAME,
+  },
 };
 
 const FAQ_SCHEMA = {
@@ -21,18 +100,42 @@ const FAQ_SCHEMA = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Do you have client testimonials yet?",
+      name: "What does The Web3 Wizard do?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not yet. Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such.",
+        text: "The Web3 Wizard (Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We turn problems and product ideas into focused working products — AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
       },
     },
     {
       "@type": "Question",
-      name: "Are the projects in the portfolio client work?",
+      name: "Do you build AI agents?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. The portfolio currently shows personal products and experiments built by The Web3 Wizard. Every project is labeled clearly so you can distinguish founder-built work from future client work.",
+        text: "Yes. AI agent development is a core capability. We have built AI agents for Telegram, Web3 workflows, and autonomous data pipelines. Every agent is built to a clear scope with defined behaviour and documented limitations.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you build Solana applications?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Solana application development is a primary technical focus. The studio has built Solana monitoring tools, wallet intelligence products, and Solana-integrated application layers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you have client testimonials?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Not yet. Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are the portfolio projects client work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labeled so you can distinguish personal work from future client engagements.",
       },
     },
     {
@@ -40,7 +143,7 @@ const FAQ_SCHEMA = {
       name: "Do you write smart contracts?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The studio focuses on product experiences, application layers, tools, and integrations. Smart-contract work and formal smart-contract audits are not presented as part of this offer.",
+        text: "The studio focuses on product experiences, application layers, AI agents, and integrations. Smart-contract auditing is outside scope. Smart-contract integration can be discussed for specific engagements.",
       },
     },
     {
@@ -48,39 +151,13 @@ const FAQ_SCHEMA = {
       name: "Do you use AI to build the products?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. AI helps with research, planning, design, coding, testing, and review. Khalid directs the work, challenges the output, understands important decisions, tests key behavior, and remains accountable for what is delivered.",
+        text: "Yes. AI helps with research, planning, design, coding, testing, and review. Khalid Murtala directs the work, challenges the output, understands important decisions, tests key behaviour, and remains accountable for what is delivered.",
       },
     },
   ],
 };
 
-const PERSON_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: AUTHOR,
-  url: SITE_URL,
-  sameAs: [
-    "https://github.com/THEWEB3WIZARD",
-    "https://www.linkedin.com/in/theweb3wizard00",
-    "https://x.com/theweb3wizard00",
-    "https://t.me/theweb3wizard00",
-  ],
-  worksFor: {
-    "@type": "Organization",
-    name: "Web3 Wizard Labs",
-    url: SITE_URL,
-  },
-};
-
-const WEBSITE_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Web3 Wizard Labs",
-  url: SITE_URL,
-  description:
-    "Founder-led Web3 product studio for focused products, prototypes, community tools, and application-layer clarity.",
-  author: { "@type": "Person", name: AUTHOR },
-};
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function serviceSchema(name: string, description: string) {
   return {
@@ -88,23 +165,75 @@ function serviceSchema(name: string, description: string) {
     "@type": "Service",
     name,
     description,
-    provider: { "@type": "Person", name: AUTHOR, url: SITE_URL },
+    provider: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: AUTHOR_NAME,
+    },
+    serviceType: "Web3 Product Development",
+    areaServed: "Worldwide",
   };
 }
 
-function articleSchema(title: string, description: string, slug: string) {
+function softwareSchema(
+  name: string,
+  description: string,
+  url?: string,
+  repoUrl?: string,
+) {
+  const obj: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: AUTHOR_NAME,
+    },
+    applicationCategory: "Web3 Application",
+  };
+  if (url) obj.url = url;
+  if (repoUrl) obj.codeRepository = repoUrl;
+  return obj;
+}
+
+function articleSchema(
+  title: string,
+  description: string,
+  slug: string,
+  datePublished: string,
+  dateModified?: string,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
-    author: { "@type": "Person", name: AUTHOR, url: SITE_URL },
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: AUTHOR_NAME,
+      alternateName: PERSONA,
+    },
     publisher: {
       "@type": "Organization",
-      name: "Web3 Wizard Labs",
+      "@id": `${SITE_URL}/#organization`,
+      name: ORG_NAME,
       url: SITE_URL,
     },
     url: `${SITE_URL}/insights/${slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/insights/${slug}`,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: ORG_NAME,
+    },
   };
 }
 
@@ -121,17 +250,29 @@ function breadcrumb(items: { name: string; url: string }[]) {
   };
 }
 
-const ROUTE_META: Record<string, RouteMeta> = {
+// ─── Route metadata registry ──────────────────────────────────────────────────
+
+type RouteMeta = {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  schemas?: object[];
+};
+
+export const ROUTE_META: Record<string, RouteMeta> = {
+  // ── Home ──────────────────────────────────────────────────────────────────
   "/": {
-    title: "Web3 Wizard Labs | Clearer Web3 products, built by one founder.",
+    title: "The Web3 Wizard | AI-Native Web3 Product Studio",
     description:
-      "Founder-led Web3 product studio for focused products, prototypes, community tools, and application-layer clarity.",
-    schemas: [WEBSITE_SCHEMA, PERSON_SCHEMA, FAQ_SCHEMA],
+      "Turn your Web3 problem into a working product. The Web3 Wizard is a founder-led AI-native Web3 product studio building AI agents, Solana applications, dApps, automation tools, and focused Web3 MVPs.",
+    schemas: [WEBSITE_SCHEMA, ORGANIZATION_SCHEMA, PERSON_SCHEMA, FAQ_SCHEMA],
   },
+
+  // ── Services ──────────────────────────────────────────────────────────────
   "/services": {
-    title: "Web3 product services | Web3 Wizard Labs",
+    title: "Web3 Product Services | The Web3 Wizard",
     description:
-      "Focused Web3 product builds, prototype refinement, community tools, and bounded application-layer review.",
+      "Focused Web3 product development services: Product Discovery Sprint, AI-native Web3 product builds, AI agent and Solana engineering. Choose the engagement that fits your situation.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -140,78 +281,66 @@ const ROUTE_META: Record<string, RouteMeta> = {
       ]),
     ],
   },
-  "/services/product-builds": {
-    title: "Product builds | Web3 Wizard Labs",
+
+  "/services/product-discovery": {
+    title: "Product Discovery Sprint | Web3 Product Studio | The Web3 Wizard",
     description:
-      "For founders and small teams who need a focused Web3 application, dashboard, internal tool, or prototype built without unnecessary agency layers.",
+      "Turn a Web3 problem or idea into a build-ready product direction. Clarify the user, define the MVP scope, and decide what to build first — before committing to a larger engagement.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
-        "Product builds",
-        "For founders and small teams who need a focused Web3 application, dashboard, internal tool, or prototype built without unnecessary agency layers."
+        "Product Discovery Sprint",
+        "A focused engagement for Web3 founders who have a real problem or product idea but need clarity before committing to a build. Covers problem definition, target user, MVP scope, and build-ready product direction.",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Services", url: `${SITE_URL}/services` },
-        { name: "Product builds", url: `${SITE_URL}/services/product-builds` },
+        { name: "Product Discovery Sprint", url: `${SITE_URL}/services/product-discovery` },
       ]),
     ],
   },
-  "/services/prototype-refinement": {
-    title: "Prototype refinement | Web3 Wizard Labs",
+
+  "/services/web3-mvp-development": {
+    title: "AI-Native Web3 Product Build | MVP Development | The Web3 Wizard",
     description:
-      "I help refine rough, confusing, incomplete, or AI-assisted prototypes into clearer product experiences with a more reliable main journey.",
+      "Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, dashboards, and Web3 MVPs — built by a founder-led AI-native studio.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
-        "Prototype refinement",
-        "I help refine rough, confusing, incomplete, or AI-assisted prototypes into clearer product experiences with a more reliable main journey."
+        "AI-Native Web3 Product Build",
+        "For founders with a validated problem, product concept, prototype, or specification. Builds focused Web3 products including AI agents, Solana applications, dApps, automation tools, and MVPs.",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Services", url: `${SITE_URL}/services` },
-        { name: "Prototype refinement", url: `${SITE_URL}/services/prototype-refinement` },
+        { name: "AI-Native Web3 Product Build", url: `${SITE_URL}/services/web3-mvp-development` },
       ]),
     ],
   },
-  "/services/community-tools": {
-    title: "Community tools | Web3 Wizard Labs",
+
+  "/services/ai-agent-solana-engineering": {
+    title: "AI Agent & Solana Development | Web3 Engineering | The Web3 Wizard",
     description:
-      "Build focused Telegram Mini Apps, Discord tools, alerts, wallet utilities, and community workflows that help people take a clear next action.",
+      "Specialist AI agent and Solana engineering for Web3 teams. Autonomous workflows, Telegram bots, Discord tools, Solana integrations, on-chain data pipelines, and AI-powered Web3 product features.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
-        "Community tools",
-        "Build focused Telegram Mini Apps, Discord tools, alerts, wallet utilities, and community workflows that help people take a clear next action."
+        "AI Agent & Solana Product Engineering",
+        "For teams that need specialist AI agent or Solana engineering. Covers autonomous workflows, Telegram and Discord AI agents, Solana integrations, on-chain data pipelines, and AI-powered Web3 product features.",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Services", url: `${SITE_URL}/services` },
-        { name: "Community tools", url: `${SITE_URL}/services/community-tools` },
+        { name: "AI Agent & Solana Engineering", url: `${SITE_URL}/services/ai-agent-solana-engineering` },
       ]),
     ],
   },
-  "/services/application-review": {
-    title: "Application review | Web3 Wizard Labs",
-    description:
-      "A narrow application-layer review for fast-built and AI-assisted Web3 applications. Focused on users, access, secrets, configuration, and trust boundaries.",
-    schemas: [
-      PERSON_SCHEMA,
-      serviceSchema(
-        "Application review",
-        "A narrow application-layer review for fast-built and AI-assisted Web3 applications. Focused on users, access, secrets, configuration, and trust boundaries."
-      ),
-      breadcrumb([
-        { name: "Home", url: SITE_URL },
-        { name: "Services", url: `${SITE_URL}/services` },
-        { name: "Application review", url: `${SITE_URL}/services/application-review` },
-      ]),
-    ],
-  },
+
+  // ── Work ──────────────────────────────────────────────────────────────────
   "/work": {
-    title: "Founder-built Web3 work | Web3 Wizard Labs",
+    title: "Founder-Built Web3 Projects | AI Agents, Solana & dApps | The Web3 Wizard",
     description:
-      "Personal Web3 products and experiments built by The Web3 Wizard, clearly labeled and honestly documented.",
+      "Evidence-driven portfolio of founder-built Web3 projects. AI agents, Solana monitoring tools, EVM wallet intelligence, AI content tools, and Web3 automation — built and shipped by Khalid Murtala.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -220,12 +349,97 @@ const ROUTE_META: Record<string, RouteMeta> = {
       ]),
     ],
   },
-  "/work/solpulse": {
-    title: "SolPulse — Solana monitoring concept | Web3 Wizard Labs",
+
+  "/work/valor": {
+    title: "Valor — AI Agent for Telegram | Web3 AI Agent | The Web3 Wizard",
     description:
-      "A founder-built Solana monitoring concept for clearer whale activity signals. Turns on-chain activity into a calmer, more useful alerting experience.",
+      "Valor is a founder-built AI agent for Telegram. An autonomous conversational agent built for Web3 communities and workflows on the Telegram platform.",
     schemas: [
       PERSON_SCHEMA,
+      softwareSchema(
+        "Valor",
+        "An AI agent for Telegram. Autonomous conversational agent for Web3 communities.",
+        "https://valor-tgbot.vercel.app",
+        "https://github.com/theweb3wizard/Valor",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Work", url: `${SITE_URL}/work` },
+        { name: "Valor", url: `${SITE_URL}/work/valor` },
+      ]),
+    ],
+  },
+
+  "/work/walletlens": {
+    title: "WalletLens — AI-Powered EVM Wallet Intelligence | The Web3 Wizard",
+    description:
+      "WalletLens is a founder-built AI-powered EVM wallet intelligence tool. Analyse Ethereum, Polygon, BNB Chain, Arbitrum, and Base wallets with natural language AI queries.",
+    schemas: [
+      PERSON_SCHEMA,
+      softwareSchema(
+        "WalletLens",
+        "AI-powered EVM wallet intelligence. Analyse ETH, Polygon, BNB, Arbitrum, and Base wallets.",
+        "https://walletlens-hq.vercel.app",
+        "https://github.com/theweb3wizard/walletlens",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Work", url: `${SITE_URL}/work` },
+        { name: "WalletLens", url: `${SITE_URL}/work/walletlens` },
+      ]),
+    ],
+  },
+
+  "/work/write3": {
+    title: "Write3 — AI Web3 Content Generator | The Web3 Wizard",
+    description:
+      "Write3 is a founder-built AI-powered Web3 content generation tool for X, Discord, Telegram, Farcaster, and blogs. AI-native content workflows for Web3 communities.",
+    schemas: [
+      PERSON_SCHEMA,
+      softwareSchema(
+        "Write3",
+        "AI-powered Web3 content generator for X, Discord, Telegram, Farcaster, and blogs.",
+        "https://write3-ai.vercel.app",
+        "https://github.com/theweb3wizard/Write3",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Work", url: `${SITE_URL}/work` },
+        { name: "Write3", url: `${SITE_URL}/work/write3` },
+      ]),
+    ],
+  },
+
+  "/work/agenthub": {
+    title: "AgentHub — Secure AI Agent Access Layer | The Web3 Wizard",
+    description:
+      "AgentHub is a founder-built secure access layer for AI coding assistants. Policy-controlled access to databases, APIs, and infrastructure with audit trails and human approval gates.",
+    schemas: [
+      PERSON_SCHEMA,
+      softwareSchema(
+        "AgentHub",
+        "Secure, authenticated access for AI coding assistants to databases, APIs, and infrastructure with policy control, audit trails, and human approval gates.",
+        "https://agenthub-lyart.vercel.app",
+        "https://github.com/theweb3wizard/AgentHub",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Work", url: `${SITE_URL}/work` },
+        { name: "AgentHub", url: `${SITE_URL}/work/agenthub` },
+      ]),
+    ],
+  },
+
+  "/work/solpulse": {
+    title: "SolPulse — Solana Wallet Monitoring Tool | The Web3 Wizard",
+    description:
+      "SolPulse is a founder-built Solana on-chain monitoring experiment. Turns Solana wallet activity into calmer, more readable alert signals via Telegram.",
+    schemas: [
+      PERSON_SCHEMA,
+      softwareSchema(
+        "SolPulse",
+        "Founder-built Solana monitoring experiment. On-chain wallet activity signals delivered as readable Telegram alerts.",
+      ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Work", url: `${SITE_URL}/work` },
@@ -233,36 +447,11 @@ const ROUTE_META: Record<string, RouteMeta> = {
       ]),
     ],
   },
-  "/work/txpreview": {
-    title: "TxPreview — transaction intent interface | Web3 Wizard Labs",
-    description:
-      "A founder-built interface concept for making transaction intent easier to inspect before a wallet signature.",
-    schemas: [
-      PERSON_SCHEMA,
-      breadcrumb([
-        { name: "Home", url: SITE_URL },
-        { name: "Work", url: `${SITE_URL}/work` },
-        { name: "TxPreview", url: `${SITE_URL}/work/txpreview` },
-      ]),
-    ],
-  },
-  "/work/searchlens": {
-    title: "SearchLens — AI discoverability research tool | Web3 Wizard Labs",
-    description:
-      "A founder-built concept for helping teams understand how their products appear in AI-assisted search.",
-    schemas: [
-      PERSON_SCHEMA,
-      breadcrumb([
-        { name: "Home", url: SITE_URL },
-        { name: "Work", url: `${SITE_URL}/work` },
-        { name: "SearchLens", url: `${SITE_URL}/work/searchlens` },
-      ]),
-    ],
-  },
+
   "/work/community-signal": {
-    title: "Community Signal — community activity tool | Web3 Wizard Labs",
+    title: "Community Signal — Web3 Community Action Tool | The Web3 Wizard",
     description:
-      "A building-stage experiment for turning community activity into a clearer next action using Telegram and Discord workflows.",
+      "Community Signal is a building-stage experiment for turning Telegram and Discord community activity into a clearer next action without unnecessary complexity.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -272,22 +461,27 @@ const ROUTE_META: Record<string, RouteMeta> = {
       ]),
     ],
   },
+
+  // ── About ─────────────────────────────────────────────────────────────────
   "/about": {
-    title: "About Web3 Wizard Labs | The Web3 Wizard",
+    title: "About The Web3 Wizard | Khalid Murtala | AI-Native Web3 Studio",
     description:
-      "A founder-led studio for making Web3 products clearer through focused scope and direct ownership.",
+      "Khalid Murtala is the founder of The Web3 Wizard (Web3 Wizard Labs) — a founder-led AI-native Web3 product studio. We build AI agents, Solana applications, dApps, and focused Web3 MVPs.",
     schemas: [
       PERSON_SCHEMA,
+      ORGANIZATION_SCHEMA,
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "About", url: `${SITE_URL}/about` },
       ]),
     ],
   },
+
+  // ── Insights ──────────────────────────────────────────────────────────────
   "/insights": {
-    title: "Web3 product insights | Web3 Wizard Labs",
+    title: "Web3 Product Insights | AI Agents, Solana & MVP Development | The Web3 Wizard",
     description:
-      "Plain-English thinking about Web3 products, AI-assisted building, scope, and user experience.",
+      "Practical thinking on Web3 product decisions, AI-native development, Solana applications, MVP scoping, and building dApps that real users can understand.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -296,73 +490,112 @@ const ROUTE_META: Record<string, RouteMeta> = {
       ]),
     ],
   },
+
   "/insights/scope-a-web3-product-before-spending-money": {
-    title: "How to scope a Web3 product before spending money | Web3 Wizard Labs",
+    title: "How to Scope a Web3 MVP Before Spending Money | The Web3 Wizard",
     description:
-      "A plain-English framework for deciding what belongs in a first Web3 product and what should wait.",
+      "A practical framework for Web3 founders deciding what to build first. How to define an MVP, cut unnecessary scope, and avoid spending on the wrong features.",
     schemas: [
       PERSON_SCHEMA,
       articleSchema(
-        "How to scope a Web3 product before spending money",
-        "A plain-English framework for deciding what belongs in a first Web3 product and what should wait.",
-        "scope-a-web3-product-before-spending-money"
+        "How to Scope a Web3 MVP Before Spending Money",
+        "A practical framework for Web3 founders deciding what to build first. How to define an MVP, cut unnecessary scope, and avoid spending on the wrong features.",
+        "scope-a-web3-product-before-spending-money",
+        "2026-08-13",
+        "2026-08-19",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Insights", url: `${SITE_URL}/insights` },
-        { name: "How to scope a Web3 product before spending money", url: `${SITE_URL}/insights/scope-a-web3-product-before-spending-money` },
+        {
+          name: "How to Scope a Web3 MVP Before Spending Money",
+          url: `${SITE_URL}/insights/scope-a-web3-product-before-spending-money`,
+        },
       ]),
     ],
   },
+
   "/insights/why-a-web3-prototype-can-fail": {
-    title: "Why a Web3 prototype can fail when real users touch it | Web3 Wizard Labs",
+    title: "Why a Web3 Prototype Fails With Real Users | The Web3 Wizard",
     description:
-      "The gap between a working demo and a product that explains itself under real user pressure.",
+      "The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and how to close that gap before launch.",
     schemas: [
       PERSON_SCHEMA,
       articleSchema(
-        "Why a Web3 prototype can fail when real users touch it",
-        "The gap between a working demo and a product that explains itself under real user pressure.",
-        "why-a-web3-prototype-can-fail"
+        "Why a Web3 Prototype Fails With Real Users",
+        "The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and how to close that gap before launch.",
+        "why-a-web3-prototype-can-fail",
+        "2026-08-13",
+        "2026-08-19",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Insights", url: `${SITE_URL}/insights` },
-        { name: "Why a Web3 prototype can fail", url: `${SITE_URL}/insights/why-a-web3-prototype-can-fail` },
+        {
+          name: "Why a Web3 Prototype Fails With Real Users",
+          url: `${SITE_URL}/insights/why-a-web3-prototype-can-fail`,
+        },
       ]),
     ],
   },
+
   "/insights/use-ai-without-blindly-trusting-it": {
-    title: "How to use AI when building a Web3 product without blindly trusting the output | Web3 Wizard Labs",
+    title: "How to Use AI in Web3 Product Development Without Blindly Trusting It | The Web3 Wizard",
     description:
-      "A practical look at directing, challenging, testing, and taking responsibility for AI-assisted product work.",
+      "A practical guide to AI-native Web3 product development. How to direct AI, challenge its output, test what matters, and stay accountable for what gets shipped.",
     schemas: [
       PERSON_SCHEMA,
       articleSchema(
-        "How to use AI when building a Web3 product without blindly trusting the output",
-        "A practical look at directing, challenging, testing, and taking responsibility for AI-assisted product work.",
-        "use-ai-without-blindly-trusting-it"
+        "How to Use AI in Web3 Product Development Without Blindly Trusting It",
+        "A practical guide to AI-native Web3 product development. How to direct AI, challenge its output, test what matters, and stay accountable for what gets shipped.",
+        "use-ai-without-blindly-trusting-it",
+        "2026-08-13",
+        "2026-08-19",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
         { name: "Insights", url: `${SITE_URL}/insights` },
-        { name: "How to use AI without blindly trusting the output", url: `${SITE_URL}/insights/use-ai-without-blindly-trusting-it` },
+        {
+          name: "How to Use AI in Web3 Development Without Blindly Trusting It",
+          url: `${SITE_URL}/insights/use-ai-without-blindly-trusting-it`,
+        },
       ]),
     ],
   },
+
+  // ── Start / contact (noindex) ─────────────────────────────────────────────
   "/start": {
-    title: "Start with your idea | Web3 Wizard Labs",
+    title: "Start a Conversation | Web3 Wizard Labs",
     description:
-      "Tell The Web3 Wizard what you are trying to build, where you are stuck, and what a useful first version should do.",
+      "Tell The Web3 Wizard what you are trying to build. Discuss an AI agent, Solana application, dApp, MVP, or Web3 automation project.",
+    noindex: true,
+    schemas: [PERSON_SCHEMA],
+  },
+
+  // ── Legal ─────────────────────────────────────────────────────────────────
+  "/privacy": {
+    title: "Privacy Policy | Web3 Wizard Labs",
+    description:
+      "How Web3 Wizard Labs handles inquiry submissions and personal information. No database. Inquiries are delivered via Telegram notification.",
+    schemas: [PERSON_SCHEMA],
+  },
+
+  "/terms": {
+    title: "Terms of Service | Web3 Wizard Labs",
+    description:
+      "Clear boundaries for Web3 Wizard Labs engagements. Service scope, limitations, and what is explicitly outside scope.",
     schemas: [PERSON_SCHEMA],
   },
 };
 
 const DEFAULT_META: RouteMeta = {
-  title: "Web3 Wizard Labs",
-  description: "Founder-led Web3 product studio.",
+  title: "The Web3 Wizard | AI-Native Web3 Product Studio",
+  description:
+    "Founder-led AI-native Web3 product studio. AI agents, Solana applications, dApps, automation, and focused Web3 MVPs.",
   schemas: [PERSON_SCHEMA],
 };
+
+// ─── HTML injection ────────────────────────────────────────────────────────────
 
 function escapeHtml(str: string): string {
   return str
@@ -373,24 +606,22 @@ function escapeHtml(str: string): string {
 }
 
 export function injectMetaIntoHtml(html: string, pathname: string): string {
-  // Normalise pathname — strip query + hash, trailing slash except root
+  // Normalise pathname — strip query, hash, trailing slash except root
   const clean = pathname.split("?")[0].split("#")[0].replace(/\/$/, "") || "/";
   const meta = ROUTE_META[clean] ?? DEFAULT_META;
 
-  const canonical = `${SITE_URL}${clean}`;
+  const canonical = `${SITE_URL}${clean === "/" ? "" : clean}`;
   const title = escapeHtml(meta.title);
   const description = escapeHtml(meta.description);
+  const noindex = meta.noindex ? '\n  <meta name="robots" content="noindex, nofollow" />' : "";
 
   const schemaBlocks = (meta.schemas ?? [])
-    .map(
-      (s) =>
-        `<script type="application/ld+json">${JSON.stringify(s)}</script>`
-    )
+    .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
     .join("\n  ");
 
   const metaBlock = `
   <title>${title}</title>
-  <meta name="description" content="${description}" />
+  <meta name="description" content="${description}" />${noindex}
   <link rel="canonical" href="${canonical}" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
@@ -399,15 +630,16 @@ export function injectMetaIntoHtml(html: string, pathname: string): string {
   <meta property="og:image" content="${OG_IMAGE}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Web3 Wizard Labs — Clearer Web3 products, built by one founder." />
+  <meta property="og:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}" />
+  <meta property="og:site_name" content="${escapeHtml(ORG_NAME)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
   <meta name="twitter:image" content="${OG_IMAGE}" />
-  <meta name="twitter:image:alt" content="Web3 Wizard Labs — Clearer Web3 products, built by one founder." />
+  <meta name="twitter:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}" />
+  <meta name="twitter:site" content="@theweb3wizard00" />
   ${schemaBlocks}`;
 
-  // Replace the static title in index.html and inject all meta before </head>
   return html
     .replace(/<title>[^<]*<\/title>/, "")
     .replace("</head>", `${metaBlock}\n</head>`);

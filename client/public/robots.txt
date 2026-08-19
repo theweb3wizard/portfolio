@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /start
 
-# AI crawlers — allow indexing for GEO
+# AI crawlers — explicitly permitted for GEO indexing
 User-agent: GPTBot
 Allow: /
 
@@ -17,8 +18,4 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-# Block form submission page from being indexed
-User-agent: *
-Disallow: /start
-
-Sitemap: https://theweb3wizard.xyz/sitemap.xml
+Sitemap: https://www.theweb3wizard.xyz/sitemap.xml

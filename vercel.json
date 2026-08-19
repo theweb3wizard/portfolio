@@ -8,7 +8,8 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
       ]
     },
     {
@@ -23,10 +24,22 @@
         { "key": "Content-Type", "value": "image/svg+xml" },
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
+    },
+    {
+      "source": "/favicon.svg",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
     }
   ],
   "redirects": [
-    { "source": "/og-image.png", "destination": "/og-image.svg", "permanent": false }
+    { "source": "/og-image.png", "destination": "/og-image.svg", "permanent": true },
+    { "source": "/services/product-builds", "destination": "/services/web3-mvp-development", "permanent": true },
+    { "source": "/services/prototype-refinement", "destination": "/services/web3-mvp-development", "permanent": true },
+    { "source": "/services/community-tools", "destination": "/services/ai-agent-solana-engineering", "permanent": true },
+    { "source": "/services/application-review", "destination": "/services/web3-mvp-development", "permanent": true },
+    { "source": "/work/txpreview", "destination": "/work", "permanent": true },
+    { "source": "/work/searchlens", "destination": "/work", "permanent": true }
   ],
   "rewrites": [
     { "source": "/api/trpc/(.*)", "destination": "/api/trpc" },

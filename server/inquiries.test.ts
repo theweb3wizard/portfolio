@@ -1,17 +1,23 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { buildInquiryNotification, inquiryInputSchema, sendInquiryEmail } from "./routers";
+
+// Mock ENV so sendTelegramNotification sees valid config
+vi.mock("./_core/env.js", () => ({
+  ENV: { telegramBotToken: "test-token", telegramChatId: "test-chat-id" },
+}));
+
+import { buildTelegramMessage, inquiryInputSchema, sendTelegramNotification } from "./routers";
 
 const valid = {
   name: "Khalid Test",
   email: "founder@example.com",
   company: "Example Labs",
   projectUrl: "",
-  description: "I need a focused Web3 product with a clear first user journey.",
-  situation: "product-builds",
+  description: "I need a focused Web3 product with a clear first user journey and an AI agent component.",
+  situation: "web3-mvp-development",
   stage: "prototype",
-  timeline: "next-1-3-months",
+  timeline: "1-3-months",
   budget: "2k-10k",
-  success: "A usable first version with a documented handover.",
+  success: "A deployed AI agent and Solana integration with documented handover.",
   consent: true,
   website: "",
 };
@@ -36,42 +42,45 @@ describe("inquiryInputSchema", () => {
   it("rejects short project descriptions", () => {
     expect(() => inquiryInputSchema.parse({ ...valid, description: "Too short" })).toThrow();
   });
+
+  it("rejects invalid email", () => {
+    expect(() => inquiryInputSchema.parse({ ...valid, email: "not-an-email" })).toThrow();
+  });
 });
 
-describe("Resend inquiry delivery", () => {
-  it("builds a replyable email payload without persistence metadata", () => {
+describe("buildTelegramMessage", () => {
+  it("builds a Telegram message containing all key inquiry fields", () => {
     const input = inquiryInputSchema.parse(valid);
-    const email = buildInquiryNotification(input);
+    const message = buildTelegramMessage(input);
 
-    expect(email).toMatchObject({
-      from: "inquiries@theweb3wizard.xyz",
-      to: "theweb3wizard00@gmail.com",
-      replyTo: "founder@example.com",
-      subject: "New Web3 Wizard Labs inquiry from Khalid Test",
-    });
-    expect(email.text).toContain("What they are trying to build:");
-    expect(email.text).not.toContain("notificationSent");
+    expect(message).toContain("New Inquiry — Web3 Wizard Labs");
+    expect(message).toContain("Khalid Test");
+    expect(message).toContain("founder@example.com");
+    expect(message).toContain("What they want to build:");
+    expect(message).not.toContain("notificationSent");
   });
+});
 
-  it("sends the email through Resend and returns success", async () => {
+describe("sendTelegramNotification", () => {
+  it("sends the message through the Telegram Bot API and returns true", async () => {
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(
-      new Response(JSON.stringify({ id: "email_123" }), { status: 200 }),
+      new Response(JSON.stringify({ ok: true, result: { message_id: 42 } }), { status: 200 }),
     );
 
     const input = inquiryInputSchema.parse(valid);
-    await expect(sendInquiryEmail(input)).resolves.toBe(true);
+    await expect(sendTelegramNotification(input)).resolves.toBe(true);
     expect(fetchMock).toHaveBeenCalledWith(
-      "https://api.resend.com/emails",
+      expect.stringContaining("api.telegram.org"),
       expect.objectContaining({ method: "POST" }),
     );
   });
 
-  it("surfaces a useful error when Resend rejects delivery", async () => {
+  it("throws a useful error when Telegram rejects the request", async () => {
     vi.spyOn(globalThis, "fetch").mockResolvedValue(
-      new Response("invalid sender", { status: 422 }),
+      new Response("Unauthorized", { status: 401 }),
     );
 
     const input = inquiryInputSchema.parse(valid);
-    await expect(sendInquiryEmail(input)).rejects.toThrow("Resend email delivery failed (422)");
+    await expect(sendTelegramNotification(input)).rejects.toThrow("Telegram notification failed (401)");
   });
 });

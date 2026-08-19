@@ -1,3 +1,5 @@
+// ─── Types ────────────────────────────────────────────────────────────────────
+
 export type ProjectStatus = "deployed" | "building" | "concept";
 
 export type Project = {
@@ -16,6 +18,8 @@ export type Project = {
   limitations: string[];
   lessons: string[];
   relatedService: string;
+  liveUrl?: string;
+  repoUrl?: string;
   featured?: boolean;
 };
 
@@ -26,95 +30,263 @@ export type Insight = {
   category: string;
   readingTime: string;
   relatedService: string;
+  datePublished: string;
   draft: boolean;
 };
 
+// ─── Projects ─────────────────────────────────────────────────────────────────
+
 export const projects: Project[] = [
+  {
+    name: "Valor",
+    slug: "valor",
+    summary: "A founder-built AI agent for Telegram — autonomous conversation and task execution for Web3 communities.",
+    description: "Valor is an AI agent that operates inside Telegram. It handles conversations, answers questions, and executes tasks autonomously within Web3 community contexts.",
+    status: "deployed",
+    category: "AI agent",
+    builtBy: "The Web3 Wizard",
+    isPersonalProject: true,
+    problem: "Web3 communities rely heavily on manual moderation and repetitive question-answering. Most bots respond with static replies rather than reasoning about context.",
+    whatItDoes: "An autonomous AI agent deployed on Telegram. Valor processes natural language, reasons over context, and executes defined tasks without requiring a human to be present for every interaction.",
+    decisions: [
+      "Build around conversational context rather than keyword triggers to make the agent genuinely useful.",
+      "Define a clear capability boundary so the agent does not pretend to know things it does not.",
+      "Keep the deployment model simple — Telegram webhooks, no complex infrastructure.",
+    ],
+    stack: ["TypeScript", "Node.js", "Telegram Bot API", "OpenAI API", "Vercel"],
+    limitations: [
+      "This is a founder-built personal project, not a client deployment.",
+      "Agent behaviour is bounded by defined system prompts and does not self-modify.",
+      "No financial advice, trading signals, or token recommendations are provided.",
+    ],
+    lessons: [
+      "Autonomous agents are only useful when their failure modes are well-defined.",
+      "The most important design decision in an agent is what it explicitly refuses to do.",
+    ],
+    relatedService: "/services/ai-agent-solana-engineering",
+    liveUrl: "https://valor-tgbot.vercel.app",
+    repoUrl: "https://github.com/theweb3wizard/Valor",
+    featured: true,
+  },
+  {
+    name: "WalletLens",
+    slug: "walletlens",
+    summary: "AI-powered EVM wallet intelligence — query Ethereum, Polygon, BNB, Arbitrum, and Base wallets in plain English.",
+    description: "WalletLens turns EVM on-chain data into something a non-technical founder can actually interrogate. Natural language queries replace raw blockchain explorers.",
+    status: "deployed",
+    category: "Web3 AI tool",
+    builtBy: "The Web3 Wizard",
+    isPersonalProject: true,
+    problem: "EVM wallet data is publicly available but practically inaccessible to founders who are not experienced with blockchain explorers or raw API responses.",
+    whatItDoes: "A web application that lets users ask natural language questions about EVM wallet addresses. It fetches on-chain data, interprets it with AI, and returns readable summaries and insights.",
+    decisions: [
+      "Use natural language as the primary interface to eliminate the learning curve of blockchain data tools.",
+      "Support multiple chains (ETH, Polygon, BNB, Arbitrum, Base) from a single query to reduce context switching.",
+      "Be explicit about data freshness and what the tool can and cannot verify.",
+    ],
+    stack: ["TypeScript", "React", "Next.js", "OpenAI API", "Etherscan API", "Vercel"],
+    limitations: [
+      "This is a founder-built personal project, not a production-grade service.",
+      "On-chain data is fetched from third-party APIs and may have rate limits or delays.",
+      "No financial advice or investment recommendations are made.",
+    ],
+    lessons: [
+      "The interface design of a data tool matters as much as the data itself.",
+      "Chain support requires handling meaningfully different data structures, not just swapping an API key.",
+    ],
+    relatedService: "/services/web3-mvp-development",
+    liveUrl: "https://walletlens-hq.vercel.app",
+    repoUrl: "https://github.com/theweb3wizard/walletlens",
+    featured: true,
+  },
+  {
+    name: "Write3",
+    slug: "write3",
+    summary: "AI-powered Web3 content generation for X, Discord, Telegram, Farcaster, and blogs.",
+    description: "Write3 is an AI-native content tool designed for Web3 builders and communities. It generates platform-appropriate content across the channels Web3 communities actually use.",
+    status: "deployed",
+    category: "AI content tool",
+    builtBy: "The Web3 Wizard",
+    isPersonalProject: true,
+    problem: "Web3 founders spend significant time creating content for multiple platforms with different norms. Generic AI writing tools do not understand Web3 context or platform-specific formatting.",
+    whatItDoes: "A web application that generates Web3-native content for X (Twitter), Discord, Telegram, Farcaster, and long-form blogs. Users provide context about their project and the tool produces ready-to-use content.",
+    decisions: [
+      "Build separate output formats for each platform rather than a single generic output.",
+      "Train the system prompt on Web3 communication norms to produce content that fits the ecosystem.",
+      "Keep the interface minimal so founders can iterate quickly on different content angles.",
+    ],
+    stack: ["TypeScript", "React", "Next.js", "OpenAI API", "Vercel"],
+    limitations: [
+      "This is a founder-built personal project.",
+      "Generated content requires human review before publishing.",
+      "The tool does not post directly to platforms — it generates drafts for human distribution.",
+    ],
+    lessons: [
+      "AI content tools are most useful when they reduce a specific friction, not when they try to replace the entire content workflow.",
+      "Platform-specific formatting is non-trivial and worth building explicitly.",
+    ],
+    relatedService: "/services/web3-mvp-development",
+    liveUrl: "https://write3-ai.vercel.app",
+    repoUrl: "https://github.com/theweb3wizard/Write3",
+    featured: true,
+  },
+  {
+    name: "AgentHub",
+    slug: "agenthub",
+    summary: "A secure access layer for AI coding assistants — policy-controlled access to databases, APIs, and infrastructure.",
+    description: "AgentHub solves a real problem in AI-native development: how do you give an AI coding assistant access to production resources without losing control of what it can do?",
+    status: "deployed",
+    category: "AI infrastructure tool",
+    builtBy: "The Web3 Wizard",
+    isPersonalProject: true,
+    problem: "AI coding assistants need access to databases, APIs, and infrastructure to be genuinely useful. Giving them broad access creates real security and compliance risks.",
+    whatItDoes: "A policy-controlled access layer that sits between AI coding tools and sensitive resources. It enforces access policies, maintains audit trails, and routes approvals to humans when required.",
+    decisions: [
+      "Design around least-privilege access — agents get the minimum access required for each task.",
+      "Make audit trails a first-class feature so every action is traceable.",
+      "Human approval gates for high-risk operations rather than blocking all sensitive access.",
+    ],
+    stack: ["TypeScript", "Node.js", "PostgreSQL", "Vercel"],
+    limitations: [
+      "This is a founder-built personal project, not a production enterprise tool.",
+      "Policy enforcement is limited to the integrations currently supported.",
+      "Security properties have not been formally audited.",
+    ],
+    lessons: [
+      "The hardest part of secure agent design is defining the right granularity of access policies.",
+      "Audit trails are only useful if they are easy to read, not just technically present.",
+    ],
+    relatedService: "/services/ai-agent-solana-engineering",
+    liveUrl: "https://agenthub-lyart.vercel.app",
+    repoUrl: "https://github.com/theweb3wizard/AgentHub",
+    featured: true,
+  },
   {
     name: "SolPulse",
     slug: "solpulse",
-    summary: "A founder-built Solana monitoring concept for clearer whale activity signals.",
-    description: "SolPulse explores how on-chain activity can become a calmer, more useful alerting experience for people who need to understand what changed.",
+    summary: "A founder-built Solana on-chain monitoring experiment — whale activity signals delivered via Telegram.",
+    description: "SolPulse turns raw Solana on-chain activity into a calmer, more readable monitoring workflow. Meaningful wallet movements delivered as plain-English Telegram alerts.",
     status: "deployed",
-    category: "Monitoring tool",
+    category: "Solana monitoring tool",
     builtBy: "The Web3 Wizard",
     isPersonalProject: true,
-    problem: "Raw wallet activity is noisy. The useful question is not whether something happened, but whether it deserves attention.",
-    whatItDoes: "A personal product experiment that turns selected Solana wallet movements into a more readable monitoring workflow.",
-    decisions: ["Prioritize a small number of meaningful signals instead of a wall of events.", "Keep the alert language plain enough to understand without a protocol background.", "Treat the product as an experiment and disclose what has not been verified."],
-    stack: ["Solana", "React", "TypeScript", "Telegram"],
-    limitations: ["This is personal work, not a client deployment.", "Coverage and reliability are limited to the current experiment.", "No investment or trading outcome is implied."],
-    lessons: ["Alerts are only useful when the user understands why they matter.", "A focused workflow can be more valuable than a larger data surface."],
-    relatedService: "/services/community-tools",
-    featured: true,
-  },
-  {
-    name: "TxPreview",
-    slug: "txpreview",
-    summary: "A founder-built interface concept for making transaction intent easier to inspect.",
-    description: "TxPreview explores the product experience around pausing before a wallet signature and asking what the action is really going to do.",
-    status: "deployed",
-    category: "Wallet utility",
-    builtBy: "The Web3 Wizard",
-    isPersonalProject: true,
-    problem: "Wallet prompts often compress important intent into unfamiliar contract data and a final button.",
-    whatItDoes: "A personal interface experiment for showing transaction context before a user confirms a wallet action.",
-    decisions: ["Explain the action in normal language before showing technical detail.", "Make uncertainty visible rather than pretending the interface can guarantee safety.", "Keep the primary journey short enough to be useful during a real decision."],
-    stack: ["React", "TypeScript", "Wallet APIs"],
-    limitations: ["This is a founder-built experiment, not a security certification.", "Smart-contract behavior is outside the scope of this product concept.", "The interface does not guarantee a transaction is safe."],
-    lessons: ["Clarity is part of product safety, but it is not a substitute for a formal audit.", "A user needs context before controls."],
-    relatedService: "/services/prototype-refinement",
-    featured: true,
-  },
-  {
-    name: "SearchLens",
-    slug: "searchlens",
-    summary: "A founder-built concept for helping teams understand how their products appear in AI-assisted search.",
-    description: "SearchLens is an independent product experiment focused on turning vague discoverability questions into a more structured review conversation.",
-    status: "concept",
-    category: "Research tool",
-    builtBy: "The Web3 Wizard",
-    isPersonalProject: true,
-    problem: "Teams want to know how their product is understood by search and AI systems, but the question is often too broad to act on.",
-    whatItDoes: "A concept for organizing search prompts, observed answers, and content decisions into a clearer working loop.",
-    decisions: ["Focus on questions and evidence instead of vanity rankings.", "Connect observations to content decisions a founder can actually make.", "Keep the concept clearly labeled until the workflow is fully built."],
-    stack: ["Product research", "React", "AI-assisted workflows"],
-    limitations: ["Concept build; not a finished commercial product.", "No search ranking or lead-generation outcome is promised.", "The workflow remains under refinement."],
-    lessons: ["A useful content system begins with a real buyer question.", "A concept should be labeled honestly before it becomes a product claim."],
-    relatedService: "/services/product-builds",
-    featured: true,
+    problem: "Raw Solana wallet activity is noisy. The useful question is not whether something happened, but whether it deserves attention — and most monitoring tools do not make that distinction.",
+    whatItDoes: "A personal product experiment that filters Solana wallet movements and delivers a smaller set of meaningful signals as readable Telegram notifications.",
+    decisions: [
+      "Prioritise a small number of meaningful signals over a wall of events.",
+      "Keep alert language plain enough to understand without a protocol background.",
+      "Treat the product as an experiment and disclose what has not been verified.",
+    ],
+    stack: ["Solana", "TypeScript", "Node.js", "Telegram Bot API"],
+    limitations: [
+      "This is personal work, not a client deployment.",
+      "Coverage and reliability are limited to the current experiment.",
+      "No investment or trading outcome is implied.",
+    ],
+    lessons: [
+      "Alerts are only useful when the user understands why they matter.",
+      "A focused monitoring workflow can be more valuable than a larger data surface.",
+    ],
+    relatedService: "/services/ai-agent-solana-engineering",
   },
   {
     name: "Community Signal",
     slug: "community-signal",
-    summary: "A building-stage experiment for turning community activity into a clearer next action.",
-    description: "Community Signal explores how a Telegram or Discord workflow can guide people from attention to a product action without adding unnecessary complexity.",
+    summary: "A building-stage experiment for turning Telegram and Discord community activity into a clearer next action.",
+    description: "Community Signal explores how a Telegram or Discord workflow can guide people from community attention to a product action without unnecessary complexity.",
     status: "building",
-    category: "Community tool",
+    category: "Community automation",
     builtBy: "The Web3 Wizard",
     isPersonalProject: true,
-    problem: "Community activity is easy to measure and difficult to turn into a coherent product journey.",
-    whatItDoes: "A building-stage experiment in community prompts, lightweight actions, and useful handoffs.",
-    decisions: ["Start with one clear action rather than a full community operating system.", "Keep the experience useful without assuming token incentives.", "Document the unknowns before calling the concept complete."],
-    stack: ["Telegram", "Discord", "React"],
-    limitations: ["Building-stage personal project.", "No community growth or adoption result is claimed.", "The workflow is not currently offered as a ready-made product."],
-    lessons: ["Community tools work best when they reduce a real friction point.", "Distribution is not a substitute for product value."],
-    relatedService: "/services/community-tools",
+    problem: "Community activity is easy to measure and difficult to turn into a coherent product journey. Most community bots add noise rather than reduce friction.",
+    whatItDoes: "A building-stage experiment in community prompts, lightweight action flows, and useful handoffs between community interaction and product engagement.",
+    decisions: [
+      "Start with one clear action rather than a full community operating system.",
+      "Keep the experience useful without assuming token incentives.",
+      "Document the unknowns before calling the concept complete.",
+    ],
+    stack: ["TypeScript", "Telegram Bot API", "Discord API", "Node.js"],
+    limitations: [
+      "Building-stage personal project — not yet offered as a product.",
+      "No community growth or adoption result is claimed.",
+      "The workflow is under active development.",
+    ],
+    lessons: [
+      "Community tools work best when they reduce a real friction point rather than create a new channel.",
+      "Distribution is not a substitute for product value.",
+    ],
+    relatedService: "/services/ai-agent-solana-engineering",
   },
 ];
 
+// ─── Insights ─────────────────────────────────────────────────────────────────
+
 export const insights: Insight[] = [
-  { title: "How to scope a Web3 product before spending money", slug: "scope-a-web3-product-before-spending-money", description: "A plain-English framework for deciding what belongs in a first Web3 product and what should wait.", category: "Product decisions", readingTime: "6 min read", relatedService: "/services/product-builds", draft: false },
-  { title: "Why a Web3 prototype can fail when real users touch it", slug: "why-a-web3-prototype-can-fail", description: "The gap between a working demo and a product that explains itself under real user pressure.", category: "Prototype refinement", readingTime: "5 min read", relatedService: "/services/prototype-refinement", draft: false },
-  { title: "How to use AI when building a Web3 product without blindly trusting the output", slug: "use-ai-without-blindly-trusting-it", description: "A practical look at directing, challenging, testing, and taking responsibility for AI-assisted product work.", category: "AI-assisted building", readingTime: "7 min read", relatedService: "/services/application-review", draft: false },
+  {
+    title: "How to scope a Web3 MVP before spending money",
+    slug: "scope-a-web3-product-before-spending-money",
+    description: "A practical framework for Web3 founders deciding what to build first. How to define an MVP, eliminate unnecessary scope, and avoid building the wrong thing.",
+    category: "Product strategy",
+    readingTime: "6 min read",
+    relatedService: "/services/product-discovery",
+    datePublished: "2026-08-13",
+    draft: false,
+  },
+  {
+    title: "Why a Web3 prototype fails when real users touch it",
+    slug: "why-a-web3-prototype-can-fail",
+    description: "The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and what to fix before launch.",
+    category: "Web3 product development",
+    readingTime: "5 min read",
+    relatedService: "/services/web3-mvp-development",
+    datePublished: "2026-08-13",
+    draft: false,
+  },
+  {
+    title: "How to use AI in Web3 product development without blindly trusting it",
+    slug: "use-ai-without-blindly-trusting-it",
+    description: "A practical guide to AI-native Web3 product development. How to direct AI tools, challenge their output, test what matters, and stay accountable for what ships.",
+    category: "AI-native development",
+    readingTime: "7 min read",
+    relatedService: "/services/web3-mvp-development",
+    datePublished: "2026-08-13",
+    draft: false,
+  },
 ];
 
+// ─── Services ─────────────────────────────────────────────────────────────────
+
 export const services = {
-  productBuilds: { slug: "product-builds", label: "Product builds", eyebrow: "FOCUSED PRODUCT BUILDS", title: "Turn the idea into the smallest useful product.", description: "For founders and small teams who need a focused Web3 application, dashboard, internal tool, or prototype built without unnecessary agency layers.", cta: "Tell me what you want to build", query: "product-builds" },
-  prototypeRefinement: { slug: "prototype-refinement", label: "Prototype refinement", eyebrow: "PROTOTYPE REFINEMENT", title: "Your prototype should help people understand the product, not make them work for it.", description: "I help refine rough, confusing, incomplete, or AI-assisted prototypes into clearer product experiences with a more reliable main journey.", cta: "Review my prototype", query: "prototype-refinement" },
-  communityTools: { slug: "community-tools", label: "Community tools", eyebrow: "COMMUNITY TOOLS", title: "Turn community attention into a useful product experience.", description: "Build focused Telegram Mini Apps, Discord tools, alerts, wallet utilities, and community workflows that help people take a clear next action.", cta: "Discuss a community tool", query: "community-tools" },
-  applicationReview: { slug: "application-review", label: "Application review", eyebrow: "APPLICATION-LAYER REVIEW", title: "A focused review before you trust your application to real users.", description: "A narrow application-layer review for fast-built and AI-assisted Web3 applications. It focuses on users, access, secrets, configuration, and important trust boundaries.", cta: "Request an application review", query: "application-review" },
+  productDiscovery: {
+    slug: "product-discovery",
+    label: "Product Discovery Sprint",
+    eyebrow: "PRODUCT DISCOVERY SPRINT",
+    title: "Turn your Web3 problem into a build-ready product direction.",
+    description: "For founders who have a real problem or promising idea but need clarity before committing to a build. We define the user, scope the MVP, and produce a direction you can act on.",
+    cta: "Start with your problem",
+    query: "product-discovery",
+  },
+  web3MvpDevelopment: {
+    slug: "web3-mvp-development",
+    label: "AI-Native Web3 Product Build",
+    eyebrow: "AI-NATIVE WEB3 PRODUCT BUILD",
+    title: "Build the smallest useful Web3 product — and ship it.",
+    description: "For founders with a validated problem, product concept, prototype, or specification. We build focused AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
+    cta: "Discuss your product",
+    query: "web3-mvp-development",
+  },
+  aiAgentSolanaEngineering: {
+    slug: "ai-agent-solana-engineering",
+    label: "AI Agent & Solana Engineering",
+    eyebrow: "AI AGENT & SOLANA ENGINEERING",
+    title: "Specialist AI agent and Solana engineering for Web3 teams.",
+    description: "For teams that already know the capability they need. AI agents, autonomous workflows, Telegram and Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features.",
+    cta: "Discuss the capability",
+    query: "ai-agent-solana-engineering",
+  },
 } as const;
+
+// ─── Navigation ───────────────────────────────────────────────────────────────
 
 export const navLinks = [
   { label: "Services", href: "/services" },

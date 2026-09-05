@@ -122,8 +122,10 @@ export function SiteFooter() {
           <a href="https://x.com/theweb3wizard00" target="_blank" rel="noreferrer">X (Twitter)</a>
           <a href="https://t.me/theweb3wizard00" target="_blank" rel="noreferrer">Telegram</a>
           <a href="https://github.com/theweb3wizard" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/theweb3wizard00" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:theweb3wizard00@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/theweb3wizard00" target="_blank" rel="noreferrer">LinkedIn</a>
+                          <a href="https://medium.com/@theweb3wizard00" target="_blank" rel="noreferrer">Medium</a>
+                          <a href="https://substack.com/@theweb3wizard00" target="_blank" rel="noreferrer">Substack</a>
+                          <a href="mailto:theweb3wizard00@gmail.com">Email</a>
         </div>
       </div>
       <div className="container footer-bottom">

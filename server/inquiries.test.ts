@@ -53,7 +53,7 @@ describe("buildTelegramMessage", () => {
     const input = inquiryInputSchema.parse(valid);
     const message = buildTelegramMessage(input);
 
-    expect(message).toContain("New Inquiry — Web3 Wizard Labs");
+    expect(message).toContain("New Inquiry — The Web3 Wizard Labs");
     expect(message).toContain("Khalid Test");
     expect(message).toContain("founder@example.com");
     expect(message).toContain("What they want to build:");

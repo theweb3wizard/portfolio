@@ -22,7 +22,7 @@ export function buildTelegramMessage(input: z.infer<typeof inquiryInputSchema>):
     `${emoji} *${label}:* ${value || "—"}`;
 
   return [
-    "🔔 *New Inquiry — Web3 Wizard Labs*",
+    "🔔 *New Inquiry — The Web3 Wizard Labs*",
     "",
     line("👤", "Name", input.name),
     line("📧", "Email", input.email),

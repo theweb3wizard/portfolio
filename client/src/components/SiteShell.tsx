@@ -6,9 +6,9 @@ import { navLinks } from "@/site";
 
 export function BrandMark() {
   return (
-    <Link href="/" className="brand-mark" aria-label="The Web3 Wizard — home">
+    <Link href="/" className="brand-mark" aria-label="The Web3 Wizard home">
       <span className="brand-glyph">W</span>
-      <span>Web3 Wizard Labs</span>
+      <span>The Web3 Wizard</span>
     </Link>
   );
 }
@@ -51,7 +51,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link href="/start" className="button button-primary header-cta">
-          Bring us the problem <ArrowUpRight size={15} />
+          Start a conversation <ArrowUpRight size={15} />
         </Link>
         <button
           className="mobile-menu-button"
@@ -82,7 +82,7 @@ export function SiteHeader() {
               <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>
             ))}
             <Link href="/start" className="button button-primary" onClick={() => setOpen(false)}>
-              Bring us the problem <ArrowUpRight size={15} />
+              Start a conversation <ArrowUpRight size={15} />
             </Link>
           </nav>
         </div>,
@@ -109,7 +109,7 @@ export function SiteFooter() {
           <Link href="/services">Services</Link>
           <Link href="/work">Work</Link>
           <Link href="/insights">Insights</Link>
-          <Link href="/start">Start a project</Link>
+          <Link href="/start">Start a conversation</Link>
         </div>
         <div>
           <span className="footer-label">Services</span>
@@ -127,7 +127,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© 2026 Web3 Wizard Labs. Built by Khalid Murtala — The Web3 Wizard.</span>
+        <span>© 2026 The Web3 Wizard Labs · Founded by Khalid Murtala.</span>
         <span>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>

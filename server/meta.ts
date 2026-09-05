@@ -12,13 +12,16 @@
 export const SITE_URL = "https://www.theweb3wizard.xyz";
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const OG_IMAGE_ALT =
-  "The Web3 Wizard — AI-native Web3 product studio. Turn your Web3 problem into a working product.";
+  "The Web3 Wizard: AI-Native Web3 Product Studio. Turn your Web3 problem into a working product.";
 
 const AUTHOR_NAME = "Khalid Murtala";
 const PERSONA = "The Web3 Wizard";
-const ORG_NAME = "Web3 Wizard Labs";
+const ORG_NAME = "The Web3 Wizard Labs";
+// Public brand shown in social cards (og:site_name). The formal entity name
+// (ORG_NAME) is reserved for schema.org / legal / publisher fields.
+const SITE_NAME = PERSONA;
 const STUDIO_DESCRIPTION =
-  "The Web3 Wizard is a founder-led AI-native Web3 product studio. We turn real problems and product ideas into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.";
+  "The Web3 Wizard is a founder-led AI-native Web3 product studio. We help early-stage Web3 founders and small teams turn real problems and roadmap milestones into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.";
 
 // ─── Entity schemas ────────────────────────────────────────────────────────────
 
@@ -69,8 +72,9 @@ const ORGANIZATION_SCHEMA = {
   ],
   sameAs: [
     "https://github.com/theweb3wizard",
-    "https://x.com/theweb3wizard00",
     "https://www.linkedin.com/in/theweb3wizard00",
+    "https://x.com/theweb3wizard00",
+    "https://t.me/theweb3wizard00",
   ],
 };
 
@@ -103,7 +107,7 @@ const FAQ_SCHEMA = {
       name: "What does The Web3 Wizard do?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Web3 Wizard (Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We turn problems and product ideas into focused working products — AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
+        text: "The Web3 Wizard (The Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We help early-stage founders and small teams turn problems and product ideas into focused working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
       },
     },
     {
@@ -127,7 +131,7 @@ const FAQ_SCHEMA = {
       name: "Do you have client testimonials?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not yet. Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly.",
+        text: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly.",
       },
     },
     {
@@ -143,7 +147,7 @@ const FAQ_SCHEMA = {
       name: "Do you write smart contracts?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The studio focuses on product experiences, application layers, AI agents, and integrations. Smart-contract auditing is outside scope. Smart-contract integration can be discussed for specific engagements.",
+        text: "The studio focuses on product experiences, application layers, AI agents, and integrations. Smart-contract auditing is outside scope. Smart-contract integration at the product layer can be discussed for specific engagements.",
       },
     },
     {
@@ -285,7 +289,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/services/product-discovery": {
     title: "Product Discovery Sprint | Web3 Product Studio | The Web3 Wizard",
     description:
-      "Turn a Web3 problem or idea into a build-ready product direction. Clarify the user, define the MVP scope, and decide what to build first — before committing to a larger engagement.",
+      "Turn a Web3 problem or idea into a build-ready product direction. Clarify the user, define the MVP scope, and decide what to build first before committing to a larger engagement.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
@@ -303,7 +307,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/services/web3-mvp-development": {
     title: "AI-Native Web3 Product Build | MVP Development | The Web3 Wizard",
     description:
-      "Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, dashboards, and Web3 MVPs — built by a founder-led AI-native studio.",
+      "Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, dashboards, and Web3 MVPs built by a founder-led AI-native studio.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
@@ -340,7 +344,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/work": {
     title: "Founder-Built Web3 Projects | AI Agents, Solana & dApps | The Web3 Wizard",
     description:
-      "Evidence-driven portfolio of founder-built Web3 projects. AI agents, Solana monitoring tools, EVM wallet intelligence, AI content tools, and Web3 automation — built and shipped by Khalid Murtala.",
+      "Evidence-driven portfolio of founder-built Web3 projects. AI agents, Solana monitoring tools, EVM wallet intelligence, AI content tools, and Web3 automation built and shipped by Khalid Murtala.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -351,7 +355,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/valor": {
-    title: "Valor — AI Agent for Telegram | Web3 AI Agent | The Web3 Wizard",
+    title: "Valor | AI Agent for Telegram | Web3 AI Agent | The Web3 Wizard",
     description:
       "Valor is a founder-built AI agent for Telegram. An autonomous conversational agent built for Web3 communities and workflows on the Telegram platform.",
     schemas: [
@@ -371,7 +375,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/walletlens": {
-    title: "WalletLens — AI-Powered EVM Wallet Intelligence | The Web3 Wizard",
+    title: "WalletLens | AI-Powered EVM Wallet Intelligence | The Web3 Wizard",
     description:
       "WalletLens is a founder-built AI-powered EVM wallet intelligence tool. Analyse Ethereum, Polygon, BNB Chain, Arbitrum, and Base wallets with natural language AI queries.",
     schemas: [
@@ -391,7 +395,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/write3": {
-    title: "Write3 — AI Web3 Content Generator | The Web3 Wizard",
+    title: "Write3 | AI Web3 Content Generator | The Web3 Wizard",
     description:
       "Write3 is a founder-built AI-powered Web3 content generation tool for X, Discord, Telegram, Farcaster, and blogs. AI-native content workflows for Web3 communities.",
     schemas: [
@@ -411,7 +415,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/agenthub": {
-    title: "AgentHub — Secure AI Agent Access Layer | The Web3 Wizard",
+    title: "AgentHub | Secure AI Agent Access Layer | The Web3 Wizard",
     description:
       "AgentHub is a founder-built secure access layer for AI coding assistants. Policy-controlled access to databases, APIs, and infrastructure with audit trails and human approval gates.",
     schemas: [
@@ -430,8 +434,28 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     ],
   },
 
+  "/work/orderflow": {
+    title: "OrderFlow | AI Trading Journal on Injective | The Web3 Wizard",
+    description:
+      "OrderFlow is a founder-built AI trading journal for Injective Protocol. It reads your on-chain trading history and shows exactly where you are leaking money, what is working, and what to fix.",
+    schemas: [
+      PERSON_SCHEMA,
+      softwareSchema(
+        "OrderFlow",
+        "AI-powered trading journal for Injective Protocol. Analyses on-chain trading history and turns it into specific, evidence-based feedback.",
+        "https://orderflow-hq.vercel.app",
+        "https://github.com/theweb3wizard/orderflow",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Work", url: `${SITE_URL}/work` },
+        { name: "OrderFlow", url: `${SITE_URL}/work/orderflow` },
+      ]),
+    ],
+  },
+
   "/work/solpulse": {
-    title: "SolPulse — Solana Wallet Monitoring Tool | The Web3 Wizard",
+    title: "SolPulse | Solana Wallet Monitoring Tool | The Web3 Wizard",
     description:
       "SolPulse is a founder-built Solana on-chain monitoring experiment. Turns Solana wallet activity into calmer, more readable alert signals via Telegram.",
     schemas: [
@@ -449,7 +473,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/community-signal": {
-    title: "Community Signal — Web3 Community Action Tool | The Web3 Wizard",
+    title: "Community Signal | Web3 Community Action Tool | The Web3 Wizard",
     description:
       "Community Signal is a building-stage experiment for turning Telegram and Discord community activity into a clearer next action without unnecessary complexity.",
     schemas: [
@@ -466,7 +490,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/about": {
     title: "About The Web3 Wizard | Khalid Murtala | AI-Native Web3 Studio",
     description:
-      "Khalid Murtala is the founder of The Web3 Wizard (Web3 Wizard Labs) — a founder-led AI-native Web3 product studio. We build AI agents, Solana applications, dApps, and focused Web3 MVPs.",
+      "Khalid Murtala is the founder of The Web3 Wizard (The Web3 Wizard Labs), a founder-led AI-native Web3 product studio. We build AI agents, Solana applications, dApps, and focused Web3 MVPs.",
     schemas: [
       PERSON_SCHEMA,
       ORGANIZATION_SCHEMA,
@@ -556,7 +580,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
         { name: "Home", url: SITE_URL },
         { name: "Insights", url: `${SITE_URL}/insights` },
         {
-          name: "How to Use AI in Web3 Development Without Blindly Trusting It",
+          name: "How to Use AI in Web3 Product Development Without Blindly Trusting It",
           url: `${SITE_URL}/insights/use-ai-without-blindly-trusting-it`,
         },
       ]),
@@ -565,7 +589,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // ── Start / contact (noindex) ─────────────────────────────────────────────
   "/start": {
-    title: "Start a Conversation | Web3 Wizard Labs",
+    title: "Start a Conversation | The Web3 Wizard",
     description:
       "Tell The Web3 Wizard what you are trying to build. Discuss an AI agent, Solana application, dApp, MVP, or Web3 automation project.",
     noindex: true,
@@ -574,16 +598,16 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // ── Legal ─────────────────────────────────────────────────────────────────
   "/privacy": {
-    title: "Privacy Policy | Web3 Wizard Labs",
+    title: "Privacy Policy | The Web3 Wizard",
     description:
-      "How Web3 Wizard Labs handles inquiry submissions and personal information. No database. Inquiries are delivered via Telegram notification.",
+      "How The Web3 Wizard Labs handles inquiry submissions and personal information. No database. Inquiries are delivered via Telegram notification.",
     schemas: [PERSON_SCHEMA],
   },
 
   "/terms": {
-    title: "Terms of Service | Web3 Wizard Labs",
+    title: "Terms of Service | The Web3 Wizard",
     description:
-      "Clear boundaries for Web3 Wizard Labs engagements. Service scope, limitations, and what is explicitly outside scope.",
+      "Clear boundaries for The Web3 Wizard Labs engagements. Service scope, limitations, and what is explicitly outside scope.",
     schemas: [PERSON_SCHEMA],
   },
 };
@@ -631,7 +655,7 @@ export function injectMetaIntoHtml(html: string, pathname: string): string {
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}" />
-  <meta property="og:site_name" content="${escapeHtml(ORG_NAME)}" />
+  <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />

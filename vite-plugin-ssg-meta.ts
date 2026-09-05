@@ -31,6 +31,7 @@ export const SSG_ROUTES = [
   "/work/walletlens",
   "/work/write3",
   "/work/agenthub",
+  "/work/orderflow",
   "/work/solpulse",
   "/work/community-signal",
   "/about",

@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     name: "Valor",
     slug: "valor",
-    summary: "A founder-built AI agent for Telegram — autonomous conversation and task execution for Web3 communities.",
+    summary: "A founder-built AI agent for Telegram: autonomous conversation and task execution for Web3 communities.",
     description: "Valor is an AI agent that operates inside Telegram. It handles conversations, answers questions, and executes tasks autonomously within Web3 community contexts.",
     status: "deployed",
     category: "AI agent",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     decisions: [
       "Build around conversational context rather than keyword triggers to make the agent genuinely useful.",
       "Define a clear capability boundary so the agent does not pretend to know things it does not.",
-      "Keep the deployment model simple — Telegram webhooks, no complex infrastructure.",
+      "Keep the deployment model simple. Telegram webhooks, no complex infrastructure.",
     ],
     stack: ["TypeScript", "Node.js", "Telegram Bot API", "OpenAI API", "Vercel"],
     limitations: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     name: "WalletLens",
     slug: "walletlens",
-    summary: "AI-powered EVM wallet intelligence — query Ethereum, Polygon, BNB, Arbitrum, and Base wallets in plain English.",
+    summary: "AI-powered EVM wallet intelligence: query Ethereum, Polygon, BNB, Arbitrum, and Base wallets in plain English.",
     description: "WalletLens turns EVM on-chain data into something a non-technical founder can actually interrogate. Natural language queries replace raw blockchain explorers.",
     status: "deployed",
     category: "Web3 AI tool",
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     limitations: [
       "This is a founder-built personal project.",
       "Generated content requires human review before publishing.",
-      "The tool does not post directly to platforms — it generates drafts for human distribution.",
+      "The tool does not post directly to platforms. It generates drafts for human distribution.",
     ],
     lessons: [
       "AI content tools are most useful when they reduce a specific friction, not when they try to replace the entire content workflow.",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
   {
     name: "AgentHub",
     slug: "agenthub",
-    summary: "A secure access layer for AI coding assistants — policy-controlled access to databases, APIs, and infrastructure.",
+    summary: "A secure access layer for AI coding assistants: policy-controlled access to databases, APIs, and infrastructure.",
     description: "AgentHub solves a real problem in AI-native development: how do you give an AI coding assistant access to production resources without losing control of what it can do?",
     status: "deployed",
     category: "AI infrastructure tool",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     problem: "AI coding assistants need access to databases, APIs, and infrastructure to be genuinely useful. Giving them broad access creates real security and compliance risks.",
     whatItDoes: "A policy-controlled access layer that sits between AI coding tools and sensitive resources. It enforces access policies, maintains audit trails, and routes approvals to humans when required.",
     decisions: [
-      "Design around least-privilege access — agents get the minimum access required for each task.",
+      "Design around least-privilege access. Agents get the minimum access required for each task.",
       "Make audit trails a first-class feature so every action is traceable.",
       "Human approval gates for high-risk operations rather than blocking all sensitive access.",
     ],
@@ -162,15 +162,45 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "OrderFlow",
+    slug: "orderflow",
+    summary: "A founder-built AI trading journal that reads on-chain history from Injective and shows a trader exactly where they are leaking money.",
+    description: "OrderFlow is an AI-powered trading journal for Injective Protocol. It reads your on-chain trading history and turns it into specific, evidence-based feedback: where you are leaking money, what you are doing well, and what to fix next.",
+    status: "deployed",
+    category: "AI trading analytics",
+    builtBy: "The Web3 Wizard",
+    isPersonalProject: true,
+    problem: "Most traders review their performance from memory or scattered screenshots. Their on-chain history holds the real story, but it is hard to read and even harder to turn into a concrete change in behaviour.",
+    whatItDoes: "A web application that pulls a trader's on-chain history from Injective Protocol and analyses it with AI. It surfaces patterns across the trades, highlights where money is being lost, points out what is working, and gives specific suggestions drawn from the trader's own activity.",
+    decisions: [
+      "Anchor every insight to real on-chain evidence from the user's own trades rather than generic trading advice.",
+      "Use AI to interpret patterns, but frame the output as review and reflection, not signals or predictions.",
+      "Focus on a single chain (Injective) to read its data accurately rather than covering many chains shallowly.",
+    ],
+    stack: ["Next.js", "Gemini AI", "Injective SDK", "TypeScript"],
+    limitations: [
+      "This is a founder-built personal project, not a production trading service.",
+      "It reviews past on-chain activity. It does not provide trading signals, predictions, or financial advice.",
+      "Coverage is limited to Injective Protocol trading history.",
+    ],
+    lessons: [
+      "Analysis is only useful when it points to a specific, evidence-backed action.",
+      "Reading one chain's data well is more valuable than reading many chains shallowly.",
+    ],
+    relatedService: "/services/web3-mvp-development",
+    liveUrl: "https://orderflow-hq.vercel.app",
+    repoUrl: "https://github.com/theweb3wizard/orderflow",
+  },
+  {
     name: "SolPulse",
     slug: "solpulse",
-    summary: "A founder-built Solana on-chain monitoring experiment — whale activity signals delivered via Telegram.",
+    summary: "A founder-built Solana on-chain monitoring experiment: whale activity signals delivered via Telegram.",
     description: "SolPulse turns raw Solana on-chain activity into a calmer, more readable monitoring workflow. Meaningful wallet movements delivered as plain-English Telegram alerts.",
     status: "deployed",
     category: "Solana monitoring tool",
     builtBy: "The Web3 Wizard",
     isPersonalProject: true,
-    problem: "Raw Solana wallet activity is noisy. The useful question is not whether something happened, but whether it deserves attention — and most monitoring tools do not make that distinction.",
+    problem: "Raw Solana wallet activity is noisy. The useful question is not whether something happened, but whether it deserves attention. Most monitoring tools do not make that distinction.",
     whatItDoes: "A personal product experiment that filters Solana wallet movements and delivers a smaller set of meaningful signals as readable Telegram notifications.",
     decisions: [
       "Prioritise a small number of meaningful signals over a wall of events.",
@@ -207,7 +237,7 @@ export const projects: Project[] = [
     ],
     stack: ["TypeScript", "Telegram Bot API", "Discord API", "Node.js"],
     limitations: [
-      "Building-stage personal project — not yet offered as a product.",
+      "Building-stage personal project. Not yet offered as a product.",
       "No community growth or adoption result is claimed.",
       "The workflow is under active development.",
     ],
@@ -262,7 +292,7 @@ export const services = {
     label: "Product Discovery Sprint",
     eyebrow: "PRODUCT DISCOVERY SPRINT",
     title: "Turn your Web3 problem into a build-ready product direction.",
-    description: "For founders who have a real problem or promising idea but need clarity before committing to a build. We define the user, scope the MVP, and produce a direction you can act on.",
+    description: "Start here if you are not yet sure what to build. For founders and small teams with a real problem or promising idea, we define the user, scope the MVP, and produce a direction you can act on with confidence.",
     cta: "Start with your problem",
     query: "product-discovery",
   },
@@ -270,8 +300,8 @@ export const services = {
     slug: "web3-mvp-development",
     label: "AI-Native Web3 Product Build",
     eyebrow: "AI-NATIVE WEB3 PRODUCT BUILD",
-    title: "Build the smallest useful Web3 product — and ship it.",
-    description: "For founders with a validated problem, product concept, prototype, or specification. We build focused AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
+    title: "Build the smallest useful Web3 product and ship it.",
+    description: "The core engagement. For founders and small teams with a validated problem, concept, prototype, or spec, we build and ship a focused product: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
     cta: "Discuss your product",
     query: "web3-mvp-development",
   },
@@ -280,7 +310,7 @@ export const services = {
     label: "AI Agent & Solana Engineering",
     eyebrow: "AI AGENT & SOLANA ENGINEERING",
     title: "Specialist AI agent and Solana engineering for Web3 teams.",
-    description: "For teams that already know the capability they need. AI agents, autonomous workflows, Telegram and Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features.",
+    description: "A specialist capability for teams that already know what they need. AI agents, autonomous workflows, Telegram and Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features.",
     cta: "Discuss the capability",
     query: "ai-agent-solana-engineering",
   },
@@ -289,8 +319,9 @@ export const services = {
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
 export const navLinks = [
-  { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/start" },
 ];

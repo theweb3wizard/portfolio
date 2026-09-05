@@ -11,7 +11,7 @@ import { getInquiryFormState, getInquirySubmitA11y, shouldBlockInquirySubmit } f
 const faqItems = [
   {
     question: "What does The Web3 Wizard do?",
-    answer: "The Web3 Wizard (Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We turn real problems and product ideas into focused working products — AI agents, Solana applications, dApps, automation tools, and Web3 MVPs."
+    answer: "The Web3 Wizard (The Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We help early-stage founders and small teams turn problems and product ideas into focused working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs."
   },
   {
     question: "Do you build AI agents?",
@@ -23,7 +23,7 @@ const faqItems = [
   },
   {
     question: "Do you have client testimonials?",
-    answer: "Not yet. Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly."
+    answer: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly."
   },
   {
     question: "Are the portfolio projects client work?",
@@ -49,12 +49,12 @@ export function Home() {
             <span className="eyebrow">AI-NATIVE WEB3 PRODUCT STUDIO</span>
             <h1>Turn Your Web3 Problem Into a Working Product.</h1>
             <p className="hero-copy">
-              The Web3 Wizard is a founder-led AI-native product studio helping early-stage Web3 founders
-              turn problems and ideas into focused, working products — AI agents, Solana applications,
-              dApps, automation tools, and Web3 MVPs.
+              The Web3 Wizard is a founder-led AI-native product studio helping early-stage Web3
+              founders and small teams turn important problems and roadmap milestones into focused,
+              working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.
             </p>
             <div className="hero-actions">
-              <ButtonLink href="/start">Bring us the problem</ButtonLink>
+              <ButtonLink href="/start">Start a conversation</ButtonLink>
               <ButtonLink href="/work" variant="secondary">See the work</ButtonLink>
             </div>
             <p className="hero-note">
@@ -105,7 +105,7 @@ export function Home() {
             />
             <ProblemCard
               title="I need an AI agent or Solana integration"
-              copy="You know the capability you need — an AI agent, Solana integration, or automated Web3 workflow."
+              copy="You know the capability you need: an AI agent, Solana integration, or automated Web3 workflow."
               href="/services/ai-agent-solana-engineering"
               label="Explore AI Agent & Solana Engineering"
             />
@@ -124,7 +124,7 @@ export function Home() {
         <div className="container capabilities-grid">
           <SectionHeading
             eyebrow="CAPABILITIES"
-            title="What we build"
+            title="What I help you build"
             children="The goal is not to build the largest possible system. It is to identify the smallest useful product, make the important decisions clear, and ship something you can learn from."
           />
           <div className="capability-list">
@@ -150,7 +150,7 @@ export function Home() {
           <SectionHeading
             eyebrow="FOUNDER-BUILT WORK"
             title="Real projects. Real code. Clearly labeled."
-            children="These are founder-built personal projects — not client case studies. Each one demonstrates a real capability."
+            children="These are founder-built personal projects, not client case studies. Each one demonstrates a real capability."
           />
           <div className="projects-grid">
             {projects.filter((p) => p.featured).map((project) => (
@@ -166,10 +166,10 @@ export function Home() {
       {/* Process */}
       <section className="section">
         <div className="container">
-          <SectionHeading eyebrow="HOW IT WORKS" title="Discover → Define → Build → Verify → Ship" />
+          <SectionHeading eyebrow="HOW IT WORKS" title="Understand → Define → Build → Verify → Ship" />
           <div className="process-grid">
             {[
-              { n: "01", t: "Discover", p: "Understand the problem, the user, and what actually needs to be built." },
+              { n: "01", t: "Understand", p: "Get clear on the problem, the user, and what actually needs to be built." },
               { n: "02", t: "Define", p: "Scope the smallest useful product. Agree the first meaningful outcome." },
               { n: "03", t: "Build", p: "AI-native execution. Fast without cutting corners on what matters." },
               { n: "04", t: "Verify", p: "Test the important behaviour. Document limitations honestly." },
@@ -211,7 +211,7 @@ export function Home() {
         <div className="container split-callout">
           <div>
             <SectionHeading
-              eyebrow="WHAT WE BUILD — AND WHAT WE DON'T"
+              eyebrow="WHAT WE BUILD AND WHAT WE DON'T"
               title="Focused scope. Honest limits."
               children="We build focused MVPs and product capabilities, not entire companies."
             />
@@ -238,6 +238,53 @@ export function Home() {
         </div>
       </section>
 
+      {/* About the founder */}
+      <section className="section">
+        <div className="container split-callout">
+          <div>
+            <SectionHeading
+              eyebrow="ABOUT THE FOUNDER"
+              title="Built and directed by Khalid Murtala."
+              children="I am Khalid Murtala, the founder of The Web3 Wizard. I work directly with founders and small teams, from the first conversation through to handover, so the person building your product is the person you talk to."
+            />
+          </div>
+          <div className="callout-panel">
+            <p className="capability-copy">
+              This is a founder-led operation, not an agency with layers between you and the work.
+              AI accelerates the build. I direct it, challenge it, test what matters, and stay
+              accountable for what ships.
+            </p>
+            <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <ButtonLink href="/about" variant="secondary">More about the studio</ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Insights teaser */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="INSIGHTS"
+            title="Practical thinking for Web3 founders."
+            children="Notes on scoping, shipping, and building Web3 products real users can navigate."
+          />
+          <div className="insight-grid">
+            {insights.slice(0, 3).map((item) => (
+              <Link href={`/insights/${item.slug}`} className="insight-card" key={item.slug}>
+                <span className="eyebrow">{item.category}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span className="inline-link">{item.readingTime} <ArrowUpRight size={14} /></span>
+              </Link>
+            ))}
+          </div>
+          <div style={{ marginTop: 28 }}>
+            <ButtonLink href="/insights" variant="secondary">Read all insights</ButtonLink>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="cta-section">
         <div className="container">
@@ -247,7 +294,7 @@ export function Home() {
             Tell us what you are trying to build, where you are stuck, and what
             a working first version needs to do.
           </p>
-          <ButtonLink href="/start">Bring us the problem</ButtonLink>
+          <ButtonLink href="/start">Start a conversation</ButtonLink>
         </div>
       </section>
     </PageFrame>
@@ -326,7 +373,7 @@ const serviceDetail = (key: keyof typeof services) => ({
       "Defined problem statement and target user",
       "Review of existing alternatives",
       "Core workflow and user journey",
-      "MVP scope — what to build and what to defer",
+      "MVP scope: what to build and what to defer",
       "Technical feasibility assessment",
       "Where AI or Web3 adds genuine value vs. unnecessary complexity",
       "Build-ready product direction",
@@ -367,7 +414,7 @@ const serviceDetail = (key: keyof typeof services) => ({
   },
   aiAgentSolanaEngineering: {
     good: [
-      "You know the specific capability you need — an AI agent, Solana integration, or automated workflow",
+      "You know the specific capability you need: an AI agent, Solana integration, or automated workflow",
       "You have an existing product that needs a new AI or Solana capability",
       "You need a Telegram or Discord AI agent for a Web3 community",
       "You need on-chain data pipelines, wallet monitoring, or Solana application features",
@@ -461,12 +508,12 @@ export function WorkPage() {
       <PageHero
         eyebrow="FOUNDER-BUILT WORK"
         title="Real projects. Real evidence. Clearly labeled."
-        description="A portfolio of founder-built Web3 projects by Khalid Murtala — AI agents, Solana tools, EVM wallet intelligence, and Web3 automation. These are personal projects, not client case studies."
+        description="A portfolio of founder-built Web3 projects by Khalid Murtala: AI agents, Solana tools, EVM wallet intelligence, and Web3 automation. These are personal projects, not client case studies."
       />
       <div className="page-content">
         <div className="container">
           <div className="work-filter">
-            {(["all", "deployed", "building", "concept"] as const).map((value) => (
+            {(["all", "deployed", "building"] as const).map((value) => (
               <button
                 key={value}
                 className={`filter-button ${filter === value ? "active" : ""}`}
@@ -514,7 +561,7 @@ export function ProjectDetailPage() {
         <div className="container">
           <div className="project-detail-hero">
             <div>
-              <span className="personal-label">Founder-built personal project — not client work</span>
+              <span className="personal-label">Founder-built personal project. Not client work.</span>
               <h1>{project.name}</h1>
               <p className="hero-copy">{project.description}</p>
               <div className="card-meta" style={{ marginTop: 25 }}>
@@ -581,23 +628,23 @@ export function AboutPage() {
       <PageHero
         eyebrow="ABOUT THE STUDIO"
         title="Khalid Murtala. Founder of The Web3 Wizard."
-        description="Web3 Wizard Labs is a founder-led AI-native Web3 product studio operated by Khalid Murtala. We turn real Web3 problems and product ideas into focused, working products."
+        description="The Web3 Wizard Labs is a founder-led AI-native Web3 product studio operated by Khalid Murtala. We help early-stage founders and small teams turn real Web3 problems and roadmap milestones into focused, working products."
       />
       <div className="page-content">
         <div className="container about-grid">
           <aside className="about-aside">
             <span className="eyebrow">THE WEB3 WIZARD</span>
-            <h3>Khalid Murtala — founder, builder, product engineer.</h3>
+            <h3>Khalid Murtala. Founder, builder, product engineer.</h3>
             <p className="about-copy">
               I build Web3 and AI products, with a particular interest in the point where an
               ambitious idea has to become something another person can actually understand and use.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, margin: "20px 0" }}>
               <a href="https://github.com/theweb3wizard" target="_blank" rel="noreferrer" className="inline-link">
-                GitHub — theweb3wizard <ExternalLink size={13} />
+                GitHub: theweb3wizard <ExternalLink size={13} />
               </a>
               <a href="https://x.com/theweb3wizard00" target="_blank" rel="noreferrer" className="inline-link">
-                X — @theweb3wizard00 <ExternalLink size={13} />
+                X: @theweb3wizard00 <ExternalLink size={13} />
               </a>
               <a href="https://www.linkedin.com/in/theweb3wizard00" target="_blank" rel="noreferrer" className="inline-link">
                 LinkedIn <ExternalLink size={13} />
@@ -609,8 +656,8 @@ export function AboutPage() {
             <h2>Direct ownership from architecture to handover.</h2>
             <p className="about-copy">
               Khalid Murtala personally directs architecture, implementation, testing, communication,
-              and handover for every engagement. The Web3 Wizard (Web3 Wizard Labs) is a founder-led
-              operation — not an agency with layers between the client and the work.
+              and handover for every engagement. The Web3 Wizard (The Web3 Wizard Labs) is a founder-led
+              operation, not an agency with layers between the client and the work.
             </p>
             <h3>AI-native execution with human accountability</h3>
             <p className="about-copy">
@@ -621,12 +668,12 @@ export function AboutPage() {
             <h3>What the studio specialises in</h3>
             <p className="about-copy">
               The Web3 Wizard specialises in AI agents, Solana applications, dApps, Web3 automation
-              tools, and focused MVP development. The real GitHub portfolio — Valor, WalletLens,
-              Write3, AgentHub, SolPulse — reflects the actual technical capabilities of the studio.
+              tools, and focused MVP development. The real GitHub portfolio (Valor, WalletLens,
+              Write3, AgentHub, OrderFlow, SolPulse) reflects the actual technical capabilities of the studio.
             </p>
             <h3>An honest starting point</h3>
             <p className="about-copy">
-              Web3 Wizard Labs is currently opening its first client engagements. There are no client
+              The Web3 Wizard Labs is currently opening its first client engagements. There are no client
               testimonials or client case studies to present yet. The founder-built work in the
               portfolio is a genuine record of what has been built and shipped, clearly labeled as
               personal projects.
@@ -635,7 +682,7 @@ export function AboutPage() {
             <p className="about-copy">
               We do not present personal projects as client work. We do not guarantee product-market
               fit, user adoption, financial outcomes, or security certifications. We do not build
-              entire companies — we build focused products and capabilities that help founders make
+              entire companies. We build focused products and capabilities that help founders make
               their most important next decision.
             </p>
           </div>
@@ -758,14 +805,14 @@ const insightBodies: Record<string, React.ReactNode> = {
       <p>
         The second gap is the error-state gap. Prototypes are built for the happy path. Real usage
         is not. When a wallet connection fails, when a transaction reverts, when a user takes an
-        unexpected action — these moments determine whether the product is trustworthy. A prototype
+        unexpected action. These moments determine whether the product is trustworthy. A prototype
         with no error states is a product that communicates failure with silence or with
         developer-facing error messages. Neither builds trust.
       </p>
       <p>
         The third gap is the value gap. A prototype often shows a feature working. It does not
         always communicate why the feature matters to the person using it. Users do not interact with
-        products to see features — they interact with products to achieve something. If the product
+        products to see features. They interact with products to achieve something. If the product
         makes that something unclear, the feature does not matter.
       </p>
       <h2>What to fix before you put it in front of real users</h2>
@@ -788,7 +835,7 @@ const insightBodies: Record<string, React.ReactNode> = {
       <p>
         AI-native development is real and it is genuinely faster. A product that would have taken
         three months to build can now be shipped in weeks. The risk is not that AI makes development
-        too slow — the risk is that it makes it too fast to be careful.
+        too slow. The risk is that it makes it too fast to be careful.
       </p>
       <h2>What AI does well and where it fails silently</h2>
       <p>
@@ -804,7 +851,7 @@ const insightBodies: Record<string, React.ReactNode> = {
         of a wallet signing flow, a token approval, or an on-chain transaction can have real financial
         consequences. AI does not know your product's threat model. It does not know which user actions
         are irreversible. It does not know which edge cases your users are most likely to hit.
-        You do — or you need to.
+        You do. Or you need to.
       </p>
       <h2>The discipline of AI-native development</h2>
       <p>
@@ -818,7 +865,7 @@ const insightBodies: Record<string, React.ReactNode> = {
       <p>
         This is how The Web3 Wizard builds products. AI accelerates the work. Human judgment directs
         it. The result is a product that is fast to build and honest about what it does and does not
-        guarantee — which is the only kind of product worth shipping.
+        guarantee. That is the only kind of product worth shipping.
       </p>
     </>
   ),
@@ -836,7 +883,7 @@ export function InsightDetailPage() {
           <span className="eyebrow">{item.category} • {item.readingTime}</span>
           <h1>{item.title}</h1>
           <div className="article-meta">
-            By Khalid Murtala — The Web3 Wizard | Web3 Wizard Labs &nbsp;·&nbsp; {item.datePublished}
+            By Khalid Murtala · The Web3 Wizard | The Web3 Wizard Labs &nbsp;·&nbsp; {item.datePublished}
           </div>
           <div className="article-body">
             {body ?? <p>{item.description}</p>}
@@ -889,7 +936,7 @@ export function StartPage() {
     <PageFrame>
       <PageHero
         eyebrow="START A CONVERSATION"
-        title="Bring us the problem. We'll help turn it into a product."
+        title="Start a conversation. Let's turn the problem into a product."
         description="You do not need a perfect brief. Tell us what you are trying to build, the problem you are solving, and what a useful first version needs to do."
       />
       <div className="page-content">
@@ -932,7 +979,7 @@ export function StartPage() {
                   <Field label="Project URL (if you have one)" name="projectUrl" value={form.projectUrl} onChange={update} />
                   <Field label="Describe the problem or product" name="description" as="textarea" value={form.description} onChange={update} error={errors.description} required className="full" hint="What problem are you solving? What does a useful first version need to do? Minimum 30 characters." />
                   <Field label="Type of engagement" name="situation" as="select" value={form.situation} onChange={update} className="full">
-                    <option value="not-sure">Not sure yet — help me figure it out</option>
+                    <option value="not-sure">Not sure yet, help me figure it out</option>
                     <option value="product-discovery">Product Discovery Sprint</option>
                     <option value="web3-mvp-development">AI-Native Web3 Product Build</option>
                     <option value="ai-agent-solana-engineering">AI Agent & Solana Engineering</option>
@@ -957,7 +1004,7 @@ export function StartPage() {
                     <option value="10k-25k">$10,000 – $25,000</option>
                     <option value="25k-plus">$25,000+</option>
                   </Field>
-                  <Field label="What does success look like?" name="success" as="textarea" value={form.success} onChange={update} className="full" hint="Optional — what would make this engagement valuable for you?" />
+                  <Field label="What is the most important milestone or what's stuck?" name="success" as="textarea" value={form.success} onChange={update} className="full" hint="Optional: the roadmap milestone you need to hit, or where you are currently stuck." />
                   <div className="field full">
                     <label>
                       <input
@@ -966,7 +1013,7 @@ export function StartPage() {
                         onChange={(e) => update("consent", e.target.checked)}
                         style={{ marginRight: 8 }}
                       />
-                      I consent to Web3 Wizard Labs receiving this inquiry and using the provided
+                      I consent to The Web3 Wizard Labs receiving this inquiry and using the provided
                       details to respond. I understand this data is not stored in a database and is
                       delivered via Telegram notification to Khalid Murtala.
                     </label>
@@ -984,7 +1031,7 @@ export function StartPage() {
                     >
                       {formState === "submitting" ? (
                         <><Loader2 size={15} className="submit-spinner" /> Sending…</>
-                      ) : "Send the inquiry"}
+                      ) : "Start the conversation"}
                     </button>
                     <p className="form-note" style={{ marginTop: 12 }}>
                       Typically reviewed within two business days. No automated responses.
@@ -1038,7 +1085,7 @@ export function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
         <PageHero
           eyebrow="PRIVACY"
           title="How inquiries and personal information are handled."
-          description="A clear explanation of what happens when you submit an inquiry to Web3 Wizard Labs."
+          description="A clear explanation of what happens when you submit an inquiry to The Web3 Wizard Labs."
         />
         <div className="page-content">
           <div className="container">
@@ -1094,26 +1141,26 @@ export function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
       <PageHero
         eyebrow="TERMS"
         title="Clear boundaries for every engagement."
-        description="What Web3 Wizard Labs does, what it does not do, and what every engagement includes and excludes."
+        description="What The Web3 Wizard Labs does, what it does not do, and what every engagement includes and excludes."
       />
       <div className="page-content">
         <div className="container">
           <div className="legal-copy">
             <h2>What these terms cover</h2>
             <p>
-              These terms apply to all engagements between Web3 Wizard Labs (operated by Khalid
+              These terms apply to all engagements between The Web3 Wizard Labs (operated by Khalid
               Murtala) and clients or prospective clients. They describe the nature of the work,
               what is explicitly outside scope, and the honest limitations of every engagement.
             </p>
-            <h2>What Web3 Wizard Labs builds</h2>
+            <h2>What The Web3 Wizard Labs builds</h2>
             <p>
-              Web3 Wizard Labs builds focused MVPs and product capabilities. This includes AI agents,
+              The Web3 Wizard Labs builds focused MVPs and product capabilities. This includes AI agents,
               Solana applications, dApps, automation tools, Web3 product interfaces, and related
               digital products. The studio does not build entire companies and does not take on
               open-ended or undefined scopes.
             </p>
             <h2>What is explicitly outside scope</h2>
-            <p>The following are not services offered by Web3 Wizard Labs under any engagement:</p>
+            <p>The following are not services offered by The Web3 Wizard Labs under any engagement:</p>
             <ul>
               <li>Smart-contract security audits or formal security certifications</li>
               <li>Formal penetration testing</li>
@@ -1136,7 +1183,7 @@ export function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
               presented as evidence of a client engagement.
             </p>
             <p style={{ marginTop: 32, color: "var(--muted)", fontSize: 13 }}>
-              These terms describe the operating principles of Web3 Wizard Labs as of 2026-08-19.
+              These terms describe the operating principles of The Web3 Wizard Labs as of 2026-08-19.
               They should receive appropriate legal review before being relied upon as a formal
               contractual document.
             </p>

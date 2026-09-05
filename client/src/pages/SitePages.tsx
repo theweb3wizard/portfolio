@@ -738,134 +738,129 @@ const insightBodies: Record<string, React.ReactNode> = {
   "scope-a-web3-product-before-spending-money": (
     <>
       <p>
-        Most early Web3 products fail because they are too large, not because the idea is wrong.
-        A founder with a genuine problem builds a product that tries to solve every edge case,
-        targets every user, and ships every feature before anyone has validated the core. The result
-        is a product nobody can explain, a build that takes six months longer than expected, and a
-        team that ran out of runway before they learned anything useful.
+        I have killed products before I finished them. Not because the ideas were bad. Because I
+        tried to build everything at once and ran out of time, money, and patience before I could
+        learn anything real. Scoping is the part of building nobody wants to spend time on. But it
+        is the part that decides whether you ship something or burn six months on something nobody
+        asked for.
       </p>
-      <h2>Start with one user in one situation</h2>
+      <h2>One user, one moment</h2>
       <p>
-        The most productive question when scoping a Web3 MVP is not "what should the product do?"
-        It is "who is struggling with what, right now?" Pick one user. One situation. One moment
-        where they need to take a specific action and currently cannot, or can only do it badly.
-        Everything else goes on a list labelled "later."
-      </p>
-      <p>
-        This is harder than it sounds. Founders are close to their ideas and naturally want to show
-        their full vision. The job of scoping is to resist that instinct. The first version of the
-        product is a learning device, not a complete solution. It needs to be small enough to ship
-        quickly and clear enough that a user can tell you whether it solved the right problem.
-      </p>
-      <h2>The four things an MVP actually needs</h2>
-      <p>
-        A useful first version needs exactly four things: a user who has the problem you think they
-        have, a workflow that solves it (even if imperfectly), a way to observe whether it worked,
-        and an honest record of what is not included. Everything else is scope you added because it
-        felt necessary, not because evidence said it was.
+        When I sit down to scope, I ask a different question than most founders do. Instead of
+        "what should the product do?", I ask "who is struggling with what, right now, and what
+        is the smallest thing I can build to make that struggle a little less painful?"
+        You pick one user. One situation. One moment where they need to take an action and
+        currently cannot. Everything else goes on a list and stays there.
       </p>
       <p>
-        In Web3 specifically, this means being ruthless about wallet integration complexity, chain
-        selection, token mechanics, and on-chain versus off-chain decisions. Each of these can double
-        build time without adding product value. The question is not "should we support this?" but
-        "does this make the core problem easier to solve for the user we are targeting right now?"
+        This is harder than it looks. You are close to your idea. You see the whole thing in your
+        head. The temptation is to show people the full vision early and hope they get it. But a
+        first version is not a solution. It is a learning device. It needs to be small enough to
+        ship fast and clear enough that a real person can tell you whether it solved the right
+        problem.
       </p>
-      <h2>Where AI and Web3 genuinely belong in the MVP</h2>
+      <h2>What actually matters in a first version</h2>
       <p>
-        Before adding AI or blockchain features, ask one question: does this make the product
-        meaningfully better for the target user, or does it make the team feel like the product is
-        more sophisticated? AI is genuinely useful when it reduces friction in the user's workflow,
-        not when it adds a chatbot to a product that would work better as a simple form. Web3 is
-        genuinely useful when the decentralised or on-chain nature of the data matters to the user,
-        not when it is added to signal credibility.
+        You need four things. A user who genuinely has the problem you think they have. A
+        workflow that works, even if it is rough. A way to observe whether it worked. And an
+        honest note about what is not in it. That is it. Everything else is scope you added because
+        it felt necessary, not because someone proved it was.
       </p>
       <p>
-        A well-scoped Web3 MVP is one you can explain in two sentences, build in weeks not months,
-        and test with real users before you run out of money. That is the kind of product
-        The Web3 Wizard is built to help you define and ship.
+        In Web3 this cuts deep. Wallet integration, chain selection, token mechanics, the decision
+        to put things on-chain versus off. Each one can double your build time without adding value
+        for the person using the product. The question is not "should we support this chain" or
+        "should we add a token." The question is "does this make the core problem easier to solve
+        for the person who needs it right now?" If it does not, leave it out.
+      </p>
+      <p>
+        A well-scoped product is one you can explain in two sentences, build in weeks not months,
+        and test with real people before the money runs out. That is the standard I work to, and
+        it is what I help founders get to.
       </p>
     </>
   ),
   "why-a-web3-prototype-can-fail": (
     <>
       <p>
-        A prototype that works in a demo can fail completely when real users touch it. This is not
-        a Web3-specific problem, but Web3 makes it worse. The gap between "this works on my machine"
-        and "this works for someone who has never seen this product before" is where most early
-        Web3 products quietly break down.
+        I have shipped prototypes that worked perfectly on my machine and fell apart the moment
+        someone else tried them. Web3 makes this worse than most domains because the user is
+        expected to know things that most people have never heard of. A prototype that works on
+        your screen often creates a wall of confusion for the first real person who touches it.
       </p>
-      <h2>The three gaps that kill Web3 prototypes</h2>
+      <h2>Where prototypes actually break</h2>
       <p>
-        The first gap is the explanation gap. Web3 products often assume a level of user knowledge
-        that does not exist. Wallet connection flows, transaction confirmations, gas fees, network
-        switching, and token approvals are all routine to a developer and opaque to a new user.
-        A prototype that works smoothly for its creator often creates a wall of unfamiliar decisions
-        for the first real user who touches it.
-      </p>
-      <p>
-        The second gap is the error-state gap. Prototypes are built for the happy path. Real usage
-        is not. When a wallet connection fails, when a transaction reverts, when a user takes an
-        unexpected action. These moments determine whether the product is trustworthy. A prototype
-        with no error states is a product that communicates failure with silence or with
-        developer-facing error messages. Neither builds trust.
+        The first thing that breaks is the assumption that the user knows what you know. A wallet
+        connection flow, a transaction confirmation, gas fees, network switching, token approvals.
+        These are routine to someone who builds in Web3 every day. To everyone else, they are a
+        chain of unfamiliar decisions with no clear answer. When your prototype assumes knowledge
+        your user does not have, the product feels broken even when it works.
       </p>
       <p>
-        The third gap is the value gap. A prototype often shows a feature working. It does not
-        always communicate why the feature matters to the person using it. Users do not interact with
-        products to see features. They interact with products to achieve something. If the product
-        makes that something unclear, the feature does not matter.
-      </p>
-      <h2>What to fix before you put it in front of real users</h2>
-      <p>
-        Walk through the product as a first-time user who does not understand Web3 conventions.
-        At every step, ask: does this screen tell the user what to do next? Does it explain what
-        just happened? Does it handle the most likely failure gracefully? If the answer to any of
-        those questions is no, that is a higher priority than any new feature.
+        The second thing that breaks is error handling. Prototypes are built for the path that
+        works. Real usage is not. When a wallet refuses to connect, when a transaction reverts,
+        when a user clicks something unexpected. These moments determine whether the product feels
+        trustworthy or frustrating. A prototype that has no error states communicates failure with
+        silence or with technical text that scares the user away. Neither builds confidence.
       </p>
       <p>
-        The most valuable thing you can do with a Web3 prototype is watch a real person try to use
-        it without your help. You will learn more in one hour of observation than in a week of
-        developer review. That is the kind of clarity The Web3 Wizard helps founders build before
-        they invest in a larger production build.
+        The third thing that breaks is purpose. A prototype shows a feature working. It does not
+        always explain why that feature matters. Users do not interact with products to admire
+        features. They interact with products to accomplish something. If the product does not make
+        the purpose obvious, the feature does not matter no matter how well it works.
+      </p>
+      <h2>What to fix before real users see it</h2>
+      <p>
+        Walk through your product as if you are someone who has never heard of Web3 before. At
+        every step, ask: does this screen tell me what to do next? Does it explain what just
+        happened? Does it handle the most likely failure in a way I can understand? If the answer
+        to any of those is no, that is more important than any new feature you want to add.
+      </p>
+      <p>
+        The single most useful thing you can do with a prototype is watch someone try to use it
+        without helping them. You will learn more in an hour of watching than in a week of reviewing
+        yourself. That is the kind of clarity I want to help founders build before they commit to
+        a larger build.
       </p>
     </>
   ),
   "use-ai-without-blindly-trusting-it": (
     <>
       <p>
-        AI-native development is real and it is genuinely faster. A product that would have taken
-        three months to build can now be shipped in weeks. The risk is not that AI makes development
-        too slow. The risk is that it makes it too fast to be careful.
+        I use AI to build things now. It is faster than it used to be, and the difference is real.
+        A product that would have taken months now takes weeks. The danger is not that AI is too
+        slow. The danger is that it is too fast, and you do not catch the things that matter until
+        they are already in production.
       </p>
-      <h2>What AI does well and where it fails silently</h2>
+      <h2>Where AI is genuinely useful and where it is not</h2>
       <p>
-        AI coding tools are excellent at generating plausible implementations quickly. They are
-        unreliable when it comes to security-sensitive logic, complex state management, domain-specific
-        edge cases, and anything that requires genuine understanding of the product's purpose rather
-        than pattern-matching on syntax. The danger is not that AI produces obviously wrong code.
-        The danger is that it produces subtly wrong code that looks correct, passes basic tests, and
-        only fails in production under real usage.
-      </p>
-      <p>
-        In Web3 specifically, this matters more than in most domains. A subtly wrong implementation
-        of a wallet signing flow, a token approval, or an on-chain transaction can have real financial
-        consequences. AI does not know your product's threat model. It does not know which user actions
-        are irreversible. It does not know which edge cases your users are most likely to hit.
-        You do. Or you need to.
-      </p>
-      <h2>The discipline of AI-native development</h2>
-      <p>
-        Productive AI-native development is not "let AI write the code and ship it." It is a discipline
-        with four steps. First, direct: give the AI clear context about the goal, the user, and the
-        constraints. Second, challenge: read every generated output critically, especially the parts
-        that look obvious. Third, test: write tests for the behaviour that matters, not just the happy
-        path. Fourth, document: keep a record of what you verified, what you deferred, and what you
-        know is incomplete.
+        AI tools are excellent at producing plausible code quickly. They are unreliable when it
+        comes to things that matter. Security-sensitive logic, complex state, edge cases that only
+        appear in real usage. AI does not understand why your product exists. It does not know
+        which user action is irreversible. It does not know what your threat model is. It is
+        pattern-matching, not thinking. The risk is not that it produces obviously wrong code. The
+        risk is that it produces code that looks right, passes basic tests, and fails in production.
       </p>
       <p>
-        This is how The Web3 Wizard builds products. AI accelerates the work. Human judgment directs
-        it. The result is a product that is fast to build and honest about what it does and does not
-        guarantee. That is the only kind of product worth shipping.
+        In Web3 this cuts deeper than in most domains. A wrong implementation of a wallet signing
+        flow, a token approval that grants more access than intended, a transaction that behaves
+        differently than the user expected. These are not bugs you can patch after launch. They are
+        things that can cost users real value. You need to be the person who catches them before
+        they ship, not the person who reads about them in a support ticket.
+      </p>
+      <h2>How I actually use it</h2>
+      <p>
+        I use AI as a starting point, not a finishing point. I give it clear context about what I
+        am building, who it is for, and what the limits are. Then I read everything it produces
+        critically, especially the parts that look too easy. I test the behaviour that matters, not
+        just the path that works. And I keep notes on what I verified, what I am not sure about,
+        and what I have deferred. That is the whole discipline. It is not complicated, but it does
+        require you to stay in the loop.
+      </p>
+      <p>
+        The honest version of building with AI is that it makes you faster and it does not make you
+        less responsible. You still own the product. You still need to know what is in it and why.
+        That is how I build, and that is what I expect from the work I do for others.
       </p>
     </>
   ),

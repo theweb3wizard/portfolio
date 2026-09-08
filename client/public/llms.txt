@@ -1,0 +1,47 @@
+# The Web3 Wizard Labs
+
+> Founder-led AI-native Web3 product studio by Khalid Murtala. We turn real Web3 problems and roadmap milestones into focused, working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.
+
+## About
+The Web3 Wizard (The Web3 Wizard Labs) is a solo studio, not an agency. Khalid Murtala directs every engagement — from architecture to handover — with AI-native execution and human accountability. We build the smallest useful product, with visible deliverables and documented limitations.
+
+## Services
+- [Product Discovery Sprint](https://www.theweb3wizard.xyz/services/product-discovery): Turn a Web3 problem or idea into a build-ready product direction. Define the user, scope the MVP, and decide what to build first. For founders who need clarity before committing to a build.
+- [Web3 MVP Development](https://www.theweb3wizard.xyz/services/web3-mvp-development): Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, and Web3 MVPs built by a founder-led AI-native studio.
+- [AI Agent & Solana Engineering](https://www.theweb3wizard.xyz/services/ai-agent-solana-engineering): Specialist capability for AI agents, autonomous workflows, Telegram/Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features.
+
+## Work — Founder-Built Projects
+- [Valor — AI Agent for Telegram](https://www.theweb3wizard.xyz/work/valor): Autonomous conversational agent for Web3 communities. Live at https://valor-tgbot.vercel.app — GitHub https://github.com/theweb3wizard/Valor
+- [WalletLens — EVM Wallet Intelligence](https://www.theweb3wizard.xyz/work/walletlens): Query Ethereum, Polygon, BNB, Arbitrum, Base wallets in plain English. Live at https://walletlens-hq.vercel.app
+- [Write3 — AI Web3 Content Generator](https://www.theweb3wizard.xyz/work/write3): Generate Web3-native content for X, Discord, Telegram, Farcaster, blogs. Live at https://write3-ai.vercel.app
+- [AgentHub — Secure AI Agent Access Layer](https://www.theweb3wizard.xyz/work/agenthub): Policy-controlled access to DBs/APIs/infra with audit trails. Live at https://agenthub-lyart.vercel.app
+- [OrderFlow — AI Trading Journal on Injective](https://www.theweb3wizard.xyz/work/orderflow): Reads on-chain history to show where you leak money. Live at https://orderflow-hq.vercel.app
+- [SolPulse — Solana Wallet Monitoring](https://www.theweb3wizard.xyz/work/solpulse): Solana on-chain signals via Telegram
+- [Community Signal — Web3 Community Action Tool](https://www.theweb3wizard.xyz/work/community-signal): Building-stage experiment for turning community activity into a clear next action
+- [All Work](https://www.theweb3wizard.xyz/work): Portfolio overview
+
+## Insights
+- [How to Scope a Web3 MVP Before Spending Money](https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money)
+- [Why a Web3 Prototype Fails With Real Users](https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail)
+- [How to Use AI in Web3 Product Development Without Blindly Trusting It](https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it)
+- [All Insights](https://www.theweb3wizard.xyz/insights)
+
+## Other Pages
+- [About](https://www.theweb3wizard.xyz/about): About Khalid Murtala and the studio
+- [Start a Conversation](https://www.theweb3wizard.xyz/start): Contact form — inquiries delivered via Telegram, no database
+- [Pricing](https://www.theweb3wizard.xyz/pricing.md): Structured pricing for AI agents
+- [Sitemap](https://www.theweb3wizard.xyz/sitemap.xml)
+- [Privacy](https://www.theweb3wizard.xyz/privacy) | [Terms](https://www.theweb3wizard.xyz/terms)
+
+## Contact
+- Email: theweb3wizard00@gmail.com
+- GitHub: https://github.com/theweb3wizard
+- X: https://x.com/theweb3wizard00
+- Telegram: https://t.me/theweb3wizard00
+- LinkedIn: https://www.linkedin.com/in/theweb3wizard00
+
+## Notes for AI
+- All portfolio work is founder-built personal work, clearly labeled — not client case studies.
+- No smart-contract audits, no guarantees of adoption, product-market fit, or financial outcomes.
+- Pricing is in pricing.md — parseable without JavaScript.
+- Last updated: 2026-09-08

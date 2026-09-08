@@ -62,11 +62,13 @@
 - Sitemap `<lastmod>` updated on changed pages
 - robots.txt reviewed
 
-### Phase 5 — Footer & final touches [🟡 PARTIALLY COMPLETED]
+### Phase 5 — Footer & final touches [✅ COMPLETED]
 - ✅ Footer CTA "Start a conversation" verified across all instances
 - ✅ Copyright updated to "© 2026 The Web3 Wizard Labs · Founded by Khalid Murtala."
+- ✅ Medium: https://medium.com/@theweb3wizard00 added to footer Connect
+- ✅ Substack: https://substack.com/@theweb3wizard00 added to footer Connect
+- ✅ Insight copy rewritten — unique founder-voice content for all 3 insights
 - ⏳ Medium/Substack URLs still blocked — pending user input
-- ⏳ Insight copy (all 3 insights share identical body text — known issue from FORENSIC-AUDIT.md §3.11)
 
 ### Phase 6 — Verification [✅ COMPLETED]
 - ✅ `pnpm check` (tsc `--noEmit`) — passed, no errors
@@ -76,14 +78,13 @@
 - ✅ No bare "Web3 Wizard Labs" remaining in source files
 
 ## Blockers
-- [BLOCKER] Medium/Substack URLs needed from user for footer edit
-- [BLOCKER] Insight copy uniqueness — all 3 insights share identical body text (known issue)
+- [BLOCKER] None remaining — all phases complete
 
 ## Last action taken
-- All remaining "Web3 Wizard Labs" stragglers fixed in og-image.svg, routers.ts, inquiries.test.ts, SitePages.tsx
-- Footer CTA "Start a project" → "Start a conversation" fixed in SiteShell.tsx
+- Added Medium and Substack links to footer Connect section
+- Commit `7f957c4` pushed to remote
 - All verification passed: TypeScript check ✅, Build ✅, Tests ✅ (17/17)
-- Ready to commit and push
+- ALL PHASES COMPLETE. No blockers remain.
 
 ## Git state to remember
 - Run `git diff --stat` to check what's already changed

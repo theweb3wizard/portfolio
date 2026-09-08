@@ -268,7 +268,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
     title: "The Web3 Wizard | AI-Native Web3 Product Studio",
     description:
-      "Turn your Web3 problem into a working product. The Web3 Wizard is a founder-led AI-native Web3 product studio building AI agents, Solana applications, dApps, automation tools, and focused Web3 MVPs.",
+      "Founder-led AI-native Web3 studio. We turn real problems into working products: AI agents, Solana apps, dApps, automation, and focused Web3 MVPs.",
     schemas: [WEBSITE_SCHEMA, ORGANIZATION_SCHEMA, PERSON_SCHEMA, FAQ_SCHEMA],
   },
 
@@ -276,7 +276,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/services": {
     title: "Web3 Product Services | The Web3 Wizard",
     description:
-      "Focused Web3 product development services: Product Discovery Sprint, AI-native Web3 product builds, AI agent and Solana engineering. Choose the engagement that fits your situation.",
+      "Choose your engagement: Product Discovery Sprint, Web3 MVP build, or AI Agent & Solana engineering. Focused services for Web3 founders.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -287,9 +287,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/services/product-discovery": {
-    title: "Product Discovery Sprint | Web3 Product Studio | The Web3 Wizard",
+    title: "Product Discovery Sprint | The Web3 Wizard",
     description:
-      "Turn a Web3 problem or idea into a build-ready product direction. Clarify the user, define the MVP scope, and decide what to build first before committing to a larger engagement.",
+      "Turn a Web3 idea into a build-ready direction. Define the user, scope the MVP, and decide what to build first with confidence.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
@@ -305,9 +305,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/services/web3-mvp-development": {
-    title: "AI-Native Web3 Product Build | MVP Development | The Web3 Wizard",
+    title: "Web3 MVP Development | The Web3 Wizard",
     description:
-      "Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, dashboards, and Web3 MVPs built by a founder-led AI-native studio.",
+      "Build a focused Web3 MVP: AI agents, Solana apps, dApps, and automation. Founder-led, AI-native execution from concept to shipped product.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
@@ -323,9 +323,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/services/ai-agent-solana-engineering": {
-    title: "AI Agent & Solana Development | Web3 Engineering | The Web3 Wizard",
+    title: "AI Agent & Solana Engineering | The Web3 Wizard",
     description:
-      "Specialist AI agent and Solana engineering for Web3 teams. Autonomous workflows, Telegram bots, Discord tools, Solana integrations, on-chain data pipelines, and AI-powered Web3 product features.",
+      "Specialist AI agent & Solana engineering: autonomous workflows, Telegram/Discord bots, Solana integrations, and on-chain data pipelines.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
@@ -342,9 +342,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // ── Work ──────────────────────────────────────────────────────────────────
   "/work": {
-    title: "Founder-Built Web3 Projects | AI Agents, Solana & dApps | The Web3 Wizard",
+    title: "Founder-Built Web3 Projects | The Web3 Wizard",
     description:
-      "Evidence-driven portfolio of founder-built Web3 projects. AI agents, Solana monitoring tools, EVM wallet intelligence, AI content tools, and Web3 automation built and shipped by Khalid Murtala.",
+      "Portfolio of founder-built Web3 projects: AI agents, Solana tools, EVM wallet intelligence, and automation — shipped by Khalid Murtala.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -355,9 +355,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/valor": {
-    title: "Valor | AI Agent for Telegram | Web3 AI Agent | The Web3 Wizard",
+    title: "Valor — AI Agent for Telegram | The Web3 Wizard",
     description:
-      "Valor is a founder-built AI agent for Telegram. An autonomous conversational agent built for Web3 communities and workflows on the Telegram platform.",
+      "Valor is a founder-built AI agent for Telegram. Autonomous conversational help and task execution for Web3 communities.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -375,9 +375,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/walletlens": {
-    title: "WalletLens | AI-Powered EVM Wallet Intelligence | The Web3 Wizard",
+    title: "WalletLens | EVM Wallet Intelligence | The Web3 Wizard",
     description:
-      "WalletLens is a founder-built AI-powered EVM wallet intelligence tool. Analyse Ethereum, Polygon, BNB Chain, Arbitrum, and Base wallets with natural language AI queries.",
+      "WalletLens: AI-powered EVM wallet intelligence for Ethereum, Polygon, BNB, Arbitrum & Base. Query wallets in plain English.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -397,7 +397,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/work/write3": {
     title: "Write3 | AI Web3 Content Generator | The Web3 Wizard",
     description:
-      "Write3 is a founder-built AI-powered Web3 content generation tool for X, Discord, Telegram, Farcaster, and blogs. AI-native content workflows for Web3 communities.",
+      "Write3: AI-powered Web3 content for X, Discord, Telegram, Farcaster, and blogs. Generate platform-ready drafts quickly.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -415,9 +415,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/agenthub": {
-    title: "AgentHub | Secure AI Agent Access Layer | The Web3 Wizard",
+    title: "AgentHub | Secure AI Agent Access | The Web3 Wizard",
     description:
-      "AgentHub is a founder-built secure access layer for AI coding assistants. Policy-controlled access to databases, APIs, and infrastructure with audit trails and human approval gates.",
+      "AgentHub: secure access layer for AI coding assistants. Policy-controlled DB/API access with audit trails and human approval.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -435,9 +435,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/orderflow": {
-    title: "OrderFlow | AI Trading Journal on Injective | The Web3 Wizard",
+    title: "OrderFlow | AI Trading Journal | The Web3 Wizard",
     description:
-      "OrderFlow is a founder-built AI trading journal for Injective Protocol. It reads your on-chain trading history and shows exactly where you are leaking money, what is working, and what to fix.",
+      "OrderFlow: AI trading journal for Injective. Reads your on-chain history to show where you leak money and what to fix next.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -455,9 +455,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/solpulse": {
-    title: "SolPulse | Solana Wallet Monitoring Tool | The Web3 Wizard",
+    title: "SolPulse | Solana Wallet Monitoring | The Web3 Wizard",
     description:
-      "SolPulse is a founder-built Solana on-chain monitoring experiment. Turns Solana wallet activity into calmer, more readable alert signals via Telegram.",
+      "SolPulse: Solana wallet monitoring experiment. Turns wallet activity into calmer, readable Telegram alerts.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -473,9 +473,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/community-signal": {
-    title: "Community Signal | Web3 Community Action Tool | The Web3 Wizard",
+    title: "Community Signal | The Web3 Wizard",
     description:
-      "Community Signal is a building-stage experiment for turning Telegram and Discord community activity into a clearer next action without unnecessary complexity.",
+      "Community Signal: building-stage experiment turning Telegram and Discord activity into a clearer next action.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -488,9 +488,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // ── About ─────────────────────────────────────────────────────────────────
   "/about": {
-    title: "About The Web3 Wizard | Khalid Murtala | AI-Native Web3 Studio",
+    title: "About | Khalid Murtala | The Web3 Wizard",
     description:
-      "Khalid Murtala is the founder of The Web3 Wizard (The Web3 Wizard Labs), a founder-led AI-native Web3 product studio. We build AI agents, Solana applications, dApps, and focused Web3 MVPs.",
+      "Khalid Murtala, founder of The Web3 Wizard Labs — founder-led AI-native Web3 studio building AI agents, Solana apps, and focused MVPs.",
     schemas: [
       PERSON_SCHEMA,
       ORGANIZATION_SCHEMA,
@@ -503,9 +503,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // ── Insights ──────────────────────────────────────────────────────────────
   "/insights": {
-    title: "Web3 Product Insights | AI Agents, Solana & MVP Development | The Web3 Wizard",
+    title: "Web3 Insights | The Web3 Wizard",
     description:
-      "Practical thinking on Web3 product decisions, AI-native development, Solana applications, MVP scoping, and building dApps that real users can understand.",
+      "Practical thinking on Web3 product decisions, AI-native development, Solana apps, MVP scoping, and dApps users understand.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -516,9 +516,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/insights/scope-a-web3-product-before-spending-money": {
-    title: "How to Scope a Web3 MVP Before Spending Money | The Web3 Wizard",
+    title: "How to Scope a Web3 MVP | The Web3 Wizard",
     description:
-      "A practical framework for Web3 founders deciding what to build first. How to define an MVP, cut unnecessary scope, and avoid spending on the wrong features.",
+      "A practical framework for Web3 founders: define the MVP, cut unnecessary scope, and avoid spending on the wrong features.",
     schemas: [
       PERSON_SCHEMA,
       articleSchema(
@@ -564,9 +564,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/insights/use-ai-without-blindly-trusting-it": {
-    title: "How to Use AI in Web3 Product Development Without Blindly Trusting It | The Web3 Wizard",
+    title: "Using AI in Web3 Without Blind Trust | The Web3 Wizard",
     description:
-      "A practical guide to AI-native Web3 product development. How to direct AI, challenge its output, test what matters, and stay accountable for what gets shipped.",
+      "Practical guide to AI-native Web3 development: direct AI, challenge its output, test what matters, and stay accountable.",
     schemas: [
       PERSON_SCHEMA,
       articleSchema(
@@ -666,5 +666,9 @@ export function injectMetaIntoHtml(html: string, pathname: string): string {
 
   return html
     .replace(/<title>[^<]*<\/title>/, "")
+    .replace(/<meta name="description"[^>]*>/, "")
+    .replace(/<link rel="canonical"[^>]*>/, "")
+    .replace(/<meta property="og:[^>]*>/g, "")
+    .replace(/<meta name="twitter:[^>]*>/g, "")
     .replace("</head>", `${metaBlock}\n</head>`);
 }

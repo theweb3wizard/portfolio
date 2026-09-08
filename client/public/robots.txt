@@ -2,11 +2,17 @@ User-agent: *
 Allow: /
 Disallow: /start
 
-# AI crawlers — explicitly permitted for GEO indexing
+# AI crawlers — explicitly permitted for GEO/AEO indexing
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
@@ -16,6 +22,12 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://www.theweb3wizard.xyz/sitemap.xml

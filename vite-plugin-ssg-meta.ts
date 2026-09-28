@@ -35,6 +35,9 @@ export const SSG_ROUTES = [
   "/work/solpulse",
   "/work/community-signal",
   "/about",
+  "/profile",
+  "/hire-khalid",
+  "/ai-agents",
   "/insights",
   "/insights/scope-a-web3-product-before-spending-money",
   "/insights/why-a-web3-prototype-can-fail",
@@ -196,8 +199,7 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   },
   "/about": {
     h1: "Khalid Murtala. Founder of The Web3 Wizard.",
-    intro: "The Web3 Wizard Labs is a founder-led AI-native Web3 product studio operated by Khalid Murtala. We help early-stage founders and small teams turn real Web3 problems and roadmap milestones into focused, working products. Direct ownership from architecture to handover — the person you talk to is the person building your product.",
-    extra: "AI-native execution with human accountability: AI is used throughout research, planning, design, coding, testing, and review, but output is challenged, tested, and documented. Specialises in AI agents, Solana applications, dApps, automation, and focused MVPs. Currently opening first client engagements, with founder-built personal work as genuine proof. Connect via GitHub, X, LinkedIn, Telegram, and email.",
+    intro: "The Web3 Wizard Labs is a founder-led AI-native Web3 product studio operated by Khalid Murtala. We help early-stage founders and small teams turn real Web3 problems and roadmap milestones into focused, working products. Direct ownership from architecture to handover — the person you talk to is the person building your product.",    extra: "AI-native execution with human accountability: AI is used throughout research, planning, design, coding, testing, and review, but output is challenged, tested, and documented. Specialises in AI agents, Solana applications, dApps, automation, and focused MVPs. Currently opening first client engagements, with founder-built personal work as genuine proof. Connect via GitHub, X, LinkedIn, Telegram, and email.",
     links: [
       { href: "/work", label: "View Work" },
       { href: "/services", label: "View Services" },
@@ -205,6 +207,39 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
       { href: "/start", label: "Start a Conversation" },
       { href: "https://github.com/theweb3wizard", label: "GitHub" },
       { href: "https://x.com/theweb3wizard00", label: "X (Twitter)" },
+    ],
+  },
+  "/profile": {
+    h1: "Khalid Murtala — AI × Web3 Product Engineer",
+    intro: "Profile of Khalid Murtala, founder of The Web3 Wizard Labs. Builds AI agents, Web3 applications, wallet intelligence tools, automation systems, and focused product MVPs with TypeScript, React, Next.js, Node.js, LLM APIs, Solana, and EVM integrations. Open to project-based client work and AI/Web3 engineering roles.",
+    extra: "Selected founder-built projects include Valor (Telegram AI agent), WalletLens (EVM wallet intelligence), and AgentHub (secure agent access layer), each with live demos and public repositories. Contact via the start page, email, GitHub, X, LinkedIn, or Telegram. Print or save the profile page as PDF for applications.",
+    links: [
+      { href: "/work", label: "View Work" },
+      { href: "/services", label: "View Services" },
+      { href: "/ai-agents", label: "AI Agents" },
+      { href: "/start", label: "Start a Conversation" },
+      { href: "https://github.com/theweb3wizard", label: "GitHub" },
+    ],
+  },
+  "/hire-khalid": {
+    h1: "Hire Khalid Murtala — AI × Web3 Product Engineer",
+    intro: "Work with Khalid Murtala on AI agents, AI × Web3 product engineering, and focused dApp builds. Project-based client engagements start from $750 (discovery), with integration sprints from $2,500 and product builds from $6,000. Starting prices are indicative and confirmed after a fit conversation.",
+    extra: "Also open to credible AI/Web3 engineering roles. See the full profile for skills, selected projects, availability, and contact channels.",
+    links: [
+      { href: "/profile", label: "Full Profile" },
+      { href: "/work", label: "View Work" },
+      { href: "/start", label: "Start a Conversation" },
+    ],
+  },
+  "/ai-agents": {
+    h1: "Practical AI agents for real Web3 workflows.",
+    intro: "Khalid Murtala builds practical AI agents for Web3: documentation and support, wallet intelligence, transaction investigation, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters.",
+    extra: "Reference implementations include Valor (autonomous Telegram agent), AgentHub (policy-controlled agent access layer), and WalletLens (EVM wallet intelligence) — all founder-built and clearly labeled. Agent work ships as an Integration Sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
+    links: [
+      { href: "/work/valor", label: "See Valor" },
+      { href: "/work/agenthub", label: "See AgentHub" },
+      { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
+      { href: "/start?type=integration-sprint", label: "Discuss an Integration" },
     ],
   },
   "/insights": {

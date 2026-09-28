@@ -6,9 +6,17 @@
 The Web3 Wizard (The Web3 Wizard Labs) is a solo studio, not an agency. Khalid Murtala directs every engagement — from architecture to handover — with AI-native execution and human accountability. We build the smallest useful product, with visible deliverables and documented limitations.
 
 ## Services
-- [Product Discovery Sprint](https://www.theweb3wizard.xyz/services/product-discovery): Turn a Web3 problem or idea into a build-ready product direction. Define the user, scope the MVP, and decide what to build first. For founders who need clarity before committing to a build.
+- [Product Discovery Sprint](https://www.theweb3wizard.xyz/services/product-discovery): Turn a Web3 problem or idea into a build-ready product direction. Define the user, scope the MVP, and decide what to build first.
 - [Web3 MVP Development](https://www.theweb3wizard.xyz/services/web3-mvp-development): Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, and Web3 MVPs built by a founder-led AI-native studio.
 - [AI Agent & Solana Engineering](https://www.theweb3wizard.xyz/services/ai-agent-solana-engineering): Specialist capability for AI agents, autonomous workflows, Telegram/Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features.
+- [AI Agents](https://www.theweb3wizard.xyz/ai-agents): Practical AI agents for Web3 workflows — support, wallet intelligence, community operations, treasury monitoring, controlled on-chain actions.
+
+## Ways to Work Together (indicative starting prices)
+- [Product and Technical Discovery — from $750](https://www.theweb3wizard.xyz/start?type=discovery): 3–7 days. Problem clarification, MVP scope, architecture direction, roadmap.
+- [AI Agent or Web3 Integration Sprint — from $2,500](https://www.theweb3wizard.xyz/start?type=integration-sprint): 1–2 weeks. One defined agent or integration, tested, documented, handed over.
+- [Focused dApp or Web3 Product Build — from $6,000](https://www.theweb3wizard.xyz/start?type=product-build): 3–8 weeks. Frontend, backend, integrations, deployment, handover.
+- [Embedded Product Engineering — from $2,000/month](https://www.theweb3wizard.xyz/start?type=embedded): Monthly or milestone-based capacity.
+- Starting prices are indicative. Final scope, timeline, integrations, and price are confirmed after a fit conversation. Full details in [pricing.md](https://www.theweb3wizard.xyz/pricing.md).
 
 ## Work — Founder-Built Projects
 - [Valor — AI Agent for Telegram](https://www.theweb3wizard.xyz/work/valor): Autonomous conversational agent for Web3 communities. Live at https://valor-tgbot.vercel.app — GitHub https://github.com/theweb3wizard/Valor
@@ -28,6 +36,7 @@ The Web3 Wizard (The Web3 Wizard Labs) is a solo studio, not an agency. Khalid M
 
 ## Other Pages
 - [About](https://www.theweb3wizard.xyz/about): About Khalid Murtala and the studio
+- [Profile — Khalid Murtala](https://www.theweb3wizard.xyz/profile): Professional profile, skills, availability, contact links (print-friendly; also at /hire-khalid)
 - [Start a Conversation](https://www.theweb3wizard.xyz/start): Contact form — inquiries delivered via Telegram, no database
 - [Pricing](https://www.theweb3wizard.xyz/pricing.md): Structured pricing for AI agents
 - [Sitemap](https://www.theweb3wizard.xyz/sitemap.xml)

@@ -106,7 +106,9 @@ export function SiteFooter() {
         <div>
           <span className="footer-label">Studio</span>
           <Link href="/about">About</Link>
+          <Link href="/profile">Profile — Khalid Murtala</Link>
           <Link href="/services">Services</Link>
+          <Link href="/ai-agents">AI Agents</Link>
           <Link href="/work">Work</Link>
           <Link href="/insights">Insights</Link>
           <Link href="/start">Start a conversation</Link>

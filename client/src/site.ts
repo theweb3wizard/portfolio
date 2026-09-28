@@ -128,7 +128,6 @@ export const projects: Project[] = [
     relatedService: "/services/web3-mvp-development",
     liveUrl: "https://write3-ai.vercel.app",
     repoUrl: "https://github.com/theweb3wizard/Write3",
-    featured: true,
   },
   {
     name: "AgentHub",
@@ -321,7 +320,8 @@ export const services = {
 export const navLinks = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
+  { label: "AI Agents", href: "/ai-agents" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/start" },
+  { label: "Profile", href: "/profile" },
 ];

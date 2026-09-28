@@ -1,8 +1,19 @@
 import { useMemo, useState } from "react";
 import { Link, useLocation, useRoute } from "wouter";
-import { ArrowUpRight, Check, ChevronRight, ExternalLink, Github, Loader2 } from "lucide-react";
+import { ArrowUpRight, Check, ChevronRight, ExternalLink, Github, Loader2, Printer } from "lucide-react";
 import { ButtonLink, Faq, PageFrame, PageHero, ProjectCard, SectionHeading } from "@/components/SiteShell";
 import { insights, projects, services } from "@/site";
+import {
+  CONTACT_EMAIL,
+  PRICE_DISCLAIMER,
+  engagements,
+  getBookingHref,
+  normalizeInquiryType,
+  primarySkills,
+  socialLinks,
+  supportingCapabilities,
+} from "@/commercial";
+import type { Project } from "@/site";
 import { trpc } from "@/lib/trpc";
 import { getInquiryFormState, getInquirySubmitA11y, shouldBlockInquirySubmit } from "@/inquiryFormState";
 
@@ -14,30 +25,219 @@ const faqItems = [
     answer: "The Web3 Wizard (The Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We help early-stage founders and small teams turn problems and product ideas into focused working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs."
   },
   {
+    question: "Who is it for?",
+    answer: "Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone — and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built."
+  },
+  {
+    question: "What types of projects do you accept?",
+    answer: "Focused scopes: AI agents and agentic workflows, Solana and EVM application features, wallet intelligence and on-chain data tools, Telegram and Discord tools, Web3 automation, and focused product MVPs. If a project needs an open-ended build or an entire company built, it is not a fit."
+  },
+  {
     question: "Do you build AI agents?",
     answer: "Yes. AI agent development is a core capability. We have built AI agents for Telegram, Web3 workflows, and autonomous data pipelines. Every agent is built to a clear scope with defined behaviour and documented limitations."
   },
   {
-    question: "Do you build Solana applications?",
-    answer: "Yes. Solana application development is a primary technical focus. The studio has built Solana monitoring tools, wallet intelligence products, and Solana-integrated application layers."
-  },
-  {
-    question: "Do you have client testimonials?",
-    answer: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly."
+    question: "Do you build Solana and EVM applications?",
+    answer: "Yes. Solana and EVM application development are primary technical focuses. The studio has built Solana monitoring tools, EVM wallet intelligence products, and application layers that integrate with both ecosystems."
   },
   {
     question: "Are the portfolio projects client work?",
     answer: "No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labeled so you can distinguish personal work from future client engagements."
   },
   {
-    question: "Do you write smart contracts?",
-    answer: "The studio focuses on product experiences, application layers, AI agents, and integrations. Smart-contract auditing is outside scope. Smart-contract integration at the product layer can be discussed for specific engagements."
+    question: "Do you have client testimonials?",
+    answer: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly."
+  },
+  {
+    question: "Do you perform smart-contract audits?",
+    answer: "No. The studio does not provide formal smart-contract audits, penetration tests, or security certification. Application-layer reviews and product-layer smart-contract integrations can be discussed for specific engagements."
   },
   {
     question: "Do you use AI to build the products?",
     answer: "Yes. AI helps with research, planning, design, coding, testing, and review. Khalid Murtala directs the work, challenges the output, understands important decisions, tests key behaviour, and remains accountable for what is delivered."
   },
+  {
+    question: "How does pricing work?",
+    answer: "There are four starting points: Product and Technical Discovery from $750, AI Agent or Web3 Integration Sprint from $2,500, Focused dApp or Web3 Product Build from $6,000, and Embedded Product Engineering from $2,000/month. Starting prices are indicative. Final scope, timeline, integrations, and price are confirmed after a fit conversation."
+  },
+  {
+    question: "What happens after I submit an enquiry?",
+    answer: "Khalid Murtala reviews every inquiry personally — typically within two business days — and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification."
+  },
 ];
+
+// ─── Shared commercial sections ───────────────────────────────────────────────
+
+export function BookFitCallButton({ variant = "secondary" }: { variant?: "primary" | "secondary" | "text" }) {
+  const booking = getBookingHref();
+  if (booking.external) {
+    return (
+      <a href={booking.href} target="_blank" rel="noreferrer" className={`button button-${variant}`}>
+        Book a fit call <ArrowUpRight size={15} />
+      </a>
+    );
+  }
+  return <ButtonLink href={booking.href} variant={variant}>Book a fit call</ButtonLink>;
+}
+
+export function EngagementsSection() {
+  return (
+    <section className="section" id="ways-to-work">
+      <div className="container">
+        <SectionHeading
+          eyebrow="WAYS TO WORK TOGETHER"
+          title="Four starting points. One fit conversation."
+          children="Indicative starting prices — not fixed quotes. Every engagement is scoped and confirmed after a fit conversation."
+        />
+        <div className="engagement-grid">
+          {engagements.map((engagement) => (
+            <div className="engagement-card" key={engagement.id}>
+              <span className="engagement-index">{engagement.index}</span>
+              <h3>{engagement.name}</h3>
+              <p className="engagement-tagline">{engagement.tagline}</p>
+              <p className="engagement-for">{engagement.forWho}</p>
+              <div className="engagement-price-row">
+                <strong className="engagement-price">{engagement.priceLabel}</strong>
+                <span className="engagement-duration">{engagement.duration}</span>
+              </div>
+              <ul className="engagement-list">
+                {engagement.deliverables.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div className="engagement-cta">
+                <ButtonLink href={`/start?type=${engagement.inquiryType}`}>{engagement.cta}</ButtonLink>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="price-disclaimer">{PRICE_DISCLAIMER}</p>
+      </div>
+    </section>
+  );
+}
+
+export function WhatIBuildSection() {
+  const primary = [
+    {
+      title: "AI Agent Development",
+      copy: "Practical agents with defined behaviour: Telegram and Discord agents, wallet intelligence, transaction investigation, community operations, and controlled on-chain workflows.",
+      href: "/ai-agents",
+      label: "Explore AI agents",
+    },
+    {
+      title: "AI × Web3 Product Engineering",
+      copy: "AI-powered product features, on-chain data pipelines, wallet integrations, and automation woven into a product real users can navigate.",
+      href: "/services/ai-agent-solana-engineering",
+      label: "Explore AI × Web3 engineering",
+    },
+    {
+      title: "Decentralised Application Development",
+      copy: "Focused dApps and Web3 product interfaces on Solana and EVM: the smallest useful product, shipped with documentation and known limitations.",
+      href: "/services/web3-mvp-development",
+      label: "Explore product builds",
+    },
+  ];
+  return (
+    <section className="section">
+      <div className="container">
+        <SectionHeading
+          eyebrow="WHAT I BUILD"
+          title="Three primary capabilities."
+          children="Founder-led delivery — the person you talk to is the person who builds it."
+        />
+        <div className="routing-grid three-col">
+          {primary.map((item) => (
+            <ProblemCard key={item.title} title={item.title} copy={item.copy} href={item.href} label={item.label} eyebrow="CAPABILITY" />
+          ))}
+        </div>
+        <div className="supporting-capabilities">
+          <span className="eyebrow">SUPPORTING CAPABILITIES</span>
+          <p>{supportingCapabilities.join(" · ")}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const proofItems = [
+  { title: "Founder-built AI products shipped", detail: "Valor, WalletLens, Write3, AgentHub, and OrderFlow — all with live public demos." },
+  { title: "Public GitHub repositories", detail: "Every featured project links to its real repository. Nothing is a mockup." },
+  { title: "Multi-chain application work", detail: "Solana monitoring and EVM wallet intelligence across Ethereum, Polygon, BNB, Arbitrum, and Base." },
+  { title: "AI-agent implementations", detail: "Autonomous Telegram agents, policy-controlled agent access layers, and AI-triggered data workflows." },
+  { title: "On-chain data tools", detail: "Wallet intelligence, transaction investigation, and trading-history analysis in plain English." },
+  { title: "Solana and Web3 application experiments", detail: "Monitoring workflows and community automation, each with documented limitations." },
+  { title: "Technical documentation and architecture work", detail: "Every project and engagement ships with handover notes and known limitations." },
+];
+
+export function ProofSection() {
+  return (
+    <section className="section">
+      <div className="container">
+        <SectionHeading
+          eyebrow="PROOF BEYOND CODE"
+          title="Verifiable work. No borrowed credibility."
+          children="No client logos, no invented metrics, no “trusted by” claims. What follows can be checked: live demos, public repositories, and documented decisions."
+        />
+        <div className="proof-grid">
+          {proofItems.map((item) => (
+            <div className="proof-item" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CurrentFocusSection() {
+  return (
+    <section className="section">
+      <div className="container split-callout">
+        <div>
+          <SectionHeading
+            eyebrow="CURRENT FOCUS"
+            title="Building practical AI-native Web3 products."
+            children="Khalid is currently focused on AI agents, wallet intelligence, Web3 operations tools, developer support tools, controlled on-chain workflows, and Solana and EVM integrations — and is open to project-based client work and AI/Web3 engineering roles."
+          />
+        </div>
+        <div className="callout-panel">
+          <div className="boundary-list">
+            <div className="boundary-item">AI agents with defined behaviour and human approval gates.</div>
+            <div className="boundary-item">Wallet intelligence and transaction investigation tools.</div>
+            <div className="boundary-item">Web3 operations and community automation.</div>
+            <div className="boundary-item">Controlled on-chain workflows on Solana and EVM.</div>
+          </div>
+          <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <ButtonLink href="/profile" variant="secondary">View profile</ButtonLink>
+            <ButtonLink href="/work" variant="text">See the work</ButtonLink>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FinalCtaSection() {
+  return (
+    <section className="cta-section">
+      <div className="container">
+        <span className="eyebrow">NEXT STEP</span>
+        <h2>Have a Web3 problem that needs to become a product?</h2>
+        <p>
+          Tell us what you are trying to build, where you are stuck, and what
+          a working first version needs to do.
+        </p>
+        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+          <ButtonLink href="/start">Start a conversation</ButtonLink>
+          <BookFitCallButton />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function Home() {
   return (
@@ -48,6 +248,7 @@ export function Home() {
           <div>
             <span className="eyebrow">AI-NATIVE WEB3 PRODUCT STUDIO</span>
             <h1>Turn Your Web3 Problem Into a Working Product.</h1>
+            <p className="hero-identity">Khalid Murtala — AI × Web3 Product Engineer and founder of The Web3 Wizard.</p>
             <p className="hero-copy">
               The Web3 Wizard is a founder-led AI-native product studio helping early-stage Web3
               founders and small teams turn important problems and roadmap milestones into focused,
@@ -56,6 +257,9 @@ export function Home() {
             <div className="hero-actions">
               <ButtonLink href="/start">Start a conversation</ButtonLink>
               <ButtonLink href="/work" variant="secondary">See the work</ButtonLink>
+            </div>
+            <div className="hero-actions hero-tertiary">
+              <ButtonLink href="/profile" variant="text">View profile</ButtonLink>
             </div>
             <p className="hero-note">
               AI helps us move faster. Khalid Murtala directs the work, challenges the output,
@@ -82,68 +286,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* What are you trying to do */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading
-            eyebrow="START HERE"
-            title="What are you trying to do?"
-            children="Start with the situation that sounds most like yours."
-          />
-          <div className="routing-grid">
-            <ProblemCard
-              title="I have a problem to solve"
-              copy="You know there is a real problem but need help defining the product and scoping what to build first."
-              href="/services/product-discovery"
-              label="Explore Product Discovery"
-            />
-            <ProblemCard
-              title="I have a product to build"
-              copy="You have a validated problem or concept and need a founder-led AI-native studio to build it."
-              href="/services/web3-mvp-development"
-              label="Explore Web3 Product Build"
-            />
-            <ProblemCard
-              title="I need an AI agent or Solana integration"
-              copy="You know the capability you need: an AI agent, Solana integration, or automated Web3 workflow."
-              href="/services/ai-agent-solana-engineering"
-              label="Explore AI Agent & Solana Engineering"
-            />
-            <ProblemCard
-              title="I am not sure where to start"
-              copy="Send the situation in plain English. Khalid will help identify the smallest useful first step."
-              href="/start"
-              label="Start a conversation"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities */}
-      <section className="section">
-        <div className="container capabilities-grid">
-          <SectionHeading
-            eyebrow="CAPABILITIES"
-            title="What I help you build"
-            children="The goal is not to build the largest possible system. It is to identify the smallest useful product, make the important decisions clear, and ship something you can learn from."
-          />
-          <div className="capability-list">
-            {[
-              "AI agents for Telegram and Web3 workflows",
-              "Solana applications and monitoring tools",
-              "dApps and Web3 product interfaces",
-              "Automation tools and data pipelines",
-              "EVM wallet intelligence tools",
-              "Web3 content and community tools",
-              "AI-powered product features",
-              "Focused Web3 MVPs",
-            ].map((item) => (
-              <div className="capability-item" key={item}>{item}</div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Selected work */}
       <section className="section">
         <div className="container">
@@ -162,6 +304,12 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <EngagementsSection />
+
+      <WhatIBuildSection />
+
+      <ProofSection />
 
       {/* Process */}
       <section className="section">
@@ -185,79 +333,13 @@ export function Home() {
         </div>
       </section>
 
-      {/* AI method */}
-      <section className="section">
-        <div className="container split-callout">
-          <div className="callout-panel">
-            <span className="eyebrow">AI-NATIVE, NOT AI-UNACCOUNTABLE</span>
-            <h3>AI helps us move faster. It does not replace judgment.</h3>
-            <p className="capability-copy">
-              We use AI throughout the work: research, planning, design, coding, testing, and review.
-              Khalid Murtala directs every engagement, challenges AI output, understands the important
-              decisions, and verifies what gets delivered.
-            </p>
-          </div>
-          <div className="boundary-list">
-            <div className="boundary-item">AI-assisted speed without treating output as automatically correct.</div>
-            <div className="boundary-item">Human-directed decisions with plain-English explanations.</div>
-            <div className="boundary-item">Transparent verification and documented limitations.</div>
-            <div className="boundary-item">No inflated claims. No vague capability promises.</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Boundaries */}
-      <section className="section">
-        <div className="container split-callout">
-          <div>
-            <SectionHeading
-              eyebrow="WHAT WE BUILD AND WHAT WE DON'T"
-              title="Focused scope. Honest limits."
-              children="We build focused MVPs and product capabilities, not entire companies."
-            />
-          </div>
-          <div className="callout-panel">
-            <p className="capability-copy">
-              We do not present personal projects as client work, claim to be a generic Web3 agency,
-              or promise outcomes we cannot control. Every engagement has visible deliverables,
-              a defined scope, and documented limitations.
-            </p>
-            <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <ButtonLink href="/services" variant="secondary">View services</ButtonLink>
-              <ButtonLink href="/terms" variant="text">Service boundaries</ButtonLink>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CurrentFocusSection />
 
       {/* FAQ */}
       <section className="section">
         <div className="container">
           <SectionHeading eyebrow="FAQ" title="Questions worth answering" align="center" />
           <Faq items={faqItems} />
-        </div>
-      </section>
-
-      {/* About the founder */}
-      <section className="section">
-        <div className="container split-callout">
-          <div>
-            <SectionHeading
-              eyebrow="ABOUT THE FOUNDER"
-              title="Built and directed by Khalid Murtala."
-              children="I am Khalid Murtala, the founder of The Web3 Wizard. I work directly with founders and small teams, from the first conversation through to handover, so the person building your product is the person you talk to."
-            />
-          </div>
-          <div className="callout-panel">
-            <p className="capability-copy">
-              This is a founder-led operation, not an agency with layers between you and the work.
-              AI accelerates the build. I direct it, challenge it, test what matters, and stay
-              accountable for what ships.
-            </p>
-            <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <ButtonLink href="/about" variant="secondary">More about the studio</ButtonLink>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -285,26 +367,15 @@ export function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="cta-section">
-        <div className="container">
-          <span className="eyebrow">NEXT STEP</span>
-          <h2>Have a Web3 problem that needs to become a product?</h2>
-          <p>
-            Tell us what you are trying to build, where you are stuck, and what
-            a working first version needs to do.
-          </p>
-          <ButtonLink href="/start">Start a conversation</ButtonLink>
-        </div>
-      </section>
+      <FinalCtaSection />
     </PageFrame>
   );
 }
 
-function ProblemCard({ title, copy, href, label }: { title: string; copy: string; href: string; label: string }) {
+function ProblemCard({ title, copy, href, label, eyebrow = "PATH" }: { title: string; copy: string; href: string; label: string; eyebrow?: string }) {
   return (
     <Link href={href} className="problem-card">
-      <span className="eyebrow">PATH</span>
+      <span className="eyebrow">{eyebrow}</span>
       <h3>{title}</h3>
       <p>{copy}</p>
       <span className="inline-link">{label} <ArrowUpRight size={14} /></span>
@@ -443,6 +514,12 @@ const serviceDetail = (key: keyof typeof services) => ({
 export function ServiceDetailPage({ type }: { type: keyof typeof services }) {
   const service = services[type];
   const details = serviceDetail(type);
+  const engagementForService: Record<string, (typeof engagements)[number]> = {
+    productDiscovery: engagements[0],
+    web3MvpDevelopment: engagements[2],
+    aiAgentSolanaEngineering: engagements[1],
+  };
+  const engagement = engagementForService[type];
   return (
     <PageFrame>
       <PageHero eyebrow={service.eyebrow} title={service.title} description={service.description}>
@@ -483,6 +560,11 @@ export function ServiceDetailPage({ type }: { type: keyof typeof services }) {
               force a project that does not suit the scope.
             </p>
             <ButtonLink href={`/start?type=${service.query}`}>{service.cta}</ButtonLink>
+            {engagement && (
+              <p className="engagement-aside-price">
+                {engagement.priceLabel} · {engagement.duration}. {PRICE_DISCLAIMER}
+              </p>
+            )}
             <div className="boundary-list" style={{ marginTop: 25 }}>
               <div className="boundary-item">Direct communication with Khalid Murtala.</div>
               <div className="boundary-item">Agreed scope with visible deliverables.</div>
@@ -561,9 +643,27 @@ export function ProjectDetailPage() {
         <div className="container">
           <div className="project-detail-hero">
             <div>
-              <span className="personal-label">Founder-built personal project. Not client work.</span>
+              <span className="personal-label">Founder-built reference implementation. Not client work.</span>
               <h1>{project.name}</h1>
               <p className="hero-copy">{project.description}</p>
+              <dl className="project-facts">
+                <div>
+                  <dt>Category</dt>
+                  <dd>{project.category}</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd>{project.status}</dd>
+                </div>
+                <div>
+                  <dt>Role</dt>
+                  <dd>Founder · Product Engineer · AI Integration Lead</dd>
+                </div>
+                <div>
+                  <dt>Built with</dt>
+                  <dd>{project.stack.join(", ")}</dd>
+                </div>
+              </dl>
               <div className="card-meta" style={{ marginTop: 25 }}>
                 <span className="status-badge">{project.status}</span>
                 <span className="tag">{project.category}</span>
@@ -593,12 +693,33 @@ export function ProjectDetailPage() {
               <p>{project.problem}</p>
               <h3>Key decisions</h3>
               <ul>{project.decisions.map((item) => <li key={item}>{item}</li>)}</ul>
-              <h3>Technology stack</h3>
-              <p>Built with: {project.stack.join(", ")}.</p>
+              <h3>Built with</h3>
+              <p>{project.stack.join(", ")}.</p>
+              <div className="stack-chips">
+                {project.stack.map((tech) => (
+                  <span className="tag" key={tech}>{tech}</span>
+                ))}
+              </div>
               <h3>Known limitations</h3>
               <ul>{project.limitations.map((item) => <li key={item}>{item}</li>)}</ul>
-              <h3>What this project demonstrates</h3>
+              <h3>What this demonstrates</h3>
               <ul>{project.lessons.map((item) => <li key={item}>{item}</li>)}</ul>
+              <h3>Demo video</h3>
+              <div className="demo-placeholder" role="note" aria-label="Demo video placeholder">
+                <p>No demo video yet. Explore the live demo or repository to see this project in action.</p>
+                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-link">
+                      Open live demo <ExternalLink size={13} />
+                    </a>
+                  )}
+                  {project.repoUrl && (
+                    <a href={project.repoUrl} target="_blank" rel="noreferrer" className="inline-link">
+                      Open repository <Github size={13} />
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
             <aside className="side-panel">
               <span className="eyebrow">RELATED SERVICE</span>
@@ -651,6 +772,9 @@ export function AboutPage() {
               </a>
             </div>
             <ButtonLink href="/start">Start a conversation</ButtonLink>
+            <div style={{ display: "flex", gap: 12, marginTop: 12, flexWrap: "wrap" }}>
+              <ButtonLink href="/profile" variant="secondary">View Khalid's profile</ButtonLink>
+            </div>
           </aside>
           <div>
             <h2>Direct ownership from architecture to handover.</h2>
@@ -897,7 +1021,12 @@ export function InsightDetailPage() {
 
 export function StartPage() {
   const [location] = useLocation();
-  const initialType = new URLSearchParams(location.split("?")[1] || "").get("type") || "not-sure";
+  const params = new URLSearchParams(location.split("?")[1] || "");
+  const initialType = normalizeInquiryType(params.get("type"));
+  const projectParam = params.get("project") || "";
+  const isFitCall = params.get("intent") === "fit-call";
+  const projectContext = projects.find((item) => item.slug === projectParam);
+  const booking = getBookingHref();
   const mutation = trpc.inquiries.create.useMutation();
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
@@ -924,16 +1053,38 @@ export function StartPage() {
       await mutation.mutateAsync(form);
       setSent(true);
     } catch {
-      setErrors({ form: "Something went wrong while sending. Please try again or email theweb3wizard00@gmail.com." });
+      setErrors({ form: `Something went wrong while sending. Please try again or email ${CONTACT_EMAIL}.` });
     }
   };
   return (
     <PageFrame>
       <PageHero
         eyebrow="START A CONVERSATION"
-        title="Start a conversation. Let's turn the problem into a product."
+        title={isFitCall ? "Book a fit call. Start with a message." : "Start a conversation. Let's turn the problem into a product."}
         description="You do not need a perfect brief. Tell us what you are trying to build, the problem you are solving, and what a useful first version needs to do."
-      />
+      >
+        {isFitCall && !booking.external && (
+          <p className="fit-call-note">
+            Online scheduling is not configured yet — send the form below and Khalid will reply
+            personally to arrange a fit call. Prefer email?{" "}
+            <a className="inline-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </p>
+        )}
+        {isFitCall && booking.external && (
+          <p className="fit-call-note">
+            <a href={booking.href} target="_blank" rel="noreferrer" className="inline-link">
+              Prefer to pick a time directly? Open the scheduler <ArrowUpRight size={14} />
+            </a>
+          </p>
+        )}
+        {projectContext && (
+          <p className="fit-call-note">
+            You are asking about something similar to <strong>{projectContext.name}</strong> —
+            a founder-built reference implementation, not client work. Mention what you would
+            want done differently in the form below.
+          </p>
+        )}
+      </PageHero>
       <div className="page-content">
         <div className="container form-shell">
           <div>
@@ -950,8 +1101,8 @@ export function StartPage() {
             <div className="fit-check-panel">
               <strong>Prefer to ask one question first?</strong>
               <p>Email directly if you want to check fit before completing the form.</p>
-              <a className="inline-link" href="mailto:theweb3wizard00@gmail.com">
-                theweb3wizard00@gmail.com <ArrowUpRight size={14} />
+              <a className="inline-link" href={`mailto:${CONTACT_EMAIL}`}>
+                {CONTACT_EMAIL} <ArrowUpRight size={14} />
               </a>
             </div>
           </div>
@@ -975,9 +1126,13 @@ export function StartPage() {
                   <Field label="Describe the problem or product" name="description" as="textarea" value={form.description} onChange={update} error={errors.description} required className="full" hint="What problem are you solving? What does a useful first version need to do? Minimum 30 characters." />
                   <Field label="Type of engagement" name="situation" as="select" value={form.situation} onChange={update} className="full">
                     <option value="not-sure">Not sure yet, help me figure it out</option>
-                    <option value="product-discovery">Product Discovery Sprint</option>
-                    <option value="web3-mvp-development">AI-Native Web3 Product Build</option>
-                    <option value="ai-agent-solana-engineering">AI Agent & Solana Engineering</option>
+                    <option value="discovery">Product and Technical Discovery (from $750)</option>
+                    <option value="integration-sprint">AI Agent or Web3 Integration Sprint (from $2,500)</option>
+                    <option value="product-build">Focused dApp or Web3 Product Build (from $6,000)</option>
+                    <option value="embedded">Embedded Product Engineering (from $2,000/month)</option>
+                    <option value="product-discovery">Product Discovery Sprint (service page)</option>
+                    <option value="web3-mvp-development">AI-Native Web3 Product Build (service page)</option>
+                    <option value="ai-agent-solana-engineering">AI Agent & Solana Engineering (service page)</option>
                   </Field>
                   <Field label="Where are you in the process?" name="stage" as="select" value={form.stage} onChange={update}>
                     <option value="idea">I have an idea or problem</option>
@@ -1068,6 +1223,270 @@ function Field({
       {hint && <small>{hint}</small>}
       {error && <span className="form-error">{error}</span>}
     </div>
+  );
+}
+
+// ─── Profile / Hire Khalid Page ───────────────────────────────────────────────
+
+export function ProfilePage() {
+  const selectedWork = projects.filter((p) => p.featured);
+  return (
+    <PageFrame>
+      <div className="profile-printable">
+        <PageHero
+          eyebrow="PROFILE — KHALID MURTALA"
+          title="Khalid Murtala — AI × Web3 Product Engineer"
+          description="I build AI agents, Web3 applications, wallet intelligence tools, automation systems, and focused product MVPs. My work combines TypeScript, React, Next.js, Node.js, LLM APIs, blockchain data, Solana, EVM integrations, and human-controlled agent workflows."
+        >
+          <div className="hero-actions">
+            <ButtonLink href="/start">Start a Conversation</ButtonLink>
+            <BookFitCallButton />
+          </div>
+          <div className="hero-actions hero-tertiary no-print">
+            <button type="button" className="button button-text" onClick={() => window.print()}>
+              <Printer size={15} /> Print or save this profile as PDF
+            </button>
+          </div>
+        </PageHero>
+        <div className="page-content">
+          <div className="container detail-grid">
+            <div>
+              <h2>Professional summary</h2>
+              <p>
+                Founder of The Web3 Wizard / The Web3 Wizard Labs — a founder-led AI-native Web3
+                product studio. I turn real problems and roadmap milestones into focused working
+                products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.
+                AI accelerates the work; I remain accountable for what ships.
+              </p>
+              <h3>What I build</h3>
+              <ul>
+                <li>AI agents for Telegram, Discord, and Web3 workflows</li>
+                <li>AI × Web3 product features and agentic pipelines</li>
+                <li>Decentralised applications on Solana and EVM chains</li>
+                <li>Wallet intelligence and on-chain data tools</li>
+                <li>Web3 automation and community operations tools</li>
+                <li>Focused product MVPs for early-stage founders</li>
+              </ul>
+              <h3>Primary technical skills</h3>
+              <div className="stack-chips">
+                {primarySkills.map((skill) => (
+                  <span className="tag" key={skill}>{skill}</span>
+                ))}
+              </div>
+              <h3>Selected projects</h3>
+              <p>
+                All projects below are founder-built reference implementations — not client work.
+                Each links to a live demo and public repository where available.
+              </p>
+              <ul>
+                {projects.map((project) => (
+                  <li key={project.slug}>
+                    <Link href={`/work/${project.slug}`} className="inline-link" style={{ marginTop: 0 }}>
+                      {project.name}
+                    </Link>
+                    {" "}— {project.summary}
+                    {project.liveUrl && (
+                      <>
+                        {" "}<a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-link" style={{ marginTop: 0 }}>Live</a>
+                      </>
+                    )}
+                    {project.repoUrl && (
+                      <>
+                        {" "}<a href={project.repoUrl} target="_blank" rel="noreferrer" className="inline-link" style={{ marginTop: 0 }}>GitHub</a>
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <h3>Current focus</h3>
+              <p>
+                Practical AI-native Web3 products: AI agents, wallet intelligence, Web3 operations
+                tools, developer support tools, controlled on-chain workflows, and Solana and EVM
+                integrations.
+              </p>
+              <h3>Availability</h3>
+              <ul>
+                <li>Project-based client work: open — starting with a fit conversation.</li>
+                <li>AI/Web3 engineering roles: open to credible inbound opportunities.</li>
+                <li>Reviews every inquiry personally, typically within two business days.</li>
+              </ul>
+            </div>
+            <aside className="side-panel">
+              <span className="eyebrow">CONTACT & LINKS</span>
+              <h3>Work with Khalid</h3>
+              <div className="profile-links">
+                {socialLinks.map((link) => (
+                  <a key={link.label} href={link.href} target={link.href.startsWith("mailto") ? undefined : "_blank"} rel="noreferrer" className="inline-link">
+                    {link.label}: {link.handle} <ArrowUpRight size={13} />
+                  </a>
+                ))}
+              </div>
+              <div style={{ display: "grid", gap: 12, marginTop: 20 }}>
+                <ButtonLink href="/work">View the work</ButtonLink>
+                <ButtonLink href="/services" variant="secondary">View services</ButtonLink>
+                <ButtonLink href="/start" variant="secondary">Start a conversation</ButtonLink>
+              </div>
+              <p className="engagement-aside-price" style={{ marginTop: 20 }}>
+                Engagements start from $750 (discovery). {PRICE_DISCLAIMER}
+              </p>
+            </aside>
+          </div>
+          <div className="container" style={{ marginTop: 60 }}>
+            <SectionHeading
+              eyebrow="SELECTED WORK"
+              title="Evidence, not claims."
+              children="The same founder-built projects shown across this site."
+            />
+            <div className="projects-grid">
+              {selectedWork.map((project: Project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <FinalCtaSection />
+    </PageFrame>
+  );
+}
+
+// ─── AI Agents Landing Page ───────────────────────────────────────────────────
+
+const agentUseCases = [
+  {
+    title: "Documentation and support agents",
+    problem: "Web3 products bury answers in docs, Discord threads, and scattered announcements.",
+    who: "Founders and small teams drowning in repeat support questions.",
+    does: "Answers from defined sources, escalates what it cannot verify, and logs every conversation.",
+    doesNot: "It does not invent policy, promise outcomes, or replace human support for sensitive cases.",
+    clientAngle: "As a client project: a support agent scoped to your docs, with escalation rules you approve.",
+  },
+  {
+    title: "Wallet intelligence agents",
+    problem: "On-chain wallet data is public but unreadable to non-technical stakeholders.",
+    who: "Founders, analysts, and teams doing diligence on counterparties or users.",
+    does: "Turns wallet history into plain-English behaviour summaries, portfolio breakdowns, and risk signals.",
+    doesNot: "It does not give financial advice or certify that a wallet is safe.",
+    clientAngle: "As a client project: a wallet-intelligence workflow scoped to your chains and questions. Reference: WalletLens.",
+  },
+  {
+    title: "Transaction investigation assistants",
+    problem: "A confusing transaction can take hours to unpack across explorers and logs.",
+    who: "Operators and developers triaging failed or unexpected on-chain behaviour.",
+    does: "Walks through transaction history step by step and explains what happened in readable language.",
+    doesNot: "It does not reverse transactions or guarantee it catches every edge case.",
+    clientAngle: "As a client project: an investigation assistant scoped to your protocol or chain.",
+  },
+  {
+    title: "Web3 community operations agents",
+    problem: "Community channels need constant moderation and repetitive question-answering.",
+    who: "Community-led projects on Telegram and Discord.",
+    does: "Reasons over conversation context, answers within defined boundaries, and can trigger defined on-chain actions such as tipping contributors.",
+    doesNot: "It does not self-modify, invent permissions, or act outside its approved capability set.",
+    clientAngle: "As a client project: a community agent with capabilities and refusal rules you define. Reference: Valor.",
+  },
+  {
+    title: "Treasury monitoring agents",
+    problem: "Treasury movements go unnoticed until someone asks uncomfortable questions.",
+    who: "DAOs, protocols, and small teams managing shared funds.",
+    does: "Watches defined wallets and delivers plain-English alerts when meaningful movements occur.",
+    doesNot: "It does not move funds, approve spending, or replace multisig controls.",
+    clientAngle: "As a client project: a monitoring workflow scoped to your wallets, thresholds, and alert channels.",
+  },
+  {
+    title: "Developer support agents",
+    problem: "Developers integrating your product hit the same integration questions repeatedly.",
+    who: "Infrastructure and protocol teams with external builders.",
+    does: "Answers integration questions from your docs and examples, with code pointers and escalation paths.",
+    doesNot: "It does not debug private codebases or guarantee integration outcomes.",
+    clientAngle: "As a client project: a developer assistant grounded in your documentation.",
+  },
+  {
+    title: "Research and intelligence workflows",
+    problem: "Grant programs, ecosystems, and analysts need structured reads on noisy activity.",
+    who: "Ecosystem teams and researchers tracking builders, grants, or governance.",
+    does: "Collects defined signals, summarises them on a schedule, and cites its sources.",
+    doesNot: "It does not make funding decisions or verify off-chain claims.",
+    clientAngle: "As a client project: a research pipeline scoped to your sources and output format.",
+  },
+  {
+    title: "Controlled on-chain workflows",
+    problem: "Some operations should happen automatically — but only within strict limits.",
+    who: "Teams that need automation without giving an agent the keys to everything.",
+    does: "Executes pre-approved actions within policy limits, with audit trails and human approval gates for anything sensitive.",
+    doesNot: "It does not self-deploy, expand its own permissions, or act without a trace.",
+    clientAngle: "As a client project: an automation scoped to approved actions, with you holding the approval keys. Reference: AgentHub.",
+  },
+];
+
+export function AiAgentsPage() {
+  return (
+    <PageFrame>
+      <PageHero
+        eyebrow="AI AGENTS"
+        title="Practical AI agents for real Web3 workflows."
+        description="Not hype demos. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters. Every example below is grounded in founder-built reference implementations — clearly labeled, never presented as client deployments."
+      >
+        <div className="hero-actions">
+          <ButtonLink href="/start?type=integration-sprint">Discuss an Integration</ButtonLink>
+          <ButtonLink href="/work/valor" variant="secondary">See Valor in action</ButtonLink>
+        </div>
+      </PageHero>
+      <div className="page-content">
+        <div className="container">
+          <SectionHeading
+            eyebrow="EVIDENCE FIRST"
+            title="Built, shipped, and labeled honestly."
+            children="These reference implementations show what the agent work actually looks like."
+          />
+          <div className="projects-grid">
+            {projects
+              .filter((p) => ["valor", "agenthub", "walletlens"].includes(p.slug))
+              .map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+          </div>
+          <div style={{ marginTop: 80 }}>
+            <SectionHeading
+              eyebrow="USE CASES"
+              title="Where an agent earns its place — and where it does not."
+              children="Not every problem needs an agent. Each category below states the problem, who feels it, what the agent does, what it refuses to do, and how it could become a scoped client project."
+            />
+            <div className="usecase-grid">
+              {agentUseCases.map((useCase) => (
+                <article className="usecase-card" key={useCase.title}>
+                  <h3>{useCase.title}</h3>
+                  <p><strong>The problem:</strong> {useCase.problem}</p>
+                  <p><strong>Who feels it:</strong> {useCase.who}</p>
+                  <p><strong>What the agent does:</strong> {useCase.does}</p>
+                  <p><strong>What it does not do:</strong> {useCase.doesNot}</p>
+                  <p className="offer-fit">{useCase.clientAngle}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="split-callout" style={{ marginTop: 80 }}>
+            <div>
+              <SectionHeading
+                eyebrow="ENGAGEMENT"
+                title="One agent. Defined scope. Documented behaviour."
+                children="Agent work ships as an Integration Sprint: starting from $2,500, typically 1–2 weeks, with behaviour testing, documentation, and handover."
+              />
+            </div>
+            <div className="callout-panel">
+              <p className="capability-copy">
+                {PRICE_DISCLAIMER}
+              </p>
+              <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <ButtonLink href="/start?type=integration-sprint">Discuss an Integration</ButtonLink>
+                <BookFitCallButton />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <FinalCtaSection />
+    </PageFrame>
   );
 }
 

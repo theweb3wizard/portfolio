@@ -501,6 +501,52 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     ],
   },
 
+  // ── Profile / hire ────────────────────────────────────────────────────────
+  "/profile": {
+    title: "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+    description:
+      "Profile of Khalid Murtala: AI agents, Web3 applications, wallet intelligence, automation, and focused MVPs. Skills, selected projects, availability, and contact.",
+    schemas: [
+      PERSON_SCHEMA,
+      ORGANIZATION_SCHEMA,
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Profile", url: `${SITE_URL}/profile` },
+      ]),
+    ],
+  },
+
+  "/hire-khalid": {
+    title: "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+    description:
+      "Work with Khalid Murtala on AI agents, Web3 product engineering, and focused dApp builds. Project-based availability plus contact details.",
+    schemas: [
+      PERSON_SCHEMA,
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Hire Khalid", url: `${SITE_URL}/hire-khalid` },
+      ]),
+    ],
+  },
+
+  // ── AI agents ─────────────────────────────────────────────────────────────
+  "/ai-agents": {
+    title: "AI Agent Development for Web3 | The Web3 Wizard",
+    description:
+      "Practical AI agents for Web3: support, wallet intelligence, community operations, treasury monitoring, and controlled on-chain workflows. Founder-built reference implementations.",
+    schemas: [
+      PERSON_SCHEMA,
+      serviceSchema(
+        "AI Agent Development",
+        "Practical AI agents for Web3 workflows: documentation and support, wallet intelligence, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities, explicit boundaries, and human approval gates.",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "AI Agents", url: `${SITE_URL}/ai-agents` },
+      ]),
+    ],
+  },
+
   // ── Insights ──────────────────────────────────────────────────────────────
   "/insights": {
     title: "Web3 Insights | The Web3 Wizard",

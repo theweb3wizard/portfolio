@@ -91,6 +91,28 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Profile / hiring -->
+  <url>
+    <loc>https://www.theweb3wizard.xyz/profile</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.theweb3wizard.xyz/hire-khalid</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI agents -->
+  <url>
+    <loc>https://www.theweb3wizard.xyz/ai-agents</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Insights -->
   <url>
     <loc>https://www.theweb3wizard.xyz/insights</loc>

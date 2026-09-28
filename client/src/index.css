@@ -462,7 +462,9 @@ p { margin: 0; }
   .hero { padding-top: 75px; }
   .hero-visual { min-height: 370px; }
   .routing-grid { grid-template-columns: repeat(2, 1fr); }
+  .routing-grid.three-col { grid-template-columns: repeat(2, 1fr); }
   .projects-grid, .insight-grid { grid-template-columns: repeat(2, 1fr); }
+  .engagement-grid, .proof-grid, .usecase-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .side-panel { position: static; }
   .problem-card h3, .service-card h3 { margin-top: 22px; }
@@ -480,12 +482,16 @@ p { margin: 0; }
 
   /* Single column */
   .routing-grid,
+  .routing-grid.three-col,
   .projects-grid,
   .process-grid,
   .service-grid,
   .insight-grid,
   .capability-list,
   .form-grid,
+  .engagement-grid,
+  .proof-grid,
+  .usecase-grid,
   .offer-grid { grid-template-columns: 1fr; }
 
   /* Article font slightly smaller on phone */
@@ -514,5 +520,74 @@ p { margin: 0; }
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* ─── Engagements (Ways to Work Together) ──────────────────────────────────── */
+
+.engagement-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.engagement-card { padding: 28px; border: 1px solid var(--border); background: linear-gradient(160deg, rgba(215,168,75,.07), transparent 55%), #111214; display: flex; flex-direction: column; gap: 12px; transition: transform .25s var(--ease-out), border-color .25s var(--ease-out); }
+.engagement-card:hover { transform: translateY(-5px); border-color: rgba(215,168,75,.65); }
+.engagement-index { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .13em; }
+.engagement-card h3 { margin: 0; font-size: 23px; letter-spacing: -.05em; line-height: 1.1; }
+.engagement-tagline { color: #f4f4f1; font-size: var(--text-body-sm); font-weight: 600; line-height: 1.55; margin: 0; }
+.engagement-for { color: var(--muted); font-size: var(--text-body-sm); line-height: var(--lh-body-sm); margin: 0; }
+.engagement-price-row { display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.engagement-price { color: var(--gold); font-size: 19px; letter-spacing: -.03em; }
+.engagement-duration { color: var(--blue); font-size: 12px; line-height: 1.55; }
+.engagement-list { margin: 0; padding-left: 18px; color: var(--muted); font-size: var(--text-body-sm); line-height: 1.7; display: grid; gap: 4px; }
+.engagement-cta { margin-top: auto; padding-top: 8px; }
+.price-disclaimer { margin-top: 22px; color: var(--muted); font-size: 12px; line-height: 1.6; max-width: 72ch; }
+.engagement-aside-price { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 14px 0 0; }
+.engagement-aside-price::first-line { color: var(--gold); font-weight: 700; }
+
+/* ─── Proof / focus / capabilities ─────────────────────────────────────────── */
+
+.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.proof-item { padding: 22px; border: 1px solid var(--border); background: #111214; }
+.proof-item h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: -.03em; }
+.proof-item p { color: var(--muted); font-size: var(--text-body-sm); line-height: var(--lh-body-sm); margin: 0; }
+.routing-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+.supporting-capabilities { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--border); }
+.supporting-capabilities p { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.hero-identity { margin: 0 0 16px; color: var(--gold); font-size: 14px; font-weight: 600; letter-spacing: -.01em; }
+.hero-tertiary { margin-top: 14px; }
+.fit-call-note { margin-top: 20px; max-width: var(--copy-max); color: var(--muted); font-size: 14px; line-height: 1.7; }
+.fit-call-note strong { color: #f4f4f1; }
+
+/* ─── Project quick-scan ───────────────────────────────────────────────────── */
+
+.project-facts { display: grid; gap: 0; margin: 26px 0 0; border-top: 1px solid var(--border); }
+.project-facts > div { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.project-facts dt { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); padding-top: 3px; }
+.project-facts dd { margin: 0; color: #d6d7d2; font-size: 14px; line-height: 1.6; }
+.stack-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.demo-placeholder { padding: 22px; border: 1px dashed var(--border); background: rgba(255,255,255,.02); }
+.demo-placeholder p { color: var(--muted); font-size: var(--text-body-sm); line-height: 1.65; margin: 0 0 6px; }
+
+/* ─── AI agents use cases ──────────────────────────────────────────────────── */
+
+.usecase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.usecase-card { padding: 26px; border: 1px solid var(--border); background: #111214; }
+.usecase-card h3 { margin: 0 0 14px; font-size: 20px; letter-spacing: -.04em; }
+.usecase-card p { color: var(--muted); font-size: var(--text-body-sm); line-height: var(--lh-body-sm); margin: 0 0 10px; }
+.usecase-card p strong { color: #d6d7d2; }
+.usecase-card p:last-child { margin-bottom: 0; }
+
+/* ─── Profile ──────────────────────────────────────────────────────────────── */
+
+.profile-links { display: flex; flex-direction: column; gap: 10px; margin: 16px 0 4px; }
+.profile-links .inline-link { margin-top: 0; }
+
+/* ─── Print (profile / CV) ─────────────────────────────────────────────────── */
+
+@media print {
+  .site-header, .site-footer, .cta-section, .no-print, .mobile-overlay { display: none !important; }
+  .site-frame { background: #fff; }
+  :root, body { background: #fff; color: #111; }
+  .page-hero, .section, .page-content { padding: 24px 0; border: none; }
+  .hero h1, .page-hero h1 { font-size: 32px; }
+  .hero-copy, .capability-copy, .about-copy, .detail-grid p, .detail-grid li { color: #333; }
+  .callout-panel, .side-panel, .engagement-card, .proof-item, .usecase-card { border: 1px solid #999; background: #fff; break-inside: avoid; }
+  a { color: #111; }
 }
 

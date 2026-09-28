@@ -76,6 +76,18 @@ export const CLIENT_ROUTE_META: Record<string, ClientRouteMeta> = {
     title: "About | Khalid Murtala | The Web3 Wizard",
     description: "Khalid Murtala, founder of The Web3 Wizard Labs — founder-led AI-native Web3 studio building AI agents, Solana apps, and focused MVPs.",
   },
+  "/profile": {
+    title: "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+    description: "Profile of Khalid Murtala: AI agents, Web3 applications, wallet intelligence, automation, and focused MVPs. Skills, selected projects, availability, and contact.",
+  },
+  "/hire-khalid": {
+    title: "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+    description: "Work with Khalid Murtala on AI agents, Web3 product engineering, and focused dApp builds. Project-based availability plus contact details.",
+  },
+  "/ai-agents": {
+    title: "AI Agent Development for Web3 | The Web3 Wizard",
+    description: "Practical AI agents for Web3: support, wallet intelligence, community operations, treasury monitoring, and controlled on-chain workflows. Founder-built reference implementations.",
+  },
   "/insights": {
     title: "Web3 Insights | The Web3 Wizard",
     description: "Practical thinking on Web3 product decisions, AI-native development, Solana apps, MVP scoping, and dApps users understand.",

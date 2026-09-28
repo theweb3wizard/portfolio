@@ -5,17 +5,19 @@ import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import {
-  Home,
-  ServicesPage,
-  ServiceDetailPage,
-  WorkPage,
-  ProjectDetailPage,
   AboutPage,
+  AiAgentsPage,
+  Home,
   InsightsPage,
   InsightDetailPage,
-  StartPage,
   LegalPage,
   NotFoundPage,
+  ProfilePage,
+  ProjectDetailPage,
+  ServicesPage,
+  ServiceDetailPage,
+  StartPage,
+  WorkPage,
 } from "./pages/SitePages";
 import { useEffect } from "react";
 import { CLIENT_ROUTE_META, SITE_URL } from "@shared/routeMeta";
@@ -107,6 +109,9 @@ function Router() {
       <Route path="/work" component={WorkPage} />
       <Route path="/work/:slug" component={ProjectDetailPage} />
       <Route path="/about" component={AboutPage} />
+      <Route path="/profile" component={ProfilePage} />
+      <Route path="/hire-khalid" component={ProfilePage} />
+      <Route path="/ai-agents" component={AiAgentsPage} />
       <Route path="/insights" component={InsightsPage} />
       <Route path="/insights/:slug" component={InsightDetailPage} />
       <Route path="/start" component={StartPage} />

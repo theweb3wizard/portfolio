@@ -656,6 +656,11 @@ html, body { overflow-x: clip; }
   .pricing-strip-row { grid-template-columns: 1fr; }
 }
 
+/* ─── Founder portrait ───────────────────────────────────────────────────────── */
+
+.founder-portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border: 1px solid var(--border); margin-bottom: 20px; background: var(--surface); }
+.founder-portrait.square { aspect-ratio: 1 / 1; }
+
 /* ─── Print (profile / CV) ─────────────────────────────────────────────────── */
 
 @media print {

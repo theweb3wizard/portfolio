@@ -793,6 +793,12 @@ export function AboutPage() {
       <div className="page-content">
         <div className="container about-grid">
           <aside className="about-aside">
+            <img
+              src="/images/khalid-murtala.webp"
+              alt="Portrait of Khalid Murtala, founder of The Web3 Wizard"
+              className="founder-portrait"
+              loading="lazy"
+            />
             <span className="eyebrow">THE WEB3 WIZARD</span>
             <h3>Khalid Murtala. Founder, builder, product engineer.</h3>
             <p className="about-copy">
@@ -1361,6 +1367,12 @@ export function ProfilePage() {
               </ul>
             </div>
             <aside className="side-panel">
+              <img
+                src="/images/khalid-murtala.webp"
+                alt="Portrait of Khalid Murtala, founder of The Web3 Wizard"
+                className="founder-portrait square"
+                loading="lazy"
+              />
               <span className="eyebrow">CONTACT & LINKS</span>
               <h3>Work with Khalid</h3>
               <div className="profile-links">

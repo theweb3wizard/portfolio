@@ -174,6 +174,8 @@ const proofItems = [
 ];
 
 export function ProofSection() {
+  const liveCount = projects.filter((p) => p.liveUrl).length;
+  const repoCount = projects.filter((p) => p.repoUrl).length;
   return (
     <section className="section">
       <div className="container">
@@ -182,6 +184,24 @@ export function ProofSection() {
           title="Verifiable work. No borrowed credibility."
           children="No client logos, no invented metrics, no “trusted by” claims. What follows can be checked: live demos, public repositories, and documented decisions."
         />
+        <div className="proof-stats" role="list" aria-label="Verifiable portfolio counts">
+          <div role="listitem">
+            <strong>{projects.length}</strong>
+            <span>Founder-built reference implementations</span>
+          </div>
+          <div role="listitem">
+            <strong>{liveCount}</strong>
+            <span>Live public demos</span>
+          </div>
+          <div role="listitem">
+            <strong>{repoCount}</strong>
+            <span>Public repositories</span>
+          </div>
+          <div role="listitem">
+            <strong>Solana + EVM</strong>
+            <span>Solana plus Ethereum, Polygon, BNB, Arbitrum and Base</span>
+          </div>
+        </div>
         <div className="proof-grid">
           {proofItems.map((item) => (
             <div className="proof-item" key={item.title}>
@@ -264,6 +284,10 @@ export function Home() {
             <div className="hero-actions hero-tertiary">
               <ButtonLink href="/profile" variant="text">View profile</ButtonLink>
             </div>
+            <p className="availability-badge">
+              <span className="availability-dot" aria-hidden="true" />
+              Currently accepting project inquiries · Based in Kano, Nigeria (UTC+1)
+            </p>
             <p className="hero-note">
               AI helps us move faster. Khalid Murtala directs the work, challenges the output,
               tests the important parts, and remains accountable for what gets delivered.
@@ -408,6 +432,18 @@ export function ServicesPage() {
                 <span className="inline-link">Explore this service <ArrowUpRight size={14} /></span>
               </Link>
             ))}
+          </div>
+          <div className="pricing-strip">
+            <span className="eyebrow">INDICATIVE STARTING PRICES</span>
+            <div className="pricing-strip-row">
+              {engagements.map((engagement) => (
+                <Link key={engagement.id} href={`/start?type=${engagement.inquiryType}`}>
+                  <strong>{engagement.priceLabel}</strong>
+                  <span>{engagement.name}</span>
+                </Link>
+              ))}
+            </div>
+            <p>{PRICE_DISCLAIMER}</p>
           </div>
           <div className="split-callout" style={{ marginTop: 80 }}>
             <div>
@@ -1107,6 +1143,16 @@ export function StartPage() {
               <a className="inline-link" href={`mailto:${CONTACT_EMAIL}`}>
                 {CONTACT_EMAIL} <ArrowUpRight size={14} />
               </a>
+            </div>
+            <div className="fit-check-panel">
+              <strong>When it's not a fit</strong>
+              <p>To save us both time, please don't enquire if the work needs any of these:</p>
+              <div className="boundary-list" style={{ marginTop: 12 }}>
+                <div className="boundary-item">Formal smart-contract audits or security certification.</div>
+                <div className="boundary-item">Guaranteed users, revenue, or product-market fit.</div>
+                <div className="boundary-item">Open-ended or undefined scope.</div>
+                <div className="boundary-item">Token economics or investment advice.</div>
+              </div>
             </div>
           </div>
           <div className="form-card">

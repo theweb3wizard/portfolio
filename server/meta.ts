@@ -112,6 +112,22 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
+      name: "Who is it for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone — and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What types of projects do you accept?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Focused scopes: AI agents and agentic workflows, Solana and EVM application features, wallet intelligence and on-chain data tools, Telegram and Discord tools, Web3 automation, and focused product MVPs. Open-ended builds are not a fit.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Do you build AI agents?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -120,10 +136,10 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "Do you build Solana applications?",
+      name: "Do you build Solana and EVM applications?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Solana application development is a primary technical focus. The studio has built Solana monitoring tools, wallet intelligence products, and Solana-integrated application layers.",
+        text: "Yes. Solana and EVM application development are primary technical focuses. The studio has built Solana monitoring tools, EVM wallet intelligence products, and application layers that integrate with both ecosystems.",
       },
     },
     {
@@ -144,10 +160,10 @@ const FAQ_SCHEMA = {
     },
     {
       "@type": "Question",
-      name: "Do you write smart contracts?",
+      name: "Do you perform smart-contract audits?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The studio focuses on product experiences, application layers, AI agents, and integrations. Smart-contract auditing is outside scope. Smart-contract integration at the product layer can be discussed for specific engagements.",
+        text: "No. The studio does not provide formal smart-contract audits, penetration tests, or security certification. Application-layer reviews and product-layer smart-contract integrations can be discussed for specific engagements.",
       },
     },
     {
@@ -156,6 +172,22 @@ const FAQ_SCHEMA = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. AI helps with research, planning, design, coding, testing, and review. Khalid Murtala directs the work, challenges the output, understands important decisions, tests key behaviour, and remains accountable for what is delivered.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does pricing work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "There are four starting points: Product and Technical Discovery from $750, AI Agent or Web3 Integration Sprint from $2,500, Focused dApp or Web3 Product Build from $6,000, and Embedded Product Engineering from $2,000/month. Starting prices are indicative. Final scope, timeline, integrations, and price are confirmed after a fit conversation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens after I submit an enquiry?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Khalid Murtala reviews every inquiry personally — typically within two business days — and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification.",
       },
     },
   ],

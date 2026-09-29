@@ -49,6 +49,8 @@ p { margin: 0; }
 /* ─── Layout ─────────────────────────────────────────────────────────────────── */
 
 .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+html, body { overflow-x: clip; }
+@supports not (overflow: clip) { html, body { overflow-x: hidden; } }
 .site-frame { min-height: 100vh; background: radial-gradient(circle at 70% 0%, rgba(215,168,75,.07), transparent 30rem), #0a0a0b; }
 
 /* ─── Header ─────────────────────────────────────────────────────────────────── */
@@ -461,11 +463,15 @@ p { margin: 0; }
   .fit-note .button { margin-left: 0; }
   .hero { padding-top: 75px; }
   .hero-visual { min-height: 370px; }
-  .routing-grid { grid-template-columns: repeat(2, 1fr); }
-  .routing-grid.three-col { grid-template-columns: repeat(2, 1fr); }
+  .routing-grid, .routing-grid.three-col { grid-template-columns: repeat(2, 1fr); }
   .projects-grid, .insight-grid { grid-template-columns: repeat(2, 1fr); }
-  .engagement-grid, .proof-grid, .usecase-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Text-dense grids stack full-width below desktop — 2 squeezed text
+     columns is what reads as unprofessional on phones and small tablets. */
+  .service-grid,
+  .engagement-grid,
+  .proof-grid,
+  .usecase-grid,
+  .process-grid { grid-template-columns: 1fr; }
   .side-panel { position: static; }
   .problem-card h3, .service-card h3 { margin-top: 22px; }
   .insight-card h3 { margin-top: 20px; }
@@ -509,6 +515,15 @@ p { margin: 0; }
   .project-detail-hero { gap: 25px; }
   .detail-grid p { font-size: var(--text-body-sm); }
   .cta-section { padding: 72px 0; }
+
+  /* Stacked-card polish: full-width cards should feel designed, not leftover. */
+  .engagement-card { padding: 22px; }
+  .engagement-card h3 { font-size: 20px; }
+  .engagement-price-row { flex-direction: row; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
+  .proof-item { padding: 18px; }
+  .usecase-card { padding: 20px; }
+  .usecase-card h3 { font-size: 18px; }
+  .project-facts > div { grid-template-columns: 104px 1fr; gap: 12px; }
 }
 
 /* ─── Reduced motion ─────────────────────────────────────────────────────────── */
@@ -577,6 +592,27 @@ p { margin: 0; }
 
 .profile-links { display: flex; flex-direction: column; gap: 10px; margin: 16px 0 4px; }
 .profile-links .inline-link { margin-top: 0; }
+
+/* ─── Mobile stacking + overflow hardening ─────────────────────────────────── */
+
+.projects-grid > *, .engagement-grid > *, .proof-grid > *, .usecase-grid > *,
+.insight-grid > *, .routing-grid > *, .process-grid > *, .service-grid > *,
+.capability-list > * { min-width: 0; }
+
+/* Deliverables disclosure: fully expanded on desktop, collapsed behind a
+   native <details> disclosure on tablet/phone. No JS, keyboard-accessible,
+   and every package stays visible and comparable. */
+.engagement-details { margin: 0; }
+.engagement-details summary { display: none; }
+.engagement-details .engagement-list { display: grid; }
+@media (max-width: 900px) {
+  .engagement-details summary { display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--gold); font-size: 13px; font-weight: 700; list-style: none; }
+  .engagement-details summary::-webkit-details-marker { display: none; }
+  .engagement-details summary::after { content: '+'; font-family: 'DM Mono', monospace; font-size: 16px; }
+  .engagement-details[open] summary::after { content: '–'; }
+  .engagement-details:not([open]) .engagement-list { display: none; }
+  .engagement-details[open] .engagement-list { margin-top: 10px; }
+}
 
 /* ─── Print (profile / CV) ─────────────────────────────────────────────────── */
 

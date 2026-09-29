@@ -100,11 +100,14 @@ export function EngagementsSection() {
                 <strong className="engagement-price">{engagement.priceLabel}</strong>
                 <span className="engagement-duration">{engagement.duration}</span>
               </div>
-              <ul className="engagement-list">
-                {engagement.deliverables.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <details className="engagement-details" name="engagement-disclosure">
+                <summary>What's included ({engagement.deliverables.length})</summary>
+                <ul className="engagement-list">
+                  {engagement.deliverables.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </details>
               <div className="engagement-cta">
                 <ButtonLink href={`/start?type=${engagement.inquiryType}`}>{engagement.cta}</ButtonLink>
               </div>

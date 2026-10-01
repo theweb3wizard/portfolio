@@ -2,6 +2,9 @@ import { useMemo, useState } from "react";
 import { Link, useLocation, useRoute } from "wouter";
 import { ArrowUpRight, Check, ChevronRight, ExternalLink, Github, Loader2, Printer } from "lucide-react";
 import { ButtonLink, Faq, PageFrame, PageHero, ProjectCard, SectionHeading } from "@/components/SiteShell";
+import HeroConsole from "@/components/HeroConsole";
+import CountUp from "@/components/CountUp";
+import ProjectArt from "@/components/ProjectArt";
 import { insights, projects, services } from "@/site";
 import {
   CONTACT_EMAIL,
@@ -186,15 +189,15 @@ export function ProofSection() {
         />
         <div className="proof-stats" role="list" aria-label="Verifiable portfolio counts">
           <div role="listitem">
-            <strong>{projects.length}</strong>
+            <CountUp value={projects.length} />
             <span>Founder-built reference implementations</span>
           </div>
           <div role="listitem">
-            <strong>{liveCount}</strong>
+            <CountUp value={liveCount} />
             <span>Live public demos</span>
           </div>
           <div role="listitem">
-            <strong>{repoCount}</strong>
+            <CountUp value={repoCount} />
             <span>Public repositories</span>
           </div>
           <div role="listitem">
@@ -293,22 +296,8 @@ export function Home() {
               tests the important parts, and remains accountable for what gets delivered.
             </p>
           </div>
-          <div className="hero-visual" aria-label="AI-native Web3 product studio composition">
-            <div className="visual-panel one">
-              <span className="eyebrow">DELIVERY MODEL</span>
-              <strong>Problem → Product → MVP</strong>
-              <span className="visual-line" />
-              <span className="visual-line short" />
-            </div>
-            <div className="visual-panel two">
-              <span className="eyebrow">CAPABILITIES</span>
-              <strong>AI agents · Solana · dApps</strong>
-              <p>Automation · Web3 MVPs · Focused builds</p>
-            </div>
-            <div className="visual-panel three">
-              <span className="eyebrow">FOUNDER-LED</span>
-              <strong>Direct. Accountable.</strong>
-            </div>
+          <div className="hero-visual hero-console-wrap" aria-label="AI-native Web3 product studio composition">
+            <HeroConsole />
           </div>
         </div>
       </section>
@@ -678,6 +667,7 @@ export function ProjectDetailPage() {
   if (!project) return <NotFoundPage />;
   return (
     <PageFrame>
+      <div className="reading-progress" data-reading-progress aria-hidden="true" />
       <div className="page-content">
         <div className="container">
           <div className="project-detail-hero">
@@ -721,6 +711,7 @@ export function ProjectDetailPage() {
               </div>
             </div>
             <div className="project-hero-visual">
+              <ProjectArt slug={project.slug} />
               <span>{project.name}</span>
             </div>
           </div>
@@ -1040,8 +1031,12 @@ export function InsightDetailPage() {
   const item = insights.find((insight) => insight.slug === params?.slug);
   if (!item) return <NotFoundPage />;
   const body = insightBodies[item.slug];
+  const idx = insights.findIndex((insight) => insight.slug === item.slug);
+  const prev = idx > 0 ? insights[idx - 1] : null;
+  const next = idx >= 0 && idx < insights.length - 1 ? insights[idx + 1] : null;
   return (
     <PageFrame>
+      <div className="reading-progress" data-reading-progress aria-hidden="true" />
       <div className="page-content">
         <article className="article">
           <span className="eyebrow">{item.category} • {item.readingTime}</span>
@@ -1056,6 +1051,22 @@ export function InsightDetailPage() {
             <ButtonLink href={item.relatedService}>Explore the related service</ButtonLink>
             <ButtonLink href="/work" variant="secondary">View founder-built projects</ButtonLink>
           </div>
+          {(prev || next) && (
+            <nav className="article-nav" aria-label="More insights">
+              {prev ? (
+                <Link href={`/insights/${prev.slug}`} rel="prev" className="article-nav-link">
+                  <span className="article-nav-label">Previous</span>
+                  <span className="article-nav-title">{prev.title}</span>
+                </Link>
+              ) : <span />}
+              {next ? (
+                <Link href={`/insights/${next.slug}`} rel="next" className="article-nav-link article-nav-next">
+                  <span className="article-nav-label">Next</span>
+                  <span className="article-nav-title">{next.title}</span>
+                </Link>
+              ) : <span />}
+            </nav>
+          )}
         </article>
       </div>
     </PageFrame>
@@ -1162,6 +1173,7 @@ export function StartPage() {
             </div>
           </div>
           <div className="form-card">
+            <div className="form-progress" aria-hidden="true"><span data-form-progress /></div>
             {formState === "success" ? (
               <div className="form-success" role="status" aria-live="polite">
                 <div className="success-icon" aria-hidden="true"><Check size={22} strokeWidth={2.5} /></div>
@@ -1674,16 +1686,17 @@ export function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
 export function NotFoundPage() {
   return (
     <PageFrame>
-      <div className="page-content">
-        <div className="container" style={{ textAlign: "center", paddingTop: 80, paddingBottom: 80 }}>
+      <div className="page-content notfound-content">
+        <div className="container notfound-wrap">
+          <span className="notfound-ghost" aria-hidden="true">404</span>
           <span className="eyebrow">404</span>
-          <h1 style={{ fontSize: "clamp(3rem, 7vw, 6rem)", letterSpacing: "-.08em", margin: "18px 0" }}>
+          <h1 className="notfound-title">
             That page is not here.
           </h1>
-          <p style={{ color: "var(--muted)", fontSize: 18, lineHeight: 1.7, maxWidth: 500, margin: "0 auto 32px" }}>
+          <p className="notfound-copy">
             The page you were looking for does not exist or may have moved.
           </p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="notfound-actions">
             <ButtonLink href="/">Go home</ButtonLink>
             <ButtonLink href="/work" variant="secondary">View the work</ButtonLink>
           </div>

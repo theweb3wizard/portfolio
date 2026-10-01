@@ -18,6 +18,30 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // Build-only code splitting: framework + data libs get their own
+        // cached chunks (parallel fetch, better repeat-visit cache).
+        // No route, markup, or behavior change.
+        manualChunks(id: string) {
+          if (!id.includes("node_modules")) return undefined;
+          if (
+            id.includes("/react-dom/") ||
+            id.includes("/react/") ||
+            id.includes("/scheduler/") ||
+            id.includes("/wouter/")
+          )
+            return "vendor";
+          if (
+            id.includes("/@tanstack/") ||
+            id.includes("/@trpc/") ||
+            id.includes("/superjson/")
+          )
+            return "data";
+          return undefined;
+        },
+      },
+    },
   },
   server: {
     host: true,

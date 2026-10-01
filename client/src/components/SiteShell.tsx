@@ -1,8 +1,32 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Link } from "wouter";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { ArrowUpRight, Menu, Search, X } from "lucide-react";
 import { navLinks } from "@/site";
+import { Suspense, lazy } from "react";
+
+const SiteSearch = lazy(() => import("./SiteSearch"));
+
+function isActiveLink(location: string, href: string) {
+  const path = location.split("?")[0];
+  if (href === "/") return path === "/" || path === "";
+  return path === href || path.startsWith(`${href}/`);
+}
+
+export function SearchButton({ className = "" }: { className?: string }) {
+  return (
+    <button
+      type="button"
+      className={`search-button ${className}`}
+      aria-label="Search this site"
+      onClick={() => window.dispatchEvent(new CustomEvent("site-search:open"))}
+    >
+      <Search size={17} aria-hidden="true" />
+      <kbd aria-hidden="true">⌘K</kbd>
+    </button>
+  );
+}
+import ProjectArt from "./ProjectArt";
 
 export function BrandMark() {
   return (
@@ -15,6 +39,7 @@ export function BrandMark() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [location] = useLocation();
   const closeRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLElement>(null);
 
@@ -46,10 +71,21 @@ export function SiteHeader() {
       <div className="container header-inner">
         <BrandMark />
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>{link.label}</Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActiveLink(location, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={active ? "active" : undefined}
+                aria-current={active ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
+        <SearchButton />
         <Link href="/start" className="button button-primary header-cta">
           Start a conversation <ArrowUpRight size={15} />
         </Link>
@@ -78,9 +114,20 @@ export function SiteHeader() {
                 <X />
               </button>
             </div>
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActiveLink(location, link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={active ? "active" : undefined}
+                  aria-current={active ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link href="/start" className="button button-primary" onClick={() => setOpen(false)}>
               Start a conversation <ArrowUpRight size={15} />
             </Link>
@@ -103,7 +150,7 @@ export function SiteFooter() {
             The work shown here is founder-built personal work by Khalid Murtala unless explicitly stated otherwise.
           </p>
         </div>
-        <div>
+        <nav className="footer-col footer-col--split" aria-label="Studio">
           <span className="footer-label">Studio</span>
           <Link href="/about">About</Link>
           <Link href="/profile">Profile — Khalid Murtala</Link>
@@ -112,23 +159,23 @@ export function SiteFooter() {
           <Link href="/work">Work</Link>
           <Link href="/insights">Insights</Link>
           <Link href="/start">Start a conversation</Link>
-        </div>
-        <div>
+        </nav>
+        <nav className="footer-col" aria-label="Services">
           <span className="footer-label">Services</span>
           <Link href="/services/product-discovery">Product Discovery Sprint</Link>
           <Link href="/services/web3-mvp-development">AI-Native Web3 Product Build</Link>
           <Link href="/services/ai-agent-solana-engineering">AI Agent &amp; Solana Engineering</Link>
-        </div>
-        <div>
+        </nav>
+        <nav className="footer-col footer-col--split" aria-label="Connect">
           <span className="footer-label">Connect</span>
           <a href="https://x.com/theweb3wizard00" target="_blank" rel="noreferrer">X (Twitter)</a>
           <a href="https://t.me/theweb3wizard00" target="_blank" rel="noreferrer">Telegram</a>
           <a href="https://github.com/theweb3wizard" target="_blank" rel="noreferrer">GitHub</a>
-<a href="https://www.linkedin.com/in/theweb3wizard00" target="_blank" rel="noreferrer">LinkedIn</a>
-                          <a href="https://medium.com/@theweb3wizard00" target="_blank" rel="noreferrer">Medium</a>
-                          <a href="https://substack.com/@theweb3wizard00" target="_blank" rel="noreferrer">Substack</a>
-                          <a href="mailto:theweb3wizard00@gmail.com">Email</a>
-        </div>
+          <a href="https://www.linkedin.com/in/theweb3wizard00" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://medium.com/@theweb3wizard00" target="_blank" rel="noreferrer">Medium</a>
+          <a href="https://substack.com/@theweb3wizard00" target="_blank" rel="noreferrer">Substack</a>
+          <a href="mailto:theweb3wizard00@gmail.com">Email</a>
+        </nav>
       </div>
       <div className="container footer-bottom">
         <span>© 2026 The Web3 Wizard Labs · Founded by Khalid Murtala.</span>
@@ -148,6 +195,9 @@ export function PageFrame({ children }: { children: React.ReactNode }) {
       <SiteHeader />
       <main id="main-content">{children}</main>
       <SiteFooter />
+      <Suspense fallback={null}>
+        <SiteSearch />
+      </Suspense>
     </div>
   );
 }
@@ -193,6 +243,7 @@ export function ProjectCard({ project }: { project: import("@/site").Project }) 
   return (
     <Link href={`/work/${project.slug}`} className="project-card">
       <div className="project-visual">
+        <ProjectArt slug={project.slug} />
         <span className="visual-kicker">{project.category}</span>
         <span className="visual-title">{project.name}</span>
         <span className="visual-line" />

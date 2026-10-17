@@ -38,6 +38,36 @@ export type Insight = {
 
 export const projects: Project[] = [
   {
+    name: "Spellbook",
+    slug: "spellbook",
+    summary: "Autonomous Web3 AI agent marketplace: instant fixed-scope deployments, custom commissions, and escrow workflow.",
+    description: "Spellbook is a production marketplace and workflow hub for Web3 AI agents. Founders and operators can purchase pre-configured autonomous agents or commission custom agent architectures with escrow-protected checkout, real-time milestone delivery, and multi-tenant telemetry.",
+    status: "deployed",
+    category: "AI agent marketplace",
+    builtBy: "The Web3 Wizard",
+    isPersonalProject: true,
+    problem: "Deploying AI agents for Web3 operations is either slow and expensive through custom agencies or brittle using unvetted open-source scripts without clear operating boundaries or support.",
+    whatItDoes: "A curated Web3 AI agent marketplace offering 20+ specialized agents across Telegram, Discord, DeFi, and on-chain intelligence. Includes instant USDT/USDC crypto checkout, automated workspace provisioning, customer setup forms, real-time Telegram operator alerts, and milestone-tracked handover.",
+    decisions: [
+      "Implement deterministic customer workspace provisioning with live milestones and encrypted setup credential intake.",
+      "Enforce explicit boundaries, service-model differences (One-off source code vs Managed hosting), and transparent API cost ownership.",
+      "Integrate operator Telegram dispatch for instant order, messaging, and review alerts.",
+    ],
+    stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "TRON / TRC-20", "Telegram Bot API", "Resend"],
+    limitations: [
+      "Marketplace products provide autonomous execution within bounded parameters; they do not provide financial advice or guaranteed returns.",
+      "Customer owns their respective LLM (OpenAI/Anthropic) and RPC infrastructure credentials.",
+    ],
+    lessons: [
+      "Marketplace conversions require complete transparency around deliverables, boundaries, and ongoing API/hosting ownership before purchase.",
+      "An integrated customer order portal with interactive messaging converts skeptical buyers into confident partners.",
+    ],
+    relatedService: "/services/ai-agent-solana-engineering",
+    liveUrl: "https://spellbook.theweb3wizard.xyz",
+    repoUrl: "https://github.com/theweb3wizard/spellbook",
+    featured: true,
+  },
+  {
     name: "Valor",
     slug: "valor",
     summary: "A founder-built AI agent for Telegram: autonomous conversation and task execution for Web3 communities.",
@@ -317,10 +347,17 @@ export const services = {
 
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
-export const navLinks = [
+export type NavLinkItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+export const navLinks: NavLinkItem[] = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "AI Agents", href: "/ai-agents" },
+  { label: "Spellbook ↗", href: "https://spellbook.theweb3wizard.xyz", external: true },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
   { label: "Profile", href: "/profile" },

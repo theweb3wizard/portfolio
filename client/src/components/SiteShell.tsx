@@ -72,6 +72,19 @@ export function SiteHeader() {
         <BrandMark />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navLinks.map((link) => {
+            if (link.external || link.href.startsWith("http")) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="external-nav-link"
+                >
+                  {link.label}
+                </a>
+              );
+            }
             const active = isActiveLink(location, link.href);
             return (
               <Link
@@ -115,6 +128,19 @@ export function SiteHeader() {
               </button>
             </div>
             {navLinks.map((link) => {
+              if (link.external || link.href.startsWith("http")) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
               const active = isActiveLink(location, link.href);
               return (
                 <Link
@@ -156,6 +182,7 @@ export function SiteFooter() {
           <Link href="/profile">Profile — Khalid Murtala</Link>
           <Link href="/services">Services</Link>
           <Link href="/ai-agents">AI Agents</Link>
+          <a href="https://spellbook.theweb3wizard.xyz" target="_blank" rel="noopener noreferrer">Spellbook (Marketplace) ↗</a>
           <Link href="/work">Work</Link>
           <Link href="/insights">Insights</Link>
           <Link href="/start">Start a conversation</Link>
@@ -165,6 +192,7 @@ export function SiteFooter() {
           <Link href="/services/product-discovery">Product Discovery Sprint</Link>
           <Link href="/services/web3-mvp-development">AI-Native Web3 Product Build</Link>
           <Link href="/services/ai-agent-solana-engineering">AI Agent &amp; Solana Engineering</Link>
+          <a href="https://spellbook.theweb3wizard.xyz/requests/new" target="_blank" rel="noopener noreferrer">Custom Agent Builds ↗</a>
         </nav>
         <nav className="footer-col footer-col--split" aria-label="Connect">
           <span className="footer-label">Connect</span>

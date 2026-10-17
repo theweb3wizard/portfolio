@@ -1501,8 +1501,25 @@ export function AiAgentsPage() {
         description="Not hype demos. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters. Every example below is grounded in founder-built reference implementations — clearly labeled, never presented as client deployments."
       >
         <div className="hero-actions">
-          <ButtonLink href="/start?type=integration-sprint">Discuss an Integration</ButtonLink>
-          <ButtonLink href="/work/valor" variant="secondary">See Valor in action</ButtonLink>
+          <a
+            href="https://spellbook.theweb3wizard.xyz/agents"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button-primary"
+          >
+            Browse Spellbook Marketplace <ArrowUpRight size={15} />
+          </a>
+          <ButtonLink href="/start?type=integration-sprint" variant="secondary">
+            Discuss an Integration
+          </ButtonLink>
+          <a
+            href="https://spellbook.theweb3wizard.xyz/requests/new"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button-secondary"
+          >
+            Custom Agent Commission <ArrowUpRight size={15} />
+          </a>
         </div>
       </PageHero>
       <div className="page-content">
@@ -1514,11 +1531,45 @@ export function AiAgentsPage() {
           />
           <div className="projects-grid">
             {projects
-              .filter((p) => ["valor", "agenthub", "walletlens"].includes(p.slug))
+              .filter((p) => ["spellbook", "valor", "agenthub", "walletlens"].includes(p.slug))
               .map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}
           </div>
+
+          <div className="split-callout" style={{ marginTop: 60, marginBottom: 20 }}>
+            <div>
+              <SectionHeading
+                eyebrow="AI AGENT MARKETPLACE"
+                title="Spellbook: Turnkey Web3 AI agents ready to deploy."
+                children="Need pre-configured autonomous agents without the agency wait? Spellbook is our dedicated marketplace featuring 20+ specialized agents across Telegram, Discord, DeFi monitoring, and wallet intelligence with escrow-protected checkout, source code handover, and managed hosting options."
+              />
+            </div>
+            <div className="callout-panel">
+              <p className="capability-copy">
+                Choose between full source code ownership (one-off package) or hands-off hosting (managed subscription). Every order includes an interactive customer workspace, encrypted setup credential intake, and real-time Telegram operator dispatch.
+              </p>
+              <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <a
+                  href="https://spellbook.theweb3wizard.xyz/agents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-primary"
+                >
+                  Browse 20+ Agent Catalogue <ArrowUpRight size={15} />
+                </a>
+                <a
+                  href="https://spellbook.theweb3wizard.xyz/requests/new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-secondary"
+                >
+                  Commission Custom Build <ArrowUpRight size={15} />
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div style={{ marginTop: 80 }}>
             <SectionHeading
               eyebrow="USE CASES"
@@ -1552,6 +1603,14 @@ export function AiAgentsPage() {
               </p>
               <div style={{ marginTop: 25, display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <ButtonLink href="/start?type=integration-sprint">Discuss an Integration</ButtonLink>
+                <a
+                  href="https://spellbook.theweb3wizard.xyz/requests/new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-secondary"
+                >
+                  Commission on Spellbook <ArrowUpRight size={15} />
+                </a>
                 <BookFitCallButton />
               </div>
             </div>

@@ -27,6 +27,7 @@ export const SSG_ROUTES = [
   "/services/web3-mvp-development",
   "/services/ai-agent-solana-engineering",
   "/work",
+  "/work/spellbook",
   "/work/valor",
   "/work/walletlens",
   "/work/write3",
@@ -118,6 +119,19 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
       { href: "/work/orderflow", label: "OrderFlow" },
       { href: "/work/solpulse", label: "SolPulse" },
       { href: "/about", label: "About the Founder" },
+    ],
+  },
+  "/work/spellbook": {
+    h1: "Spellbook — Autonomous Web3 AI Agent Marketplace",
+    intro: "Spellbook is a production marketplace and workflow hub for Web3 AI agents. Founders and operators can purchase pre-configured autonomous agents or commission custom agent architectures with escrow-protected checkout, real-time milestone delivery, and multi-tenant telemetry.",
+    extra: "Features 20+ specialized agents across Telegram, Discord, DeFi, and on-chain intelligence with turnkey deployment packages, automated requirements intake, and real-time Telegram operator alerts. Stack: Next.js, TypeScript, Supabase, Tailwind CSS, TRC-20, Telegram Bot API, Resend. Live at spellbook.theweb3wizard.xyz and GitHub at github.com/theweb3wizard/spellbook. Related service: AI Agent & Solana Engineering.",
+    links: [
+      { href: "/work", label: "All Work" },
+      { href: "/ai-agents", label: "AI Agents Capability" },
+      { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
+      { href: "https://spellbook.theweb3wizard.xyz", label: "Visit Spellbook Marketplace" },
+      { href: "https://spellbook.theweb3wizard.xyz/agents", label: "Browse Agent Catalogue" },
+      { href: "https://github.com/theweb3wizard/spellbook", label: "GitHub Repo" },
     ],
   },
   "/work/valor": {
@@ -234,8 +248,12 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   "/ai-agents": {
     h1: "Practical AI agents for real Web3 workflows.",
     intro: "Khalid Murtala builds practical AI agents for Web3: documentation and support, wallet intelligence, transaction investigation, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters.",
-    extra: "Reference implementations include Valor (autonomous Telegram agent), AgentHub (policy-controlled agent access layer), and WalletLens (EVM wallet intelligence) — all founder-built and clearly labeled. Agent work ships as an Integration Sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
+    extra: "Explore Spellbook — our dedicated Web3 AI agent marketplace featuring 20+ specialized agents with escrow checkout, custom commissions, and managed hosting. Reference implementations include Valor (autonomous Telegram agent), AgentHub (policy-controlled agent access layer), and WalletLens (EVM wallet intelligence) — all founder-built and clearly labeled. Agent work ships as an Integration Sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
     links: [
+      { href: "https://spellbook.theweb3wizard.xyz", label: "Spellbook Marketplace" },
+      { href: "https://spellbook.theweb3wizard.xyz/agents", label: "Browse 20+ Agents" },
+      { href: "https://spellbook.theweb3wizard.xyz/requests/new", label: "Commission Custom Agent" },
+      { href: "/work/spellbook", label: "Spellbook Overview" },
       { href: "/work/valor", label: "See Valor" },
       { href: "/work/agenthub", label: "See AgentHub" },
       { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },

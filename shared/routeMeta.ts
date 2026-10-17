@@ -44,6 +44,10 @@ export const CLIENT_ROUTE_META: Record<string, ClientRouteMeta> = {
     title: "Founder-Built Web3 Projects | The Web3 Wizard",
     description: "Portfolio of founder-built Web3 projects: AI agents, Solana tools, EVM wallet intelligence, and automation — shipped by Khalid Murtala.",
   },
+  "/work/spellbook": {
+    title: "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard",
+    description: "Spellbook is an autonomous Web3 AI agent marketplace offering 20+ specialized agents, custom build commissions, and escrow-protected workflow.",
+  },
   "/work/valor": {
     title: "Valor — AI Agent for Telegram | The Web3 Wizard",
     description: "Valor is a founder-built AI agent for Telegram. Autonomous conversational help and task execution for Web3 communities.",

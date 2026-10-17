@@ -127,7 +127,24 @@ export default function ProjectArt({ slug }: { slug: string }) {
           <circle cx={268} cy={58} r="4" fill={GOLD} />
         </g>
       )}
-      {!["valor", "walletlens", "write3", "agenthub", "orderflow", "solpulse"].includes(slug) && (
+      {slug === "spellbook" && (
+        <g>
+          <rect x={140} y={35} width="120" height="150" rx="14" fill="none" stroke={GOLD} strokeWidth="1.8" opacity="0.8" />
+          <line x1={200} y1={35} x2={200} y2={185} stroke={GOLD} strokeWidth="1.4" opacity="0.6" />
+          <circle cx={200} cy={110} r="22" fill="none" stroke={BLUE} strokeWidth="1.5" opacity="0.75" />
+          <circle cx={200} cy={110} r="6" fill={GOLD} />
+          <Rings cx={200} cy={110} color={BLUE} />
+          <circle cx={70} cy={70} r="4" fill={GREEN} opacity="0.8" />
+          <circle cx={95} cy={85} r="3" fill={GREEN} opacity="0.5" />
+          <circle cx={330} cy={70} r="4" fill={GREEN} opacity="0.8" />
+          <circle cx={305} cy={85} r="3" fill={GREEN} opacity="0.5" />
+          <rect x={158} y={60} width="30" height="6" rx="3" fill={GOLD} opacity="0.6" />
+          <rect x={158} y={74} width="22" height="6" rx="3" fill={GOLD} opacity="0.4" />
+          <rect x={212} y={60} width="30" height="6" rx="3" fill={BLUE} opacity="0.6" />
+          <rect x={212} y={74} width="22" height="6" rx="3" fill={BLUE} opacity="0.4" />
+        </g>
+      )}
+      {!["valor", "walletlens", "write3", "agenthub", "orderflow", "solpulse", "spellbook"].includes(slug) && (
         <g>
           <Nodes color={GOLD} />
           <Grid color={BLUE} />

@@ -1484,7 +1484,7 @@ const agentUseCases = [
   },
   {
     title: "Controlled on-chain workflows",
-    problem: "Some operations should happen automatically — but only within strict limits.",
+    problem: "Some operations should happen automatically, but only within strict limits.",
     who: "Teams that need automation without giving an agent the keys to everything.",
     does: "Executes pre-approved actions within policy limits, with audit trails and human approval gates for anything sensitive.",
     doesNot: "It does not self-deploy, expand its own permissions, or act without a trace.",
@@ -1498,7 +1498,7 @@ export function AiAgentsPage() {
       <PageHero
         eyebrow="AI AGENTS"
         title="Practical AI agents for real Web3 workflows."
-        description="Not hype demos. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters. Every example below is grounded in founder-built reference implementations — clearly labeled, never presented as client deployments."
+        description="Not hype demos. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters. Every example below is grounded in founder-built reference implementations, clearly labeled and never presented as client deployments."
       >
         <div className="hero-actions">
           <a
@@ -1573,7 +1573,7 @@ export function AiAgentsPage() {
           <div style={{ marginTop: 80 }}>
             <SectionHeading
               eyebrow="USE CASES"
-              title="Where an agent earns its place — and where it does not."
+              title="Where an agent earns its place, and where it does not."
               children="Not every problem needs an agent. Each category below states the problem, who feels it, what the agent does, what it refuses to do, and how it could become a scoped client project."
             />
             <div className="usecase-grid">

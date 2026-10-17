@@ -248,7 +248,7 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   "/ai-agents": {
     h1: "Practical AI agents for real Web3 workflows.",
     intro: "Khalid Murtala builds practical AI agents for Web3: documentation and support, wallet intelligence, transaction investigation, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters.",
-    extra: "Explore Spellbook — our dedicated Web3 AI agent marketplace featuring 20+ specialized agents with escrow checkout, custom commissions, and managed hosting. Reference implementations include Valor (autonomous Telegram agent), AgentHub (policy-controlled agent access layer), and WalletLens (EVM wallet intelligence) — all founder-built and clearly labeled. Agent work ships as an Integration Sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
+    extra: "Explore Spellbook, our dedicated Web3 AI agent marketplace featuring 20+ specialized agents with escrow checkout, custom commissions, and managed hosting. Reference implementations include Valor (autonomous Telegram agent), AgentHub (policy-controlled agent access layer), and WalletLens (EVM wallet intelligence), all founder-built and clearly labeled. Agent work ships as an Integration Sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
     links: [
       { href: "https://spellbook.theweb3wizard.xyz", label: "Spellbook Marketplace" },
       { href: "https://spellbook.theweb3wizard.xyz/agents", label: "Browse 20+ Agents" },

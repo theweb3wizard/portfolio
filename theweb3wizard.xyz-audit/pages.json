@@ -1,0 +1,3688 @@
+{
+  "generatedAt": "2026-10-22T20:39:02.613Z",
+  "dist": "C:\\Users\\KHALID PC\\Documents\\Github Projects\\portfolio\\dist\\public",
+  "pageCount": 25,
+  "crossPage": {
+    "duplicateTitles": [],
+    "duplicateDescriptions": [],
+    "duplicateCanonicals": [],
+    "missingCanonical": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "missingTitle": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "missingDescription": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "titleTooLong": [
+      {
+        "url": "/hire-khalid/",
+        "len": 66,
+        "title": "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard"
+      },
+      {
+        "url": "/profile/",
+        "len": 61,
+        "title": "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard"
+      }
+    ],
+    "titleTooShort": [],
+    "descTooLong": [
+      {
+        "url": "/ai-agents/",
+        "len": 178
+      },
+      {
+        "url": "/profile/",
+        "len": 161
+      }
+    ],
+    "descTooShort": [],
+    "noH1": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "multiH1": [],
+    "noJsonLd": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "brokenJsonLd": [],
+    "thinContent": [
+      {
+        "url": "/about/",
+        "words": 164
+      },
+      {
+        "url": "/ai-agents/",
+        "words": 171
+      },
+      {
+        "url": "/googlea2084a1162bab0e0/",
+        "words": 2
+      },
+      {
+        "url": "/hire-khalid/",
+        "words": 120
+      },
+      {
+        "url": "/",
+        "words": 170
+      },
+      {
+        "url": "/insights/",
+        "words": 136
+      },
+      {
+        "url": "/insights/scope-a-web3-product-before-spending-money/",
+        "words": 176
+      },
+      {
+        "url": "/insights/use-ai-without-blindly-trusting-it/",
+        "words": 167
+      },
+      {
+        "url": "/insights/why-a-web3-prototype-can-fail/",
+        "words": 167
+      },
+      {
+        "url": "/privacy/",
+        "words": 140
+      },
+      {
+        "url": "/profile/",
+        "words": 151
+      },
+      {
+        "url": "/services/ai-agent-solana-engineering/",
+        "words": 146
+      },
+      {
+        "url": "/services/",
+        "words": 153
+      },
+      {
+        "url": "/services/product-discovery/",
+        "words": 169
+      },
+      {
+        "url": "/services/web3-mvp-development/",
+        "words": 151
+      },
+      {
+        "url": "/terms/",
+        "words": 139
+      },
+      {
+        "url": "/work/agenthub/",
+        "words": 123
+      },
+      {
+        "url": "/work/community-signal/",
+        "words": 124
+      },
+      {
+        "url": "/work/",
+        "words": 147
+      },
+      {
+        "url": "/work/orderflow/",
+        "words": 138
+      },
+      {
+        "url": "/work/solpulse/",
+        "words": 120
+      },
+      {
+        "url": "/work/spellbook/",
+        "words": 149
+      },
+      {
+        "url": "/work/valor/",
+        "words": 135
+      },
+      {
+        "url": "/work/walletlens/",
+        "words": 128
+      },
+      {
+        "url": "/work/write3/",
+        "words": 121
+      }
+    ],
+    "noOgImage": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "noTwitterCard": [
+      "/googlea2084a1162bab0e0/"
+    ],
+    "orphanPages": [
+      "/googlea2084a1162bab0e0/",
+      "/hire-khalid/"
+    ],
+    "nonWwwCanonical": []
+  },
+  "schemaTypes": {
+    "Person": 24,
+    "ProfessionalService": 3,
+    "BreadcrumbList": 21,
+    "Service": 4,
+    "WebSite": 1,
+    "FAQPage": 1,
+    "Article": 3,
+    "SoftwareApplication": 7
+  },
+  "pages": [
+    {
+      "file": "about/index.html",
+      "url": "/about/",
+      "bytes": 6519,
+      "lang": "en",
+      "title": "About | Khalid Murtala | The Web3 Wizard",
+      "titleLen": 40,
+      "metaDescription": "Khalid Murtala, founder of The Web3 Wizard Labs — founder-led AI-native Web3 studio building AI agents, Solana apps, and focused MVPs.",
+      "metaDescriptionLen": 134,
+      "canonical": "https://www.theweb3wizard.xyz/about",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "About | Khalid Murtala | The Web3 Wizard",
+      "ogDescription": "Khalid Murtala, founder of The Web3 Wizard Labs — founder-led AI-native Web3 studio building AI agents, Solana apps, and focused MVPs.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/about",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "About | Khalid Murtala | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Khalid Murtala. Founder of The Web3 Wizard."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Khalid Murtala. Founder of The Web3 Wizard."
+        }
+      ],
+      "wordCount": 164,
+      "textSample": "About | Khalid Murtala | The Web3 Wizard Home | Services | Work | Insights | About | Contact Khalid Murtala. Founder of The Web3 Wizard. The Web3 Wizard Labs is a founder-led AI-native Web3 product studio operated by Khalid Murtala. We help early-stage founders and small teams turn real Web3 problems and roadmap milestones into focused, working products. Direct ownership from architecture to hando",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "ProfessionalService",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"ProfessionalService\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"description\":\"The Web3 Wizard is a founder-led AI-native Web3 product studio. We help early-stage Web3 founders and small teams turn real problems and roadmap milestones into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.\",\"founder\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\"},\"knowsAbout\":[\"AI agents\",\"Solana application development\",\"Web3 product development\",\"dApp development\",\"Web3 automation\",\"MVP development\",\"AI-native product development\"],\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"]}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"About\",\"item\":\"https://www.theweb3wizard.xyz/about\"}]}"
+        }
+      ],
+      "anchorCount": 15,
+      "internalLinks": 15,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "View Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "View Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Read Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Start a Conversation",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://github.com/theweb3wizard",
+          "text": "GitHub",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://x.com/theweb3wizard00",
+          "text": "X (Twitter)",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "ai-agents/index.html",
+      "url": "/ai-agents/",
+      "bytes": 6565,
+      "lang": "en",
+      "title": "AI Agent Development for Web3 | The Web3 Wizard",
+      "titleLen": 47,
+      "metaDescription": "Practical AI agents for Web3: support, wallet intelligence, community operations, treasury monitoring, and controlled on-chain workflows. Founder-built reference implementations.",
+      "metaDescriptionLen": 178,
+      "canonical": "https://www.theweb3wizard.xyz/ai-agents",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "AI Agent Development for Web3 | The Web3 Wizard",
+      "ogDescription": "Practical AI agents for Web3: support, wallet intelligence, community operations, treasury monitoring, and controlled on-chain workflows. Founder-built reference implementations.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/ai-agents",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "AI Agent Development for Web3 | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Practical AI agents for real Web3 workflows."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Practical AI agents for real Web3 workflows."
+        }
+      ],
+      "wordCount": 171,
+      "textSample": "AI Agent Development for Web3 | The Web3 Wizard Home | Services | Work | Insights | About | Contact Practical AI agents for real Web3 workflows. Khalid Murtala builds practical AI agents for Web3: documentation and support, wallet intelligence, transaction investigation, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities,",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Service",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"AI Agent Development\",\"description\":\"Practical AI agents for Web3 workflows: documentation and support, wallet intelligence, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities, explicit boundaries, and human approval gates.\",\"provider\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"serviceType\":\"Web3 Product Development\",\"areaServed\":\"Worldwide\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"AI Agents\",\"item\":\"https://www.theweb3wizard.xyz/ai-agents\"}]}"
+        }
+      ],
+      "anchorCount": 17,
+      "internalLinks": 17,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://spellbook.theweb3wizard.xyz",
+          "text": "Spellbook Marketplace",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://spellbook.theweb3wizard.xyz/agents",
+          "text": "Browse 20+ Agents",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://spellbook.theweb3wizard.xyz/requests/new",
+          "text": "Commission Custom Agent",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/spellbook",
+          "text": "Spellbook Overview",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/valor",
+          "text": "See Valor",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/agenthub",
+          "text": "See AgentHub",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start?type=integration-sprint",
+          "text": "Discuss an Integration",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "googlea2084a1162bab0e0.html",
+      "url": "/googlea2084a1162bab0e0/",
+      "bytes": 53,
+      "lang": null,
+      "title": null,
+      "titleLen": 0,
+      "metaDescription": null,
+      "metaDescriptionLen": 0,
+      "canonical": null,
+      "robots": null,
+      "keywords": null,
+      "viewport": null,
+      "ogTitle": null,
+      "ogDescription": null,
+      "ogImage": null,
+      "ogUrl": null,
+      "ogType": null,
+      "ogSiteName": null,
+      "twitterCard": null,
+      "twitterTitle": null,
+      "twitterImage": null,
+      "hreflang": [],
+      "h1": [],
+      "headings": [],
+      "wordCount": 2,
+      "textSample": "google-site-verification: googlea2084a1162bab0e0.html",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [],
+      "anchorCount": 0,
+      "internalLinks": 0,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [],
+      "preloads": [],
+      "scripts": 0,
+      "stylesheets": 0,
+      "inlineJsonLdCount": 0
+    },
+    {
+      "file": "hire-khalid/index.html",
+      "url": "/hire-khalid/",
+      "bytes": 5166,
+      "lang": "en",
+      "title": "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+      "titleLen": 66,
+      "metaDescription": "Work with Khalid Murtala on AI agents, Web3 product engineering, and focused dApp builds. Project-based availability plus contact details.",
+      "metaDescriptionLen": 138,
+      "canonical": "https://www.theweb3wizard.xyz/hire-khalid",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+      "ogDescription": "Work with Khalid Murtala on AI agents, Web3 product engineering, and focused dApp builds. Project-based availability plus contact details.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/hire-khalid",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Hire Khalid Murtala — AI × Web3 Product Engineer"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Hire Khalid Murtala — AI × Web3 Product Engineer"
+        }
+      ],
+      "wordCount": 120,
+      "textSample": "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard Home | Services | Work | Insights | About | Contact Hire Khalid Murtala — AI × Web3 Product Engineer Work with Khalid Murtala on AI agents, AI × Web3 product engineering, and focused dApp builds. Project-based client engagements start from $750 (discovery), with integration sprints from $2,500 and product builds from $6,000. Starti",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Hire Khalid\",\"item\":\"https://www.theweb3wizard.xyz/hire-khalid\"}]}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/profile",
+          "text": "Full Profile",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "View Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Start a Conversation",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 3,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 2
+    },
+    {
+      "file": "index.html",
+      "url": "/",
+      "bytes": 10917,
+      "lang": "en",
+      "title": "The Web3 Wizard | AI-Native Web3 Product Studio",
+      "titleLen": 47,
+      "metaDescription": "Founder-led AI-native Web3 studio. We turn real problems into working products: AI agents, Solana apps, dApps, automation, and focused Web3 MVPs.",
+      "metaDescriptionLen": 145,
+      "canonical": "https://www.theweb3wizard.xyz",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "The Web3 Wizard | AI-Native Web3 Product Studio",
+      "ogDescription": "Founder-led AI-native Web3 studio. We turn real problems into working products: AI agents, Solana apps, dApps, automation, and focused Web3 MVPs.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "The Web3 Wizard | AI-Native Web3 Product Studio",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Turn Your Web3 Problem Into a Working Product."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Turn Your Web3 Problem Into a Working Product."
+        }
+      ],
+      "wordCount": 170,
+      "textSample": "The Web3 Wizard | AI-Native Web3 Product Studio Home | Services | Work | Insights | About | Contact Turn Your Web3 Problem Into a Working Product. The Web3 Wizard is a founder-led AI-native product studio helping early-stage Web3 founders and small teams turn real problems and roadmap milestones into focused, working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "WebSite",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://www.theweb3wizard.xyz/#website\",\"name\":\"The Web3 Wizard Labs\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"description\":\"The Web3 Wizard is a founder-led AI-native Web3 product studio. We help early-stage Web3 founders and small teams turn real problems and roadmap milestones into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.\",\"publisher\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\"},\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"}}"
+        },
+        {
+          "ok": true,
+          "type": "ProfessionalService",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"ProfessionalService\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"description\":\"The Web3 Wizard is a founder-led AI-native Web3 product studio. We help early-stage Web3 founders and small teams turn real problems and roadmap milestones into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.\",\"founder\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\"},\"knowsAbout\":[\"AI agents\",\"Solana application development\",\"Web3 product development\",\"dApp development\",\"Web3 automation\",\"MVP development\",\"AI-native product development\"],\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"]}"
+        },
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "FAQPage",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What does The Web3 Wizard do?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The Web3 Wizard (The Web3 Wizard Labs) is a founder-led AI-native Web3 product studio. We help early-stage founders and small teams turn problems and product ideas into focused working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.\"}},{\"@type\":\"Question\",\"name\":\"Who is it for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone — and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built.\"}},{\"@type\":\"Question\",\"name\":\"What types of projects do you accept?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Focused scopes: AI agents and agentic workflows, Solana and EVM application features, wallet intelligence and on-chain data tools, Telegram and Discord tools, Web3 automation, and focused product MVPs. Open-ended builds are not a fit.\"}},{\"@type\":\"Question\",\"name\":\"Do you build AI agents?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. AI agent development is a core capability. We have built AI agents for Telegram, Web3 workflows, and autonomous data pipelines. Every agent is built to a clear scope with defined behaviour and documented limitations.\"}},{\"@type\":\"Question\",\"name\":\"Do you build Solana and EVM applications?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Solana and EVM application development are primary technical focuses. The studio has built Solana monitoring tools, EVM wallet intelligence products, and application layers that integrate with both ecosystems.\"}},{\"@type\":\"Question\",\"name\":\"Do you have client testimonials?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly.\"}},{\"@type\":\"Question\",\"name\":\"Are the portfolio projects client work?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labeled so you can distinguish personal work from future client engagements.\"}},{\"@type\":\"Question\",\"name\":\"Do you perform smart-contract audits?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. The studio does not provide formal smart-contract audits, penetration tests, or security certification. Application-layer reviews and product-layer smart-contract integrations can be discussed for specific engagements.\"}},{\"@type\":\"Question\",\"name\":\"Do you use AI to build the products?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. AI helps with research, planning, design, coding, testing, and review. Khalid Murtala directs the work, challenges the output, understands important decisions, tests key behaviour, and remains accountable for what is delivered.\"}},{\"@type\":\"Question\",\"name\":\"How does pricing work?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"There are four starting points: Product and Technical Discovery from $750, AI Agent or Web3 Integration Sprint from $2,500, Focused dApp or Web3 Product Build from $6,000, and Embedded Product Engineering from $2,000/month. Starting prices are indicative. Final scope, timeline, integrations, and price are confirmed after a fit conversation.\"}},{\"@type\":\"Question\",\"name\":\"What happens after I submit an enquiry?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Khalid Murtala reviews every inquiry personally — typically within two business days — and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification.\"}}]}"
+        }
+      ],
+      "anchorCount": 14,
+      "internalLinks": 14,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "View Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "See the Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Read Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About the Studio",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Start a Conversation",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 5,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 4
+    },
+    {
+      "file": "insights/index.html",
+      "url": "/insights/",
+      "bytes": 5266,
+      "lang": "en",
+      "title": "Web3 Insights | The Web3 Wizard",
+      "titleLen": 31,
+      "metaDescription": "Practical thinking on Web3 product decisions, AI-native development, Solana apps, MVP scoping, and dApps users understand.",
+      "metaDescriptionLen": 122,
+      "canonical": "https://www.theweb3wizard.xyz/insights",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Web3 Insights | The Web3 Wizard",
+      "ogDescription": "Practical thinking on Web3 product decisions, AI-native development, Solana apps, MVP scoping, and dApps users understand.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/insights",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Web3 Insights | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Practical thinking for Web3 founders building real products."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Practical thinking for Web3 founders building real products."
+        }
+      ],
+      "wordCount": 136,
+      "textSample": "Web3 Insights | The Web3 Wizard Home | Services | Work | Insights | About | Contact Practical thinking for Web3 founders building real products. Articles on Web3 product decisions, AI-native development, Solana applications, MVP scoping, and building dApps that real users can navigate. Practical, founder-written notes on scoping, shipping, and building products people understand. Three insights: H",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Insights\",\"item\":\"https://www.theweb3wizard.xyz/insights\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 13,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights/scope-a-web3-product-before-spending-money",
+          "text": "How to Scope a Web3 MVP",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights/why-a-web3-prototype-can-fail",
+          "text": "Why Prototypes Fail",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights/use-ai-without-blindly-trusting-it",
+          "text": "Using AI Without Blind Trust",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Explore Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 3,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 2
+    },
+    {
+      "file": "insights/scope-a-web3-product-before-spending-money/index.html",
+      "url": "/insights/scope-a-web3-product-before-spending-money/",
+      "bytes": 6642,
+      "lang": "en",
+      "title": "How to Scope a Web3 MVP | The Web3 Wizard",
+      "titleLen": 41,
+      "metaDescription": "A practical framework for Web3 founders: define the MVP, cut unnecessary scope, and avoid spending on the wrong features.",
+      "metaDescriptionLen": 121,
+      "canonical": "https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "How to Scope a Web3 MVP | The Web3 Wizard",
+      "ogDescription": "A practical framework for Web3 founders: define the MVP, cut unnecessary scope, and avoid spending on the wrong features.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "How to Scope a Web3 MVP | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "How to Scope a Web3 MVP Before Spending Money"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Scope a Web3 MVP Before Spending Money"
+        }
+      ],
+      "wordCount": 176,
+      "textSample": "How to Scope a Web3 MVP | The Web3 Wizard Home | Services | Work | Insights | About | Contact How to Scope a Web3 MVP Before Spending Money A practical framework for Web3 founders deciding what to build first. How to define an MVP, cut unnecessary scope, and avoid building the wrong thing. Focus on one user, one moment, and the smallest thing that makes their struggle less painful. A first version",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Article",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"How to Scope a Web3 MVP Before Spending Money\",\"description\":\"A practical framework for Web3 founders deciding what to build first. How to define an MVP, cut unnecessary scope, and avoid spending on the wrong features.\",\"datePublished\":\"2026-08-13\",\"dateModified\":\"2026-08-19\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\"},\"publisher\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"},\"url\":\"https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://www.theweb3wizard.xyz/#website\",\"name\":\"The Web3 Wizard Labs\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Insights\",\"item\":\"https://www.theweb3wizard.xyz/insights\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"How to Scope a Web3 MVP Before Spending Money\",\"item\":\"https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 13,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "All Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights/why-a-web3-prototype-can-fail",
+          "text": "Next: Why Prototypes Fail",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/product-discovery",
+          "text": "Product Discovery Sprint",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "View Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "insights/use-ai-without-blindly-trusting-it/index.html",
+      "url": "/insights/use-ai-without-blindly-trusting-it/",
+      "bytes": 6634,
+      "lang": "en",
+      "title": "Using AI in Web3 Without Blind Trust | The Web3 Wizard",
+      "titleLen": 54,
+      "metaDescription": "Practical guide to AI-native Web3 development: direct AI, challenge its output, test what matters, and stay accountable.",
+      "metaDescriptionLen": 120,
+      "canonical": "https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Using AI in Web3 Without Blind Trust | The Web3 Wizard",
+      "ogDescription": "Practical guide to AI-native Web3 development: direct AI, challenge its output, test what matters, and stay accountable.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Using AI in Web3 Without Blind Trust | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "How to Use AI in Web3 Product Development Without Blindly Trusting It"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "How to Use AI in Web3 Product Development Without Blindly Trusting It"
+        }
+      ],
+      "wordCount": 167,
+      "textSample": "Using AI in Web3 Without Blind Trust | The Web3 Wizard Home | Services | Work | Insights | About | Contact How to Use AI in Web3 Product Development Without Blindly Trusting It A practical guide to AI-native Web3 product development. How to direct AI tools, challenge their output, test what matters, and stay accountable for what ships. AI is excellent at plausible code quickly, but unreliable for ",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Article",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"How to Use AI in Web3 Product Development Without Blindly Trusting It\",\"description\":\"A practical guide to AI-native Web3 product development. How to direct AI, challenge its output, test what matters, and stay accountable for what gets shipped.\",\"datePublished\":\"2026-08-13\",\"dateModified\":\"2026-08-19\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\"},\"publisher\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"},\"url\":\"https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://www.theweb3wizard.xyz/#website\",\"name\":\"The Web3 Wizard Labs\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Insights\",\"item\":\"https://www.theweb3wizard.xyz/insights\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"How to Use AI in Web3 Product Development Without Blindly Trusting It\",\"item\":\"https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it\"}]}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "All Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About the Studio",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "insights/why-a-web3-prototype-can-fail/index.html",
+      "url": "/insights/why-a-web3-prototype-can-fail/",
+      "bytes": 6696,
+      "lang": "en",
+      "title": "Why a Web3 Prototype Fails With Real Users | The Web3 Wizard",
+      "titleLen": 60,
+      "metaDescription": "The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and how to close that gap before launch.",
+      "metaDescriptionLen": 156,
+      "canonical": "https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Why a Web3 Prototype Fails With Real Users | The Web3 Wizard",
+      "ogDescription": "The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and how to close that gap before launch.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Why a Web3 Prototype Fails With Real Users | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Why a Web3 Prototype Fails With Real Users"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Why a Web3 Prototype Fails With Real Users"
+        }
+      ],
+      "wordCount": 167,
+      "textSample": "Why a Web3 Prototype Fails With Real Users | The Web3 Wizard Home | Services | Work | Insights | About | Contact Why a Web3 Prototype Fails With Real Users The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and what to fix before launch. The first thing that breaks is the assumption that users know what you know — wallet connections,",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Article",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Why a Web3 Prototype Fails With Real Users\",\"description\":\"The gap between a working demo and a product real users can navigate. Why Web3 prototypes break under user pressure and how to close that gap before launch.\",\"datePublished\":\"2026-08-13\",\"dateModified\":\"2026-08-19\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\"},\"publisher\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"},\"url\":\"https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://www.theweb3wizard.xyz/#website\",\"name\":\"The Web3 Wizard Labs\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Insights\",\"item\":\"https://www.theweb3wizard.xyz/insights\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Why a Web3 Prototype Fails With Real Users\",\"item\":\"https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail\"}]}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "All Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights/use-ai-without-blindly-trusting-it",
+          "text": "Next: Using AI Without Blind Trust",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/web3-mvp-development",
+          "text": "Web3 MVP Development",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "privacy/index.html",
+      "url": "/privacy/",
+      "bytes": 4948,
+      "lang": "en",
+      "title": "Privacy Policy | The Web3 Wizard",
+      "titleLen": 32,
+      "metaDescription": "How The Web3 Wizard Labs handles inquiry submissions and personal information. No database. Inquiries are delivered via Telegram notification.",
+      "metaDescriptionLen": 142,
+      "canonical": "https://www.theweb3wizard.xyz/privacy",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Privacy Policy | The Web3 Wizard",
+      "ogDescription": "How The Web3 Wizard Labs handles inquiry submissions and personal information. No database. Inquiries are delivered via Telegram notification.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/privacy",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Privacy Policy | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "How inquiries and personal information are handled."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "How inquiries and personal information are handled."
+        }
+      ],
+      "wordCount": 140,
+      "textSample": "Privacy Policy | The Web3 Wizard Home | Services | Work | Insights | About | Contact How inquiries and personal information are handled. A clear explanation of what happens when you submit an inquiry to The Web3 Wizard Labs. Inquiry data is delivered via Telegram notification to Khalid Murtala and is not stored in a database. No advertising trackers or behavioural profiling tools are used beyond p",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms of Service",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Start a Conversation",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 2,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 1
+    },
+    {
+      "file": "profile/index.html",
+      "url": "/profile/",
+      "bytes": 6510,
+      "lang": "en",
+      "title": "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+      "titleLen": 61,
+      "metaDescription": "Profile of Khalid Murtala: AI agents, Web3 applications, wallet intelligence, automation, and focused MVPs. Skills, selected projects, availability, and contact.",
+      "metaDescriptionLen": 161,
+      "canonical": "https://www.theweb3wizard.xyz/profile",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+      "ogDescription": "Profile of Khalid Murtala: AI agents, Web3 applications, wallet intelligence, automation, and focused MVPs. Skills, selected projects, availability, and contact.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/profile",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Khalid Murtala — AI × Web3 Product Engineer"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Khalid Murtala — AI × Web3 Product Engineer"
+        }
+      ],
+      "wordCount": 151,
+      "textSample": "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard Home | Services | Work | Insights | About | Contact Khalid Murtala — AI × Web3 Product Engineer Profile of Khalid Murtala, founder of The Web3 Wizard Labs. Builds AI agents, Web3 applications, wallet intelligence tools, automation systems, and focused product MVPs with TypeScript, React, Next.js, Node.js, LLM APIs, Solana, and EVM integ",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "ProfessionalService",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"ProfessionalService\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"description\":\"The Web3 Wizard is a founder-led AI-native Web3 product studio. We help early-stage Web3 founders and small teams turn real problems and roadmap milestones into focused working products, specialising in AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.\",\"founder\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\"},\"knowsAbout\":[\"AI agents\",\"Solana application development\",\"Web3 product development\",\"dApp development\",\"Web3 automation\",\"MVP development\",\"AI-native product development\"],\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"]}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Profile\",\"item\":\"https://www.theweb3wizard.xyz/profile\"}]}"
+        }
+      ],
+      "anchorCount": 14,
+      "internalLinks": 14,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "View Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "View Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/ai-agents",
+          "text": "AI Agents",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Start a Conversation",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://github.com/theweb3wizard",
+          "text": "GitHub",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "services/ai-agent-solana-engineering/index.html",
+      "url": "/services/ai-agent-solana-engineering/",
+      "bytes": 6161,
+      "lang": "en",
+      "title": "AI Agent &amp; Solana Engineering | The Web3 Wizard",
+      "titleLen": 51,
+      "metaDescription": "Specialist AI agent & Solana engineering: autonomous workflows, Telegram/Discord bots, Solana integrations, and on-chain data pipelines.",
+      "metaDescriptionLen": 136,
+      "canonical": "https://www.theweb3wizard.xyz/services/ai-agent-solana-engineering",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "AI Agent & Solana Engineering | The Web3 Wizard",
+      "ogDescription": "Specialist AI agent & Solana engineering: autonomous workflows, Telegram/Discord bots, Solana integrations, and on-chain data pipelines.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/services/ai-agent-solana-engineering",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "AI Agent & Solana Engineering | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Specialist AI agent and Solana engineering for Web3 teams."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Specialist AI agent and Solana engineering for Web3 teams."
+        }
+      ],
+      "wordCount": 146,
+      "textSample": "AI Agent & Solana Engineering | The Web3 Wizard Home | Services | Work | Insights | About | Contact Specialist AI agent and Solana engineering for Web3 teams. A specialist capability for teams that already know what they need. AI agents, autonomous workflows, Telegram and Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features. Specialist execution for a define",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Service",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"AI Agent & Solana Product Engineering\",\"description\":\"For teams that need specialist AI agent or Solana engineering. Covers autonomous workflows, Telegram and Discord AI agents, Solana integrations, on-chain data pipelines, and AI-powered Web3 product features.\",\"provider\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"serviceType\":\"Web3 Product Development\",\"areaServed\":\"Worldwide\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://www.theweb3wizard.xyz/services\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI Agent & Solana Engineering\",\"item\":\"https://www.theweb3wizard.xyz/services/ai-agent-solana-engineering\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 13,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "All Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/valor",
+          "text": "See Valor AI Agent",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/solpulse",
+          "text": "See SolPulse",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start?type=ai-agent-solana-engineering",
+          "text": "Discuss Capability",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "services/index.html",
+      "url": "/services/",
+      "bytes": 5400,
+      "lang": "en",
+      "title": "Web3 Product Services | The Web3 Wizard",
+      "titleLen": 39,
+      "metaDescription": "Choose your engagement: Product Discovery Sprint, Web3 MVP build, or AI Agent & Solana engineering. Focused services for Web3 founders.",
+      "metaDescriptionLen": 135,
+      "canonical": "https://www.theweb3wizard.xyz/services",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Web3 Product Services | The Web3 Wizard",
+      "ogDescription": "Choose your engagement: Product Discovery Sprint, Web3 MVP build, or AI Agent & Solana engineering. Focused services for Web3 founders.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/services",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Web3 Product Services | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Choose the engagement that fits your situation."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Choose the engagement that fits your situation."
+        }
+      ],
+      "wordCount": 153,
+      "textSample": "Web3 Product Services | The Web3 Wizard Home | Services | Work | Insights | About | Contact Choose the engagement that fits your situation. Three focused services built around how early-stage Web3 founders actually work. Product Discovery Sprint for defining the product, AI-native Web3 product builds for shipping MVPs, and AI agent & Solana engineering for specialist capabilities. Start with the p",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://www.theweb3wizard.xyz/services\"}]}"
+        }
+      ],
+      "anchorCount": 14,
+      "internalLinks": 14,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/product-discovery",
+          "text": "Product Discovery Sprint",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/web3-mvp-development",
+          "text": "Web3 MVP Development",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "View Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 3,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 2
+    },
+    {
+      "file": "services/product-discovery/index.html",
+      "url": "/services/product-discovery/",
+      "bytes": 6106,
+      "lang": "en",
+      "title": "Product Discovery Sprint | The Web3 Wizard",
+      "titleLen": 42,
+      "metaDescription": "Turn a Web3 idea into a build-ready direction. Define the user, scope the MVP, and decide what to build first with confidence.",
+      "metaDescriptionLen": 126,
+      "canonical": "https://www.theweb3wizard.xyz/services/product-discovery",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Product Discovery Sprint | The Web3 Wizard",
+      "ogDescription": "Turn a Web3 idea into a build-ready direction. Define the user, scope the MVP, and decide what to build first with confidence.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/services/product-discovery",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Product Discovery Sprint | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Turn your Web3 problem into a build-ready product direction."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Turn your Web3 problem into a build-ready product direction."
+        }
+      ],
+      "wordCount": 169,
+      "textSample": "Product Discovery Sprint | The Web3 Wizard Home | Services | Work | Insights | About | Contact Turn your Web3 problem into a build-ready product direction. Start here if you are not yet sure what to build. For founders and small teams with a real problem or promising idea, we define the user, scope the MVP, and produce a direction you can act on with confidence. Covers problem definition, target u",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Service",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Product Discovery Sprint\",\"description\":\"A focused engagement for Web3 founders who have a real problem or product idea but need clarity before committing to a build. Covers problem definition, target user, MVP scope, and build-ready product direction.\",\"provider\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"serviceType\":\"Web3 Product Development\",\"areaServed\":\"Worldwide\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://www.theweb3wizard.xyz/services\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Product Discovery Sprint\",\"item\":\"https://www.theweb3wizard.xyz/services/product-discovery\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 13,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "All Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/web3-mvp-development",
+          "text": "Web3 MVP Build",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "See Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start?type=product-discovery",
+          "text": "Start with Product Discovery",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "services/web3-mvp-development/index.html",
+      "url": "/services/web3-mvp-development/",
+      "bytes": 6093,
+      "lang": "en",
+      "title": "Web3 MVP Development | The Web3 Wizard",
+      "titleLen": 38,
+      "metaDescription": "Build a focused Web3 MVP: AI agents, Solana apps, dApps, and automation. Founder-led, AI-native execution from concept to shipped product.",
+      "metaDescriptionLen": 138,
+      "canonical": "https://www.theweb3wizard.xyz/services/web3-mvp-development",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Web3 MVP Development | The Web3 Wizard",
+      "ogDescription": "Build a focused Web3 MVP: AI agents, Solana apps, dApps, and automation. Founder-led, AI-native execution from concept to shipped product.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/services/web3-mvp-development",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Web3 MVP Development | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Build the smallest useful Web3 product and ship it."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Build the smallest useful Web3 product and ship it."
+        }
+      ],
+      "wordCount": 151,
+      "textSample": "Web3 MVP Development | The Web3 Wizard Home | Services | Work | Insights | About | Contact Build the smallest useful Web3 product and ship it. The core engagement. For founders and small teams with a validated problem, concept, prototype, or spec, we build and ship a focused product: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs. Founder-led, AI-native execution from conce",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "Service",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"AI-Native Web3 Product Build\",\"description\":\"For founders with a validated problem, product concept, prototype, or specification. Builds focused Web3 products including AI agents, Solana applications, dApps, automation tools, and MVPs.\",\"provider\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"serviceType\":\"Web3 Product Development\",\"areaServed\":\"Worldwide\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://www.theweb3wizard.xyz/services\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI-Native Web3 Product Build\",\"item\":\"https://www.theweb3wizard.xyz/services/web3-mvp-development\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 13,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "All Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "View Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights/scope-a-web3-product-before-spending-money",
+          "text": "How to Scope an MVP",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start?type=web3-mvp-development",
+          "text": "Discuss Your Product",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "terms/index.html",
+      "url": "/terms/",
+      "bytes": 4859,
+      "lang": "en",
+      "title": "Terms of Service | The Web3 Wizard",
+      "titleLen": 34,
+      "metaDescription": "Clear boundaries for The Web3 Wizard Labs engagements. Service scope, limitations, and what is explicitly outside scope.",
+      "metaDescriptionLen": 120,
+      "canonical": "https://www.theweb3wizard.xyz/terms",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Terms of Service | The Web3 Wizard",
+      "ogDescription": "Clear boundaries for The Web3 Wizard Labs engagements. Service scope, limitations, and what is explicitly outside scope.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/terms",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Terms of Service | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Clear boundaries for every engagement."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Clear boundaries for every engagement."
+        }
+      ],
+      "wordCount": 139,
+      "textSample": "Terms of Service | The Web3 Wizard Home | Services | Work | Insights | About | Contact Clear boundaries for every engagement. What The Web3 Wizard Labs does, what it does not do, and what every engagement includes and excludes. Builds focused MVPs and product capabilities — AI agents, Solana apps, dApps, automation — not entire companies, not open-ended scopes, and not smart-contract audits or for",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "View Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 2,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 1
+    },
+    {
+      "file": "work/agenthub/index.html",
+      "url": "/work/agenthub/",
+      "bytes": 5922,
+      "lang": "en",
+      "title": "AgentHub | Secure AI Agent Access | The Web3 Wizard",
+      "titleLen": 51,
+      "metaDescription": "AgentHub: secure access layer for AI coding assistants. Policy-controlled DB/API access with audit trails and human approval.",
+      "metaDescriptionLen": 125,
+      "canonical": "https://www.theweb3wizard.xyz/work/agenthub",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "AgentHub | Secure AI Agent Access | The Web3 Wizard",
+      "ogDescription": "AgentHub: secure access layer for AI coding assistants. Policy-controlled DB/API access with audit trails and human approval.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/agenthub",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "AgentHub | Secure AI Agent Access | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "AgentHub — Secure AI Agent Access Layer"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "AgentHub — Secure AI Agent Access Layer"
+        }
+      ],
+      "wordCount": 123,
+      "textSample": "AgentHub | Secure AI Agent Access | The Web3 Wizard Home | Services | Work | Insights | About | Contact AgentHub — Secure AI Agent Access Layer AgentHub solves secure access for AI coding assistants: policy-controlled access to databases, APIs, and infrastructure. It enforces least-privilege, maintains audit trails, and routes approvals to humans for high-risk operations. Designed for AI-native de",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"AgentHub\",\"description\":\"Secure, authenticated access for AI coding assistants to databases, APIs, and infrastructure with policy control, audit trails, and human approval gates.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\",\"url\":\"https://agenthub-lyart.vercel.app\",\"codeRepository\":\"https://github.com/theweb3wizard/AgentHub\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AgentHub\",\"item\":\"https://www.theweb3wizard.xyz/work/agenthub\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 12,
+      "externalLinks": 1,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/orderflow",
+          "text": "Next: OrderFlow",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://agenthub-lyart.vercel.app",
+          "text": "Live Demo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "work/community-signal/index.html",
+      "url": "/work/community-signal/",
+      "bytes": 5261,
+      "lang": "en",
+      "title": "Community Signal | The Web3 Wizard",
+      "titleLen": 34,
+      "metaDescription": "Community Signal: building-stage experiment turning Telegram and Discord activity into a clearer next action.",
+      "metaDescriptionLen": 109,
+      "canonical": "https://www.theweb3wizard.xyz/work/community-signal",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Community Signal | The Web3 Wizard",
+      "ogDescription": "Community Signal: building-stage experiment turning Telegram and Discord activity into a clearer next action.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/community-signal",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Community Signal | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Community Signal — Web3 Community Action Tool"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Community Signal — Web3 Community Action Tool"
+        }
+      ],
+      "wordCount": 124,
+      "textSample": "Community Signal | The Web3 Wizard Home | Services | Work | Insights | About | Contact Community Signal — Web3 Community Action Tool Community Signal explores how Telegram or Discord workflows can guide people from community attention to a product action without unnecessary complexity. Building-stage experiment in community prompts, lightweight action flows, and useful handoffs between community i",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Community Signal\",\"item\":\"https://www.theweb3wizard.xyz/work/community-signal\"}]}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Read Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 3,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 2
+    },
+    {
+      "file": "work/index.html",
+      "url": "/work/",
+      "bytes": 5463,
+      "lang": "en",
+      "title": "Founder-Built Web3 Projects | The Web3 Wizard",
+      "titleLen": 45,
+      "metaDescription": "Portfolio of founder-built Web3 projects: AI agents, Solana tools, EVM wallet intelligence, and automation — shipped by Khalid Murtala.",
+      "metaDescriptionLen": 135,
+      "canonical": "https://www.theweb3wizard.xyz/work",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Founder-Built Web3 Projects | The Web3 Wizard",
+      "ogDescription": "Portfolio of founder-built Web3 projects: AI agents, Solana tools, EVM wallet intelligence, and automation — shipped by Khalid Murtala.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Founder-Built Web3 Projects | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Real projects. Real evidence. Clearly labeled."
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Real projects. Real evidence. Clearly labeled."
+        }
+      ],
+      "wordCount": 147,
+      "textSample": "Founder-Built Web3 Projects | The Web3 Wizard Home | Services | Work | Insights | About | Contact Real projects. Real evidence. Clearly labeled. A portfolio of founder-built Web3 projects by Khalid Murtala: AI agents, Solana tools, EVM wallet intelligence, and Web3 automation. These are personal projects, not client case studies, clearly labeled with status, stack, decisions, limitations, and less",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"}]}"
+        }
+      ],
+      "anchorCount": 16,
+      "internalLinks": 16,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/valor",
+          "text": "Valor",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/walletlens",
+          "text": "WalletLens",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/write3",
+          "text": "Write3",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/agenthub",
+          "text": "AgentHub",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/orderflow",
+          "text": "OrderFlow",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/solpulse",
+          "text": "SolPulse",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About the Founder",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 3,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 2
+    },
+    {
+      "file": "work/orderflow/index.html",
+      "url": "/work/orderflow/",
+      "bytes": 5930,
+      "lang": "en",
+      "title": "OrderFlow | AI Trading Journal | The Web3 Wizard",
+      "titleLen": 48,
+      "metaDescription": "OrderFlow: AI trading journal for Injective. Reads your on-chain history to show where you leak money and what to fix next.",
+      "metaDescriptionLen": 123,
+      "canonical": "https://www.theweb3wizard.xyz/work/orderflow",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "OrderFlow | AI Trading Journal | The Web3 Wizard",
+      "ogDescription": "OrderFlow: AI trading journal for Injective. Reads your on-chain history to show where you leak money and what to fix next.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/orderflow",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "OrderFlow | AI Trading Journal | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "OrderFlow — AI Trading Journal on Injective"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "OrderFlow — AI Trading Journal on Injective"
+        }
+      ],
+      "wordCount": 138,
+      "textSample": "OrderFlow | AI Trading Journal | The Web3 Wizard Home | Services | Work | Insights | About | Contact OrderFlow — AI Trading Journal on Injective OrderFlow is an AI-powered trading journal for Injective Protocol. It pulls your on-chain trading history and turns it into specific, evidence-based feedback: where you are leaking money, what is working, and what to fix next. Every insight is anchored to",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"OrderFlow\",\"description\":\"AI-powered trading journal for Injective Protocol. Analyses on-chain trading history and turns it into specific, evidence-based feedback.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\",\"url\":\"https://orderflow-hq.vercel.app\",\"codeRepository\":\"https://github.com/theweb3wizard/orderflow\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"OrderFlow\",\"item\":\"https://www.theweb3wizard.xyz/work/orderflow\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 12,
+      "externalLinks": 1,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/solpulse",
+          "text": "Next: SolPulse",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/web3-mvp-development",
+          "text": "Web3 MVP Development",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://orderflow-hq.vercel.app",
+          "text": "Live Demo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "work/solpulse/index.html",
+      "url": "/work/solpulse/",
+      "bytes": 5619,
+      "lang": "en",
+      "title": "SolPulse | Solana Wallet Monitoring | The Web3 Wizard",
+      "titleLen": 53,
+      "metaDescription": "SolPulse: Solana wallet monitoring experiment. Turns wallet activity into calmer, readable Telegram alerts.",
+      "metaDescriptionLen": 107,
+      "canonical": "https://www.theweb3wizard.xyz/work/solpulse",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "SolPulse | Solana Wallet Monitoring | The Web3 Wizard",
+      "ogDescription": "SolPulse: Solana wallet monitoring experiment. Turns wallet activity into calmer, readable Telegram alerts.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/solpulse",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "SolPulse | Solana Wallet Monitoring | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "SolPulse — Solana Wallet Monitoring"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "SolPulse — Solana Wallet Monitoring"
+        }
+      ],
+      "wordCount": 120,
+      "textSample": "SolPulse | Solana Wallet Monitoring | The Web3 Wizard Home | Services | Work | Insights | About | Contact SolPulse — Solana Wallet Monitoring SolPulse turns raw Solana on-chain activity into a calmer, readable monitoring workflow. It filters wallet movements and delivers meaningful signals as plain-English Telegram alerts, prioritising a small number of meaningful events over a wall of noise. Stac",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"SolPulse\",\"description\":\"Founder-built Solana monitoring experiment. On-chain wallet activity signals delivered as readable Telegram alerts.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"SolPulse\",\"item\":\"https://www.theweb3wizard.xyz/work/solpulse\"}]}"
+        }
+      ],
+      "anchorCount": 12,
+      "internalLinks": 12,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/community-signal",
+          "text": "Next: Community Signal",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "work/spellbook/index.html",
+      "url": "/work/spellbook/",
+      "bytes": 6364,
+      "lang": "en",
+      "title": "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard",
+      "titleLen": 55,
+      "metaDescription": "Spellbook: Autonomous Web3 AI agent marketplace. Browse and deploy production-ready AI agents or commission custom architectures with escrow-protected delivery.",
+      "metaDescriptionLen": 160,
+      "canonical": "https://www.theweb3wizard.xyz/work/spellbook",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard",
+      "ogDescription": "Spellbook: Autonomous Web3 AI agent marketplace. Browse and deploy production-ready AI agents or commission custom architectures with escrow-protected delivery.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/spellbook",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Spellbook — Autonomous Web3 AI Agent Marketplace"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Spellbook — Autonomous Web3 AI Agent Marketplace"
+        }
+      ],
+      "wordCount": 149,
+      "textSample": "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard Home | Services | Work | Insights | About | Contact Spellbook — Autonomous Web3 AI Agent Marketplace Spellbook is a production marketplace and workflow hub for Web3 AI agents. Founders and operators can purchase pre-configured autonomous agents or commission custom agent architectures with escrow-protected checkout, real-time milestone delive",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Spellbook\",\"description\":\"Autonomous Web3 AI agent marketplace and workflow hub. Curated agents with escrow checkout, custom commission requests, and live milestone delivery.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\",\"url\":\"https://spellbook.theweb3wizard.xyz\",\"codeRepository\":\"https://github.com/theweb3wizard/spellbook\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Spellbook\",\"item\":\"https://www.theweb3wizard.xyz/work/spellbook\"}]}"
+        }
+      ],
+      "anchorCount": 15,
+      "internalLinks": 15,
+      "externalLinks": 0,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/ai-agents",
+          "text": "AI Agents Capability",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://spellbook.theweb3wizard.xyz",
+          "text": "Visit Spellbook Marketplace",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://spellbook.theweb3wizard.xyz/agents",
+          "text": "Browse Agent Catalogue",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://github.com/theweb3wizard/spellbook",
+          "text": "GitHub Repo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "work/valor/index.html",
+      "url": "/work/valor/",
+      "bytes": 5911,
+      "lang": "en",
+      "title": "Valor — AI Agent for Telegram | The Web3 Wizard",
+      "titleLen": 47,
+      "metaDescription": "Valor is a founder-built AI agent for Telegram. Autonomous conversational help and task execution for Web3 communities.",
+      "metaDescriptionLen": 119,
+      "canonical": "https://www.theweb3wizard.xyz/work/valor",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Valor — AI Agent for Telegram | The Web3 Wizard",
+      "ogDescription": "Valor is a founder-built AI agent for Telegram. Autonomous conversational help and task execution for Web3 communities.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/valor",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Valor — AI Agent for Telegram | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Valor — AI Agent for Telegram"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Valor — AI Agent for Telegram"
+        }
+      ],
+      "wordCount": 135,
+      "textSample": "Valor — AI Agent for Telegram | The Web3 Wizard Home | Services | Work | Insights | About | Contact Valor — AI Agent for Telegram Valor is a founder-built AI agent that operates inside Telegram. It handles conversations, answers questions, and executes tasks autonomously within Web3 community contexts. Built around conversational context rather than keyword triggers, with clear capability boundari",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Valor\",\"description\":\"An AI agent for Telegram. Autonomous conversational agent for Web3 communities.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\",\"url\":\"https://valor-tgbot.vercel.app\",\"codeRepository\":\"https://github.com/theweb3wizard/Valor\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Valor\",\"item\":\"https://www.theweb3wizard.xyz/work/valor\"}]}"
+        }
+      ],
+      "anchorCount": 14,
+      "internalLinks": 13,
+      "externalLinks": 1,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/walletlens",
+          "text": "Next: WalletLens",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/ai-agent-solana-engineering",
+          "text": "AI Agent & Solana Engineering",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://valor-tgbot.vercel.app",
+          "text": "Live Demo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://github.com/theweb3wizard/Valor",
+          "text": "GitHub Repo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "work/walletlens/index.html",
+      "url": "/work/walletlens/",
+      "bytes": 5963,
+      "lang": "en",
+      "title": "WalletLens | EVM Wallet Intelligence | The Web3 Wizard",
+      "titleLen": 54,
+      "metaDescription": "WalletLens: AI-powered EVM wallet intelligence for Ethereum, Polygon, BNB, Arbitrum & Base. Query wallets in plain English.",
+      "metaDescriptionLen": 123,
+      "canonical": "https://www.theweb3wizard.xyz/work/walletlens",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "WalletLens | EVM Wallet Intelligence | The Web3 Wizard",
+      "ogDescription": "WalletLens: AI-powered EVM wallet intelligence for Ethereum, Polygon, BNB, Arbitrum & Base. Query wallets in plain English.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/walletlens",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "WalletLens | EVM Wallet Intelligence | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "WalletLens — EVM Wallet Intelligence"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "WalletLens — EVM Wallet Intelligence"
+        }
+      ],
+      "wordCount": 128,
+      "textSample": "WalletLens | EVM Wallet Intelligence | The Web3 Wizard Home | Services | Work | Insights | About | Contact WalletLens — EVM Wallet Intelligence WalletLens turns EVM on-chain data into something a non-technical founder can interrogate. Natural language queries replace raw blockchain explorers. Supports Ethereum, Polygon, BNB, Arbitrum, and Base from a single query, with explicit data freshness and ",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"WalletLens\",\"description\":\"AI-powered EVM wallet intelligence. Analyse ETH, Polygon, BNB, Arbitrum, and Base wallets.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\",\"url\":\"https://walletlens-hq.vercel.app\",\"codeRepository\":\"https://github.com/theweb3wizard/walletlens\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"WalletLens\",\"item\":\"https://www.theweb3wizard.xyz/work/walletlens\"}]}"
+        }
+      ],
+      "anchorCount": 14,
+      "internalLinks": 13,
+      "externalLinks": 1,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/write3",
+          "text": "Next: Write3",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/web3-mvp-development",
+          "text": "Web3 MVP Development",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://walletlens-hq.vercel.app",
+          "text": "Live Demo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://github.com/theweb3wizard/walletlens",
+          "text": "GitHub Repo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    },
+    {
+      "file": "work/write3/index.html",
+      "url": "/work/write3/",
+      "bytes": 5774,
+      "lang": "en",
+      "title": "Write3 | AI Web3 Content Generator | The Web3 Wizard",
+      "titleLen": 52,
+      "metaDescription": "Write3: AI-powered Web3 content for X, Discord, Telegram, Farcaster, and blogs. Generate platform-ready drafts quickly.",
+      "metaDescriptionLen": 119,
+      "canonical": "https://www.theweb3wizard.xyz/work/write3",
+      "robots": null,
+      "keywords": null,
+      "viewport": "width=device-width, initial-scale=1.0",
+      "ogTitle": "Write3 | AI Web3 Content Generator | The Web3 Wizard",
+      "ogDescription": "Write3: AI-powered Web3 content for X, Discord, Telegram, Farcaster, and blogs. Generate platform-ready drafts quickly.",
+      "ogImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "ogUrl": "https://www.theweb3wizard.xyz/work/write3",
+      "ogType": "website",
+      "ogSiteName": "The Web3 Wizard",
+      "twitterCard": "summary_large_image",
+      "twitterTitle": "Write3 | AI Web3 Content Generator | The Web3 Wizard",
+      "twitterImage": "https://www.theweb3wizard.xyz/og-image.png",
+      "hreflang": [],
+      "h1": [
+        "Write3 — AI Web3 Content Generator"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Write3 — AI Web3 Content Generator"
+        }
+      ],
+      "wordCount": 121,
+      "textSample": "Write3 | AI Web3 Content Generator | The Web3 Wizard Home | Services | Work | Insights | About | Contact Write3 — AI Web3 Content Generator Write3 is an AI-native content tool for Web3 builders and communities. It generates platform-appropriate content for X, Discord, Telegram, Farcaster, and blogs. Users provide project context and receive ready-to-use drafts, with separate output formats per pla",
+      "images": [],
+      "imagesMissingAlt": 0,
+      "imagesEmptyAlt": 0,
+      "imagesNoDims": 0,
+      "jsonld": [
+        {
+          "ok": true,
+          "type": "Person",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\",\"alternateName\":\"The Web3 Wizard\",\"url\":\"https://www.theweb3wizard.xyz\",\"jobTitle\":\"Founder of The Web3 Wizard / The Web3 Wizard Labs\",\"sameAs\":[\"https://github.com/theweb3wizard\",\"https://www.linkedin.com/in/theweb3wizard00\",\"https://x.com/theweb3wizard00\",\"https://t.me/theweb3wizard00\"],\"worksFor\":{\"@type\":\"Organization\",\"@id\":\"https://www.theweb3wizard.xyz/#organization\",\"name\":\"The Web3 Wizard Labs\",\"url\":\"https://www.theweb3wizard.xyz\"}}"
+        },
+        {
+          "ok": true,
+          "type": "SoftwareApplication",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Write3\",\"description\":\"AI-powered Web3 content generator for X, Discord, Telegram, Farcaster, and blogs.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://www.theweb3wizard.xyz/#person\",\"name\":\"Khalid Murtala\"},\"applicationCategory\":\"Web3 Application\",\"url\":\"https://write3-ai.vercel.app\",\"codeRepository\":\"https://github.com/theweb3wizard/Write3\"}"
+        },
+        {
+          "ok": true,
+          "type": "BreadcrumbList",
+          "raw": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.theweb3wizard.xyz\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Work\",\"item\":\"https://www.theweb3wizard.xyz/work\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Write3\",\"item\":\"https://www.theweb3wizard.xyz/work/write3\"}]}"
+        }
+      ],
+      "anchorCount": 13,
+      "internalLinks": 12,
+      "externalLinks": 1,
+      "emptyAnchors": 0,
+      "anchors": [
+        {
+          "href": "/",
+          "text": "Home",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services",
+          "text": "Services",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/insights",
+          "text": "Insights",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/about",
+          "text": "About",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/start",
+          "text": "Contact",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work",
+          "text": "All Work",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/work/agenthub",
+          "text": "Next: AgentHub",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/services/web3-mvp-development",
+          "text": "Web3 MVP Development",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "https://write3-ai.vercel.app",
+          "text": "Live Demo",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/privacy",
+          "text": "Privacy",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/terms",
+          "text": "Terms",
+          "rel": null,
+          "target": null
+        },
+        {
+          "href": "/sitemap.xml",
+          "text": "Sitemap",
+          "rel": null,
+          "target": null
+        }
+      ],
+      "preloads": [],
+      "scripts": 4,
+      "stylesheets": 2,
+      "inlineJsonLdCount": 3
+    }
+  ]
+}

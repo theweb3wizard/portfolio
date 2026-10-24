@@ -20,8 +20,7 @@ import {
   WorkPage,
 } from "./pages/SitePages";
 import { useEffect } from "react";
-import { CLIENT_ROUTE_META, SITE_URL } from "@shared/routeMeta";
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
+import { CLIENT_ROUTE_META, SITE_URL, ogImageFor } from "@shared/routeMeta";
 const OG_IMAGE_ALT =
   "The Web3 Wizard: AI-Native Web3 Product Studio. Turn your Web3 problem into a working product.";
 
@@ -40,7 +39,9 @@ function MetaManager() {
     if (!meta) return;
 
     const { title, description } = meta;
-    const canonical = `${SITE_URL}${path === "/" ? "" : path}`;
+    const canonicalPath = meta.canonicalPath ?? path;
+    const canonical = `${SITE_URL}${canonicalPath === "/" ? "" : canonicalPath}`;
+    const ogImage = meta.ogImage ?? ogImageFor(path);
 
     document.title = title;
 
@@ -68,7 +69,7 @@ function MetaManager() {
     setMetaProp("og:description", description);
     setMetaProp("og:type", "website");
     setMetaProp("og:url", canonical);
-    setMetaProp("og:image", OG_IMAGE);
+    setMetaProp("og:image", ogImage);
     setMetaProp("og:image:width", "1200");
     setMetaProp("og:image:height", "630");
     setMetaProp("og:image:alt", OG_IMAGE_ALT);
@@ -76,7 +77,7 @@ function MetaManager() {
     setMetaName("twitter:card", "summary_large_image");
     setMetaName("twitter:title", title);
     setMetaName("twitter:description", description);
-    setMetaName("twitter:image", OG_IMAGE);
+    setMetaName("twitter:image", ogImage);
     setMetaName("twitter:image:alt", OG_IMAGE_ALT);
     setMetaName("twitter:site", "@theweb3wizard00");
 

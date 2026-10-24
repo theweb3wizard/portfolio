@@ -18,7 +18,14 @@ import type { Plugin } from "vite";
 import { injectMetaIntoHtml } from "./server/meta.js";
 
 // Every route that should have its own static HTML file.
-// /start is intentionally excluded — it carries noindex and does not need SSG.
+//
+// /start IS included even though it is noindex. Excluding it would leave the
+// catch-all rewrite in vercel.json serving it the homepage HTML — which is
+// indexable and canonicalises to "/". Crawlers would then treat the site's most
+// heavily linked page (59 inbound internal links) as a homepage duplicate, and
+// would never receive its noindex directive. A noindex route needs its own HTML
+// file precisely so the noindex can be delivered.
+//
 // /privacy and /terms are included so they get accurate metadata if crawled.
 export const SSG_ROUTES = [
   "/",
@@ -40,11 +47,22 @@ export const SSG_ROUTES = [
   "/hire-khalid",
   "/ai-agents",
   "/insights",
+  "/insights/what-i-learned-shipping-seven-web3-mvps-solo",
   "/insights/scope-a-web3-product-before-spending-money",
   "/insights/why-a-web3-prototype-can-fail",
   "/insights/use-ai-without-blindly-trusting-it",
+  "/insights/how-much-does-a-web3-mvp-cost",
+  "/insights/do-i-need-a-smart-contract-audit",
+  "/insights/how-to-evaluate-a-web3-developer",
+  "/insights/web3-agency-vs-freelancer",
+  "/insights/what-is-an-ai-agent-in-web3",
+  "/insights/what-is-a-web3-mvp",
+  "/insights/what-is-a-product-discovery-sprint",
+  "/insights/what-is-wallet-intelligence",
   "/privacy",
   "/terms",
+  // noindex — included so the noindex directive actually ships. See note above.
+  "/start",
 ];
 
 // Static body content per route — provides crawlable H1, copy, and internal links
@@ -108,9 +126,9 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
     ],
   },
   "/work": {
-    h1: "Real projects. Real evidence. Clearly labeled.",
-    intro: "A portfolio of founder-built Web3 projects by Khalid Murtala: AI agents, Solana tools, EVM wallet intelligence, and Web3 automation. These are personal projects, not client case studies, clearly labeled with status, stack, decisions, limitations, and lessons. Each demonstrates a real capability with live demos and repositories where available.",
-    extra: "Projects include Valor (AI agent for Telegram), WalletLens (EVM wallet intelligence), Write3 (Web3 content tool), AgentHub (secure AI access layer), OrderFlow (Injective trading journal), SolPulse (Solana monitoring), and Community Signal (community action experiment). All projects show what was built, why, and what was learned.",
+    h1: "Real projects. Real evidence. Clearly labelled.",
+    intro: "A portfolio of founder-built Web3 projects by Khalid Murtala: AI agents, Solana tools, EVM wallet intelligence, and Web3 automation. These are personal projects, not client case studies, clearly labelled with status, stack, decisions, limitations, and lessons. Each demonstrates a real capability with live demos and repositories where available.",
+    extra: "Projects include Spellbook (Web3 AI agent marketplace), Valor (autonomous USDC community rewards on Base), WalletLens (EVM wallet intelligence across five chains), Write3 (compliance-safe Web3 content), AgentHub (secure MCP gateway for AI coding assistants), OrderFlow (Injective behavioural trading journal), SolPulse (Solana whale tracker), and Community Signal (community action experiment, still building). Every project links to its live deployment, and to a public repository where the code is open.",
     links: [
       { href: "/work/valor", label: "Valor" },
       { href: "/work/walletlens", label: "WalletLens" },
@@ -122,22 +140,21 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
     ],
   },
   "/work/spellbook": {
-    h1: "Spellbook — Autonomous Web3 AI Agent Marketplace",
-    intro: "Spellbook is a production marketplace and workflow hub for Web3 AI agents. Founders and operators can purchase pre-configured autonomous agents or commission custom agent architectures with escrow-protected checkout, real-time milestone delivery, and multi-tenant telemetry.",
-    extra: "Features 20+ specialized agents across Telegram, Discord, DeFi, and on-chain intelligence with turnkey deployment packages, automated requirements intake, and real-time Telegram operator alerts. Stack: Next.js, TypeScript, Supabase, Tailwind CSS, TRC-20, Telegram Bot API, Resend. Live at spellbook.theweb3wizard.xyz and GitHub at github.com/theweb3wizard/spellbook. Related service: AI Agent & Solana Engineering.",
+    h1: "Spellbook — Web3 AI Agent Marketplace",
+    intro: "Spellbook is a marketplace and workflow hub for Web3 AI agents. Founders and operators can buy pre-configured agents by operational area or commission custom agent architectures, with USDT or USDC checkout, an order workspace created immediately without an account, and milestone-tracked delivery. Managed deployments carry a forty-eight hour delivery target and include runbooks, configuration files, and thirty days of engineer coverage after handover.",
+    extra: "The credential model is the deliberate constraint: buyers provide scoped, revocable tokens only. No private keys and no seed phrases are ever requested or stored, and buyers own their own model and RPC credentials so they also control the ongoing cost. Categories cover community operations, customer and developer support, protocol and DeFi, and growth and operations. Stack: Next.js, TypeScript, Supabase, Tailwind CSS, TRC-20, Telegram Bot API, Resend. Live at spellbook.theweb3wizard.xyz. Related service: AI Agent & Solana Engineering.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/ai-agents", label: "AI Agents Capability" },
       { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
       { href: "https://spellbook.theweb3wizard.xyz", label: "Visit Spellbook Marketplace" },
       { href: "https://spellbook.theweb3wizard.xyz/agents", label: "Browse Agent Catalogue" },
-      { href: "https://github.com/theweb3wizard/spellbook", label: "GitHub Repo" },
     ],
   },
   "/work/valor": {
-    h1: "Valor — AI Agent for Telegram",
-    intro: "Valor is a founder-built AI agent that operates inside Telegram. It handles conversations, answers questions, and executes tasks autonomously within Web3 community contexts. Built around conversational context rather than keyword triggers, with clear capability boundaries and simple Telegram webhook deployment.",
-    extra: "Stack: TypeScript, Node.js, Telegram Bot API, OpenAI API, Vercel. Limitations: founder-built personal project, bounded by system prompts, no financial advice. Live demo at valor-tgbot.vercel.app and GitHub at github.com/theweb3wizard/Valor. Related service: AI Agent & Solana Engineering.",
+    h1: "Valor — Autonomous USDC Rewards for Telegram",
+    intro: "Valor is a founder-built agent that reads every message in a Telegram community, scores the contribution with AI, and pays the best ones automatically in USDC on Base. No commands, no voting, no moderator reading a spreadsheet. A cheap filter drops most messages before any model call, and the webhook returns in under fifty milliseconds so Telegram never retries a payment.",
+    extra: "Stack: Next.js, TypeScript, Neon, Drizzle ORM, viem, Base, Upstash QStash, Gemini, Telegram Bot API. Every community has its own treasury wallet, derived deterministically, so funds stay non-custodial. Limitations: founder-built personal project, scoring covers written contributions only, tips are capped and idempotent but on-chain transfers cannot be reversed, and no financial advice is provided. Live demo at valor-tgbot.vercel.app with the repository at github.com/theweb3wizard/Valor. Related service: AI Agent & Solana Engineering.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/work/walletlens", label: "Next: WalletLens" },
@@ -148,8 +165,8 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   },
   "/work/walletlens": {
     h1: "WalletLens — EVM Wallet Intelligence",
-    intro: "WalletLens turns EVM on-chain data into something a non-technical founder can interrogate. Natural language queries replace raw blockchain explorers. Supports Ethereum, Polygon, BNB, Arbitrum, and Base from a single query, with explicit data freshness and verification limits.",
-    extra: "Stack: TypeScript, React, Next.js, OpenAI API, Etherscan API, Vercel. Founder-built personal project with live demo at walletlens-hq.vercel.app and GitHub at github.com/theweb3wizard/walletlens. Demonstrates interface design for data tools and multi-chain handling. Related service: Web3 MVP Development.",
+    intro: "WalletLens turns an EVM wallet address into a report a non-technical founder can read: a risk score from 0 to 100, a portfolio breakdown, NFT holdings, the last twenty transactions, and a behavioural summary written in plain English. It covers Ethereum, Polygon, BNB Chain, Arbitrum, and Base from a single input, and every report gets its own shareable URL.",
+    extra: "Stack: Next.js 14, TypeScript, Tailwind CSS, Framer Motion, Moralis for chain data, Groq for analysis, Supabase for rate limiting, Recharts. Read-only and free, with no wallet connection and no keys, limited to five analyses per day per address. Limitations: the risk score is a heuristic and not a fraud determination, third-party data can lag or rate limit, and this is a founder-built project rather than a supported service. Live demo at walletlens-hq.vercel.app and repository at github.com/theweb3wizard/walletlens. Related service: Web3 MVP Development.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/work/write3", label: "Next: Write3" },
@@ -159,9 +176,9 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
     ],
   },
   "/work/write3": {
-    h1: "Write3 — AI Web3 Content Generator",
-    intro: "Write3 is an AI-native content tool for Web3 builders and communities. It generates platform-appropriate content for X, Discord, Telegram, Farcaster, and blogs. Users provide project context and receive ready-to-use drafts, with separate output formats per platform and Web3-native prompts.",
-    extra: "Stack: TypeScript, React, Next.js, OpenAI API, Vercel. Live demo at write3-ai.vercel.app and GitHub at github.com/theweb3wizard/Write3. Demonstrates platform-specific formatting and AI content workflows. Related service: Web3 MVP Development.",
+    h1: "Write3 — Compliance-Safe Web3 Content in Your Own Voice",
+    intro: "Write3 learns a founder's voice from three to five samples of their own writing, then generates platform-native content for Twitter, Discord, Reddit, Telegram, Farcaster, blogs, and newsletters. Every draft passes through a compliance filter that flags language associated with SEC and FCA scrutiny, including phrases like guaranteed returns, passive income, and price prediction, before anything is published.",
+    extra: "Stack: Next.js, TypeScript, Supabase, OpenRouter, Tailwind CSS. The guardrail sits inside the generation path rather than beside it, so no draft is written without being screened. Limitations: the filter is not legal advice and catches phrasing rather than structure, output is a draft for human review, and the tool does not post to platforms directly. Live demo at write3-ai.vercel.app and repository at github.com/theweb3wizard/Write3. Related service: Web3 MVP Development.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/work/agenthub", label: "Next: AgentHub" },
@@ -170,20 +187,21 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
     ],
   },
   "/work/agenthub": {
-    h1: "AgentHub — Secure AI Agent Access Layer",
-    intro: "AgentHub solves secure access for AI coding assistants: policy-controlled access to databases, APIs, and infrastructure. It enforces least-privilege, maintains audit trails, and routes approvals to humans for high-risk operations. Designed for AI-native development where assistants need production access without losing control.",
-    extra: "Stack: TypeScript, Node.js, PostgreSQL, Vercel. Founder-built personal project with live demo at agenthub-lyart.vercel.app and GitHub at github.com/theweb3wizard/AgentHub. Related service: AI Agent & Solana Engineering.",
+    h1: "AgentHub — The Secure MCP Gateway and Workspace",
+    intro: "AgentHub sits between AI coding assistants and the tools they call as a reverse proxy. Every Model Context Protocol tool call passes through authentication, a policy engine, a security boundary, and an audit logger. Policies are set per tool as allow, block, read-only, or require-approval, and the security boundary blocks private IP ranges, cloud metadata endpoints, internal hostnames, and shell metacharacters in tool arguments.",
+    extra: "Stack: Next.js, TypeScript, Tailwind CSS, Clerk for authentication, Supabase, Model Context Protocol. High-risk calls pause for human approval rather than failing, with the approver notified and a five-minute window before the call is dropped. The audit log records the user, tool, arguments, response status, caller address, and approving administrator. Limitations: enforcement covers the supported integrations only, security properties have not been formally audited, and this is a founder-built project. Live demo at agenthub-hq.vercel.app and repository at github.com/theweb3wizard/AgentHub. Related service: AI Agent & Solana Engineering.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/work/orderflow", label: "Next: OrderFlow" },
       { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
-      { href: "https://agenthub-lyart.vercel.app", label: "Live Demo" },
+      { href: "https://agenthub-hq.vercel.app", label: "Live Demo" },
+      { href: "https://github.com/theweb3wizard/AgentHub", label: "GitHub Repo" },
     ],
   },
   "/work/orderflow": {
-    h1: "OrderFlow — AI Trading Journal on Injective",
-    intro: "OrderFlow is an AI-powered trading journal for Injective Protocol. It pulls your on-chain trading history and turns it into specific, evidence-based feedback: where you are leaking money, what is working, and what to fix next. Every insight is anchored to real on-chain evidence, not generic advice.",
-    extra: "Stack: Next.js, Gemini AI, Injective SDK, TypeScript. Founder-built personal project focused on one chain for accuracy. Live demo at orderflow-hq.vercel.app and GitHub at github.com/theweb3wizard/orderflow. Reviews past activity, no signals or financial advice. Related service: Web3 MVP Development.",
+    h1: "OrderFlow — AI Behavioural Trading Journal on Injective",
+    intro: "OrderFlow is an AI-powered trading journal for Injective Protocol. It pulls on-chain trading history from Injective's live indexer, covers both spot and derivatives, and turns it into specific, evidence-based feedback: where money is leaking, what is working, and what to fix next. The key architectural decision is that the model receives pre-computed statistics rather than raw trade data, which produces specific findings instead of generic advice.",
+    extra: "Stack: Next.js 15, TypeScript, Tailwind CSS, Injective SDK, Google Gemini, Supabase. Every trade row links to Injective Explorer so any claim in the report can be checked against the chain. Injective is the only chain supported, deliberately, because its exchange module exposes spot and derivatives through a single unified indexer. Limitations: reviews past activity only, no signals or predictions, founder-built project. Live demo at orderflow-hq.vercel.app and repository at github.com/theweb3wizard/orderflow. Related service: Web3 MVP Development.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/work/solpulse", label: "Next: SolPulse" },
@@ -192,13 +210,14 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
     ],
   },
   "/work/solpulse": {
-    h1: "SolPulse — Solana Wallet Monitoring",
-    intro: "SolPulse turns raw Solana on-chain activity into a calmer, readable monitoring workflow. It filters wallet movements and delivers meaningful signals as plain-English Telegram alerts, prioritising a small number of meaningful events over a wall of noise.",
-    extra: "Stack: Solana, TypeScript, Node.js, Telegram Bot API. Personal experiment, not a production service, with limited coverage. Related service: AI Agent & Solana Engineering. Demonstrates focused alert design and Solana data handling.",
+    h1: "SolPulse — Solana Whale Tracker",
+    intro: "SolPulse watches Solana whale wallets on Pump.fun and Raydium and pushes the movements that matter to Telegram within seconds, with links to Solscan and DexScreener. Dust is filtered before it becomes an alert, one global webhook serves every user's wallets, and duplicate deliveries are absorbed at the database level so the same movement never arrives twice.",
+    extra: "Stack: Solana, TypeScript, Neon, Drizzle ORM, Helius webhooks, DexScreener pricing, Telegram Bot API. Read-only, with no wallet connection and no keys. Limitations: coverage is limited to Pump.fun and Raydium swaps, small movements are deliberately invisible, alerts depend on third-party webhook and pricing APIs, and no investment or trading outcome is implied. Live at solpulse-hq.vercel.app. Related service: AI Agent & Solana Engineering.",
     links: [
       { href: "/work", label: "All Work" },
       { href: "/work/community-signal", label: "Next: Community Signal" },
       { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
+      { href: "https://solpulse-hq.vercel.app", label: "Live Demo" },
     ],
   },
   "/work/community-signal": {
@@ -226,7 +245,7 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   "/profile": {
     h1: "Khalid Murtala — AI × Web3 Product Engineer",
     intro: "Profile of Khalid Murtala, founder of The Web3 Wizard Labs. Builds AI agents, Web3 applications, wallet intelligence tools, automation systems, and focused product MVPs with TypeScript, React, Next.js, Node.js, LLM APIs, Solana, and EVM integrations. Open to project-based client work and AI/Web3 engineering roles.",
-    extra: "Selected founder-built projects include Valor (Telegram AI agent), WalletLens (EVM wallet intelligence), and AgentHub (secure agent access layer), each with live demos and public repositories. Contact via the start page, email, GitHub, X, LinkedIn, or Telegram. Print or save the profile page as PDF for applications.",
+    extra: "Selected founder-built projects include Valor (autonomous USDC community rewards on Base), WalletLens (EVM wallet intelligence across five chains), AgentHub (a policy-controlled MCP gateway for AI coding assistants), OrderFlow (a behavioural trading journal on Injective), and SolPulse (a Solana whale tracker), each with live demos and public repositories where the code is open. Contact via the start page, email, GitHub, X, LinkedIn, or Telegram. Print or save the profile page as PDF for applications.",
     links: [
       { href: "/work", label: "View Work" },
       { href: "/services", label: "View Services" },
@@ -248,10 +267,10 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   "/ai-agents": {
     h1: "Practical AI agents for real Web3 workflows.",
     intro: "Khalid Murtala builds practical AI agents for Web3: documentation and support, wallet intelligence, transaction investigation, community operations, treasury monitoring, developer support, research, and controlled on-chain workflows. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters.",
-    extra: "Explore Spellbook, our dedicated Web3 AI agent marketplace featuring 20+ specialized agents with escrow checkout, custom commissions, and managed hosting. Reference implementations include Valor (autonomous Telegram agent), AgentHub (policy-controlled agent access layer), and WalletLens (EVM wallet intelligence), all founder-built and clearly labeled. Agent work ships as an Integration Sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
+    extra: "Explore Spellbook, a dedicated Web3 AI agent marketplace with escrow checkout, custom commissions, and managed hosting, where buyers supply scoped, revocable tokens and never a private key. Reference implementations include Valor (autonomous USDC community rewards on Base), AgentHub (a policy-controlled MCP gateway for AI coding assistants), SolPulse (a Solana whale tracker), and WalletLens (EVM wallet intelligence), all founder-built and clearly labelled. Agent work ships as an integration sprint from $2,500. Starting prices are indicative and confirmed after a fit conversation.",
     links: [
       { href: "https://spellbook.theweb3wizard.xyz", label: "Spellbook Marketplace" },
-      { href: "https://spellbook.theweb3wizard.xyz/agents", label: "Browse 20+ Agents" },
+      { href: "https://spellbook.theweb3wizard.xyz/agents", label: "Browse the Agent Catalogue" },
       { href: "https://spellbook.theweb3wizard.xyz/requests/new", label: "Commission Custom Agent" },
       { href: "/work/spellbook", label: "Spellbook Overview" },
       { href: "/work/valor", label: "See Valor" },
@@ -262,12 +281,14 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   },
   "/insights": {
     h1: "Practical thinking for Web3 founders building real products.",
-    intro: "Articles on Web3 product decisions, AI-native development, Solana applications, MVP scoping, and building dApps that real users can navigate. Practical, founder-written notes on scoping, shipping, and building products people understand.",
-    extra: "Three insights: How to scope a Web3 MVP before spending money, Why a Web3 prototype fails with real users, and How to use AI without blindly trusting it. Each links to related services and founder-built projects. More insights are planned as the studio ships more products.",
+    intro: "Twelve articles on Web3 product decisions, AI-native development, Solana applications, MVP scoping, hiring, and building products real users can navigate. Practical founder-written notes on scoping, pricing, shipping, and using AI without losing accountability.",
+    extra: "Topics include what a Web3 MVP is, how to scope one before spending money, what a Web3 MVP costs, whether a smart contract audit is worth buying, how to evaluate a Web3 developer, agencies against freelancers against solo studios, why prototypes fail with real users, using AI without blindly trusting it, and seven lessons from shipping seven Web3 products alone. Each article links to a related service and to founder-built projects where the work is inspectable.",
     links: [
+      { href: "/insights/what-i-learned-shipping-seven-web3-mvps-solo", label: "Seven Web3 MVPs Solo" },
       { href: "/insights/scope-a-web3-product-before-spending-money", label: "How to Scope a Web3 MVP" },
+      { href: "/insights/how-much-does-a-web3-mvp-cost", label: "What a Web3 MVP Costs" },
       { href: "/insights/why-a-web3-prototype-can-fail", label: "Why Prototypes Fail" },
-      { href: "/insights/use-ai-without-blindly-trusting-it", label: "Using AI Without Blind Trust" },
+      { href: "/insights/how-to-evaluate-a-web3-developer", label: "Evaluating a Web3 Developer" },
       { href: "/services", label: "Explore Services" },
     ],
   },
@@ -302,6 +323,105 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
       { href: "/about", label: "About the Studio" },
     ],
   },
+  "/insights/what-i-learned-shipping-seven-web3-mvps-solo": {
+    h1: "Seven Web3 MVPs Shipped Solo: What I Learned",
+    intro: "Seven founder-built Web3 products, one lesson each. What actually broke, what I would do differently, and why the code was rarely the reason a project failed. Drawn from Spellbook, Valor, WalletLens, Write3, AgentHub, OrderFlow, and SolPulse.",
+    extra: "Each project produced one durable lesson: scope drifts through integrations rather than features, an autonomous agent is defined by what it refuses to do, interface design is product design in data tools, a compliance guardrail has to sit inside the writing path rather than beside it, an audit trail nobody can read is not an audit trail, pre-computed statistics make an AI report specific instead of generic, and an alert threshold is the product. Every example comes from founder-built work rather than client engagements, and the lessons are reported as they happened.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/work", label: "See All Projects" },
+      { href: "/services/web3-mvp-development", label: "Web3 MVP Development" },
+      { href: "/about", label: "About the Founder" },
+    ],
+  },
+  "/insights/how-much-does-a-web3-mvp-cost": {
+    h1: "How Much Does a Web3 MVP Cost?",
+    intro: "What a Web3 MVP actually costs, which four decisions move the price up or down, and how to spend less without shipping less. Published starting points included.",
+    extra: "Published starting prices are a Product Discovery Sprint from $750, an integration sprint from $2,500, a product build from $6,000, and embedded engineering from $2,000 per month. Four decisions do most of the work: how many chains and integrations are in version one, whether money moves, who owns the failure paths, and how much discovery has already been done. Cutting failure handling is the most expensive saving available, because it moves cost from the build to production. Related service: Web3 MVP Development.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/services/web3-mvp-development", label: "Web3 MVP Development" },
+      { href: "/hire-khalid", label: "Hire Khalid" },
+      { href: "/start?type=web3-mvp-development", label: "Discuss Your Product" },
+    ],
+  },
+  "/insights/do-i-need-a-smart-contract-audit": {
+    h1: "Do I Need a Smart Contract Audit?",
+    intro: "When a smart contract audit is worth the money, when it is not, and what you still need to do if you skip one. Written by someone who does not sell audits.",
+    extra: "An audit buys an independent read of code by someone who did not write it, plus a report you can show to others. It does not cover economic design flaws, front-end or key-management failures, or upgrade and governance risk. If a contract holds other people's money, an audit is part of the cost of shipping and should be budgeted from the start. If it is an experiment with no user funds, testing, disclosure, and a way to pause matter more than a report. Related service: Web3 MVP Development.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/services/web3-mvp-development", label: "Web3 MVP Development" },
+      { href: "/work", label: "View Work" },
+      { href: "/about", label: "About the Founder" },
+    ],
+  },
+  "/insights/how-to-evaluate-a-web3-developer": {
+    h1: "How to Evaluate a Web3 Developer",
+    intro: "Five things worth checking before you hire a Web3 developer, the questions that reveal more than a portfolio, and the honest weaknesses in my own track record.",
+    extra: "Check whether they can explain a failure they caused and what they changed afterwards, whether they separate what they verified from what they assumed, whether they read code they did not write, whether they can describe the limits of the last thing they shipped, and whether you can reach them directly. Ask what they would refuse to build and what they would test first. The article applies the same five checks to my own work rather than only to other people. Related service: Product Discovery Sprint.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/work", label: "View Work" },
+      { href: "/hire-khalid", label: "Hire Khalid" },
+      { href: "/services/product-discovery", label: "Product Discovery Sprint" },
+    ],
+  },
+  "/insights/web3-agency-vs-freelancer": {
+    h1: "Web3 Agency vs Freelancer: How to Choose",
+    intro: "An honest comparison of agencies, freelancers, and solo studios for Web3 product work, including the cases where a solo studio like mine is the wrong choice.",
+    extra: "An agency offers capacity, process, and cover across several disciplines, at a higher cost and a slower start. A freelancer offers speed and low overhead, with variable reliability and nobody to cover an absence. A solo studio sits between the two: one accountable engineer working to a written scope. Choose an agency when you need three functions at once, a freelancer for a single well-defined task, and expect to own the roadmap whichever route you take. Related service: Web3 MVP Development.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/hire-khalid", label: "Hire Khalid" },
+      { href: "/services", label: "View Services" },
+      { href: "/work", label: "View Work" },
+    ],
+  },
+  "/insights/what-is-an-ai-agent-in-web3": {
+    h1: "What Is an AI Agent in Web3?",
+    intro: "A plain definition of an AI agent in Web3, how it differs from a bot or a smart contract, and why the refusal list matters more than the list of capabilities.",
+    extra: "An agent reads an input, reasons about it, and takes a bounded action without a human in the loop. A bot matches triggers against responses. A smart contract executes deterministic code on-chain. An agent decides, which is why the useful specification is not what it can do but what it will not do, who can stop it, and what happens when it is wrong. Working examples include Valor, which scores and pays community contributions, and SolPulse, which tracks Solana whale wallets. Related service: AI Agent & Solana Engineering.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
+      { href: "/work/valor", label: "See Valor" },
+      { href: "/ai-agents", label: "AI Agents Capability" },
+    ],
+  },
+  "/insights/what-is-a-web3-mvp": {
+    h1: "What Is a Web3 MVP?",
+    intro: "What a Web3 MVP is, why the Web3 version needs failure handling in version one, and what belongs in a first version versus what can safely wait.",
+    extra: "An MVP is the smallest version that lets a real user complete one meaningful action and lets you observe whether it worked. Web3 adds four properties that change the calculation: irreversible transactions, user funds moving on-chain, public code, and wallet friction. Failure paths therefore belong in version one rather than version two. Governance tokens, multi-chain support, admin dashboards, and referral systems can almost always wait. Related service: Web3 MVP Development.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/services/web3-mvp-development", label: "Web3 MVP Development" },
+      { href: "/services/product-discovery", label: "Product Discovery Sprint" },
+      { href: "/work", label: "View Work" },
+    ],
+  },
+  "/insights/what-is-a-product-discovery-sprint": {
+    h1: "What Is a Product Discovery Sprint?",
+    intro: "What a product discovery sprint produces, what it is not, and how to tell whether it is the right purchase for where your product stands right now.",
+    extra: "A discovery sprint produces a written direction: the user, the problem, the workflow, the scope of the first build, the technical unknowns, and a recommendation that is allowed to conclude software is not the answer. It is not market research, a business plan, a pitch deck, or an audit, and it does not replace a lawyer or an accountant. If you already know exactly what to build and who it is for, skip discovery and build instead. Related service: Product Discovery Sprint.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/services/product-discovery", label: "Product Discovery Sprint" },
+      { href: "/hire-khalid", label: "Hire Khalid" },
+      { href: "/start?type=product-discovery", label: "Start with Discovery" },
+    ],
+  },
+  "/insights/what-is-wallet-intelligence": {
+    h1: "What Is Wallet Intelligence?",
+    intro: "What wallet intelligence means, the problem it actually solves, and the four things it should never claim to be. Includes a working project example.",
+    extra: "Wallet intelligence is the step between raw on-chain data and a decision: reading a wallet's history, holdings, and behaviour, then stating plainly what that pattern suggests. It should never claim to be a fraud determination, a credit score, investment advice, or a complete picture, because a wallet's history is not a person. WalletLens is a working example that covers five EVM chains and states its confidence limits on every report. Related service: AI Agent & Solana Engineering.",
+    links: [
+      { href: "/insights", label: "All Insights" },
+      { href: "/work/walletlens", label: "See WalletLens" },
+      { href: "/services/ai-agent-solana-engineering", label: "AI Agent & Solana Engineering" },
+      { href: "/work", label: "View Work" },
+    ],
+  },
   "/privacy": {
     h1: "How inquiries and personal information are handled.",
     intro: "A clear explanation of what happens when you submit an inquiry to The Web3 Wizard Labs. Inquiry data is delivered via Telegram notification to Khalid Murtala and is not stored in a database. No advertising trackers or behavioural profiling tools are used beyond privacy-respecting Vercel Analytics.",
@@ -322,13 +442,33 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
       { href: "/services", label: "View Services" },
     ],
   },
+  // Fallback stub only — /start is noindex, so this exists purely so the page is
+  // never an empty <div id="root"> if prerendering is ever skipped. Real markup
+  // is supplied by the prerender step.
+  "/start": {
+    h1: "Start a conversation about your Web3 product.",
+    intro: "Tell The Web3 Wizard what you are trying to build. Discuss an AI agent, Solana application, dApp, MVP, or Web3 automation project. One founder reads every inquiry and replies directly.",
+    extra: "Project-based client engagements start from $750 for a Product Discovery Sprint, with integration sprints from $2,500 and product builds from $6,000. Starting prices are indicative and confirmed after a fit conversation.",
+    links: [
+      { href: "/services", label: "View Services" },
+      { href: "/hire-khalid", label: "Hire Khalid" },
+      { href: "/work", label: "See Work" },
+      { href: "/insights", label: "Read Insights" },
+    ],
+  },
 };
 
-function injectStaticBody(html: string, route: string): string {
+// Sentinels wrapped around the crawlable body so scripts/prerender.tsx can swap
+// the fallback stub for the real server-rendered page without fragile HTML parsing.
+// If prerendering is ever skipped, the stub between these markers is what ships.
+export const SSG_BODY_START = "<!--ssg-body:start-->";
+export const SSG_BODY_END = "<!--ssg-body:end-->";
+
+export function injectStaticBody(html: string, route: string): string {
   const data = STATIC_BODY[route];
   if (!data) return html;
   const relatedLinks = data.links.map((l) => `<a href="${l.href}">${l.label}</a>`).join(" | ");
-  const siteNav = `<header><nav aria-label="Primary"><a href="/">Home</a> | <a href="/services">Services</a> | <a href="/work">Work</a> | <a href="/insights">Insights</a> | <a href="/about">About</a> | <a href="/start">Contact</a></nav></header>`;
+  const siteNav = `<header><nav aria-label="Primary"><a href="/">Home</a> | <a href="/work">Work</a> | <a href="/services">Services</a> | <a href="/ai-agents">AI Agents</a> | <a href="/insights">Insights</a> | <a href="/about">About</a> | <a href="/hire-khalid">Hire Khalid</a> | <a href="/start">Contact</a></nav></header>`;
   const bodyContent = `
 ${siteNav}
 <main>
@@ -339,8 +479,9 @@ ${siteNav}
 </main>
 <footer><nav><a href="/privacy">Privacy</a> | <a href="/terms">Terms</a> | <a href="/sitemap.xml">Sitemap</a></nav><p>© 2026 The Web3 Wizard Labs · Founded by Khalid Murtala.</p></footer>
 `;
+  const wrapped = `${SSG_BODY_START}${bodyContent}${SSG_BODY_END}`;
   if (html.includes('<div id="root"></div>')) {
-    return html.replace('<div id="root"></div>', `<div id="root">${bodyContent}</div>`);
+    return html.replace('<div id="root"></div>', `<div id="root">${wrapped}</div>`);
   }
   return html.replace("</body>", `${bodyContent}</body>`);
 }

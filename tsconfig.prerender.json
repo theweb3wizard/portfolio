@@ -1,0 +1,16 @@
+{
+  // Used only by the prerender step (scripts/prerender.tsx, run via tsx).
+  // The root tsconfig keeps jsx:"preserve" for Vite; Node needs the automatic JSX runtime.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": true
+  },
+  "include": [
+    "scripts/**/*",
+    "client/src/**/*",
+    "shared/**/*",
+    "server/**/*",
+    "vite-plugin-ssg-meta.ts"
+  ]
+}

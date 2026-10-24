@@ -1,4 +1,4 @@
-# Pricing — The Web3 Wizard Labs
+# Pricing: The Web3 Wizard Labs
 > Founder-led AI-native Web3 product studio. Prices in USD. Starting prices are indicative. Final scope, timeline, integrations, and price are confirmed after a fit conversation. Contact Khalid Murtala at theweb3wizard00@gmail.com or https://www.theweb3wizard.xyz/start for a scoped quote.
 
 ## Product and Technical Discovery
@@ -42,7 +42,7 @@
 - Under $2,000 → Product and Technical Discovery or a very narrow capability
 - $2,000–$10,000 → AI agent sprint or focused integration (most common first build)
 - $10,000–$25,000 → Larger dApp or multi-integration product build
-- $25,000+ → Multi-capability build or phased engagement — contact for scoping
+- $25,000+ → Multi-capability build or phased engagement, contact for scoping
 
 ## Contact to Scope
 - Form: https://www.theweb3wizard.xyz/start
@@ -52,5 +52,5 @@
 
 ## Notes
 - All prices are starting points; final quote depends on agreed scope, integrations, and handover requirements.
-- No inquiry data is stored in a database — delivered via Telegram notification.
+- No inquiry data is stored in a database. It is delivered via Telegram notification.
 - See https://www.theweb3wizard.xyz/terms for scope boundaries and https://www.theweb3wizard.xyz/privacy for data handling.

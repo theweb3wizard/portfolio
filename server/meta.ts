@@ -115,7 +115,7 @@ const FAQ_SCHEMA = {
       name: "Who is it for?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone — and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built.",
+        text: "Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone, and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built.",
       },
     },
     {
@@ -147,7 +147,7 @@ const FAQ_SCHEMA = {
       name: "Do you have client testimonials?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly.",
+        text: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labelled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly.",
       },
     },
     {
@@ -155,7 +155,7 @@ const FAQ_SCHEMA = {
       name: "Are the portfolio projects client work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labeled so you can distinguish personal work from future client engagements.",
+        text: "No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labelled so you can distinguish personal work from future client engagements.",
       },
     },
     {
@@ -187,7 +187,7 @@ const FAQ_SCHEMA = {
       name: "What happens after I submit an enquiry?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Khalid Murtala reviews every inquiry personally — typically within two business days — and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification.",
+        text: "Khalid Murtala reviews every inquiry personally, typically within two business days, and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification.",
       },
     },
   ],
@@ -292,6 +292,16 @@ type RouteMeta = {
   title: string;
   description: string;
   noindex?: boolean;
+  /**
+   * Canonical URL override, used when two routes serve identical content and one
+   * must consolidate its signals into the other. See "/profile" below.
+   */
+  canonicalPath?: string;
+  /**
+   * Explicit Open Graph image. By default every route gets its own card from
+   * /og/ — see ogImageFor() below. Only set this to override that convention.
+   */
+  ogImage?: string;
   schemas?: object[];
 };
 
@@ -376,7 +386,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/work": {
     title: "Founder-Built Web3 Projects | The Web3 Wizard",
     description:
-      "Portfolio of founder-built Web3 projects: AI agents, Solana tools, EVM wallet intelligence, and automation — shipped by Khalid Murtala.",
+      "Portfolio of founder-built Web3 projects: AI agents, Solana tools, EVM wallet intelligence, and automation, shipped by Khalid Murtala.",
     schemas: [
       PERSON_SCHEMA,
       breadcrumb([
@@ -407,14 +417,14 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/valor": {
-    title: "Valor — AI Agent for Telegram | The Web3 Wizard",
+    title: "Valor: AI Community Rewards | The Web3 Wizard",
     description:
-      "Valor is a founder-built AI agent for Telegram. Autonomous conversational help and task execution for Web3 communities.",
+      "Valor is a founder-built agent that scores every Telegram message and pays top contributors in USDC on Base. No commands, no voting, no manual review.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
         "Valor",
-        "An AI agent for Telegram. Autonomous conversational agent for Web3 communities.",
+        "Autonomous community rewards agent. Scores Telegram contributions with AI and pays top contributors in USDC on Base.",
         "https://valor-tgbot.vercel.app",
         "https://github.com/theweb3wizard/Valor",
       ),
@@ -429,7 +439,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/work/walletlens": {
     title: "WalletLens | EVM Wallet Intelligence | The Web3 Wizard",
     description:
-      "WalletLens: AI-powered EVM wallet intelligence for Ethereum, Polygon, BNB, Arbitrum & Base. Query wallets in plain English.",
+      "WalletLens: AI-powered EVM wallet intelligence for Ethereum, Polygon, BNB, Arbitrum and Base. Paste an address for a risk score and a plain-English read.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
@@ -447,14 +457,14 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/write3": {
-    title: "Write3 | AI Web3 Content Generator | The Web3 Wizard",
+    title: "Write3 | Compliance-Safe Web3 Content | The Web3 Wizard",
     description:
-      "Write3: AI-powered Web3 content for X, Discord, Telegram, Farcaster, and blogs. Generate platform-ready drafts quickly.",
+      "Write3 learns a founder's voice from their own writing, generates platform-native Web3 content, and flags risky claims before anything is published.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
         "Write3",
-        "AI-powered Web3 content generator for X, Discord, Telegram, Farcaster, and blogs.",
+        "Compliance-safe AI voice clone for Web3 content. Generates platform-native drafts and flags language that attracts regulatory scrutiny.",
         "https://write3-ai.vercel.app",
         "https://github.com/theweb3wizard/Write3",
       ),
@@ -475,7 +485,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       softwareSchema(
         "AgentHub",
         "Secure, authenticated access for AI coding assistants to databases, APIs, and infrastructure with policy control, audit trails, and human approval gates.",
-        "https://agenthub-lyart.vercel.app",
+        "https://agenthub-hq.vercel.app",
         "https://github.com/theweb3wizard/AgentHub",
       ),
       breadcrumb([
@@ -507,14 +517,15 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/work/solpulse": {
-    title: "SolPulse | Solana Wallet Monitoring | The Web3 Wizard",
+    title: "SolPulse | Solana Whale Tracking | The Web3 Wizard",
     description:
-      "SolPulse: Solana wallet monitoring experiment. Turns wallet activity into calmer, readable Telegram alerts.",
+      "SolPulse is a founder-built Solana whale tracker. It watches Pump.fun and Raydium wallets and sends dust-filtered alerts to Telegram within seconds.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
         "SolPulse",
-        "Founder-built Solana monitoring experiment. On-chain wallet activity signals delivered as readable Telegram alerts.",
+        "Solana whale tracker. Watches Pump.fun and Raydium wallets and delivers dust-filtered movement alerts to Telegram and a live dashboard.",
+        "https://solpulse-hq.vercel.app",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
@@ -542,7 +553,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/about": {
     title: "About | Khalid Murtala | The Web3 Wizard",
     description:
-      "Khalid Murtala, founder of The Web3 Wizard Labs — founder-led AI-native Web3 studio building AI agents, Solana apps, and focused MVPs.",
+      "Khalid Murtala, founder of The Web3 Wizard Labs, a founder-led AI-native Web3 studio building AI agents, Solana apps, and focused MVPs.",
     schemas: [
       PERSON_SCHEMA,
       ORGANIZATION_SCHEMA,
@@ -554,10 +565,16 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   // ── Profile / hire ────────────────────────────────────────────────────────
+  // NOTE: /profile and /hire-khalid both render ProfilePage (see client/src/App.tsx),
+  // so they are byte-identical in content. /profile therefore declares /hire-khalid
+  // as its canonical, so the two consolidate rather than compete as duplicates.
+  // If these pages are ever given distinct content: delete canonicalPath below and
+  // re-add /profile to client/public/sitemap.xml.
   "/profile": {
-    title: "Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+    title: "Khalid Murtala | AI × Web3 Engineer | The Web3 Wizard",
     description:
-      "Profile of Khalid Murtala: AI agents, Web3 applications, wallet intelligence, automation, and focused MVPs. Skills, selected projects, availability, and contact.",
+      "Profile of Khalid Murtala: AI agents, Web3 applications, wallet intelligence, automation, and focused MVPs. Skills, selected projects, and availability.",
+    canonicalPath: "/hire-khalid",
     schemas: [
       PERSON_SCHEMA,
       ORGANIZATION_SCHEMA,
@@ -569,7 +586,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   "/hire-khalid": {
-    title: "Hire Khalid Murtala — AI × Web3 Product Engineer | The Web3 Wizard",
+    title: "Hire Khalid Murtala | AI × Web3 Engineer | The Web3 Wizard",
     description:
       "Work with Khalid Murtala on AI agents, Web3 product engineering, and focused dApp builds. Project-based availability plus contact details.",
     schemas: [
@@ -585,7 +602,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/ai-agents": {
     title: "AI Agent Development for Web3 | The Web3 Wizard",
     description:
-      "Practical AI agents for Web3: support, wallet intelligence, community operations, treasury monitoring, and controlled on-chain workflows. Founder-built reference implementations.",
+      "Practical AI agents for Web3: support, wallet intelligence, community ops, treasury monitoring, and controlled on-chain workflows. Founder-built.",
     schemas: [
       PERSON_SCHEMA,
       serviceSchema(
@@ -685,6 +702,213 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     ],
   },
 
+  "/insights/what-i-learned-shipping-seven-web3-mvps-solo": {
+    title: "Seven Web3 MVPs Solo: What I Learned | The Web3 Wizard",
+    description:
+      "Seven founder-built Web3 products, one lesson each. What actually broke, what I would do differently, and why the code was rarely the reason a project failed.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "What I Learned Shipping Seven Web3 MVPs Solo",
+        "Seven founder-built Web3 products and the lesson each one taught: scope, integrations, agent boundaries, interface as product, actionable output, documented limits, and what shipping changes about the definition of done.",
+        "what-i-learned-shipping-seven-web3-mvps-solo",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "What I Learned Shipping Seven Web3 MVPs Solo",
+          url: `${SITE_URL}/insights/what-i-learned-shipping-seven-web3-mvps-solo`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/how-much-does-a-web3-mvp-cost": {
+    title: "How Much Does a Web3 MVP Cost? | The Web3 Wizard",
+    description:
+      "What a Web3 MVP actually costs, which four decisions move the price up or down, and how to spend less without shipping less. Published starting points included.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "How Much Does a Web3 MVP Cost?",
+        "Published starting points for a Web3 MVP, the four decisions that move the price, what makes a build cost more than expected, and how to spend less without cutting the failure paths that protect users.",
+        "how-much-does-a-web3-mvp-cost",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "How Much Does a Web3 MVP Cost?",
+          url: `${SITE_URL}/insights/how-much-does-a-web3-mvp-cost`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/do-i-need-a-smart-contract-audit": {
+    title: "Do I Need a Smart Contract Audit? | The Web3 Wizard",
+    description:
+      "When a smart contract audit is worth the money, when it is not, and what you still need to do if you skip one. Written by someone who does not sell audits.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "Do I Need a Smart Contract Audit?",
+        "What a smart contract audit actually provides, when it is genuinely necessary, when it is not the next thing your budget should buy, and the testing and disclosure discipline you still need either way.",
+        "do-i-need-a-smart-contract-audit",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "Do I Need a Smart Contract Audit?",
+          url: `${SITE_URL}/insights/do-i-need-a-smart-contract-audit`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/how-to-evaluate-a-web3-developer": {
+    title: "How to Evaluate a Web3 Developer | The Web3 Wizard",
+    description:
+      "Five things worth checking before you hire a Web3 developer, the questions that reveal more than a portfolio, and the honest weaknesses in my own track record.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "How to Evaluate a Web3 Developer",
+        "The five criteria worth checking before hiring a Web3 developer, questions that reveal more than a portfolio, common red flags, and an honest self-assessment against the same standard.",
+        "how-to-evaluate-a-web3-developer",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "How to Evaluate a Web3 Developer",
+          url: `${SITE_URL}/insights/how-to-evaluate-a-web3-developer`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/web3-agency-vs-freelancer": {
+    title: "Web3 Agency vs Freelancer | The Web3 Wizard",
+    description:
+      "An honest comparison of agencies, freelancers, and solo studios for Web3 product work, including the cases where a solo studio like mine is the wrong choice.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "Web3 Agency vs Freelancer: How to Choose",
+        "When an agency is the right call, when an individual is, what a solo studio can and cannot offer, and a five-minute method for matching structure to the shape of your project.",
+        "web3-agency-vs-freelancer",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "Web3 Agency vs Freelancer: How to Choose",
+          url: `${SITE_URL}/insights/web3-agency-vs-freelancer`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/what-is-an-ai-agent-in-web3": {
+    title: "What Is an AI Agent in Web3? | The Web3 Wizard",
+    description:
+      "A plain definition of an AI agent in Web3, how it differs from a bot or a smart contract, and why the refusal list matters more than the list of capabilities.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "What Is an AI Agent in Web3?",
+        "A plain-language definition of an AI agent in Web3: the input, the reasoning step, and the bounded action, plus what an agent is not and where one genuinely earns its place.",
+        "what-is-an-ai-agent-in-web3",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "What Is an AI Agent in Web3?",
+          url: `${SITE_URL}/insights/what-is-an-ai-agent-in-web3`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/what-is-a-web3-mvp": {
+    title: "What Is a Web3 MVP? | The Web3 Wizard",
+    description:
+      "What a Web3 MVP is, why the Web3 version needs failure handling in version one, and what belongs in a first build versus what can safely wait.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "What Is a Web3 MVP?",
+        "What a Web3 MVP is, the four properties of Web3 that change what a minimum viable product has to include, and the difference between what belongs in version one and what does not.",
+        "what-is-a-web3-mvp",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "What Is a Web3 MVP?",
+          url: `${SITE_URL}/insights/what-is-a-web3-mvp`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/what-is-a-product-discovery-sprint": {
+    title: "What Is a Product Discovery Sprint? | The Web3 Wizard",
+    description:
+      "What a product discovery sprint produces, what it is not, and how to tell whether it is the right purchase for where your product stands right now.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "What Is a Product Discovery Sprint?",
+        "What a product discovery sprint produces, what it is not, when it is the wrong purchase, and how a short written direction prevents the expensive build mistakes it exists to catch.",
+        "what-is-a-product-discovery-sprint",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "What Is a Product Discovery Sprint?",
+          url: `${SITE_URL}/insights/what-is-a-product-discovery-sprint`,
+        },
+      ]),
+    ],
+  },
+
+  "/insights/what-is-wallet-intelligence": {
+    title: "What Is Wallet Intelligence? | The Web3 Wizard",
+    description:
+      "What wallet intelligence means, the problem it actually solves, and the four things it should never claim to be. Includes a working project example.",
+    schemas: [
+      PERSON_SCHEMA,
+      articleSchema(
+        "What Is Wallet Intelligence?",
+        "What wallet intelligence means in practice, the interpretation gap it exists to close, the four things it should never claim to be, and a working example from a founder-built project.",
+        "what-is-wallet-intelligence",
+        "2026-10-24",
+      ),
+      breadcrumb([
+        { name: "Home", url: SITE_URL },
+        { name: "Insights", url: `${SITE_URL}/insights` },
+        {
+          name: "What Is Wallet Intelligence?",
+          url: `${SITE_URL}/insights/what-is-wallet-intelligence`,
+        },
+      ]),
+    ],
+  },
+
   // ── Start / contact (noindex) ─────────────────────────────────────────────
   "/start": {
     title: "Start a Conversation | The Web3 Wizard",
@@ -727,12 +951,30 @@ function escapeHtml(str: string): string {
     .replace(/>/g, "&gt;");
 }
 
+/**
+ * Per-route Open Graph cards live in /og/, named after the route:
+ *   "/"            -> /og/home.png
+ *   "/work/valor"  -> /og/work-valor.png
+ *
+ * Generated by theweb3wizard.xyz-audit/generate-og-images.py.
+ * The original /og-image.png remains the sitewide fallback.
+ */
+export function ogImageFor(pathname: string): string {
+  const slug =
+    pathname === "/"
+      ? "home"
+      : pathname.replace(/^\//, "").replace(/\/$/, "").replace(/\//g, "-");
+  return `${SITE_URL}/og/${slug}.png`;
+}
+
 export function injectMetaIntoHtml(html: string, pathname: string): string {
   // Normalise pathname — strip query, hash, trailing slash except root
   const clean = pathname.split("?")[0].split("#")[0].replace(/\/$/, "") || "/";
   const meta = ROUTE_META[clean] ?? DEFAULT_META;
 
-  const canonical = `${SITE_URL}${clean === "/" ? "" : clean}`;
+  const canonicalTarget = meta.canonicalPath ?? clean;
+  const canonical = `${SITE_URL}${canonicalTarget === "/" ? "" : canonicalTarget}`;
+  const ogImage = meta.ogImage ?? ogImageFor(clean);
   const title = escapeHtml(meta.title);
   const description = escapeHtml(meta.description);
   const noindex = meta.noindex ? '\n  <meta name="robots" content="noindex, nofollow" />' : "";
@@ -749,7 +991,7 @@ export function injectMetaIntoHtml(html: string, pathname: string): string {
   <meta property="og:description" content="${description}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${canonical}" />
-  <meta property="og:image" content="${OG_IMAGE}" />
+  <meta property="og:image" content="${ogImage}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}" />
@@ -757,7 +999,7 @@ export function injectMetaIntoHtml(html: string, pathname: string): string {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
-  <meta name="twitter:image" content="${OG_IMAGE}" />
+  <meta name="twitter:image" content="${ogImage}" />
   <meta name="twitter:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}" />
   <meta name="twitter:site" content="@theweb3wizard00" />
   ${schemaBlocks}`;

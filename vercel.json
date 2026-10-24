@@ -3,6 +3,7 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist/public",
   "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -75,6 +76,12 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "theweb3wizard.xyz" }],
+      "destination": "https://www.theweb3wizard.xyz/:path*",
+      "permanent": true
+    },
     { "source": "/services/product-builds", "destination": "/services/web3-mvp-development", "permanent": true },
     { "source": "/services/prototype-refinement", "destination": "/services/web3-mvp-development", "permanent": true },
     { "source": "/services/community-tools", "destination": "/services/ai-agent-solana-engineering", "permanent": true },

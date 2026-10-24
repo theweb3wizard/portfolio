@@ -916,6 +916,27 @@ html, body { overflow-x: clip; }
   content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 2px;
   border-radius: 2px; background: linear-gradient(180deg, var(--gold), transparent);
 }
+/* Sub-headings, lists, citations and quotes inside long-form bodies.
+   Used by the service-page depth sections and the expanded insight articles. */
+.article-body h3 { color: #f4f4f1; margin: 36px 0 12px; font-size: 21px; letter-spacing: -.03em; line-height: 1.25; }
+.article-body ul, .article-body ol { margin: 0 0 26px; padding-left: 22px; max-width: var(--prose-max); }
+.article-body li { line-height: 1.8; margin-bottom: 9px; }
+.article-body li::marker { color: var(--gold); }
+.article-body strong { color: #f4f4f1; font-weight: 650; }
+.article-body blockquote {
+  margin: 0 0 26px; padding: 4px 0 4px 22px; border-left: 2px solid rgba(215,168,75,.5);
+  color: var(--muted); max-width: var(--prose-max);
+}
+.article-body blockquote p { margin-bottom: 12px; }
+.article-body .inline-link { color: var(--gold); }
+.article-body .inline-link:hover { color: var(--gold); text-decoration: underline; }
+/* Service pages read as commercial pages, not editorial posts: no drop cap. */
+.service-depth { margin-top: 0; }
+.service-depth > p:first-of-type::first-letter {
+  font: inherit; float: none; padding: 0; color: inherit;
+}
+.service-faq { margin-top: 72px; }
+.service-faq h2 { margin-bottom: 26px; }
 .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); }
 .article-nav-link {
   display: flex; flex-direction: column; gap: 8px; padding: 20px;
@@ -1053,6 +1074,10 @@ html, body { overflow-x: clip; }
   .page-hero, .section, .page-content { padding: 24px 0; border: none; }
   .hero h1, .page-hero h1 { font-size: 32px; animation: none; }
   .hero-copy, .capability-copy, .about-copy, .detail-grid p, .detail-grid li { color: #333; }
+  .article-body, .article-body p, .article-body li { color: #333; }
+  .article-body h2, .article-body h3, .article-body strong { color: #111; }
+  .article-body li::marker { color: #111; }
+  .article-body .inline-link { color: #111; }
   .callout-panel, .side-panel, .engagement-card, .proof-item, .usecase-card,
   .project-card, .insight-card, .problem-card, .service-card { border: 1px solid #999; background: #fff; break-inside: avoid; box-shadow: none; }
   a { color: #111; }

@@ -2,6 +2,10 @@ import { useMemo, useState } from "react";
 import { Link, useLocation, useRoute } from "wouter";
 import { ArrowUpRight, Check, ChevronRight, ExternalLink, Github, Loader2, Printer } from "lucide-react";
 import { ButtonLink, Faq, PageFrame, PageHero, ProjectCard, SectionHeading } from "@/components/SiteShell";
+import { SERVICE_DEPTH } from "@/content/serviceDepth";
+import { SERVICE_FAQS } from "@shared/serviceFaqs";
+import { INSIGHT_BODIES } from "@/content/insights";
+import { projectNarrative } from "@/content/projectNarratives";
 import HeroConsole from "@/components/HeroConsole";
 import CountUp from "@/components/CountUp";
 import ProjectArt from "@/components/ProjectArt";
@@ -29,7 +33,7 @@ const faqItems = [
   },
   {
     question: "Who is it for?",
-    answer: "Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone — and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built."
+    answer: "Early-stage Web3 founders and small teams with a validated problem, prototype, product idea, or roadmap milestone, and who need AI agents, AI × Web3 product engineering, or a focused decentralised application built."
   },
   {
     question: "What types of projects do you accept?",
@@ -45,11 +49,11 @@ const faqItems = [
   },
   {
     question: "Are the portfolio projects client work?",
-    answer: "No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labeled so you can distinguish personal work from future client engagements."
+    answer: "No. The portfolio shows founder-built personal projects and experiments. Every project is clearly labelled so you can distinguish personal work from future client engagements."
   },
   {
     question: "Do you have client testimonials?",
-    answer: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labeled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly."
+    answer: "Not yet. The Web3 Wizard Labs is currently opening its first client engagements. The work shown on this site is founder-built personal work, clearly labelled as such. The first engagement is designed to be narrow and transparent so both sides can evaluate the fit responsibly."
   },
   {
     question: "Do you perform smart-contract audits?",
@@ -65,7 +69,7 @@ const faqItems = [
   },
   {
     question: "What happens after I submit an enquiry?",
-    answer: "Khalid Murtala reviews every inquiry personally — typically within two business days — and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification."
+    answer: "Khalid Murtala reviews every inquiry personally, typically within two business days, and replies if the project looks like a good fit. If it is not the right fit, he says so clearly. Inquiry data is not stored in a database; it is delivered via Telegram notification."
   },
 ];
 
@@ -90,7 +94,7 @@ export function EngagementsSection() {
         <SectionHeading
           eyebrow="WAYS TO WORK TOGETHER"
           title="Four starting points. One fit conversation."
-          children="Indicative starting prices — not fixed quotes. Every engagement is scoped and confirmed after a fit conversation."
+          children="Indicative starting prices, not fixed quotes. Every engagement is scoped and confirmed after a fit conversation."
         />
         <div className="engagement-grid">
           {engagements.map((engagement) => (
@@ -150,7 +154,7 @@ export function WhatIBuildSection() {
         <SectionHeading
           eyebrow="WHAT I BUILD"
           title="Three primary capabilities."
-          children="Founder-led delivery — the person you talk to is the person who builds it."
+          children="Founder-led delivery: the person you talk to is the person who builds it."
         />
         <div className="routing-grid three-col">
           {primary.map((item) => (
@@ -167,7 +171,7 @@ export function WhatIBuildSection() {
 }
 
 const proofItems = [
-  { title: "Founder-built AI products shipped", detail: "Valor, WalletLens, Write3, AgentHub, and OrderFlow — all with live public demos." },
+  { title: "Founder-built AI products shipped", detail: "Valor, WalletLens, Write3, AgentHub, and OrderFlow, all with live public demos." },
   { title: "Public GitHub repositories", detail: "Every featured project links to its real repository. Nothing is a mockup." },
   { title: "Multi-chain application work", detail: "Solana monitoring and EVM wallet intelligence across Ethereum, Polygon, BNB, Arbitrum, and Base." },
   { title: "AI-agent implementations", detail: "Autonomous Telegram agents, policy-controlled agent access layers, and AI-triggered data workflows." },
@@ -226,7 +230,7 @@ export function CurrentFocusSection() {
           <SectionHeading
             eyebrow="CURRENT FOCUS"
             title="Building practical AI-native Web3 products."
-            children="Khalid is currently focused on AI agents, wallet intelligence, Web3 operations tools, developer support tools, controlled on-chain workflows, and Solana and EVM integrations — and is open to project-based client work and AI/Web3 engineering roles."
+            children="Khalid is currently focused on AI agents, wallet intelligence, Web3 operations tools, developer support tools, controlled on-chain workflows, and Solana and EVM integrations, and is open to project-based client work and AI/Web3 engineering roles."
           />
         </div>
         <div className="callout-panel">
@@ -274,7 +278,7 @@ export function Home() {
           <div>
             <span className="eyebrow">AI-NATIVE WEB3 PRODUCT STUDIO</span>
             <h1>Turn Your Web3 Problem Into a Working Product.</h1>
-            <p className="hero-identity">Khalid Murtala — AI × Web3 Product Engineer and founder of The Web3 Wizard.</p>
+            <p className="hero-identity">Khalid Murtala, AI × Web3 Product Engineer and founder of The Web3 Wizard.</p>
             <p className="hero-copy">
               The Web3 Wizard is a founder-led AI-native product studio helping early-stage Web3
               founders and small teams turn important problems and roadmap milestones into focused,
@@ -307,7 +311,7 @@ export function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="FOUNDER-BUILT WORK"
-            title="Real projects. Real code. Clearly labeled."
+            title="Real projects. Real code. Clearly labelled."
             children="These are founder-built personal projects, not client case studies. Each one demonstrates a real capability."
           />
           <div className="projects-grid">
@@ -548,13 +552,19 @@ export function ServiceDetailPage({ type }: { type: keyof typeof services }) {
     aiAgentSolanaEngineering: engagements[1],
   };
   const engagement = engagementForService[type];
+  const faqs = SERVICE_FAQS[type];
   return (
     <PageFrame>
       <PageHero eyebrow={service.eyebrow} title={service.title} description={service.description}>
         <ButtonLink href={`/start?type=${service.query}`}>{service.cta}</ButtonLink>
       </PageHero>
       <div className="page-content">
-        <div className="container detail-grid">
+        <div className="container">
+          <article className="article">
+            <div className="article-body service-depth">{SERVICE_DEPTH[type]}</div>
+          </article>
+        </div>
+        <div className="container detail-grid" style={{ marginTop: 84 }}>
           <div>
             <h2>Is this the right engagement?</h2>
             <p className="legal-copy">
@@ -600,6 +610,10 @@ export function ServiceDetailPage({ type }: { type: keyof typeof services }) {
             </div>
           </aside>
         </div>
+        <div className="container service-faq">
+          <SectionHeading eyebrow="FAQ" title="Common questions" align="center" />
+          <Faq items={faqs} />
+        </div>
       </div>
     </PageFrame>
   );
@@ -617,7 +631,7 @@ export function WorkPage() {
     <PageFrame>
       <PageHero
         eyebrow="FOUNDER-BUILT WORK"
-        title="Real projects. Real evidence. Clearly labeled."
+        title="Real projects. Real evidence. Clearly labelled."
         description="A portfolio of founder-built Web3 projects by Khalid Murtala: AI agents, Solana tools, EVM wallet intelligence, and Web3 automation. These are personal projects, not client case studies."
       />
       <div className="page-content">
@@ -646,7 +660,7 @@ export function WorkPage() {
             </div>
             <div className="callout-panel">
               <div className="boundary-list">
-                <div className="boundary-item">All projects are labeled with their current status.</div>
+                <div className="boundary-item">All projects are labelled with their current status.</div>
                 <div className="boundary-item">No personal project is presented as a client case study.</div>
                 <div className="boundary-item">Live demos and repositories are linked where they exist.</div>
                 <div className="boundary-item">Limitations are documented honestly on each project page.</div>
@@ -766,6 +780,13 @@ export function ProjectDetailPage() {
             </aside>
           </div>
         </div>
+        {projectNarrative(project.slug) && (
+          <div className="container">
+            <article className="article">
+              <div className="article-body service-depth">{projectNarrative(project.slug)}</div>
+            </article>
+          </div>
+        )}
       </div>
     </PageFrame>
   );
@@ -835,7 +856,7 @@ export function AboutPage() {
             <p className="about-copy">
               The Web3 Wizard Labs is currently opening its first client engagements. There are no client
               testimonials or client case studies to present yet. The founder-built work in the
-              portfolio is a genuine record of what has been built and shipped, clearly labeled as
+              portfolio is a genuine record of what has been built and shipped, clearly labelled as
               personal projects.
             </p>
             <h3>What we do not claim</h3>
@@ -894,143 +915,11 @@ export function InsightsPage() {
 
 // ─── Insight Detail Page ──────────────────────────────────────────────────────
 
-const insightBodies: Record<string, React.ReactNode> = {
-  "scope-a-web3-product-before-spending-money": (
-    <>
-      <p>
-        I have killed products before I finished them. Not because the ideas were bad. Because I
-        tried to build everything at once and ran out of time, money, and patience before I could
-        learn anything real. Scoping is the part of building nobody wants to spend time on. But it
-        is the part that decides whether you ship something or burn six months on something nobody
-        asked for.
-      </p>
-      <h2>One user, one moment</h2>
-      <p>
-        When I sit down to scope, I ask a different question than most founders do. Instead of
-        "what should the product do?", I ask "who is struggling with what, right now, and what
-        is the smallest thing I can build to make that struggle a little less painful?"
-        You pick one user. One situation. One moment where they need to take an action and
-        currently cannot. Everything else goes on a list and stays there.
-      </p>
-      <p>
-        This is harder than it looks. You are close to your idea. You see the whole thing in your
-        head. The temptation is to show people the full vision early and hope they get it. But a
-        first version is not a solution. It is a learning device. It needs to be small enough to
-        ship fast and clear enough that a real person can tell you whether it solved the right
-        problem.
-      </p>
-      <h2>What actually matters in a first version</h2>
-      <p>
-        You need four things. A user who genuinely has the problem you think they have. A
-        workflow that works, even if it is rough. A way to observe whether it worked. And an
-        honest note about what is not in it. That is it. Everything else is scope you added because
-        it felt necessary, not because someone proved it was.
-      </p>
-      <p>
-        In Web3 this cuts deep. Wallet integration, chain selection, token mechanics, the decision
-        to put things on-chain versus off. Each one can double your build time without adding value
-        for the person using the product. The question is not "should we support this chain" or
-        "should we add a token." The question is "does this make the core problem easier to solve
-        for the person who needs it right now?" If it does not, leave it out.
-      </p>
-      <p>
-        A well-scoped product is one you can explain in two sentences, build in weeks not months,
-        and test with real people before the money runs out. That is the standard I work to, and
-        it is what I help founders get to.
-      </p>
-    </>
-  ),
-  "why-a-web3-prototype-can-fail": (
-    <>
-      <p>
-        I have shipped prototypes that worked perfectly on my machine and fell apart the moment
-        someone else tried them. Web3 makes this worse than most domains because the user is
-        expected to know things that most people have never heard of. A prototype that works on
-        your screen often creates a wall of confusion for the first real person who touches it.
-      </p>
-      <h2>Where prototypes actually break</h2>
-      <p>
-        The first thing that breaks is the assumption that the user knows what you know. A wallet
-        connection flow, a transaction confirmation, gas fees, network switching, token approvals.
-        These are routine to someone who builds in Web3 every day. To everyone else, they are a
-        chain of unfamiliar decisions with no clear answer. When your prototype assumes knowledge
-        your user does not have, the product feels broken even when it works.
-      </p>
-      <p>
-        The second thing that breaks is error handling. Prototypes are built for the path that
-        works. Real usage is not. When a wallet refuses to connect, when a transaction reverts,
-        when a user clicks something unexpected. These moments determine whether the product feels
-        trustworthy or frustrating. A prototype that has no error states communicates failure with
-        silence or with technical text that scares the user away. Neither builds confidence.
-      </p>
-      <p>
-        The third thing that breaks is purpose. A prototype shows a feature working. It does not
-        always explain why that feature matters. Users do not interact with products to admire
-        features. They interact with products to accomplish something. If the product does not make
-        the purpose obvious, the feature does not matter no matter how well it works.
-      </p>
-      <h2>What to fix before real users see it</h2>
-      <p>
-        Walk through your product as if you are someone who has never heard of Web3 before. At
-        every step, ask: does this screen tell me what to do next? Does it explain what just
-        happened? Does it handle the most likely failure in a way I can understand? If the answer
-        to any of those is no, that is more important than any new feature you want to add.
-      </p>
-      <p>
-        The single most useful thing you can do with a prototype is watch someone try to use it
-        without helping them. You will learn more in an hour of watching than in a week of reviewing
-        yourself. That is the kind of clarity I want to help founders build before they commit to
-        a larger build.
-      </p>
-    </>
-  ),
-  "use-ai-without-blindly-trusting-it": (
-    <>
-      <p>
-        I use AI to build things now. It is faster than it used to be, and the difference is real.
-        A product that would have taken months now takes weeks. The danger is not that AI is too
-        slow. The danger is that it is too fast, and you do not catch the things that matter until
-        they are already in production.
-      </p>
-      <h2>Where AI is genuinely useful and where it is not</h2>
-      <p>
-        AI tools are excellent at producing plausible code quickly. They are unreliable when it
-        comes to things that matter. Security-sensitive logic, complex state, edge cases that only
-        appear in real usage. AI does not understand why your product exists. It does not know
-        which user action is irreversible. It does not know what your threat model is. It is
-        pattern-matching, not thinking. The risk is not that it produces obviously wrong code. The
-        risk is that it produces code that looks right, passes basic tests, and fails in production.
-      </p>
-      <p>
-        In Web3 this cuts deeper than in most domains. A wrong implementation of a wallet signing
-        flow, a token approval that grants more access than intended, a transaction that behaves
-        differently than the user expected. These are not bugs you can patch after launch. They are
-        things that can cost users real value. You need to be the person who catches them before
-        they ship, not the person who reads about them in a support ticket.
-      </p>
-      <h2>How I actually use it</h2>
-      <p>
-        I use AI as a starting point, not a finishing point. I give it clear context about what I
-        am building, who it is for, and what the limits are. Then I read everything it produces
-        critically, especially the parts that look too easy. I test the behaviour that matters, not
-        just the path that works. And I keep notes on what I verified, what I am not sure about,
-        and what I have deferred. That is the whole discipline. It is not complicated, but it does
-        require you to stay in the loop.
-      </p>
-      <p>
-        The honest version of building with AI is that it makes you faster and it does not make you
-        less responsible. You still own the product. You still need to know what is in it and why.
-        That is how I build, and that is what I expect from the work I do for others.
-      </p>
-    </>
-  ),
-};
-
 export function InsightDetailPage() {
   const [, params] = useRoute("/insights/:slug");
   const item = insights.find((insight) => insight.slug === params?.slug);
   if (!item) return <NotFoundPage />;
-  const body = insightBodies[item.slug];
+  const Body = INSIGHT_BODIES[item.slug];
   const idx = insights.findIndex((insight) => insight.slug === item.slug);
   const prev = idx > 0 ? insights[idx - 1] : null;
   const next = idx >= 0 && idx < insights.length - 1 ? insights[idx + 1] : null;
@@ -1045,7 +934,7 @@ export function InsightDetailPage() {
             By Khalid Murtala · The Web3 Wizard | The Web3 Wizard Labs &nbsp;·&nbsp; {item.datePublished}
           </div>
           <div className="article-body">
-            {body ?? <p>{item.description}</p>}
+            {Body ? <Body /> : <p>{item.description}</p>}
           </div>
           <div style={{ marginTop: 48, display: "flex", gap: 14, flexWrap: "wrap" }}>
             <ButtonLink href={item.relatedService}>Explore the related service</ButtonLink>
@@ -1121,7 +1010,7 @@ export function StartPage() {
       >
         {isFitCall && !booking.external && (
           <p className="fit-call-note">
-            Online scheduling is not configured yet — send the form below and Khalid will reply
+            Online scheduling is not configured yet, so send the form below and Khalid will reply
             personally to arrange a fit call. Prefer email?{" "}
             <a className="inline-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
@@ -1135,7 +1024,7 @@ export function StartPage() {
         )}
         {projectContext && (
           <p className="fit-call-note">
-            You are asking about something similar to <strong>{projectContext.name}</strong> —
+            You are asking about something similar to <strong>{projectContext.name}</strong>:
             a founder-built reference implementation, not client work. Mention what you would
             want done differently in the form below.
           </p>
@@ -1301,8 +1190,8 @@ export function ProfilePage() {
     <PageFrame>
       <div className="profile-printable">
         <PageHero
-          eyebrow="PROFILE — KHALID MURTALA"
-          title="Khalid Murtala — AI × Web3 Product Engineer"
+          eyebrow="PROFILE: KHALID MURTALA"
+          title="Khalid Murtala, AI × Web3 Product Engineer"
           description="I build AI agents, Web3 applications, wallet intelligence tools, automation systems, and focused product MVPs. My work combines TypeScript, React, Next.js, Node.js, LLM APIs, blockchain data, Solana, EVM integrations, and human-controlled agent workflows."
         >
           <div className="hero-actions">
@@ -1320,7 +1209,7 @@ export function ProfilePage() {
             <div>
               <h2>Professional summary</h2>
               <p>
-                Founder of The Web3 Wizard / The Web3 Wizard Labs — a founder-led AI-native Web3
+                Founder of The Web3 Wizard / The Web3 Wizard Labs, a founder-led AI-native Web3
                 product studio. I turn real problems and roadmap milestones into focused working
                 products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.
                 AI accelerates the work; I remain accountable for what ships.
@@ -1342,7 +1231,7 @@ export function ProfilePage() {
               </div>
               <h3>Selected projects</h3>
               <p>
-                All projects below are founder-built reference implementations — not client work.
+                All projects below are founder-built reference implementations, not client work.
                 Each links to a live demo and public repository where available.
               </p>
               <ul>
@@ -1351,7 +1240,7 @@ export function ProfilePage() {
                     <Link href={`/work/${project.slug}`} className="inline-link" style={{ marginTop: 0 }}>
                       {project.name}
                     </Link>
-                    {" "}— {project.summary}
+                    {": "}{project.summary}
                     {project.liveUrl && (
                       <>
                         {" "}<a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-link" style={{ marginTop: 0 }}>Live</a>
@@ -1373,7 +1262,7 @@ export function ProfilePage() {
               </p>
               <h3>Availability</h3>
               <ul>
-                <li>Project-based client work: open — starting with a fit conversation.</li>
+                <li>Project-based client work: open, starting with a fit conversation.</li>
                 <li>AI/Web3 engineering roles: open to credible inbound opportunities.</li>
                 <li>Reviews every inquiry personally, typically within two business days.</li>
               </ul>
@@ -1498,7 +1387,7 @@ export function AiAgentsPage() {
       <PageHero
         eyebrow="AI AGENTS"
         title="Practical AI agents for real Web3 workflows."
-        description="Not hype demos. Defined capabilities, explicit boundaries, audit trails, and human approval where it matters. Every example below is grounded in founder-built reference implementations, clearly labeled and never presented as client deployments."
+        description="An AI agent in Web3 is a system that takes a defined input, reasons about it with a language model, and performs a bounded action against wallets, contracts, or on-chain data. Every example below is a founder-built reference implementation with defined capabilities, explicit boundaries, audit trails, and human approval where it matters. None of these are client deployments."
       >
         <div className="hero-actions">
           <a
@@ -1526,7 +1415,7 @@ export function AiAgentsPage() {
         <div className="container">
           <SectionHeading
             eyebrow="EVIDENCE FIRST"
-            title="Built, shipped, and labeled honestly."
+            title="Built, shipped, and labelled honestly."
             children="These reference implementations show what the agent work actually looks like."
           />
           <div className="projects-grid">
@@ -1542,7 +1431,7 @@ export function AiAgentsPage() {
               <SectionHeading
                 eyebrow="AI AGENT MARKETPLACE"
                 title="Spellbook: Turnkey Web3 AI agents ready to deploy."
-                children="Need pre-configured autonomous agents without the agency wait? Spellbook is our dedicated marketplace featuring 20+ specialized agents across Telegram, Discord, DeFi monitoring, and wallet intelligence with escrow-protected checkout, source code handover, and managed hosting options."
+                children="Need pre-configured autonomous agents without the agency wait? Spellbook is our dedicated marketplace of specialised agents across Telegram, Discord, DeFi monitoring, and wallet intelligence with escrow-protected checkout, source code handover, and managed hosting options."
               />
             </div>
             <div className="callout-panel">
@@ -1556,7 +1445,7 @@ export function AiAgentsPage() {
                   rel="noopener noreferrer"
                   className="button button-primary"
                 >
-                  Browse 20+ Agent Catalogue <ArrowUpRight size={15} />
+                  Browse the Agent Catalogue <ArrowUpRight size={15} />
                 </a>
                 <a
                   href="https://spellbook.theweb3wizard.xyz/requests/new"

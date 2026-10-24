@@ -179,7 +179,7 @@ export function SiteFooter() {
         <nav className="footer-col footer-col--split" aria-label="Studio">
           <span className="footer-label">Studio</span>
           <Link href="/about">About</Link>
-          <Link href="/profile">Profile — Khalid Murtala</Link>
+          <Link href="/hire-khalid">Hire Khalid — AI &amp; Web3 Product Engineer</Link>
           <Link href="/services">Services</Link>
           <Link href="/ai-agents">AI Agents</Link>
           <a href="https://spellbook.theweb3wizard.xyz" target="_blank" rel="noopener noreferrer">Spellbook (Marketplace) ↗</a>

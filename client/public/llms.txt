@@ -3,42 +3,51 @@
 > Founder-led AI-native Web3 product studio by Khalid Murtala. We turn real Web3 problems and roadmap milestones into focused, working products: AI agents, Solana applications, dApps, automation tools, and Web3 MVPs.
 
 ## About
-The Web3 Wizard (The Web3 Wizard Labs) is a solo studio, not an agency. Khalid Murtala directs every engagement — from architecture to handover — with AI-native execution and human accountability. We build the smallest useful product, with visible deliverables and documented limitations.
+The Web3 Wizard (The Web3 Wizard Labs) is a solo studio, not an agency. Khalid Murtala directs every engagement, from architecture to handover, with AI-native execution and human accountability. We build the smallest useful product, with visible deliverables and documented limitations.
 
 ## Services
 - [Product Discovery Sprint](https://www.theweb3wizard.xyz/services/product-discovery): Turn a Web3 problem or idea into a build-ready product direction. Define the user, scope the MVP, and decide what to build first.
 - [Web3 MVP Development](https://www.theweb3wizard.xyz/services/web3-mvp-development): Build a focused, working Web3 product. AI agents, Solana applications, dApps, automation tools, and Web3 MVPs built by a founder-led AI-native studio.
 - [AI Agent & Solana Engineering](https://www.theweb3wizard.xyz/services/ai-agent-solana-engineering): Specialist capability for AI agents, autonomous workflows, Telegram/Discord tools, Solana integrations, on-chain data pipelines, and AI-powered product features.
-- [AI Agents](https://www.theweb3wizard.xyz/ai-agents): Practical AI agents for Web3 workflows — support, wallet intelligence, community operations, treasury monitoring, controlled on-chain actions.
+- [AI Agents](https://www.theweb3wizard.xyz/ai-agents): Practical AI agents for Web3 workflows: support, wallet intelligence, community operations, treasury monitoring, controlled on-chain actions.
 
 ## Ways to Work Together (indicative starting prices)
-- [Product and Technical Discovery — from $750](https://www.theweb3wizard.xyz/start?type=discovery): 3–7 days. Problem clarification, MVP scope, architecture direction, roadmap.
-- [AI Agent or Web3 Integration Sprint — from $2,500](https://www.theweb3wizard.xyz/start?type=integration-sprint): 1–2 weeks. One defined agent or integration, tested, documented, handed over.
-- [Focused dApp or Web3 Product Build — from $6,000](https://www.theweb3wizard.xyz/start?type=product-build): 3–8 weeks. Frontend, backend, integrations, deployment, handover.
-- [Embedded Product Engineering — from $2,000/month](https://www.theweb3wizard.xyz/start?type=embedded): Monthly or milestone-based capacity.
+- [Product and Technical Discovery: from $750](https://www.theweb3wizard.xyz/start?type=discovery): 3–7 days. Problem clarification, MVP scope, architecture direction, roadmap.
+- [AI Agent or Web3 Integration Sprint: from $2,500](https://www.theweb3wizard.xyz/start?type=integration-sprint): 1–2 weeks. One defined agent or integration, tested, documented, handed over.
+- [Focused dApp or Web3 Product Build: from $6,000](https://www.theweb3wizard.xyz/start?type=product-build): 3–8 weeks. Frontend, backend, integrations, deployment, handover.
+- [Embedded Product Engineering: from $2,000/month](https://www.theweb3wizard.xyz/start?type=embedded): Monthly or milestone-based capacity.
 - Starting prices are indicative. Final scope, timeline, integrations, and price are confirmed after a fit conversation. Full details in [pricing.md](https://www.theweb3wizard.xyz/pricing.md).
 
-## Work — Founder-Built Projects
-- [Valor — AI Agent for Telegram](https://www.theweb3wizard.xyz/work/valor): Autonomous conversational agent for Web3 communities. Live at https://valor-tgbot.vercel.app — GitHub https://github.com/theweb3wizard/Valor
-- [WalletLens — EVM Wallet Intelligence](https://www.theweb3wizard.xyz/work/walletlens): Query Ethereum, Polygon, BNB, Arbitrum, Base wallets in plain English. Live at https://walletlens-hq.vercel.app
-- [Write3 — AI Web3 Content Generator](https://www.theweb3wizard.xyz/work/write3): Generate Web3-native content for X, Discord, Telegram, Farcaster, blogs. Live at https://write3-ai.vercel.app
-- [AgentHub — Secure AI Agent Access Layer](https://www.theweb3wizard.xyz/work/agenthub): Policy-controlled access to DBs/APIs/infra with audit trails. Live at https://agenthub-lyart.vercel.app
-- [OrderFlow — AI Trading Journal on Injective](https://www.theweb3wizard.xyz/work/orderflow): Reads on-chain history to show where you leak money. Live at https://orderflow-hq.vercel.app
-- [SolPulse — Solana Wallet Monitoring](https://www.theweb3wizard.xyz/work/solpulse): Solana on-chain signals via Telegram
-- [Community Signal — Web3 Community Action Tool](https://www.theweb3wizard.xyz/work/community-signal): Building-stage experiment for turning community activity into a clear next action
+## Work: Founder-Built Projects
+- [Valor: AI Agent for Telegram](https://www.theweb3wizard.xyz/work/valor): Autonomous conversational agent for Web3 communities. Live at https://valor-tgbot.vercel.app | GitHub https://github.com/theweb3wizard/Valor
+- [WalletLens: EVM Wallet Intelligence](https://www.theweb3wizard.xyz/work/walletlens): Query Ethereum, Polygon, BNB, Arbitrum, Base wallets in plain English. Live at https://walletlens-hq.vercel.app
+- [Write3: AI Web3 Content Generator](https://www.theweb3wizard.xyz/work/write3): Generate Web3-native content for X, Discord, Telegram, Farcaster, blogs. Live at https://write3-ai.vercel.app
+- [AgentHub: Secure AI Agent Access Layer](https://www.theweb3wizard.xyz/work/agenthub): Policy-controlled access to DBs/APIs/infra with audit trails. Live at https://agenthub-lyart.vercel.app
+- [OrderFlow: AI Trading Journal on Injective](https://www.theweb3wizard.xyz/work/orderflow): Reads on-chain history to show where you leak money. Live at https://orderflow-hq.vercel.app
+- [SolPulse: Solana Wallet Monitoring](https://www.theweb3wizard.xyz/work/solpulse): Solana on-chain signals via Telegram
+- [Community Signal: Web3 Community Action Tool](https://www.theweb3wizard.xyz/work/community-signal): Building-stage experiment for turning community activity into a clear next action
 - [All Work](https://www.theweb3wizard.xyz/work): Portfolio overview
 
 ## Insights
-- [How to Scope a Web3 MVP Before Spending Money](https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money)
-- [Why a Web3 Prototype Fails With Real Users](https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail)
-- [How to Use AI in Web3 Product Development Without Blindly Trusting It](https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it)
+- [What I Learned Shipping Seven Web3 MVPs Solo](https://www.theweb3wizard.xyz/insights/what-i-learned-shipping-seven-web3-mvps-solo): Seven founder-built products, one lesson each. Scope, integrations, agent boundaries, interface as product, actionable output, documented limits, and what shipping changes about the definition of done.
+- [How to Scope a Web3 MVP Before Spending Money](https://www.theweb3wizard.xyz/insights/scope-a-web3-product-before-spending-money): The five decisions that define scope, what to cut first when budget is tight, real cost ranges, red flags in a scope document, and a worked example.
+- [Why a Web3 Prototype Fails With Real Users](https://www.theweb3wizard.xyz/insights/why-a-web3-prototype-can-fail): The moment it usually goes wrong, six failure modes drawn from founder-built projects, what to measure, and what to fix before real users see it.
+- [How to Use AI in Web3 Product Development Without Blindly Trusting It](https://www.theweb3wizard.xyz/insights/use-ai-without-blindly-trusting-it): Human in the loop in practice, where AI goes wrong in Web3, five control points, four approval patterns, and what to log.
+- [How Much Does a Web3 MVP Cost?](https://www.theweb3wizard.xyz/insights/how-much-does-a-web3-mvp-cost): Published starting points, the four decisions that move the price, what makes a build cost more than expected, and how to spend less without cutting failure paths.
+- [Do I Need a Smart Contract Audit?](https://www.theweb3wizard.xyz/insights/do-i-need-a-smart-contract-audit): What an audit actually provides, when it is necessary, when it is not the next thing to buy, and the testing and disclosure discipline you still need.
+- [How to Evaluate a Web3 Developer](https://www.theweb3wizard.xyz/insights/how-to-evaluate-a-web3-developer): Five criteria worth checking, questions that reveal more than a portfolio, red flags, and an honest self-assessment against the same standard.
+- [Web3 Agency vs Freelancer: How to Choose](https://www.theweb3wizard.xyz/insights/web3-agency-vs-freelancer): When an agency is right, when an individual is, what a solo studio can and cannot offer, and a five-minute method for matching structure to the project.
+- [What Is an AI Agent in Web3?](https://www.theweb3wizard.xyz/insights/what-is-an-ai-agent-in-web3): A plain definition. The input, the reasoning step, and the bounded action, plus why the refusal list matters more than the capability list.
+- [What Is a Web3 MVP?](https://www.theweb3wizard.xyz/insights/what-is-a-web3-mvp): The four properties of Web3 that change what a minimum viable product has to include, and what belongs in version one.
+- [What Is a Product Discovery Sprint?](https://www.theweb3wizard.xyz/insights/what-is-a-product-discovery-sprint): What it produces, what it is not, when it is the wrong purchase, and how a short written direction prevents expensive build mistakes.
+- [What Is Wallet Intelligence?](https://www.theweb3wizard.xyz/insights/what-is-wallet-intelligence): The interpretation gap it closes, the four things it should never claim to be, and a working example from a founder-built project.
 - [All Insights](https://www.theweb3wizard.xyz/insights)
 
 ## Other Pages
 - [About](https://www.theweb3wizard.xyz/about): About Khalid Murtala and the studio
-- [Profile — Khalid Murtala](https://www.theweb3wizard.xyz/profile): Professional profile, skills, availability, contact links (print-friendly; also at /hire-khalid)
-- [Start a Conversation](https://www.theweb3wizard.xyz/start): Contact form — inquiries delivered via Telegram, no database
-- [Pricing](https://www.theweb3wizard.xyz/pricing.md): Structured pricing for AI agents
+- [Hire Khalid Murtala](https://www.theweb3wizard.xyz/hire-khalid): Professional profile, skills, availability, and contact links. Project-based client work from $750. Print-friendly. (Also reachable at /profile, which canonicalises here.)
+- [Start a Conversation](https://www.theweb3wizard.xyz/start): Contact form. Inquiries delivered via Telegram, no database
+- [Pricing](https://www.theweb3wizard.xyz/pricing.md): Structured pricing for discovery, agent and integration sprints, product builds, and embedded engineering
 - [Sitemap](https://www.theweb3wizard.xyz/sitemap.xml)
 - [Privacy](https://www.theweb3wizard.xyz/privacy) | [Terms](https://www.theweb3wizard.xyz/terms)
 
@@ -50,7 +59,7 @@ The Web3 Wizard (The Web3 Wizard Labs) is a solo studio, not an agency. Khalid M
 - LinkedIn: https://www.linkedin.com/in/theweb3wizard00
 
 ## Notes for AI
-- All portfolio work is founder-built personal work, clearly labeled — not client case studies.
+- All portfolio work is founder-built personal work, clearly labeled, not client case studies.
 - No smart-contract audits, no guarantees of adoption, product-market fit, or financial outcomes.
-- Pricing is in pricing.md — parseable without JavaScript.
-- Last updated: 2026-09-08
+- Pricing is in pricing.md, parseable without JavaScript.
+- Last updated: 2026-10-24

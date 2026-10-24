@@ -126,7 +126,7 @@ export function normalizeInquiryType(raw: string | null): string {
 // ─── Booking ──────────────────────────────────────────────────────────────────
 // Configurable fit-call URL. Set VITE_BOOKING_URL in the environment (Vercel:
 // Project Settings → Environment Variables). The task spec names this
-// NEXT_PUBLIC_BOOKING_URL; both names are accepted — see .env.example.
+// NEXT_PUBLIC_BOOKING_URL; both names are accepted, see .env.example.
 // When empty, booking CTAs route to /start?intent=fit-call instead of an
 // external scheduler, so production never shows a dead link.
 

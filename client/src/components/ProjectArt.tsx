@@ -1,5 +1,5 @@
 /**
- * ProjectArt — deterministic generative cover per project slug.
+ * ProjectArt: deterministic generative cover per project slug.
  * Brand-locked palette only (gold / blue / green on dark), pure SVG,
  * aria-hidden so SEO + screen readers keep reading the real card copy.
  */

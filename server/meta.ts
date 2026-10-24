@@ -299,7 +299,7 @@ type RouteMeta = {
   canonicalPath?: string;
   /**
    * Explicit Open Graph image. By default every route gets its own card from
-   * /og/ — see ogImageFor() below. Only set this to override that convention.
+   * /og/: see ogImageFor() below. Only set this to override that convention.
    */
   ogImage?: string;
   schemas?: object[];
@@ -968,7 +968,7 @@ export function ogImageFor(pathname: string): string {
 }
 
 export function injectMetaIntoHtml(html: string, pathname: string): string {
-  // Normalise pathname — strip query, hash, trailing slash except root
+  // Normalise pathname: strip query, hash, trailing slash except root
   const clean = pathname.split("?")[0].split("#")[0].replace(/\/$/, "") || "/";
   const meta = ROUTE_META[clean] ?? DEFAULT_META;
 

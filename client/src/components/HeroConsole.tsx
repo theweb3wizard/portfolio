@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { projects } from "@/site";
 
 /**
- * HeroConsole — live featured-work preview for the homepage hero.
+ * HeroConsole: live featured-work preview for the homepage hero.
  * SEO-safe: no h1/h2/h3 inside, reuses existing project copy only,
  * decorative chrome is aria-hidden. Crawlers keep reading the SSG
  * static body + the real h1 in Home().

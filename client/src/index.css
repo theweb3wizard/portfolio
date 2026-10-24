@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ─── Design tokens — BRAND LOCKED, do not change hex ───────────────────────── */
+/* ─── Design tokens: BRAND LOCKED, do not change hex ───────────────────────── */
 
 :root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -23,7 +23,7 @@
   --ease-out: cubic-bezier(.23,1,.32,1);
   --ease-spring: cubic-bezier(.22,1.2,.32,1);
 
-  /* derived — same hues only, opacity transforms */
+  /* derived: same hues only, opacity transforms */
   --gold-08: rgba(215,168,75,.08);
   --gold-12: rgba(215,168,75,.12);
   --gold-20: rgba(215,168,75,.20);
@@ -220,7 +220,7 @@ html, body { overflow-x: clip; }
 }
 @keyframes hero-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
-/* hero visual — premium console deck */
+/* hero visual: premium console deck */
 .hero-visual {
   min-height: 470px; position: relative; border-radius: var(--radius-xl);
   border: 1px solid var(--line-strong);
@@ -389,7 +389,7 @@ html, body { overflow-x: clip; }
   font-size: var(--text-body-sm); line-height: var(--lh-body-sm);
 }
 .boundary-item:last-child { border-bottom: none; }
-.boundary-item::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: 'DM Mono', monospace; }
+.boundary-item::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: 'DM Mono', monospace; } /* emdash-ok: gold list marker glyph in the design language, not prose */
 
 /* ─── FAQ ──────────────────────────────────────────────────────────────────── */
 
@@ -760,7 +760,7 @@ html, body { overflow-x: clip; }
   .footer-brand p { max-width: 560px; }
   .footer-bottom { margin-top: 44px; }
 
-  /* process becomes premium horizontal snap — no more 5-tall wall */
+  /* process becomes premium horizontal snap: no more 5-tall wall */
   .process-grid {
     display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
     padding-bottom: 14px; margin-inline: -24px; padding-inline: 24px;
@@ -791,7 +791,7 @@ html, body { overflow-x: clip; }
   .engagement-details[open] .engagement-list { margin-top: 10px; }
 }
 
-/* ─── Responsive: mobile (≤640px) — fixed alignment system ─────────────────── */
+/* ─── Responsive: mobile (≤640px), fixed alignment system ─────────────────── */
 
 @media (max-width: 640px) {
   .container { width: min(100% - 32px, 1200px); }
@@ -809,7 +809,7 @@ html, body { overflow-x: clip; }
   .capability-list, .form-grid { grid-template-columns: 1fr; }
   .pricing-strip-row { grid-template-columns: 1fr; }
 
-  /* proof stats stays 2x2 compact — not 4 stacked bricks */
+  /* proof stats stays 2x2 compact, not 4 stacked bricks */
   .proof-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .proof-stats > div { padding: 18px 16px; }
   .proof-stats strong { font-size: 25px; }
@@ -989,7 +989,7 @@ html, body { overflow-x: clip; }
   }
 }
 
-/* ─── Display type — Space Grotesk for headings only, body stays Inter ────── */
+/* ─── Display type: Space Grotesk for headings only, body stays Inter ────── */
 
 .hero h1, .page-hero h1, .section-heading h2, .cta-section h2, .article h1,
 .project-detail-hero h1, .visual-title, .project-hero-visual span {

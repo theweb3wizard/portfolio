@@ -240,6 +240,48 @@ ogProblems.length === 0
   ? pass(`every page has a per-page og:image that exists (${ogDistinct.size} distinct cards)`)
   : fail(`og:image problems — ${ogProblems.join("; ")}`);
 
+// ─── 4. em dash ban in built output ──────────────────────────────────────────
+
+console.log("\n[4] em dash ban");
+
+// The house style bans U+2014 from the site. scripts/_check-emdash.mjs checks the
+// source; this checks the built HTML and served text documents, which is the only
+// place that catches an em dash arriving through injected meta, JSON-LD, or a
+// data file rather than through hand written copy.
+//
+// Two exclusions, both deliberate. The JS and CSS bundles are not scanned: the
+// build strips comments, so the source level `emdash-ok` marker cannot survive
+// minification, and dependency strings could contain an em dash nobody authored.
+// The one design glyph that does live in CSS is covered by the source scan.
+const TEXT_EXT = new Set([".html", ".xml", ".txt"]);
+function shippedText(dir, out = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) shippedText(full, out);
+    else if (TEXT_EXT.has(path.extname(entry.name).toLowerCase())) out.push(full);
+  }
+  return out;
+}
+
+const emFiles = shippedText(DIST);
+const emHits = [];
+for (const file of emFiles) {
+  const text = fs.readFileSync(file, "utf-8");
+  if (!text.includes("\u2014")) continue;
+  text.split(/\r?\n/).forEach((line, i) => {
+    if (line.includes("\u2014") && !line.includes("emdash-ok")) {
+      emHits.push(`${path.relative(DIST, file)}:${i + 1}`);
+    }
+  });
+}
+emHits.length === 0
+  ? pass(`no em dashes in ${emFiles.length} built HTML, XML, and text files`)
+  : fail(
+      `em dashes in built output at ${emHits.slice(0, 6).join(", ")}${
+        emHits.length > 6 ? ` (+${emHits.length - 6} more)` : ""
+      }`,
+    );
+
 // ─── report ───────────────────────────────────────────────────────────────────
 
 const totalWords = pages.reduce((sum, p) => sum + p.words, 0);

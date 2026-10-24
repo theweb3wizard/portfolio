@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * CountUp — animates an integer on first view, renders the final value
+ * CountUp: animates an integer on first view, renders the final value
  * in the DOM from the start so crawlers + no-JS readers see real numbers.
  * Decorative animation is aria-hidden; screen readers get the final value.
  */

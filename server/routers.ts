@@ -19,10 +19,10 @@ export const inquiryInputSchema = z.object({
 
 export function buildTelegramMessage(input: z.infer<typeof inquiryInputSchema>): string {
   const line = (emoji: string, label: string, value: string) =>
-    `${emoji} *${label}:* ${value || "—"}`;
+    `${emoji} *${label}:* ${value || "n/a"}`;
 
   return [
-    "🔔 *New Inquiry — The Web3 Wizard Labs*",
+    "🔔 *New Inquiry: The Web3 Wizard Labs*",
     "",
     line("👤", "Name", input.name),
     line("📧", "Email", input.email),
@@ -38,7 +38,7 @@ export function buildTelegramMessage(input: z.infer<typeof inquiryInputSchema>):
     input.description,
     "",
     "✅ *What success looks like:*",
-    input.success || "—",
+    input.success || "n/a",
   ].join("\n");
 }
 

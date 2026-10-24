@@ -8,7 +8,9 @@
     "build": "vite build && tsx --tsconfig tsconfig.prerender.json scripts/prerender.tsx",
     "start": "NODE_ENV=production tsx server/index.ts",
     "check": "tsc --noEmit",
+    "test": "vitest run",
     "check:slugs": "node scripts/_check-slugs.mjs",
+    "check:emdash": "node scripts/_check-emdash.mjs",
     "check:reading-time": "node scripts/_check-reading-time.mjs",
     "check:seo": "node theweb3wizard.xyz-audit/verify-seo.mjs",
     "format": "prettier --write ."

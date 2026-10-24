@@ -2,7 +2,7 @@
  * shared/routeMeta.ts
  *
  * Lightweight client-side route metadata for MetaManager (SPA navigation).
- * This is a subset of server/meta.ts — titles and descriptions only.
+ * This is a subset of server/meta.ts: titles and descriptions only.
  * Full schema injection (JSON-LD, canonical, OG) happens server-side via
  * the SSG plugin at build time. This file just keeps <title> and <meta name="description">
  * in sync after client-side navigation.
@@ -17,9 +17,9 @@ export type ClientRouteMeta = {
   title: string;
   description: string;
   noindex?: boolean;
-  /** Canonical URL override — mirrors server/meta.ts. See the "/profile" entry there. */
+  /** Canonical URL override: mirrors server/meta.ts. See the "/profile" entry there. */
   canonicalPath?: string;
-  /** Explicit Open Graph image. Defaults to the per-route card — see ogImageFor below. */
+  /** Explicit Open Graph image. Defaults to the per-route card. See ogImageFor below. */
   ogImage?: string;
 };
 
@@ -28,7 +28,7 @@ export type ClientRouteMeta = {
  *   "/"           -> /og/home.png
  *   "/work/valor" -> /og/work-valor.png
  *
- * Mirrors ogImageFor() in server/meta.ts — the two must produce identical slugs.
+ * Mirrors ogImageFor() in server/meta.ts: the two must produce identical slugs.
  * verify-seo.mjs asserts that every og:image URL resolves to a real file, so any
  * drift fails the check rather than shipping a broken card.
  */

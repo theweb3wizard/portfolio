@@ -1,5 +1,5 @@
 /**
- * lib/enhance — progressive enhancement only. No copy changes, no route changes.
+ * lib/enhance: progressive enhancement only. No copy changes, no route changes.
  * - .reveal: hidden ONLY when html.js is present (no-JS + crawlers stay visible)
  * - tilt: pointer:fine + no reduced-motion, max 5deg
  * - reading progress + form progress bars are aria-hidden

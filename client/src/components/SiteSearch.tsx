@@ -4,7 +4,7 @@ import { useLocation } from "wouter";
 import { insights, navLinks, projects, services } from "@/site";
 
 /**
- * SiteSearch — ⌘K quick search over existing titles only.
+ * SiteSearch: ⌘K quick search over existing titles only.
  * Lazy-loaded so cmdk never touches the initial bundle.
  * No new copy: every result reuses an existing page/project title.
  */

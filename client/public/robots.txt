@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /start
 
-# AI crawlers — explicitly permitted for GEO/AEO indexing
+# AI crawlers: explicitly permitted for GEO/AEO indexing
 User-agent: GPTBot
 Allow: /
 

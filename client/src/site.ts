@@ -80,7 +80,7 @@ export const projects: Project[] = [
     decisions: [
       "Put pure-TypeScript filters in front of the model so 90% or more of messages never reach an AI call. If an agent reads every message in a group, cost control is the binding constraint, not quality.",
       "Return the Telegram webhook in under 50ms and move the AI and on-chain work into a signed background job. Telegram retries a slow webhook, which means paying twice for the same message.",
-      "Derive each community's treasury wallet deterministically from a master key so funds stay non-custodial and one community's budget can never spend another's.",
+      "Derive each community's treasury wallet deterministically from a master key so one community's budget can never spend another's. The trade-off is custody: the server holds that key and signs every transfer.",
     ],
     stack: ["Next.js 16", "React 19", "TypeScript", "Neon", "Drizzle ORM", "Auth.js", "viem", "Base", "Upstash QStash", "Gemini 2.5 Flash", "Telegram Bot API"],
     limitations: [
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     builtBy: "The Web3 Wizard",
     isPersonalProject: true,
     problem: "EVM wallet data is public but practically unreadable. A founder checking whether a counterparty is worth dealing with gets a wall of hexadecimal and no opinion, and the tools that do explain it assume you already know what you are looking at.",
-    whatItDoes: "A web application that takes a wallet address and returns a full report in about ten seconds. It pulls on-chain data across five chains, computes a 0 to 100 risk score, and asks a language model to describe what the wallet's behaviour actually looks like. Read-only, no wallet connection, and every report gets its own shareable URL.",
+    whatItDoes: "A web application that takes a wallet address and returns a full report in seconds. It pulls on-chain data across five chains, computes a 0 to 100 risk score, and asks a language model to describe what the wallet's behaviour actually looks like. Read-only, no wallet connection, and every report gets its own shareable URL.",
     decisions: [
       "Make the address the only input. One field, no setup, no wallet connection, because every extra step is a reason a non-technical user closes the tab.",
       "Support Ethereum, Polygon, BNB Chain, Arbitrum, and Base from a single query so the user does not have to know which chain matters before asking.",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     builtBy: "The Web3 Wizard",
     isPersonalProject: true,
     problem: "AI coding assistants need access to databases, APIs, and infrastructure to be genuinely useful. Giving them broad access creates real security and compliance risks.",
-    whatItDoes: "A reverse proxy that sits between AI coding clients and Model Context Protocol servers. Every tool call passes through authentication, a policy engine, an SSRF firewall, and an audit logger. Policies are set per tool as allow, block, read-only, or require-approval, and approval requests go out over Slack with a five-minute window.",
+    whatItDoes: "A reverse proxy that sits between AI coding clients and Model Context Protocol servers. Every tool call passes through authentication, an SSRF firewall, and a policy engine, and every outcome, allowed or blocked, is written to an audit log. Policies are set per tool as allow, block, read-only, or require-approval, and approval requests go out over Slack with a five-minute window.",
     decisions: [
       "Design around least-privilege access. Agents get the minimum access required for each task.",
       "Make audit trails a first-class feature so every action is traceable.",

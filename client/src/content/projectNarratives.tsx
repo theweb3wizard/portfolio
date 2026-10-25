@@ -178,8 +178,11 @@ const VALOR: Narrative = {
       </p>
       <p>
         There is no investment advice, no trading signals, and no token recommendations.
-        The treasury is non-custodial: each community's wallet is derived deterministically
-        from a master key, so one community's budget can never touch another's.
+        Each community's treasury is its own address, derived deterministically from a
+        master key the server holds, so one community's budget can never touch another's.
+        That isolation is real. Custody is the part that is not: whoever holds the master
+        key can sign a transfer out of any treasury, and in this build that is the server.
+        Valor is scoped as a portfolio project rather than a production treasury.
       </p>
 
       <h2>What to take from this</h2>
@@ -364,8 +367,8 @@ const AGENTHUB: Narrative = {
       <h2>How it works</h2>
       <p>
         AgentHub sits between the AI client and the tool servers as a reverse proxy. Every
-        call passes through four things in order: authentication, a policy engine, a
-        security boundary, and an audit logger.
+        call passes through authentication, a security boundary, and a policy engine, and
+        every outcome, allowed or blocked, is written to an audit log.
       </p>
       <p>
         Policies are set per tool and there are four levels: allow, block, read-only, and

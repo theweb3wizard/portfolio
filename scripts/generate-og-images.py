@@ -116,7 +116,7 @@ PAGES: dict[str, dict[str, object]] = {
     "/work/valor": {
         "eyebrow": "PROJECT \u00b7 VALOR",
         "headline": ["Autonomous USDC rewards", "for Telegram."],
-        "subline": "Message scoring \u00b7 Base payments \u00b7 Non-custodial",
+        "subline": "Message scoring \u00b7 Base payments \u00b7 Isolated treasury",
     },
     "/work/walletlens": {
         "eyebrow": "PROJECT \u00b7 WALLETLENS",

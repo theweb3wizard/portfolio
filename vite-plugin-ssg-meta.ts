@@ -141,7 +141,7 @@ const STATIC_BODY: Record<string, { h1: string; intro: string; extra: string; li
   },
   "/work/spellbook": {
     h1: "Spellbook — Web3 AI Agent Marketplace",
-    intro: "Spellbook is a marketplace and workflow hub for Web3 AI agents. Founders and operators can buy one of eleven published agents across four operational areas, or commission a custom agent architecture, with USDT or USDC checkout, an order workspace created immediately without an account, and milestone-tracked delivery. Managed deployments carry a forty-eight hour delivery target and include runbooks, configuration files, and thirty days of engineer coverage after handover.",
+    intro: "Spellbook is a marketplace and workflow hub for Web3 AI agents. Founders and operators can buy pre-configured agents by operational area or commission a custom agent architecture, with USDT or USDC checkout, an order workspace created immediately without an account, and milestone-tracked delivery. Managed deployments carry a forty-eight hour delivery target and include runbooks, configuration files, and thirty days of engineer coverage after handover.",
     extra: "The credential model is the deliberate constraint: buyers provide scoped, revocable tokens only. No private keys and no seed phrases are ever requested or stored, and buyers own their own model and RPC credentials so they also control the ongoing cost. Categories cover community operations, customer and developer support, protocol and DeFi, and growth and operations. Stack: Next.js, TypeScript, Supabase, Tailwind CSS, TRC-20, Telegram Bot API, Resend. Live at spellbook.theweb3wizard.xyz. Related service: AI Agent & Solana Engineering.",
     links: [
       { href: "/work", label: "All Work" },

@@ -93,3 +93,12 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Internal working documents, kept on disk but never published.
+# Audit reports, crawl data, and strategy notes live here. Anything that needs
+# to run as part of the repo was moved into scripts/.
+theweb3wizard.xyz-audit/
+FORENSIC-AUDIT.md
+PROGRESS.md
+findings.md
+Github-Readme.md

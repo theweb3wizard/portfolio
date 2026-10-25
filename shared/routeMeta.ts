@@ -67,7 +67,7 @@ export const CLIENT_ROUTE_META: Record<string, ClientRouteMeta> = {
   },
   "/work/spellbook": {
     title: "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard",
-    description: "Spellbook is a Web3 AI agent marketplace with escrow-protected checkout, custom build commissions, and milestone-tracked handover.",
+    description: "Spellbook is a Web3 AI agent marketplace with USDT or USDC checkout, custom build commissions, and milestone-tracked handover.",
   },
   "/work/valor": {
     title: "Valor: AI Community Rewards | The Web3 Wizard",

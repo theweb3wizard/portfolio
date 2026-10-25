@@ -133,7 +133,7 @@ export default function WhatILearnedShippingSevenWeb3MvpsSolo() {
         <Link href="/work/spellbook" className="inline-link">
           Spellbook
         </Link>{" "}
-        is a marketplace for Web3 AI agents with escrow-protected checkout and milestone-tracked
+        is a marketplace for Web3 AI agents with USDT or USDC checkout and milestone-tracked
         handover. The most useful thing I learned building it was commercial rather than technical:
         conversions depend on complete transparency about deliverables, operating boundaries, and who
         owns the ongoing API and hosting costs.

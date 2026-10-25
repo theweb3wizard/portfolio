@@ -35,11 +35,12 @@ const SPELLBOOK: Narrative = {
 
       <h2>How it works</h2>
       <p>
-        The flow is deliberately short. You browse a catalogue by operational area:
-        community operations, customer and developer support, protocol and DeFi, growth
-        and operations. You pick one and pay in USDT or USDC. An order workspace is
-        created immediately, without an account, and it asks for the exact credentials
-        the agent needs and nothing else. Bot tokens, read-only API keys, webhook URLs.
+        The flow is deliberately short. You browse a catalogue that holds eleven published
+        agents across four operational areas at the time of writing: community operations,
+        customer and developer support, protocol and DeFi, growth and operations. You pick
+        one and pay in USDT or USDC. An order workspace is created immediately, without an
+        account, and it asks for the exact credentials the agent needs and nothing else.
+        Bot tokens, read-only API keys, webhook URLs.
       </p>
       <p>
         Then the clock starts. Forty-eight hours for a managed deployment, seventy-two

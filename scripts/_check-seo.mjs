@@ -1,17 +1,18 @@
 /**
- * verify-seo.mjs — regression gate for theweb3wizard.xyz
+ * _check-seo.mjs — regression gate for theweb3wizard.xyz
  *
  * Runs against the BUILD OUTPUT (dist/public), so it verifies what actually ships
  * rather than what the source claims. Re-run after every build:
  *
- *   node verify-seo.mjs
+ *   npm run check:seo
  *
- * Exit code 1 means at least one hard check failed.
+ * Run it from the repository root. Exit code 1 means at least one hard check
+ * failed.
  */
 import fs from "node:fs";
 import path from "node:path";
 
-const ROOT = "C:/Users/KHALID PC/Documents/Github Projects/portfolio";
+const ROOT = process.cwd();
 const DIST = path.join(ROOT, "dist", "public");
 const OK = "PASS";
 const BAD = "FAIL";

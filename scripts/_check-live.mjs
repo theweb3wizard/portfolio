@@ -1,14 +1,14 @@
 /**
- * verify-live.mjs — production checks for theweb3wizard.xyz
+ * _check-live.mjs — production checks for theweb3wizard.xyz
  *
- * verify-seo.mjs checks what we BUILT. This checks what is actually SERVED,
+ * _check-seo.mjs checks what we BUILT. This checks what is actually SERVED,
  * which is the only thing search engines and visitors ever see. Deploys can
  * fail silently, edge caches can serve yesterday's bundle, and a redirect can
  * be configured but unreachable. This script is the difference between "the
  * build passed" and "the change is live".
  *
- *   node verify-live.mjs            checks https://www.theweb3wizard.xyz
- *   node verify-live.mjs --apex     also checks https://theweb3wizard.xyz
+ *   npm run check:live
+ *   npm run check:live -- --apex      also checks https://theweb3wizard.xyz
  *
  * Exit code 1 means at least one check failed.
  */

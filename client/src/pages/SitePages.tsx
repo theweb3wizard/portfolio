@@ -1431,7 +1431,7 @@ export function AiAgentsPage() {
               <SectionHeading
                 eyebrow="AI AGENT MARKETPLACE"
                 title="Spellbook: Turnkey Web3 AI agents ready to deploy."
-                children="Need pre-configured autonomous agents without the agency wait? Spellbook is our dedicated marketplace of specialised agents across Telegram, Discord, DeFi monitoring, and wallet intelligence with escrow-protected checkout, source code handover, and managed hosting options."
+                children="Need pre-configured autonomous agents without the agency wait? Spellbook is our dedicated marketplace of specialised agents across Telegram, Discord, DeFi monitoring, and wallet intelligence with USDT or USDC checkout, source code handover, and managed hosting options."
               />
             </div>
             <div className="callout-panel">

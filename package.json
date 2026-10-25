@@ -12,7 +12,8 @@
     "check:slugs": "node scripts/_check-slugs.mjs",
     "check:emdash": "node scripts/_check-emdash.mjs",
     "check:reading-time": "node scripts/_check-reading-time.mjs",
-    "check:seo": "node theweb3wizard.xyz-audit/verify-seo.mjs",
+    "check:seo": "node scripts/_check-seo.mjs",
+    "check:live": "node scripts/_check-live.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

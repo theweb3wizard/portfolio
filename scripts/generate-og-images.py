@@ -111,7 +111,7 @@ PAGES: dict[str, dict[str, object]] = {
     "/work/spellbook": {
         "eyebrow": "PROJECT \u00b7 SPELLBOOK",
         "headline": ["A Web3 AI agent", "marketplace."],
-        "subline": "Escrow checkout \u00b7 Source handover \u00b7 Managed hosting",
+        "subline": "USDT/USDC checkout \u00b7 Source handover \u00b7 Managed hosting",
     },
     "/work/valor": {
         "eyebrow": "PROJECT \u00b7 VALOR",

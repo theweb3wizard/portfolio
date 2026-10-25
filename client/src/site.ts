@@ -40,8 +40,8 @@ export const projects: Project[] = [
   {
     name: "Spellbook",
     slug: "spellbook",
-    summary: "Autonomous Web3 AI agent marketplace: instant fixed-scope deployments, custom commissions, and escrow workflow.",
-    description: "Spellbook is a production marketplace and workflow hub for Web3 AI agents. Founders and operators can purchase pre-configured autonomous agents or commission custom agent architectures with escrow-protected checkout, real-time milestone delivery, and multi-tenant telemetry.",
+    summary: "Autonomous Web3 AI agent marketplace: instant fixed-scope deployments, custom commissions, and milestone-tracked delivery.",
+    description: "Spellbook is a production marketplace and workflow hub for Web3 AI agents. Founders and operators can purchase pre-configured autonomous agents or commission a custom agent architecture, with USDT or USDC checkout, milestone-tracked delivery, and a full source handover option.",
     status: "deployed",
     category: "AI agent marketplace",
     builtBy: "The Web3 Wizard",

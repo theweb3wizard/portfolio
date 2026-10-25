@@ -399,14 +399,13 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/work/spellbook": {
     title: "Spellbook | Web3 AI Agent Marketplace | The Web3 Wizard",
     description:
-      "Spellbook: Autonomous Web3 AI agent marketplace. Browse and deploy production-ready AI agents or commission custom architectures with escrow-protected delivery.",
+      "Spellbook: a Web3 AI agent marketplace with pre-configured agents, custom commissions, USDT or USDC checkout, and milestone-tracked delivery.",
     schemas: [
       PERSON_SCHEMA,
       softwareSchema(
         "Spellbook",
-        "Autonomous Web3 AI agent marketplace and workflow hub. Curated agents with escrow checkout, custom commission requests, and live milestone delivery.",
+        "Autonomous Web3 AI agent marketplace and workflow hub. Curated agents with USDT or USDC checkout, custom commission requests, and live milestone delivery.",
         "https://spellbook.theweb3wizard.xyz",
-        "https://github.com/theweb3wizard/spellbook",
       ),
       breadcrumb([
         { name: "Home", url: SITE_URL },
